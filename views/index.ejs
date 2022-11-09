@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Piano</title>
+    <link rel="stylesheet" href="/styles.css">
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.2/axios.min.js"></script>
+    <script src="/script.js" defer></script>
+    <script>
+        const currentSong = <%- JSON.stringify(locals.song) || 'undefined' %>
+    </script>
+</head>
+
+<body>
+    <div class="buttons">
+        <% if (locals.song == null) { %>
+            <button class="record-button button">Record</button>
+            <button class="save-button button">Save</button>
+          <% } else { %>
+            <a href="/" class="record-button button">Record New Song</a>
+          <% } %>
+        <button class="play-button button <%= locals.song != null ? 'show' : '' %>">Play</button>
+    </div>
+    <input class="input-nameOfSong" id="nameOfSong" type="text"> 
+    <a href="#" class="buttons button song-link">View Song </a>
+    <div class="piano ">
+        <div data-key="1" data-note="C" class="key white">
+            <span class="hints">Z</span>
+        </div>
+        <div data-key="2" data-note="C#" class="key black">
+            <span class="hints">A</span>
+        </div>
+        <div data-key="3" data-note="D" class="key white">
+            <span class="hints">X</span>
+        </div>
+        <div data-key="4" data-note="D#" class="key black">
+            <span class="hints">S</span>
+        </div>
+        <div data-key="5" data-note="E" class="key white">
+            <span class="hints">C</span>
+        </div>
+        <div data-key="6" data-note="F" class="key white">
+            <span class="hints">V</span>
+        </div>
+        <div data-key="7" data-note="F#" class="key black">
+            <span class="hints">D</span>
+        </div>
+        <div data-key="8" data-note="G" class="key white">
+            <span class="hints">B</span>
+        </div>
+        <div data-key="9" data-note="G#" class="key black">
+            <span class="hints">F</span>
+        </div>
+        <div data-key="10" data-note="A" class="key white">
+            <span class="hints">N</span>
+        </div>
+        <div data-key="11" data-note="A#" class="key black">
+            <span class="hints">G</span>
+        </div>
+        <div data-key="12" data-note="B" class="key white">
+            <span class="hints">M</span>
+        </div>
+        <div data-key="13" data-note="C1" class="key white">
+            <span class="hints">,</span>
+        </div>
+        <div data-key="14" data-note="C#1" class="key black">
+            <span class="hints">H</span>
+        </div>
+        <div data-key="15" data-note="D1" class="key white">
+            <span class="hints">.</span>
+        </div>
+        <div data-key="16" data-note="D#1" class="key black">
+            <span class="hints">J</span>
+        </div>
+        <div data-key="17" data-note="E1" class="key white">
+            <span class="hints">/</span>
+        </div>
+    </div>
+
+    <audio id="1" src="/sounds/040.wav"></audio>
+    <audio id="2" src="/sounds/041.wav"></audio>
+    <audio id="3" src="/sounds/042.wav"></audio>
+    <audio id="4" src="/sounds/043.wav"></audio>
+    <audio id="5" src="/sounds/044.wav"></audio>
+    <audio id="6" src="/sounds/045.wav"></audio>
+    <audio id="7" src="/sounds/046.wav"></audio>
+    <audio id="8" src="/sounds/047.wav"></audio>
+    <audio id="9" src="/sounds/048.wav"></audio>
+    <audio id="10" src="/sounds/049.wav"></audio>
+    <audio id="11" src="/sounds/050.wav"></audio>
+    <audio id="12" src="/sounds/051.wav"></audio>
+    <audio id="13" src="/sounds/052.wav"></audio>
+    <audio id="14" src="/sounds/053.wav"></audio>
+    <audio id="15" src="/sounds/054.wav"></audio>
+    <audio id="16" src="/sounds/055.wav"></audio>
+    <audio id="17" src="/sounds/056.wav"></audio>
+
+</body>
+
+</html>

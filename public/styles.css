@@ -1,0 +1,144 @@
+*,*::before,*::after{
+    box-sizing: border-box;
+}
+
+body{
+    background-color:rgb(28, 48, 156);
+    margin:0;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.piano {
+  display: block;
+  width: 100%;
+  height: 350px;
+  max-width: 880px;
+  position: relative;
+  margin: 40px auto 0;
+}
+
+
+.key {
+  position: relative;
+  border: 4px solid black;
+  border-radius: .5rem;
+  transition: all .07s ease;
+  display: block;
+  box-sizing: border-box;
+  z-index: 2;
+  }
+
+.white {
+  float: left;
+  width: 10%;
+  height: 100%;
+  background: white;  
+
+  }
+  .white.active {
+    transform: scale(.95);
+    border-color: #028ae9;
+    box-shadow: 0 0 1rem ;
+  }
+.black {
+  position: absolute;
+  width: 6%;
+  height: 60%;
+  background: #000;
+  color: white;
+  top: 0;
+  z-index: 3;
+
+  }
+  .black.active {
+    transform: scale(.95);
+    border-color: #028ae9;
+    box-shadow: 0 0 1rem ;
+  }
+  .hints {
+    display: block;
+    width: 100%;
+    opacity: 0;
+    position: absolute;
+    bottom: 7px;
+    font-size: 20px;
+    text-align: center;
+  }
+  .piano:hover .hints {
+    opacity: 1;
+  }
+
+  .key[data-key="2"] {
+    left: 7%;
+  }
+
+  .key[data-key="4"] {
+    left: 17%;
+  }
+
+  .key[data-key="7"]  {
+    left: 37%;
+  }
+
+  .key[data-key="9"] {
+    left: 47%;
+  }
+
+  .key[data-key="11"] {
+    left: 57%;    
+  }
+
+  .key[data-key="14"] {
+    left: 77%;    
+  }
+
+  .key[data-key="16"] {
+    left: 87%;    
+  }
+
+.buttons{
+  display: flex;
+  margin-bottom: 15px;
+}
+
+.button{
+  border:none;
+  font-size: 2rem;
+  margin-left: 1rem;
+  border-radius: 5px;
+}
+.button:first-child {
+  margin-left: 0;
+}
+.record-button,
+.song-link{
+  background-color:white;
+}
+.record-button.active{
+  background-color: red;
+}
+.button:hover{
+  background-color: rgb(85, 83, 83);
+}
+.play-button,
+.save-button,
+.song-link,
+.input-nameOfSong{
+  display:none;
+}
+.play-button.show,
+.save-button.show,
+.song-link.show,
+.input-nameOfSong.show{
+  display: block;
+}
+
+.input-nameOfSong{
+  border:none;
+  font-size: 2rem;
+  margin: 1rem;
+  border-radius: 5px;
+}
