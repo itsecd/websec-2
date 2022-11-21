@@ -1,0 +1,68 @@
+.parent {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+    overflow: auto;
+}
+
+.header {
+
+}
+
+.logo {
+    display: inline-block;
+    width: 30%;
+}
+
+.phone {
+    display: inline-block;
+    background: red;
+    width: 30%;
+}
+
+form {
+    position: relative;
+    width: 300px;
+    margin: 0 auto;
+  }
+
+.search {
+    display: inline-block;
+    background: #F9F0DA;
+}
+
+.search form {
+  background: #A3D0C3;
+}
+
+.search input, .d3 button {
+  border: none;
+  outline: none;
+  background: transparent;
+}
+.search input {
+  width: 100%;
+  height: 42px;
+  padding-left: 15px;
+}
+.search button {
+  height: 42px;
+  width: 42px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  cursor: pointer;
+}
+
+.search button:before {
+  content: "\f002";
+  font-family: FontAwesome;
+  font-size: 16px;
+  color: #F9F0DA;
+}

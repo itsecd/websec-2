@@ -4,35 +4,91 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Display a map</title>
+  <title>ToSamara</title>
   <script src="https://cdn.maptiler.com/maplibre-gl-js/v2.4.0/maplibre-gl.js"></script>
+  <script type="text/javascript" src="script.js"></script>
   <link href="https://cdn.maptiler.com/maplibre-gl-js/v2.4.0/maplibre-gl.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+  <link href="styles.css" rel="stylesheet">
   <style>
     body {
       margin: 0;
       padding: 0;
     }
     #map {
-      top: 0;
       bottom: 0;
-      position: 
-      height:;
-      width: 95%;
+      display: block;
+      height: 550px;
+      width: 80%;
+      margin:auto;
     }
-  
+    
+    #marker {
+      background-image: url('https://maplibre.org/maplibre-gl-js-docs/assets/washington-monument.jpg');
+      background-size: cover;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      cursor: pointer;
+    }
+    
+    .mapboxgl-popup {
+      max-width: 200px;
+    }
   </style>
 </head>
 <body>
-  <div id="map"></div>
+  
+  <div id="header">
+    <img alt="logo" width="80px" height="80px" src="tosamara.jpg" />
+    <a class="h-logo" title="Транспортный оператор Самары">Транспортный оператор Самары</a>
+    
+    <div class="phone">
+      <span class="hotline">Горячая линия (07:30 - 19:30, Пн-Вс)</span>
+      <span class="number">+7 (846) 207-70-11</span>
+    </div>
+
+    <div class="search">
+      <form>
+        <input type="text" placeholder="Поиск...">
+        <button type="submit"></button>
+      </form>
+    </div>
+  </div>
+
+  <!--div class="parent">
+    <div id="map"></div>
+  </div-->
+
   <script>
       const key = 'SFtVbCiiP1MkvkPZNfSu';
       const map = new maplibregl.Map({
         container: 'map', // container id
         style: `https://api.maptiler.com/maps/streets/style.json?key=${key}`, // style URL
         center: [50.29644, 53.23704], // starting position [lng, lat]
-        zoom: 11, // starting zoom
+        zoom: 10, // starting zoom
       });
       map.addControl(new maplibregl.NavigationControl(), 'top-right');
+
+      var monument = [50.29644, 53.23704];
+// create the popup
+      var popup = new maplibregl.Popup({ offset: 25 }).setText(
+      'Construction on the Washington Monument began in 1848.'
+      );
+      
+      // create DOM element for the marker
+      var el = document.createElement('div');
+      el.id = 'marker';
+      
+      // create the marker
+      new maplibregl.Marker(el)
+      .setLngLat(monument)
+      .setPopup(popup) // sets a popup on this marker
+      .addTo(map);
+
+
+
+      //var marker = map.marker([50.29644, 53.23704])
   </script>
 </body>
 </html>
