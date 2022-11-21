@@ -1,12 +1,38 @@
-<html>
-    <head>
-        <link href="styles.css" rel="stylesheet">
-        <script type="text/javascript" src="script.js"></script>
-    </head>
-        <body>
-            <div>
-
-                
-            </div>
-        </body>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Display a map</title>
+  <script src="https://cdn.maptiler.com/maplibre-gl-js/v2.4.0/maplibre-gl.js"></script>
+  <link href="https://cdn.maptiler.com/maplibre-gl-js/v2.4.0/maplibre-gl.css" rel="stylesheet" />
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+    }
+    #map {
+      top: 0;
+      bottom: 0;
+      position: 
+      height:;
+      width: 95%;
+    }
+  
+  </style>
+</head>
+<body>
+  <div id="map"></div>
+  <script>
+      const key = 'SFtVbCiiP1MkvkPZNfSu';
+      const map = new maplibregl.Map({
+        container: 'map', // container id
+        style: `https://api.maptiler.com/maps/streets/style.json?key=${key}`, // style URL
+        center: [50.29644, 53.23704], // starting position [lng, lat]
+        zoom: 11, // starting zoom
+      });
+      map.addControl(new maplibregl.NavigationControl(), 'top-right');
+  </script>
+</body>
 </html>
