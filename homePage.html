@@ -10,62 +10,43 @@
   <link href="https://cdn.maptiler.com/maplibre-gl-js/v2.4.0/maplibre-gl.css" rel="stylesheet" />
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
   <link href="styles.css" rel="stylesheet">
-  <style>
-    body {
-      margin: 0;
-      padding: 0;
-    }
-    #map {
-      bottom: 0;
-      display: flex;
-      height: 100%;
-      width: 100%;
-      position: relative;
-    }
-    
-    #marker {
-      background-image: url('https://maplibre.org/maplibre-gl-js-docs/assets/washington-monument.jpg');
-      background-size: cover;
-      width: 50px;
-      height: 50px;
-      border-radius: 50%;
-      cursor: pointer;
-    }
-    
-    .mapboxgl-popup {
-      max-width: 200px;
-    }
-  </style>
 </head>
 <body>
+  <section>
+    <div class="header" id="header">
+      <div class="logo_text" style="display: flex;" >
+        <img alt="ToSamaraLogo" style="display:block; text-align:center" class="logo" src="tosamara.jpg" />
+        <p style="vertical-align:middle;">
+          <span style="display:block; text-align:center">ТРАНСПОРНЫЙ</span>
+          <span style="display:block; text-align:center">ОПЕРАТОР</span>
+          <span style="display:block; text-align:center">САМАРЫ</span>
+        </p>
+      </div>
+      <div class="phone">
+        <span class="hotline" style="display:block; text-align:center">Горячая линия (07:30 - 19:30, Пн-Вс)</span>
+        <span class="number" style="display:block; text-align:center">+7 (846) 207-70-11</span>
+      </div>
+
+      <div class="search">
+        <form>
+          <input type="text" placeholder="Поиск...">
+          <button type="submit"></button>
+        </form>
+      </div>
+    </div>
+  </section>
   
-  <div class="header" id="header">
-    <div class="logo_text" style="display: flex;" >
-      <img alt="ToSamaraLogo" style="display:block; text-align:center" class="logo" src="tosamara.jpg" />
-      <p style="vertical-align:middle;">
-        <span style="display:block; text-align:center">ТРАНСПОРНЫЙ</span>
-        <span style="display:block; text-align:center">ОПЕРАТОР</span>
-        <span style="display:block; text-align:center">САМАРЫ</span>
-      </p>
-    </div>
-    <div class="phone">
-      <span class="hotline" style="display:block; text-align:center">Горячая линия (07:30 - 19:30, Пн-Вс)</span>
-      <span class="number" style="display:block; text-align:center">+7 (846) 207-70-11</span>
-    </div>
+  <section class="stop-info">
+    <h1>Здесь будет будущее</h1>
+  </section>
 
-    <div class="search">
-      <form>
-        <input type="text" placeholder="Поиск...">
-        <button type="submit"></button>
-      </form>
+  <section class="sec-map">
+    <div class="map-context">
+      <h2>Положение остановки</h2>
     </div>
-  </div>
-
-  <div class="stop-info">
-    <div class="parent">
-      <div id="map"></div>
-    </div>
-  </div-->
+    <div id="map"></div>
+  </section>
+  
   <script>
       const key = 'SFtVbCiiP1MkvkPZNfSu';
       const map = new maplibregl.Map({

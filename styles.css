@@ -1,13 +1,34 @@
-.parent {
-  position:relative;
-  top: 0;
-  left: 0;
-  display: inline-flex;
-  align-items: center;
-  align-content: center;
-  justify-content: center;
-  overflow: auto;
+.sec-map {
+  width: 800px;
+
 }
+
+body {
+  margin: 0;
+  padding: 0;
+}
+#map {
+  bottom: 0;
+  width: 500px;
+  height: 500px;
+  position: relative;
+  vertical-align: middle;
+  
+}
+
+#marker {
+  background-image: url('https://maplibre.org/maplibre-gl-js-docs/assets/washington-monument.jpg');
+  background-size: cover;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.mapboxgl-popup {
+  max-width: 200px;
+}
+
 
 .header {
 height: 80px;
@@ -30,7 +51,6 @@ color: red;
 }
 
 .logo {
-  /*display: inline-block;*/
   width: 80px;
   height: 80px;
   position: relative;
@@ -39,10 +59,8 @@ color: red;
 }
 
 .phone {
-  /*display: inline-block;*/
   position: relative;
   vertical-align:middle;
-  /*margin-left: 10%;*/
   width: auto;
 }
 
@@ -53,8 +71,6 @@ form {
 }
 
 .search {
-  /*display :inline-block;*/
-  float: right;
   align-items : center;
   vertical-align:middle;
   background: #F9F0DA;
