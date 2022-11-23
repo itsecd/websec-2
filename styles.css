@@ -1,6 +1,12 @@
 .sec-map {
-  width: 800px;
-
+  width: 100%;
+  border-top: none;
+			border-right: 1px solid #c6d9e5;
+			border-bottom: 1px solid #c6d9e5;
+			border-left: 1px solid #c6d9e5;
+			position: relative;
+			padding: 2px 15px 4px 15px;
+			clear: both;
 }
 
 body {
@@ -12,9 +18,9 @@ body {
   width: 500px;
   height: 500px;
   position: relative;
-  vertical-align: middle;
-  
+  margin:0 auto;
 }
+
 
 #marker {
   background-image: url('https://maplibre.org/maplibre-gl-js-docs/assets/washington-monument.jpg');
@@ -28,6 +34,23 @@ body {
 .mapboxgl-popup {
   max-width: 200px;
 }
+
+
+
+.map-context {
+  text-align: center;
+}
+
+
+
+
+
+
+
+
+
+
+
 
 
 .header {
