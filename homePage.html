@@ -15,7 +15,7 @@
   <section>
     <div class="header" id="header">
       <div class="logo_text" style="display: flex;" >
-        <img alt="ToSamaraLogo" style="display:block; text-align:center" class="logo" src="tosamara.jpg" />
+        <img alt="ToSamaraLogo" style="display:block; text-align:center" class="logo" src="tosamara.jpg" back />
         <p style="vertical-align:middle;">
           <span style="display:block; text-align:center">ТРАНСПОРНЫЙ</span>
           <span style="display:block; text-align:center">ОПЕРАТОР</span>
@@ -30,7 +30,8 @@
       <div class="search">
         <form>
           <input type="text" id="search_text" placeholder="Поиск...">
-          <button type="submit" id="submit" onclick="getMatches('осипенко');"></button>
+          <button type="submit" id="submit" onclick="getMatchesInput();"></button>
+          <!--button type="submit" id="submit" onclick="getMatches(document.getElementsById('search_text').value);"></button-->
         </form>
       </div>
     </div>
@@ -57,25 +58,11 @@
       });
       map.addControl(new maplibregl.NavigationControl(), 'top-right');
 
-      var monument = [50.29000, 53.23704];
-// create the popup
-      var popup = new maplibregl.Popup({ offset: 25 }).setText(
-      'Construction on the Washington Monument began in 1848.'
-      );
+      get_markers();
       
-      // create DOM element for the marker
-      var el = document.createElement('div');
-      el.id = 'marker';
+
+
       
-      // create the marker
-      new maplibregl.Marker(el)
-      .setLngLat(monument)
-      .setPopup(popup) // sets a popup on this marker
-      .addTo(map);
-
-
-
-      //var marker = map.marker([50.29644, 53.23704])
   </script>
 </body>
 </html>

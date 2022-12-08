@@ -52,8 +52,7 @@ async function getMatches(searchStr) {
     const data = await load_stops_coord();
     
     let stops_data = data.getElementsByTagName("stop");
-
-    var ind = 0, searchStrL = searchStr.length;
+    
     var index, matches = [];
 
     searchStr = searchStr.toLowerCase();
@@ -65,13 +64,20 @@ async function getMatches(searchStr) {
         //console.log(stops_data[i].getElementsByTagName("KS_ID")[0].childNodes[0].nodeValue);
         if ((index = str.indexOf(searchStr)) > -1) {
             console.log(stops_data[i]);
-            matches.push(stops_data[i].getElementsByTagName("KS_ID")[0].childNodes[0].nodeValue);
-            //ind = index + searchStrL;
+            matches.push(stops_data[i]);
         }
     }
     console.log(matches);
-    //return matches;
+    return matches;
 }
+
+async function getMatchesInput()
+{
+    var val = document.getElementById('search_text').value;
+    let data = await getMatches(val);
+    console.log(data);
+}
+
 
 async function data_stops_coords()
 {
@@ -79,28 +85,45 @@ async function data_stops_coords()
     console.log(data);
     let size = data.getElementsByTagName("stop").length;
     let stop_data = data.getElementsByTagName("stop");
-    //let name = stop_data[0].getElementsByTagName("longitude")[0].childNodes[0].nodeValue;
-    //let name = stop_data[0].getElementsByTagName("latitude")[0].childNodes[0].nodeValue;
-    //let name = stop_data[0].getElementsByTagName("title")[0].childNodes[0].nodeValue;
     console.log(stop_data.length)
     
     //let lst = new Array();
     //console.log(name);
     console.log(stop_data);
 
-    /*
-    for (let i = 0; i < size; i++)
-    {
-        if (stop_data[i].childNodes[1].textContent == name_stop) {
-            lst.push(data[i]);
-        }
-    }
-    */
     
     return stop_data
 }
 
-
+async function get_markers()
+{
+    
+    const data = await load_stops_coord();
+    let stops_data = data.getElementsByTagName("stop");
+    console.log(data);
+    let size = data.getElementsByTagName("stop").length;
+    
+    for (let i = 0; i < size; i++)
+    {
+        var popup = new maplibregl.Popup({ offset: 25 }).setText(
+            stops_data[i].getElementsByTagName("title")[0].childNodes[0].nodeValue + "\t " + stops_data[i].getElementsByTagName("adjacentStreet")[0].childNodes[0].nodeValue 
+            + "\t " + stops_data[i].getElementsByTagName("direction")[0].childNodes[0].nodeValue
+        );
+        
+        // create DOM element for the marker
+        var el = document.createElement('div');
+        el.id = 'marker';
+        
+        let latitude = stops_data[i].getElementsByTagName("latitude")[0].childNodes[0].nodeValue;
+        let longitude = stops_data[i].getElementsByTagName("longitude")[0].childNodes[0].nodeValue;
+        // create the marker
+        new maplibregl.Marker(el)
+        .setLngLat([longitude, latitude])
+        .setPopup(popup)
+        .addTo(map);
+    }
+    
+}
 
 //let ab = data_stops_coords();
-let ss = getMatches("гагарина");
+//let ss = getMatches("гагарина");
