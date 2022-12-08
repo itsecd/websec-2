@@ -29,8 +29,8 @@
 
       <div class="search">
         <form>
-          <input type="text" placeholder="Поиск...">
-          <button type="submit"></button>
+          <input type="text" id="search_text" placeholder="Поиск...">
+          <button type="submit" id="submit" onclick="getMatches('осипенко');"></button>
         </form>
       </div>
     </div>
@@ -57,7 +57,7 @@
       });
       map.addControl(new maplibregl.NavigationControl(), 'top-right');
 
-      var monument = [50.29644, 53.23704];
+      var monument = [50.29000, 53.23704];
 // create the popup
       var popup = new maplibregl.Popup({ offset: 25 }).setText(
       'Construction on the Washington Monument began in 1848.'
