@@ -1,3 +1,4 @@
+var LOADED_STOPS = null;
 
 async function load_stops (){
     let url = "https://tosamara.ru/api/v2/classifiers/stops.xml";
@@ -35,12 +36,15 @@ async function data_stops(name_stop)
 }
 
 async function load_stops_coord (){
+    if (LOADED_STOPS)
+        return LOADED_STOPS;
     let url = "https://tosamara.ru/api/v2/classifiers/stopsFullDB.xml";
     try {
         let res = await fetch(url).then( response => response.text() ).then( str => {
             let parser = new window.DOMParser();
             return parser.parseFromString(str, "text/xml") 
             });
+        LOADED_STOPS = res;
         return res;
     }
     catch(err) { console.log('err:', err); }
@@ -50,10 +54,10 @@ async function load_stops_coord (){
 async function getMatches(searchStr) {
     console.log("зашел");
     const data = await load_stops_coord();
-    
+    console.log(data);
     let stops_data = data.getElementsByTagName("stop");
     
-    var index, matches = [];
+    var matches = [];
 
     searchStr = searchStr.toLowerCase();
 
@@ -62,7 +66,7 @@ async function getMatches(searchStr) {
         str = stops_data[i].getElementsByTagName("title")[0].childNodes[0].nodeValue;
         str = str.toLowerCase();
         //console.log(stops_data[i].getElementsByTagName("KS_ID")[0].childNodes[0].nodeValue);
-        if ((index = str.indexOf(searchStr)) > -1) {
+        if (str.indexOf(searchStr) > -1) {
             console.log(stops_data[i]);
             matches.push(stops_data[i]);
         }
@@ -105,8 +109,8 @@ async function get_markers()
     
     for (let i = 0; i < size; i++)
     {
-        var popup = new maplibregl.Popup({ offset: 25 }).setText(
-            stops_data[i].getElementsByTagName("title")[0].childNodes[0].nodeValue + "\t " + stops_data[i].getElementsByTagName("adjacentStreet")[0].childNodes[0].nodeValue 
+        var popup = new maplibregl.Popup({ offset: 25 }).setHTML(
+            stops_data[i].getElementsByTagName("title")[0].childNodes[0].nodeValue + "<br/> " + stops_data[i].getElementsByTagName("adjacentStreet")[0].childNodes[0].nodeValue 
             + "\t " + stops_data[i].getElementsByTagName("direction")[0].childNodes[0].nodeValue
         );
         
@@ -126,4 +130,5 @@ async function get_markers()
 }
 
 //let ab = data_stops_coords();
-//let ss = getMatches("гагарина");
+//let ss = await getMatches("гагарина");
+//console.log(ss);
