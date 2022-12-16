@@ -1,5 +1,7 @@
 var LOADED_STOPS = null;
 const ListInputElement = document.querySelector("#input-list");
+const InputElement = document.querySelector("#search_text");
+
 
 async function load_stops (){
     let url = "https://tosamara.ru/api/v2/classifiers/stops.xml";
@@ -109,8 +111,9 @@ async function get_markers()
     for (let i = 0; i < size; i++)
     {
         var popup = new maplibregl.Popup({ offset: 25 }).setHTML(
+            `<a href=\" stops_data[i].getElementsByTagName("KS_ID")[0].childNodes[0].nodeValue">` + 
             stops_data[i].getElementsByTagName("title")[0].childNodes[0].nodeValue + "<br/> " + stops_data[i].getElementsByTagName("adjacentStreet")[0].childNodes[0].nodeValue 
-            + "\t " + stops_data[i].getElementsByTagName("direction")[0].childNodes[0].nodeValue
+            + "\t " + stops_data[i].getElementsByTagName("direction")[0].childNodes[0].nodeValue + `</a>`
         );
         
         // create DOM element for the marker
@@ -129,30 +132,53 @@ async function get_markers()
 }
 
 
-
-
-
+function filterFunction() {
+    var input, filter, ul, li, a, i;
+    input = document.getElementById("search_text");
+    filter = input.value.toUpperCase();
+    div = document.getElementById("input-list");
+    a = div.getElementsByTagName("a");
+    for (i = 0; i < a.length; i++) {
+            txtValue = a[i].textContent || a[i].innerText;
+            if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                a[i].style.display = "";
+            } else {
+                a[i].style.display = "none";
+        }
+    }
+}
 
 function loadDataInput(data, element) {
     if(data) {
         console.log("aboba aboba aboba");
         console.log(data);
         let innerElement = "";
-        //element.innerHTML = "";
         let stops_data = data.getElementsByTagName("stop");
         console.log(stops_data);
         console.log(stops_data.length);
+        let dir = " ";
         for(let i = 0; i < stops_data.length; i++)
         {
+            try{
             innerElement += 
-            `<li>${stops_data[i].getElementsByTagName("title")[0].childNodes[0].nodeValue}</li>`;
+            `<a href=\"${stops_data[i].getElementsByTagName("KS_ID")[0].childNodes[0].nodeValue}>` +
+            stops_data[i].getElementsByTagName("title")[0].childNodes[0].nodeValue +"<br/> "+ 
+            stops_data[i].getElementsByTagName("direction")[0].childNodes[0].nodeValue
+            + "<br/>" + `</a>`;
+            }
+            catch(err)
+            {
+                innerElement += 
+                `<a href=\"${stops_data[i].getElementsByTagName("KS_ID")[0].childNodes[0].nodeValue}>` +
+                stops_data[i].getElementsByTagName("title")[0].childNodes[0].nodeValue +"<br/> "+ `</a>`;
+            }
         }
         element.innerHTML = innerElement;
     }
     console.log(ListInputElement);
 }
 
-load_stops_coord();
-//let ab = data_stops_coords();
-//let ss = await getMatches("гагарина");
-//console.log(ss);
+
+InputElement.addEventListener("input", function() {
+    filterFunction();
+});
