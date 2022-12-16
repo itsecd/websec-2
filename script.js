@@ -1,4 +1,5 @@
 var LOADED_STOPS = null;
+const ListInputElement = document.querySelector("#input-list");
 
 async function load_stops (){
     let url = "https://tosamara.ru/api/v2/classifiers/stops.xml";
@@ -45,6 +46,7 @@ async function load_stops_coord (){
             return parser.parseFromString(str, "text/xml") 
             });
         LOADED_STOPS = res;
+        loadDataInput(LOADED_STOPS, ListInputElement);
         return res;
     }
     catch(err) { console.log('err:', err); }
@@ -53,9 +55,9 @@ async function load_stops_coord (){
 //спросить здесь, был в параметре список
 async function getMatches(searchStr) {
     console.log("зашел");
-    const data = await load_stops_coord();
-    console.log(data);
-    let stops_data = data.getElementsByTagName("stop");
+    await load_stops_coord();
+    
+    let stops_data = LOADED_STOPS.getElementsByTagName("stop");
     
     var matches = [];
 
@@ -101,12 +103,9 @@ async function data_stops_coords()
 
 async function get_markers()
 {
-    
-    const data = await load_stops_coord();
-    let stops_data = data.getElementsByTagName("stop");
-    console.log(data);
-    let size = data.getElementsByTagName("stop").length;
-    
+    await load_stops_coord();
+    let stops_data = LOADED_STOPS.getElementsByTagName("stop");
+    let size = LOADED_STOPS.getElementsByTagName("stop").length;
     for (let i = 0; i < size; i++)
     {
         var popup = new maplibregl.Popup({ offset: 25 }).setHTML(
@@ -126,9 +125,34 @@ async function get_markers()
         .setPopup(popup)
         .addTo(map);
     }
-    
+
 }
 
+
+
+
+
+
+function loadDataInput(data, element) {
+    if(data) {
+        console.log("aboba aboba aboba");
+        console.log(data);
+        let innerElement = "";
+        //element.innerHTML = "";
+        let stops_data = data.getElementsByTagName("stop");
+        console.log(stops_data);
+        console.log(stops_data.length);
+        for(let i = 0; i < stops_data.length; i++)
+        {
+            innerElement += 
+            `<li>${stops_data[i].getElementsByTagName("title")[0].childNodes[0].nodeValue}</li>`;
+        }
+        element.innerHTML = innerElement;
+    }
+    console.log(ListInputElement);
+}
+
+load_stops_coord();
 //let ab = data_stops_coords();
 //let ss = await getMatches("гагарина");
 //console.log(ss);

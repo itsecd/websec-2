@@ -6,16 +6,20 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>ToSamara</title>
   <script src="https://cdn.maptiler.com/maplibre-gl-js/v2.4.0/maplibre-gl.js"></script>
-  <script type="text/javascript" src="script.js"></script>
+    
+  
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" 
+  integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
+  </script>
+  
   <link href="https://cdn.maptiler.com/maplibre-gl-js/v2.4.0/maplibre-gl.css" rel="stylesheet" />
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
   <link href="styles.css" rel="stylesheet">
 </head>
 <body>
-  <section>
     <div class="header" id="header">
       <div class="logo_text" style="display: flex;" >
-        <img alt="ToSamaraLogo" style="display:block; text-align:center" class="logo" src="tosamara.jpg" back />
+        <img alt="ToSamaraLogo" style="display:block; text-align:center" class="logo" src="logo.png" back />
         <p style="vertical-align:middle;">
           <span style="display:block; text-align:center">ТРАНСПОРНЫЙ</span>
           <span style="display:block; text-align:center">ОПЕРАТОР</span>
@@ -29,28 +33,29 @@
 
       <div class="search">
         <form>
-          <input type="text" id="search_text" placeholder="Поиск...">
-          <button type="submit" id="submit" onclick="getMatchesInput(); return false;"></button>
+          <div id="autocomplete" class="autocomplete">
+            <input type="text" id="search_text" class="autocomplete-input" placeholder="Поиск...">
+            <button type="submit" id="submit" onclick="getMatchesInput(); return false;"></button>
+          
+            <ul class="autocomplete-results" id="input-list"></ul>
+          </div>
           <!--button type="submit" id="submit" onclick="getMatches(document.getElementsById('search_text').value);"></button-->
         </form>
       </div>
-    </div>
-  </section>
-  
-  <section class="stop-info">
-    <h1>Здесь будет будущее</h1>
-  </section>
 
-  <section class="sec-map">
-    <div class="map-context">
-      <h2>Положение остановки</h2>
+      <div id="map" style="display: flex;"></div>
     </div>
-    <div id="map"></div>
-  </section>
+  
+
+
+  <script type="text/javascript" src="script.js"></script>
   
   <script>
       const key = 'SFtVbCiiP1MkvkPZNfSu';
-      const map = new maplibregl.Map({
+
+      //document.getElementById('autocomplete-results').innerHTML = 'data';
+
+      /*const map = new maplibregl.Map({
         container: 'map', // container id
         style: `https://api.maptiler.com/maps/streets/style.json?key=${key}`, // style URL
         center: [50.29644, 53.23704], // starting position [lng, lat]
@@ -58,11 +63,13 @@
       });
       map.addControl(new maplibregl.NavigationControl(), 'top-right');
 
-      get_markers();
+      get_markers();*/
       
-
-
       
   </script>
+
+
+
+
 </body>
 </html>
