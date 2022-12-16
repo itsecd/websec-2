@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.1.32421.90
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyTimeTable", "MyTimeTable\MyTimeTable.csproj", "{0192F6B5-4834-4E77-BAC6-1DFC11923031}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0192F6B5-4834-4E77-BAC6-1DFC11923031}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0192F6B5-4834-4E77-BAC6-1DFC11923031}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0192F6B5-4834-4E77-BAC6-1DFC11923031}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0192F6B5-4834-4E77-BAC6-1DFC11923031}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {ABE6C74F-1DC0-4BEA-88F4-8FD86185B050}
+	EndGlobalSection
+EndGlobal

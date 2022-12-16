@@ -1,0 +1,198 @@
+﻿html * {
+    font-size: 15px;
+    font-family: 'Helvetica' !important;
+}
+
+.InstitutionsDiv {
+    text-align:center;
+}
+
+h3 {
+    text-align:center;
+}
+
+h2 {
+    text-align: center;
+}
+
+h1 {
+    text-align: center;
+}
+
+.TimeTable {
+    margin: 0 auto;
+    border: 2px solid deepskyblue;
+    border-collapse:collapse;
+    width: fit-content;
+}
+
+.green {
+    border-left: 2px solid darkgreen;
+    border-bottom: 2px solid deepskyblue;
+    border-top: 2px solid deepskyblue;
+}
+
+.blue {
+    border-left: 2px solid darkblue;
+    border-bottom: 2px solid deepskyblue;
+    border-top: 2px solid deepskyblue;
+}
+
+.red {
+    border-left: 2px solid orangered;
+    border-bottom: 2px solid deepskyblue;
+    border-top: 2px solid deepskyblue;
+}
+
+.yellow {
+    border-left: 2px solid rgb(240,173,78);
+    border-bottom: 2px solid deepskyblue;
+    border-top: 2px solid deepskyblue;
+}
+
+.usually {
+    border-left: 2px solid deepskyblue;
+    border-bottom: 2px solid deepskyblue;
+    border-top: 2px solid deepskyblue;
+}
+
+.weekRow{
+    background-color: deepskyblue;
+}
+
+.week {
+    text-align: center;
+}
+
+.white {
+    color: white;
+}
+
+.TimeTable td {
+    width: 150px;
+}
+
+.TimeTableDiv {
+    width: fit-content;
+    margin: 0 auto;
+}
+
+.courseTable {
+    margin:0 auto;
+}
+.table-item{
+    min-height: 50px;
+    height:50px;
+}
+
+.icon {
+    height:15px;
+    width:15px;
+}
+
+.day {
+    background-color: deepskyblue;
+    height: 15px;
+    text-align: center;
+}
+
+.typeDiv {
+    text-align: center;
+    margin: 25px auto;
+}
+
+.GroupsTable {
+    margin: 0 auto;
+    border-collapse: separate;
+    border-spacing: 7px 11px;
+    table-layout: fixed;
+    text-align: center;
+    width:auto;
+}
+
+.GroupsTable td {
+    width: 110px;
+    height: 30px;
+    position: relative;
+    transition: 0.5s;
+    border: 2px solid deepskyblue;
+    background-color: white;
+    padding: 5px 5px 5px 5px;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.GroupsTable td:hover {
+    position: relative;
+    transform: scale(1.05);
+    transition: 0.5s;
+    border: 2px solid deepskyblue;
+    background-color: deepskyblue;
+    padding: 5px 5px 5px 5px;
+}
+
+a:visited {
+    color: #0169D3; /* Цвет посещенной ссылки */
+}
+
+a {
+    color: #0169D3;
+}
+
+.GroupsTable td a {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    text-decoration: none;
+    margin-top: 4px;
+    text-align: center;
+}
+
+table {
+    margin: 0 auto;
+}
+
+table td {
+    margin: 10px 10px 10px 10px;
+}
+
+.instTd a {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    text-decoration: none;
+    margin: 5px 10px 10px 10px;
+    text-align: center;
+}
+
+.instTd {
+    border-left: 3px solid darkblue;
+    border-right: 1px solid deepskyblue;
+    border-bottom: 1px solid deepskyblue;
+    border-top: 1px solid deepskyblue;
+    font-size: 25px;
+    padding: 10px 10px 10px 10px;
+    width: 400px;
+    height: 30px;
+    position: relative;
+    transition: 0.5s;
+    background-color: white;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.instTd:hover {
+    position: relative;
+    transform: scale(1.05);
+    transition: 0.5s;
+    border-left: 3px solid darkblue;
+    border-right: 1px solid deepskyblue;
+    border-bottom: 1px solid deepskyblue;
+    border-top: 1px solid deepskyblue;
+    font-size: 25px;
+    padding: 10px 10px 10px 10px;
+}
