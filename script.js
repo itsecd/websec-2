@@ -48,7 +48,6 @@ async function load_stops_coord (){
             return parser.parseFromString(str, "text/xml") 
             });
         LOADED_STOPS = res;
-        loadDataInput(LOADED_STOPS, ListInputElement);
         return res;
     }
     catch(err) { console.log('err:', err); }
@@ -133,9 +132,12 @@ async function get_markers()
 
 
 function filterFunction() {
-    var input, filter, ul, li, a, i;
+    var input, filter, a, i;
+    loadDataInput(LOADED_STOPS, ListInputElement);
     input = document.getElementById("search_text");
     filter = input.value.toUpperCase();
+    if(filter)
+    {
     div = document.getElementById("input-list");
     a = div.getElementsByTagName("a");
     for (i = 0; i < a.length; i++) {
@@ -146,16 +148,13 @@ function filterFunction() {
                 a[i].style.display = "none";
         }
     }
+    }
 }
 
 function loadDataInput(data, element) {
     if(data) {
-        console.log("aboba aboba aboba");
-        console.log(data);
         let innerElement = "";
         let stops_data = data.getElementsByTagName("stop");
-        console.log(stops_data);
-        console.log(stops_data.length);
         let dir = " ";
         for(let i = 0; i < stops_data.length; i++)
         {
@@ -164,7 +163,7 @@ function loadDataInput(data, element) {
             `<a href=\"${stops_data[i].getElementsByTagName("KS_ID")[0].childNodes[0].nodeValue}>` +
             stops_data[i].getElementsByTagName("title")[0].childNodes[0].nodeValue +"<br/> "+ 
             stops_data[i].getElementsByTagName("direction")[0].childNodes[0].nodeValue
-            + "<br/>" + `</a>`;
+            + "<br/>" + "<hr/>"+  `</a>`;
             }
             catch(err)
             {
@@ -175,10 +174,14 @@ function loadDataInput(data, element) {
         }
         element.innerHTML = innerElement;
     }
-    console.log(ListInputElement);
 }
 
 
 InputElement.addEventListener("input", function() {
-    filterFunction();
+    if (InputElement.value === "")
+        ListInputElement.innerHTML = "";
+    else
+        filterFunction();
 });
+
+

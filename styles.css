@@ -22,12 +22,6 @@ body {
   margin:0 auto;
 }
 
-
-.autocomplete-results {
-  max-height: 900px;
-}
-
-
 #marker {
   background-image: url('point.png');
   background-size: cover;
@@ -36,26 +30,34 @@ body {
   cursor: pointer;
 }
 
+
 .mapboxgl-popup {
   max-width: 200px;
 }
-
-
 
 .map-context {
   text-align: center;
 }
 
+a {
+  color: #000 !important;
+  text-decoration: none;
+  display:inline;
+}
+
+ul {
+  white-space:nowrap;
+}
 
 
-
-
-
-
-
-
-
-
+.autocomplete-results {
+  max-height: 200px;
+  max-width: 230px;
+  overflow-y: auto;
+  z-index:99999999;
+  position: absolute;
+  background-color: aqua;
+}
 
 
 .header {
@@ -115,9 +117,8 @@ background: transparent;
 }
 
 .search input {
-width: 100%;
+width: 80%;
 height: 42px;
-padding-left: 15px;
 position: relative;
 }
 
