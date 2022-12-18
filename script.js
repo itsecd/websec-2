@@ -3,19 +3,6 @@ const ListInputElement = document.querySelector("#input-list");
 const InputElement = document.querySelector("#search_text");
 
 
-async function load_stops (){
-    let url = "https://tosamara.ru/api/v2/classifiers/stops.xml";
-    try {
-        let res = await fetch(url).then( response => response.text() ).then( str => {
-            let parser = new window.DOMParser();
-            return parser.parseFromString(str, "text/xml") 
-            });
-        return res;
-    }
-    catch(err) { console.log('err:', err); }
-}
-
-
 async function data_stops(name_stop)
 {
     const data = await load_stops();
@@ -53,55 +40,6 @@ async function load_stops_coord (){
     catch(err) { console.log('err:', err); }
 }
 
-//спросить здесь, был в параметре список
-async function getMatches(searchStr) {
-    console.log("зашел");
-    await load_stops_coord();
-    
-    let stops_data = LOADED_STOPS.getElementsByTagName("stop");
-    
-    var matches = [];
-
-    searchStr = searchStr.toLowerCase();
-
-    for(let i = 0; i < stops_data.length; i++)
-    {
-        str = stops_data[i].getElementsByTagName("title")[0].childNodes[0].nodeValue;
-        str = str.toLowerCase();
-        //console.log(stops_data[i].getElementsByTagName("KS_ID")[0].childNodes[0].nodeValue);
-        if (str.indexOf(searchStr) > -1) {
-            console.log(stops_data[i]);
-            matches.push(stops_data[i]);
-        }
-    }
-    console.log(matches);
-    return matches;
-}
-
-async function getMatchesInput()
-{
-    var val = document.getElementById('search_text').value;
-    let data = await getMatches(val);
-    console.log(data);
-}
-
-
-async function data_stops_coords()
-{
-    const data = await load_stops_coord();
-    console.log(data);
-    let size = data.getElementsByTagName("stop").length;
-    let stop_data = data.getElementsByTagName("stop");
-    console.log(stop_data.length)
-    
-    //let lst = new Array();
-    //console.log(name);
-    console.log(stop_data);
-
-    
-    return stop_data
-}
-
 async function get_markers()
 {
     await load_stops_coord();
@@ -114,7 +52,6 @@ async function get_markers()
             stops_data[i].getElementsByTagName("title")[0].childNodes[0].nodeValue + "<br/> " + stops_data[i].getElementsByTagName("adjacentStreet")[0].childNodes[0].nodeValue 
             + "\t " + stops_data[i].getElementsByTagName("direction")[0].childNodes[0].nodeValue + `</a>`
         );
-        
         // create DOM element for the marker
         var el = document.createElement('div');
         el.id = 'marker';
@@ -130,14 +67,11 @@ async function get_markers()
 
 }
 
-
 function filterFunction() {
     var input, filter, a, i;
     loadDataInput(LOADED_STOPS, ListInputElement);
     input = document.getElementById("search_text");
     filter = input.value.toUpperCase();
-    if(filter)
-    {
     div = document.getElementById("input-list");
     a = div.getElementsByTagName("a");
     for (i = 0; i < a.length; i++) {
@@ -148,14 +82,13 @@ function filterFunction() {
                 a[i].style.display = "none";
         }
     }
-    }
 }
 
 function loadDataInput(data, element) {
     if(data) {
         let innerElement = "";
         let stops_data = data.getElementsByTagName("stop");
-        let dir = " ";
+        
         for(let i = 0; i < stops_data.length; i++)
         {
             try{
@@ -185,3 +118,40 @@ InputElement.addEventListener("input", function() {
 });
 
 
+async function transportForecast(stopID) {
+    //https://tosamara.ru/api/v2/xml?method=getFirstArrivalToStop&KS_ID=${stopID}&COUNT=10&os=android&clientid=test&authkey=${sha1(stopID+10+"just_f0r_tests")}
+    //https://tosamara.ru/api/v2/xml?method=getTransportPosition&HULLNO=${hullNo}&os=android&clientid=test&authkey=${SHA1(hullNo + "just_f0r_tests")}
+    let URL = `https://tosamara.ru/api/v2/xml?method=getFirstArrivalToStop&KS_ID=${stopID}&os=android&clientid=test&authkey=${sha1(stopID+"just_f0r_tests")}`    
+    let res = await fetch(URL)
+                .then( response => response.text() ).then( str => {
+                    let parser = new window.DOMParser();
+                    return parser.parseFromString(str, "text/xml") 
+                });
+    console.log(res);
+    res = res.getElementsByTagName("transport");
+    console.log(res);
+    for (let i = 0; i < res.length; i++)//закидывать ссылочку сюда по hullNo каждого транспорта
+    {
+        let str = res[i].getElementsByTagName("type")[0].childNodes[0].nodeValue + "  " + res[i].getElementsByTagName("number")[0].childNodes[0].nodeValue +   
+        "   time = " + res[i].getElementsByTagName("time")[0].childNodes[0].nodeValue;
+        console.log(str);
+    }    
+}
+
+transportForecast(15);
+
+
+async function getTransportPosition(hullNo) {
+    let URL =`https://tosamara.ru/api/v2/xml?method=getTransportPosition&HULLNO=${hullNo}&os=android&clientid=test&authkey=${sha1(hullNo + "just_f0r_tests")}`    
+    let res = await fetch(URL)
+                .then( response => response.text() ).then( str => {
+                    let parser = new window.DOMParser();
+                    return parser.parseFromString(str, "text/xml") 
+                });
+    console.log(res);
+    //res = res.getElementsByTagName("transport");
+    //console.log(res);
+    
+}
+
+getTransportPosition(184953);
