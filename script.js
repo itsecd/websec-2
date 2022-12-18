@@ -1,7 +1,8 @@
 var LOADED_STOPS = null;
 const ListInputElement = document.querySelector("#input-list");
 const InputElement = document.querySelector("#search_text");
-
+var my_path = window.location.pathname;
+my_path = my_path.replace("homePage.html", "");
 
 async function data_stops(name_stop)
 {
@@ -48,7 +49,7 @@ async function get_markers()
     for (let i = 0; i < size; i++)
     {
         var popup = new maplibregl.Popup({ offset: 25 }).setHTML(
-            `<a href=\" stops_data[i].getElementsByTagName("KS_ID")[0].childNodes[0].nodeValue">` + 
+            `<a href="${my_path}stops.html?id=${stops_data[i].getElementsByTagName("KS_ID")[0].childNodes[0].nodeValue}">` + 
             stops_data[i].getElementsByTagName("title")[0].childNodes[0].nodeValue + "<br/> " + stops_data[i].getElementsByTagName("adjacentStreet")[0].childNodes[0].nodeValue 
             + "\t " + stops_data[i].getElementsByTagName("direction")[0].childNodes[0].nodeValue + `</a>`
         );
@@ -88,20 +89,18 @@ function loadDataInput(data, element) {
     if(data) {
         let innerElement = "";
         let stops_data = data.getElementsByTagName("stop");
-        
         for(let i = 0; i < stops_data.length; i++)
         {
-            try{
-            innerElement += 
-            `<a href=\"${stops_data[i].getElementsByTagName("KS_ID")[0].childNodes[0].nodeValue}>` +
-            stops_data[i].getElementsByTagName("title")[0].childNodes[0].nodeValue +"<br/> "+ 
-            stops_data[i].getElementsByTagName("direction")[0].childNodes[0].nodeValue
-            + "<br/>" + "<hr/>"+  `</a>`;
+            try
+            {
+                innerElement += `<a href="stops.html?id=${stops_data[i].getElementsByTagName("KS_ID")[0].childNodes[0].nodeValue}">` +
+                stops_data[i].getElementsByTagName("title")[0].childNodes[0].nodeValue +"<br/> "+ 
+                stops_data[i].getElementsByTagName("direction")[0].childNodes[0].nodeValue
+                + "<br/>" + "<hr/>"+  `</a>`;
             }
             catch(err)
             {
-                innerElement += 
-                `<a href=\"${stops_data[i].getElementsByTagName("KS_ID")[0].childNodes[0].nodeValue}>` +
+                innerElement += `<a href="${my_path}stops.html?id=${stops_data[i].getElementsByTagName("KS_ID")[0].childNodes[0].nodeValue}">` +
                 stops_data[i].getElementsByTagName("title")[0].childNodes[0].nodeValue +"<br/> "+ `</a>`;
             }
         }
@@ -118,28 +117,6 @@ InputElement.addEventListener("input", function() {
 });
 
 
-async function transportForecast(stopID) {
-    //https://tosamara.ru/api/v2/xml?method=getFirstArrivalToStop&KS_ID=${stopID}&COUNT=10&os=android&clientid=test&authkey=${sha1(stopID+10+"just_f0r_tests")}
-    //https://tosamara.ru/api/v2/xml?method=getTransportPosition&HULLNO=${hullNo}&os=android&clientid=test&authkey=${SHA1(hullNo + "just_f0r_tests")}
-    let URL = `https://tosamara.ru/api/v2/xml?method=getFirstArrivalToStop&KS_ID=${stopID}&os=android&clientid=test&authkey=${sha1(stopID+"just_f0r_tests")}`    
-    let res = await fetch(URL)
-                .then( response => response.text() ).then( str => {
-                    let parser = new window.DOMParser();
-                    return parser.parseFromString(str, "text/xml") 
-                });
-    console.log(res);
-    res = res.getElementsByTagName("transport");
-    console.log(res);
-    for (let i = 0; i < res.length; i++)//закидывать ссылочку сюда по hullNo каждого транспорта
-    {
-        let str = res[i].getElementsByTagName("type")[0].childNodes[0].nodeValue + "  " + res[i].getElementsByTagName("number")[0].childNodes[0].nodeValue +   
-        "   time = " + res[i].getElementsByTagName("time")[0].childNodes[0].nodeValue;
-        console.log(str);
-    }    
-}
-
-transportForecast(15);
-
 
 async function getTransportPosition(hullNo) {
     let URL =`https://tosamara.ru/api/v2/xml?method=getTransportPosition&HULLNO=${hullNo}&os=android&clientid=test&authkey=${sha1(hullNo + "just_f0r_tests")}`    
@@ -149,9 +126,5 @@ async function getTransportPosition(hullNo) {
                     return parser.parseFromString(str, "text/xml") 
                 });
     console.log(res);
-    //res = res.getElementsByTagName("transport");
-    //console.log(res);
-    
-}
 
-getTransportPosition(184953);
+}
