@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Transport schedule</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+
+      <div class="content">
+        <div class="search-container">
+          <div class="search-wrapper">
+            <div class="search-wrapper-title">Поиск остановки</div>
+            <input class="search-wrapper-input" id="search" data-search>
+          </div>
+          <div class="stops" data-stops-container></div>
+          <template data-stop-template>
+            <div class="stop">
+              <div class="title" data-title></div>
+            </div>
+          </template>
+        </div>
+
+        <div id="map"></div>
+      
+      </div>
+
+      <div class="stops-content">
+
+        <div class="stops-content-container">
+          <div class="text-style">Маршрут</div>
+            <div class="stops-container">
+              <ol data-ol-stops-container></ol>
+              <template data-li-stop-template>
+                  <li class="li-item">
+                    <u style="cursor: pointer;" data-stop></u>
+                  </li>
+              </template>
+            </div>
+            <div class="button-container">
+              <button onclick="leaveRoute()" style="border-radius: 5px; cursor: pointer;">Покинуть маршрут</button>
+            </div>
+        </div>
+  
+        <div class="favorite-stops-container">
+          <div class="text-style">Сохранённые остановки</div>
+          <div class="stops-container">
+            <ol data-ol-favorite-stops-container></ol>
+          </div>
+        </div>
+      </div>
+
+    </div>
+ 
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="index.js"></script>
+</body>
+</html>
