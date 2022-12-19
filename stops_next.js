@@ -57,7 +57,7 @@ async function stops_next(hullNo) {
         console.log(KS_ID);
         let nameKS = getStopName(KS_ID);
         innerElement += `<a href="stops.html?id=${KS_ID}">` + nameKS + "  " +
-            "<br/>" + res[i].getElementsByTagName("time")[0].textContent + " секунды" + "<br/>" + "<hr/>"+  `</a>`;
+            "<br/>" + Math.ceil(res[i].getElementsByTagName("time")[0].textContent/60) + " минут(ы)" + "<br/>" + "<hr/>"+  `</a>`;
     }
 
     console.log(innerElement);
@@ -71,7 +71,7 @@ async function stops_next(hullNo) {
 async function download()
 { 
     await load_stops_coord()
-    console.log(LOADED_STOPS);
+    //console.log(LOADED_STOPS);
     stops_next(hull);
 }
 
