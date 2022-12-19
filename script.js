@@ -1,8 +1,6 @@
 var LOADED_STOPS = null;
 const ListInputElement = document.querySelector("#input-list");
 const InputElement = document.querySelector("#search_text");
-var my_path = window.location.pathname;
-my_path = my_path.replace("homePage.html", "");
 
 async function data_stops(name_stop)
 {
@@ -48,11 +46,21 @@ async function get_markers()
     let size = LOADED_STOPS.getElementsByTagName("stop").length;
     for (let i = 0; i < size; i++)
     {
-        var popup = new maplibregl.Popup({ offset: 25 }).setHTML(
-            `<a href="${my_path}stops.html?id=${stops_data[i].getElementsByTagName("KS_ID")[0].childNodes[0].nodeValue}">` + 
-            stops_data[i].getElementsByTagName("title")[0].childNodes[0].nodeValue + "<br/> " + stops_data[i].getElementsByTagName("adjacentStreet")[0].childNodes[0].nodeValue 
-            + "\t " + stops_data[i].getElementsByTagName("direction")[0].childNodes[0].nodeValue + `</a>`
-        );
+        try{
+            var popup = new maplibregl.Popup({ offset: 25 }).setHTML(
+                `<a href="stops.html?id=${stops_data[i].getElementsByTagName("KS_ID")[0].childNodes[0].nodeValue}">` + 
+                stops_data[i].getElementsByTagName("title")[0].childNodes[0].nodeValue + "<br/> " + stops_data[i].getElementsByTagName("adjacentStreet")[0].childNodes[0].nodeValue 
+                + "\t " + stops_data[i].getElementsByTagName("direction")[0].childNodes[0].nodeValue + `</a>`
+            );
+        }
+        catch (err)
+        {
+            var popup = new maplibregl.Popup({ offset: 25 }).setHTML(
+                `<a href="stops.html?id=${stops_data[i].getElementsByTagName("KS_ID")[0].childNodes[0].nodeValue}">` + 
+                stops_data[i].getElementsByTagName("title")[0].childNodes[0].nodeValue + `</a>`
+            );
+        }
+
         // create DOM element for the marker
         var el = document.createElement('div');
         el.id = 'marker';
@@ -65,7 +73,6 @@ async function get_markers()
         .setPopup(popup)
         .addTo(map);
     }
-
 }
 
 function filterFunction() {
@@ -100,7 +107,7 @@ function loadDataInput(data, element) {
             }
             catch(err)
             {
-                innerElement += `<a href="${my_path}stops.html?id=${stops_data[i].getElementsByTagName("KS_ID")[0].childNodes[0].nodeValue}">` +
+                innerElement += `<a href="stops.html?id=${stops_data[i].getElementsByTagName("KS_ID")[0].childNodes[0].nodeValue}">` +
                 stops_data[i].getElementsByTagName("title")[0].childNodes[0].nodeValue +"<br/> "+ `</a>`;
             }
         }
@@ -116,15 +123,3 @@ InputElement.addEventListener("input", function() {
         filterFunction();
 });
 
-
-
-async function getTransportPosition(hullNo) {
-    let URL =`https://tosamara.ru/api/v2/xml?method=getTransportPosition&HULLNO=${hullNo}&os=android&clientid=test&authkey=${sha1(hullNo + "just_f0r_tests")}`    
-    let res = await fetch(URL)
-                .then( response => response.text() ).then( str => {
-                    let parser = new window.DOMParser();
-                    return parser.parseFromString(str, "text/xml") 
-                });
-    console.log(res);
-
-}

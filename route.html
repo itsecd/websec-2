@@ -2,10 +2,10 @@
 <html>
 
 <head>
-    <title>Прибывалочка</title>
+    <title>ToSamaraStops</title>
     <meta charset="utf-8">
     <link rel="stylesheet" type="text/css" href="styles.css">
-    <script type="text/javascript" src="stops_route.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/js-sha1/0.6.0/sha1.min.js"></script>
 </head>
 
 
@@ -13,10 +13,12 @@
     <div class="stop-context">
         <h1>Список следующих остановок</h1>
         <div class="tr-list">
-           
+            <ul class="stops-list" id="stops-list">
+            </ul>
         </div>
     
         <a href="homePage.html">ВЕРНУТЬСЯ К КАРТЕ</a>
     </div>
+    <script type="text/javascript" src="stops_next.js"></script>
 </body>
 </html>

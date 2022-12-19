@@ -17,10 +17,14 @@ async function transportForecast(stopID) {
     let innerElement = "";
     for (let i = 0; i < res.length; i++)//закидывать ссылочку сюда по hullNo каждого транспорта
     {
-        innerElement = `<a href="route.html?hullNo=${stops_data[i].getElementsByTagName("hullNo")[0].childNodes[0].nodeValue}">` + 
+        innerElement += `<a href="route.html?hullNo=${res[i].getElementsByTagName("hullNo")[0].childNodes[0].nodeValue}">` + 
             res[i].getElementsByTagName("number")[0].childNodes[0].nodeValue + "  " + res[i].getElementsByTagName("type")[0].childNodes[0].nodeValue +   
             "<br/>" + res[i].getElementsByTagName("time")[0].childNodes[0].nodeValue + " Минут" + "<br/>" + "<hr/>"+  `</a>`;
+        console.log(innerElement);
     }
+    if (innerElement === "")
+        innerElement = "<h3>Транспорт отсутствует</h3>";
+    ListTransport.innerHTML = innerElement;
 }
 
-console.log(url_id);
+transportForecast(url_id);
