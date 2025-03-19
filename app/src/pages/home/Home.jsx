@@ -1,13 +1,25 @@
-import { useApi } from "../../context/ApiContext"
+import { useStations } from "../../hooks/useStations";
 
 export default function Home() {
+  const q = "Сов"; // Запрос для поиска станций, начинающихся на "Сов"
+  const { stations, loading, error } = useStations(q);
 
-    // тест)
+  // Логируем станции для отладки
+  console.log('Станции:', stations);
 
-    const r = useApi()
-    console.log(r) 
+  if (loading) return <div>Загрузка...</div>;
+  if (error) return <div>Ошибка: {error}</div>;
 
-    return (
-        <h1>Home</h1>
-    )
-}
+  return (
+    <div>
+      <h1>Список станций</h1>
+      <ul>
+        {stations.map((station) => (
+          <li key={station.code}>{station.title}</li>
+        ))}
+      </ul>
+    </div>
+  );
+};
+
+ 

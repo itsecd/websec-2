@@ -4,15 +4,10 @@ import axios from 'axios';
 export const ApiContext = createContext();
 
 export const ApiProvider = ({ children }) => {
-  const apiKey = import.meta.env.VITE_YANDEX_API_KEY; 
-
   const getData = async (endpoint, params = {}) => {
     try {
-      const response = await axios.get(`https://api.rasp.yandex.net/v3.0${endpoint}`, {
-        params: {
-          apikey: apiKey,
-          ...params,
-        },
+      const response = await axios.get(`http://localhost:3001/api${endpoint}`, {
+        params, 
       });
       return response.data;
     } catch (error) {
@@ -27,4 +22,4 @@ export const ApiProvider = ({ children }) => {
   );
 };
 
-export const useApi = () => useContext(ApiContext); 
+export const useApi = () => useContext(ApiContext);
