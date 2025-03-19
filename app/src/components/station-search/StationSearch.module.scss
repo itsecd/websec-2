@@ -1,0 +1,36 @@
+.table {
+    border-collapse: collapse;
+    width: 100%;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    background-color: #ffffff;
+  
+    th,
+    td {
+      border: 1px solid #d3d3d3;
+      padding: 12px;
+      text-align: left;
+      color: #333;
+    }
+  
+    th {
+      background-color: #e0e0e0;
+      font-weight: 600;
+      color: #1a1a1a;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+  
+    .actionCell {
+      text-align: center;
+    }
+  
+    tbody tr:nth-child(odd) {
+      background-color: #f7f7f7;
+    }
+  
+    tbody tr:hover {
+      background-color: #ececec;
+    }
+}
