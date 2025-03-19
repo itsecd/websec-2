@@ -1,24 +1,34 @@
-import { TextInput, Select, Loader, Table, Pagination, Button } from "@mantine/core";
+import { TextInput, Select, Loader, Table, Pagination, Button, ActionIcon } from "@mantine/core";
 import { useDebouncedValue } from "@mantine/hooks";
 import { useStations } from "../../hooks/useStations";
 import { useState } from "react";
+import { BsHeart, BsHeartFill } from "react-icons/bs"; 
 import styles from "./StationSearch.module.scss";
 
-export default function StationSearch({ onSelect }) {
+export default function StationSearch({ onSelect, setStations, setLoading, setError }) {
   const [query, setQuery] = useState("");
   const [debouncedQuery] = useDebouncedValue(query, 300);
   const [selectedCountry, setSelectedCountry] = useState(null);
   const [currentPage, setCurrentPage] = useState(1);
   const stationsPerPage = 10;
 
-  const { stations, loading, error } = useStations(debouncedQuery, selectedCountry);
+  const { mapStations, stations, loading, error, favoriteStations, addFavorite, removeFavorite } = useStations(
+    debouncedQuery,
+    selectedCountry
+  );
+  setStations(mapStations);
+  setLoading(loading);
+  setError(error);
 
   const totalPages = Math.ceil(stations.length / stationsPerPage);
-
   const paginatedStations = stations.slice(
     (currentPage - 1) * stationsPerPage,
     currentPage * stationsPerPage
   );
+
+
+  const isFavorite = (stationCode) =>
+    favoriteStations.some((fav) => fav.code === stationCode);
 
   return (
     <div>
@@ -49,15 +59,12 @@ export default function StationSearch({ onSelect }) {
 
       {stations.length > 0 && !loading && (
         <>
-          <Table
-            striped
-            highlightOnHover
-            className={styles.table}
-          >
+          <Table striped highlightOnHover className={styles.table}>
             <thead>
               <tr>
                 <th>Название</th>
                 <th>Код станции</th>
+                <th>Избранное</th> 
                 <th>Действие</th>
               </tr>
             </thead>
@@ -66,6 +73,21 @@ export default function StationSearch({ onSelect }) {
                 <tr key={s.code}>
                   <td>{s.title}</td>
                   <td>{s.code}</td>
+                  <td>
+                    <ActionIcon
+                      variant="subtle"
+                      color={isFavorite(s.code) ? "red" : "gray"}
+                      onClick={() =>
+                        isFavorite(s.code) ? removeFavorite(s.code) : addFavorite(s)
+                      }
+                    >
+                      {isFavorite(s.code) ? (
+                        <BsHeartFill size={20} /> 
+                      ) : (
+                        <BsHeart size={20} /> 
+                      )}
+                    </ActionIcon>
+                  </td>
                   <td className={styles.actionCell}>
                     <Button variant="outline" color="gray" onClick={() => onSelect(s)}>
                       Выбрать

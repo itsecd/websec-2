@@ -3,7 +3,8 @@ import { useDisclosure } from '@mantine/hooks';
 import styles from './Header.module.scss';
 import LinkItem from './link-item/LinkItem';
 import AppName from './app-name/AppName';
-import { links } from '../../сonstants/for-header';
+import { links } from '../../utils/сonstants/for-header';
+
 
 
 export default function Header() {
