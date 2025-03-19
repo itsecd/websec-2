@@ -1,25 +1,43 @@
-import { useStations } from "../../hooks/useStations";
+import { Container, Title, Drawer } from "@mantine/core";
+import { FaMap } from "react-icons/fa"; 
+import StationSearch from "../../components/station-search/StationSearch";
+import Map from "../../pages/map/Map"; 
+import { useNavigate } from "react-router-dom";
+import { useState } from "react";
 
 export default function Home() {
-  const q = "Сов"; // Запрос для поиска станций, начинающихся на "Сов"
-  const { stations, loading, error } = useStations(q);
+  const navigate = useNavigate();
+  const [isMapOpen, setIsMapOpen] = useState(false); 
 
-  // Логируем станции для отладки
-  console.log('Станции:', stations);
-
-  if (loading) return <div>Загрузка...</div>;
-  if (error) return <div>Ошибка: {error}</div>;
+  const handleSearchSelect = (station) => {
+    navigate(`/schedule/${station.code}`);
+  };
 
   return (
-    <div>
-      <h1>Список станций</h1>
-      <ul>
-        {stations.map((station) => (
-          <li key={station.code}>{station.title}</li>
-        ))}
-      </ul>
-    </div>
-  );
-};
+    <Container size="md">
+      <div style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: "10px" }}>
+        <Title order={1} my="lg">
+          🚆 Поиск железнодорожных станций
+        </Title>
+        <FaMap
+          size={24}
+          style={{ cursor: "pointer", color: "#666" }}
+          onClick={() => setIsMapOpen(true)} 
+        />
+      </div>
 
- 
+      <StationSearch onSelect={handleSearchSelect} />
+
+      <Drawer
+        opened={isMapOpen}
+        onClose={() => setIsMapOpen(false)}
+        position="left"
+        size="lg"
+        title="Карта"
+        overlayProps={{ opacity: 0.5, blur: 2 }}
+      >
+        <Map />
+      </Drawer>
+    </Container>
+  );
+}

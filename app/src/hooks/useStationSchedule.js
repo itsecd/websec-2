@@ -1,7 +1,6 @@
 import { useState, useEffect } from 'react';
 import { useApi } from '../context/ApiContext';
 
-
 export const useStationSchedule = (stationCode) => {
   const [schedules, setSchedules] = useState([]);
   const [loading, setLoading] = useState(false);
@@ -16,7 +15,7 @@ export const useStationSchedule = (stationCode) => {
         const data = await getData('/schedule/', {
           station: stationCode,
           transport_types: 'suburban',
-          date: new Date().toISOString().split('T')[0], 
+          date: new Date().toISOString().split('T')[0],
         });
         const scheduleList = data.schedule.map((s) => ({
           departure: s.departure,

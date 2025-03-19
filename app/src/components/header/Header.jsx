@@ -3,19 +3,14 @@ import { useDisclosure } from '@mantine/hooks';
 import styles from './Header.module.scss';
 import LinkItem from './link-item/LinkItem';
 import AppName from './app-name/AppName';
+import { links } from '../../сonstants/for-header';
 
-const links = [
-  { link: '/', label: 'Главная' },
-  { link: '/schedule', label: 'Расписание' },
-  { link: '/favorites', label: 'Избранное' },
-  { link: '/map', label: 'Карта' },
-];
 
 export default function Header() {
   const [opened, { toggle }] = useDisclosure(false);
 
-  const items = links.map((link) => (
-    <LinkItem link={link} styles={styles} />
+  const items = links.map((link, id) => (
+    <LinkItem key={"item-header12345"+id} link={link} styles={styles} />
   ));
 
   return (
