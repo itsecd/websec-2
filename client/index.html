@@ -7,9 +7,15 @@
 </head>
 <body>
     <h1>Институт информатики и кибернетики</h1>
-    <h2>Расписание групп</h2>
-    <div id="groups"></div>
-    <div id="timetable"></div>
+    <div>
+        <p>Введите номер группы:</p>
+        <input type="text" id="groupId">
+        <button onclick="loadTimetable()">Найти</button>
+    </div>
+
+    <div id="result" class="result-container">
+
+    </div>
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="script.js"></script>
