@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Расписание SSAU</title>
+  <link rel="stylesheet" href="/static/styles.css" />
+  <link rel="preconnect" href="https://code.jquery.com" crossorigin>
+</head>
+<body>
+  <header class="topbar">
+    <div class="topbar__inner">
+      <div class="brand">
+        <div class="brand__title">Расписание SSAU</div>
+        <div class="brand__subtitle">через JSON API вашего FastAPI-сервера</div>
+      </div>
+
+      <div class="mode">
+        <label class="mode__item">
+          <input type="radio" name="mode" value="group" checked />
+          <span>По группе</span>
+        </label>
+        <label class="mode__item">
+          <input type="radio" name="mode" value="teacher" />
+          <span>По преподавателю</span>
+        </label>
+      </div>
+    </div>
+  </header>
+
+  <main class="page">
+    <section class="panel">
+      <div class="panel__row" id="filtersGroup">
+        <div class="field">
+          <label class="field__label" for="instituteSelect">Институт / факультет</label>
+          <select id="instituteSelect" class="field__control">
+            <option value="">Загрузка...</option>
+          </select>
+        </div>
+
+        <div class="field">
+          <label class="field__label" for="courseSelect">Курс</label>
+          <select id="courseSelect" class="field__control" disabled>
+            <option value="">Выберите институт</option>
+          </select>
+        </div>
+
+        <div class="field">
+          <label class="field__label" for="groupSelect">Группа</label>
+          <select id="groupSelect" class="field__control" disabled>
+            <option value="">Сначала выберите курс</option>
+          </select>
+        </div>
+
+        <div class="field field--button">
+          <label class="field__label">&nbsp;</label>
+          <button id="showBtn" class="btn btn--primary" disabled>Показать</button>
+        </div>
+      </div>
+
+      <div class="panel__row panel__row--teacher" id="filtersTeacher" style="display:none;">
+        <div class="field field--grow">
+          <label class="field__label" for="teacherInput">Преподаватель</label>
+          <div class="teacherSearch">
+            <input id="teacherInput" class="field__control" type="text" placeholder="Начните вводить фамилию…" autocomplete="off" />
+            <input id="teacherId" type="hidden" value="" />
+            <div id="teacherSuggest" class="teacherSuggest" style="display:none;"></div>
+          </div>
+        </div>
+
+        <div class="field field--button">
+          <label class="field__label">&nbsp;</label>
+          <button id="showTeacherBtn" class="btn btn--primary" disabled>Показать</button>
+        </div>
+      </div>
+
+      <div class="panel__row panel__row--week" id="weekControls" style="display:none;">
+        <div class="weekInfo">
+          <div class="weekInfo__entity" id="entityName">—</div>
+          <div class="weekInfo__meta">
+            <span class="weekInfo__week" id="weekLabel">—</span>
+            <span class="weekInfo__dates" id="weekDates"></span>
+          </div>
+        </div>
+
+        <div class="weekNav">
+          <button id="prevWeekBtn" class="btn btn--ghost" disabled title="Предыдущая неделя">←</button>
+          <select id="weekSelect" class="field__control field__control--week"></select>
+          <button id="nextWeekBtn" class="btn btn--ghost" disabled title="Следующая неделя">→</button>
+        </div>
+      </div>
+
+      <div class="panel__row panel__row--mobileDay" id="mobileDayControls" style="display:none;">
+        <div class="field field--grow">
+          <label class="field__label" for="daySelect">День</label>
+          <select id="daySelect" class="field__control"></select>
+        </div>
+      </div>
+    </section>
+
+    <section class="content">
+      <div id="status" class="status status--idle">Выберите группу или преподавателя и нажмите «Показать».</div>
+
+      <div id="scheduleContainer"></div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer__inner">
+      Источник данных: ssau.ru/rasp (парсится сервером). Клиент получает данные только из JSON API этого приложения.
+    </div>
+  </footer>
+
+  <!-- jQuery -->
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+          integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+          crossorigin="anonymous"></script>
+  <script src="/static/app.js"></script>
+</body>
+</html>
