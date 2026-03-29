@@ -1,19 +1,20 @@
 const inputGroup= document.getElementById('groupId');
 const result = document.getElementById('result');
 const inputTeacher = document.getElementById('teacherName');
+const weekSelect = document.getElementById('weekSelect');
 
 function loadTimetable() {
     
     const groupNumber=inputGroup.value;
-    
-    if (groupNumber === '') {
+    const week = weekSelect.value;
+
+    if (!groupNumber) {
         result.innerHTML = 'Номер группы не выбран';
         return;  
     }
 
     showLoading();
-
-    fetch('/groupRasp?groupId=' + groupNumber)
+    fetch(`/groupRasp?groupId=${groupNumber}&week=${week}`)
     .then(response => response.json())
     .then(data => {
         if (data.success) {
@@ -27,8 +28,9 @@ function loadTimetable() {
 
 function loadTeacherTimetable() {
     const teacherName = inputTeacher.value;
+    const week = weekSelect.value;
 
-    if (teacherName === '') {
+    if (!teacherName) {
         result.innerHTML = 'ФИО преподавателя не введено';
         return;  
     }
@@ -40,22 +42,16 @@ function loadTeacherTimetable() {
         }
         return response.json();
     })
-    .then(searchData => {
-        showLoading();
-        return fetch('/teacherRasp?teacherId=' + searchData.id);
-    })
-    .then(response=>response.json())
+    .then(searchData => fetch(`/teacherRasp?teacherId=${searchData.id}&week=${week}`))
+    .then(res => res.json())
     .then(data => {
-        if (data.success) {
-            renderTable(data.schedule, data.teacherName);
-        }
-        else {
-            result.innerHTML = "error";
-        }
+        if (data.success) renderTable(data.schedule, data.teacherName, true);
+        else result.innerHTML = 'Расписание не найдено';
     })
+    .catch(err => result.innerHTML = err.message);
 }
 
-function renderTable(timeTable, title) {
+function renderTable(timeTable, title, isTeacher=false) {
     if (timeTable.length === 0) {
         result.innerHTML = 'Расписание не найдено';
         return;
@@ -64,7 +60,7 @@ function renderTable(timeTable, title) {
     result.appendChild(createTitle(title, timeTable.length));
     const grouped = groupByDate(timeTable);
     for (const [date, items] of Object.entries(grouped)) {
-        result.appendChild(createDateBlock(date, items));
+        result.appendChild(createDateBlock(date, items, isTeacher));
     }
 }
 
@@ -79,18 +75,15 @@ function createTitle(title, count) {
     
     const h2 = document.createElement('h2');
     h2.textContent = `${title}`;
-    
+
     const countSpan = document.createElement('p');
-    countSpan.className = 'lessons-count';
-    countSpan.textContent = `Занятия: ${count}`;
     
     titleBlock.appendChild(h2);
-    titleBlock.appendChild(countSpan);
     
     return titleBlock;
 }
 
-function createDateBlock(date, items) {
+function createDateBlock(date, items, isTeacher) {
     const block = document.createElement('div');
 
     const dateHeader = document.createElement('h3');
@@ -98,20 +91,63 @@ function createDateBlock(date, items) {
     dateHeader.textContent = `${date}`;
     block.appendChild(dateHeader);
 
-    const table = createTable(items);
+    const table = createTable(items, isTeacher);
     block.appendChild(table);
     
     return block;
 }
 
-function createTable(items) {
+function createTable(items, isTeacher) {
     const table = document.createElement('table');
     table.className = 'schedule-table';
 
     const thead = document.createElement('thead');
     const headerRow = document.createElement('tr');
-    
-    const headers = ['Время', 'Предмет', 'Тип', 'Аудитория', 'Преподаватель'];
+    const groupedMap = new Map();
+
+    function normalize(str) {
+        return (str || '').toString().trim().toLowerCase();
+    }
+
+    items.forEach(item => {
+    const key = [
+        normalize(item.time),
+        normalize(item.title),
+        normalize(item.type),
+        normalize(item.place),
+        normalize(item.teacherName)
+    ].join('|');
+
+    if (!groupedMap.has(key)) {
+        groupedMap.set(key, {
+            ...item,
+            groupNames: []
+        });
+    }
+
+    if (item.groupName) {
+        const existing = groupedMap.get(key);
+        if (!existing.groupNames.includes(item.groupName)) {
+            existing.groupNames.push(item.groupName);
+        }
+    }
+    });
+    const groupedItems = Array.from(groupedMap.values()).map(item => {
+    item.groupName = item.groupNames.join(', ');
+    return item;
+    });
+    groupedItems.sort((a, b) => {
+        if (a.date !== b.date) return a.date.localeCompare(b.date);
+        return a.time.localeCompare(b.time);
+    });
+
+    const teacherSchedule = isTeacher;
+    const headers = ['Время', 'Предмет', 'Тип', 'Аудитория'];
+    if (teacherSchedule) {
+        headers.push('Группа(ы)');
+    }
+    headers.push('Преподаватель');
+
     headers.forEach(headerText => {
         const th = document.createElement('th');
         th.textContent = headerText;
@@ -123,8 +159,11 @@ function createTable(items) {
 
     const tbody = document.createElement('tbody');
 
-    const sortedItems = [...items].sort((a, b) => a.time.localeCompare(b.time));
-    
+    const sortedItems = [...groupedItems].sort((a, b) => {
+        if (a.date !== b.date) return a.date.localeCompare(b.date);
+        return a.time.localeCompare(b.time);
+    });
+
     sortedItems.forEach(item => {
         const row = document.createElement('tr');
 
@@ -145,6 +184,12 @@ function createTable(items) {
         const placeCell = document.createElement('td');
         placeCell.textContent = item.place || '-';
         row.appendChild(placeCell);
+
+        if (teacherSchedule) {
+            const groupCell = document.createElement('td');
+            groupCell.textContent = item.groupName || '-';
+            row.appendChild(groupCell);
+        }
 
         const teacherCell = document.createElement('td');
         teacherCell.textContent = item.teacherName || '-';
