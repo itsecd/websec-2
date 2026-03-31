@@ -1,21 +1,30 @@
 body {
-    font-family:Arial, Helvetica, sans-serif;
-    margin: 15px;
+    font-family:'Segoe UI', Helvetica, sans-serif;
+    margin: 0px auto;
+    padding: 20px; 
+    font-size: 18px;
+    font-weight: bold;
     background-color: rgb(141, 173, 217);
 }
 
 h1{
     color:rgb(5, 5, 71);
     margin-bottom: 15px;
-    font-size:  20px;
+    font-size:  30px;
 }
 
-input {
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+input, select {
     padding: 6px;
     width: 250 px;
     border: 1px solid #b7b8c4;
     border-radius: 10px;
     font-size: 14px;
+    font-weight: bold;
 }
 
 button {
@@ -37,6 +46,7 @@ button:hover {
     border-radius: 8px;
     margin-top:15px;
     border: 1px solid #b7b8c4;
+     overflow-x: auto; 
 }
 
 .dates-row {
@@ -55,4 +65,141 @@ button:hover {
 
 .loading{
     color: #5d5b5b;
+}
+
+.day-card {
+    border-radius: 15px;
+    margin-bottom: 25px;
+    background: #f8f9fa;
+    overflow: hidden;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.day-header {
+    background-color: #667eea 0%;
+    padding: 15px 20px;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.day-schedule-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.lessons-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 10px;
+    padding: 12px;
+}
+
+.lesson-card {
+    background: white;
+    border-radius: 10px;
+    padding: 10px;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.1); 
+    transition: transform 0.15s ease;
+    border-left: 3px solid #667eea;
+}
+
+.lesson-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 16px rgba(0,0,0,0.15);
+}
+
+.lesson-time {
+    font-size: 14px;
+    font-weight: bold;
+    color: #667eea;
+    margin-bottom: 10px;
+    padding-bottom: 8px;
+    border-bottom: 2px solid #e0e0e0;
+}
+
+.lesson-title {
+    display: inline-block;
+    padding: 2px 8px;
+    border-radius: 12px;
+    font-size: 14px;
+    font-weight: bold;
+    margin-bottom: 6px;
+}
+
+.lesson-type {
+    display: inline-block;
+    padding: 3px 10px;
+    border-radius: 15px;
+    font-size: 11px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.lesson-place {
+    color: #666;
+    font-size: 13px;
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.lesson-teacher {
+    color: #666;
+    font-size: 13px;
+    margin-bottom: 5px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.lesson-groups {
+    color: #666;
+    font-size: 13px;
+    margin-top: 8px;
+    padding-top: 8px;
+    border-top: 1px solid #e0e0e0;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    flex-wrap: wrap;
+}
+
+.group-badge {
+    background: #e3f2fd;
+    color: #1976d2;
+    padding: 2px 8px;
+    border-radius: 12px;
+    font-size: 11px;
+    display: inline-block;
+}
+
+.timetable {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.timetable th, .timetable td {
+    border: 1px solid #ccc;
+    padding: 8px;
+    vertical-align: top;
+    text-align: left;
+}
+
+.timetable th {
+    background-color: #f0f0f0;
+}
+
+
+@media (max-width: 768px) {
+    .timetable th, .timetable td {
+        font-size: 12px;
+        padding: 6px 4px;
+    }
+
+    .lesson-cell {
+        font-size: 12px;
+        padding: 2px 3px;
+    }
 }

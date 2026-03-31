@@ -6,7 +6,7 @@ const PORT = 5000;
 
 const { parseGroup } = require('./parser');
 const groups = JSON.parse(fs.readFileSync('groups.json', 'utf8'));
-const teachers = {};
+const teachers = JSON.parse(fs.readFileSync('teachers.json', 'utf8'));
 app.use(express.static('client'));
 
 
