@@ -1,0 +1,23 @@
+<div class="container">
+  <h1>
+    <span>🌤️</span>
+    Прогноз погоды
+  </h1>
+
+  <app-search (citySelected)="onCitySelected($event)"></app-search>
+  <app-map 
+    [cities]="cities" 
+    (citySelected)="onCitySelected($event)">
+  </app-map>
+
+  <div class="footer">
+    Данные взяты из Open-Meteo
+  </div>
+</div>
+
+<div class="modal-overlay" *ngIf="selectedCity" (click)="closeModal()">
+  <div class="modal-content" (click)="$event.stopPropagation()">
+    <button class="modal-close" (click)="closeModal()">×</button>
+    <app-weather [city]="selectedCity"></app-weather>
+  </div>
+</div>

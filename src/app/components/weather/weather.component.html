@@ -1,0 +1,68 @@
+<div class="weather-content" *ngIf="city">
+  <div *ngIf="loading" class="loading">
+    <div>⏳ Загружаем данные...</div>
+  </div>
+
+  <div *ngIf="error" class="error">
+    <div>❌ Произошла ошибка</div>
+    <div style="font-size: 12px; margin-top: 8px;">Проверьте подключение</div>
+  </div>
+
+  <div *ngIf="!loading && !error && weatherData">
+    <div class="city-info">
+      <div class="city-name-large">{{ city.name }}</div>
+      <div class="city-details">Население: {{ formatPopulation(city.population) }}</div>
+    </div>
+
+    <div class="current-weather" *ngIf="currentWeather">
+      <div class="temp-main">{{ formatTemp(currentWeather.temperature_2m) }}°</div>
+      <div class="weather-desc">
+        {{ getWeatherDescription(currentWeather.weathercode) }} {{ getWeatherIcon(currentWeather.weathercode) }}
+      </div>
+      <div class="details-row">
+        <div class="detail-card">
+          <div class="detail-label">ОСАДКИ</div>
+          <div class="detail-value">
+            <span>{{ formatPrecip(currentWeather.precipitation || 0) }}</span>
+            <span class="detail-unit">мм</span>
+          </div>
+        </div>
+        <div class="detail-card">
+          <div class="detail-label">ВЕТЕР</div>
+          <div class="detail-value">
+            <span>{{ formatTemp(currentWeather.wind_speed_10m) }}</span>
+            <span class="detail-unit">км/ч</span>
+          </div>
+        </div>
+        <div class="detail-card">
+          <div class="detail-label">ВЛАЖНОСТЬ</div>
+          <div class="detail-value">
+            <span>{{ currentWeather.relative_humidity_2m || '—' }}</span>
+            <span class="detail-unit">%</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="chart-container" *ngIf="dailyWeather">
+      <canvas #weatherChart></canvas>
+    </div>
+
+    <div class="forecast-title">📅 Недельный прогноз</div>
+    <div class="forecast-list" *ngIf="dailyWeather">
+      <div class="forecast-day" *ngFor="let day of dailyWeather.time; let i = index">
+        <div class="day-name">{{ getDayName(day, i === 0) }}</div>
+        <div class="weather-icon">{{ getWeatherIcon(dailyWeather.weathercode[i]) }}</div>
+        <div class="temp-max">{{ formatTemp(dailyWeather.temperature_2m_max[i]) }}°</div>
+        <div class="temp-min">{{ formatTemp(dailyWeather.temperature_2m_min[i]) }}°</div>
+        <div class="precip">💧 {{ formatPrecip(dailyWeather.precipitation_sum[i]) }} мм</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div *ngIf="!city" class="empty-state">
+  <div class="empty-icon">🗺️</div>
+  <div class="empty-title" style="font-size: 18px; margin-bottom: 8px;">Выберите город на карте</div>
+  <div class="empty-desc" style="opacity: 0.7;">Или воспользуйтесь поиском выше</div>
+</div>

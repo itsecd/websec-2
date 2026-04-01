@@ -1,0 +1,20 @@
+<div class="search-box">
+  <input 
+    type="text" 
+    class="search-input" 
+    [(ngModel)]="query"
+    (input)="onSearchInput()"
+    placeholder="Поиск по городам..."
+    autocomplete="off">
+  <div class="search-results" [class.show]="showResults">
+    <div 
+      *ngFor="let city of results" 
+      class="search-item"
+      (click)="selectCity(city)">
+      <div>
+        <div class="city-name">{{ city.name }}</div>
+      </div>
+      <div class="city-pop">{{ formatPopulation(city.population) }}</div>
+    </div>
+  </div>
+</div>
