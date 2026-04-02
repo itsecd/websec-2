@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { stationAPI } from '../services/api';
+import { DEFAULT_MAP_CENTER, MAP_SEARCH_PARAMS } from '../config/mapConfig';
 
 export default function StationSearch({ onSelect }) {
   const [query, setQuery] = useState('');
@@ -10,9 +11,12 @@ export default function StationSearch({ onSelect }) {
   useEffect(() => {
     const fetchNearby = async () => {
       try {
-        const response = await stationAPI.nearby(55.7558, 37.6173, 50);
-        if (response.data?.stations) {
-          setStations(response.data.stations);
+        const { lat, lng } = DEFAULT_MAP_CENTER;
+        const { distance } = MAP_SEARCH_PARAMS.initial;
+        
+        const response = await stationAPI.nearby(lat, lng, distance);
+        if (response?.stations) {
+          setStations(response.stations);
         }
       } catch (err) {
         console.error('Ошибка загрузки станций:', err);
@@ -32,8 +36,8 @@ export default function StationSearch({ onSelect }) {
       setError(null);
       try {
         const response = await stationAPI.search(query);
-        if (response.data?.stations) {
-          const filtered = response.data.stations.filter(s => 
+        if (response?.stations) {
+          const filtered = response.stations.filter(s => 
             s.title?.toLowerCase().includes(query.toLowerCase()) ||
             s.short_title?.toLowerCase().includes(query.toLowerCase())
           );
@@ -87,7 +91,12 @@ export default function StationSearch({ onSelect }) {
 
       {stations.length > 0 && (
         <div className="card">
-          <h3 className="h6 mb-3">Найдено станций: {stations.length}</h3>
+          <h3 className="h6 mb-3">
+            Найдено станций: {stations.length}
+            <span className="text-muted small ms-2">
+              (вокруг {DEFAULT_MAP_CENTER.label})
+            </span>
+          </h3>
           <div className="list-group list-group-flush">
             {stations.map((station) => (
               <button

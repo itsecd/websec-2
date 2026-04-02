@@ -1,20 +1,14 @@
-import { useState, useEffect } from 'react';
 import { favoritesService } from '../services/favorites';
 
-export default function FavoritesList({ onSelectStation, onRemove }) {
-  const [favorites, setFavorites] = useState([]);
-
-  useEffect(() => {
-    setFavorites(favoritesService.getAll());
-  }, []);
-
+export default function FavoritesList({ favorites, onSelectStation, onRemove }) {
+  
   const handleRemove = (code) => {
     favoritesService.remove(code);
-    setFavorites(favoritesService.getAll());
+    
     if (onRemove) onRemove(code);
   };
 
-  if (favorites.length === 0) {
+  if (!favorites || favorites.length === 0) {
     return (
       <div className="card">
         <h3 className="h5 mb-3">

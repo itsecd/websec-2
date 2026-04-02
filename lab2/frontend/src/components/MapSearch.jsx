@@ -3,7 +3,6 @@ import Map from 'ol/Map';
 import View from 'ol/View';
 import TileLayer from 'ol/layer/Tile';
 import OSM from 'ol/source/OSM';
-import VectorLayer from 'ol/layer/Vector';
 import VectorSource from 'ol/source/Vector';
 import { fromLonLat, toLonLat } from 'ol/proj';
 import { Feature } from 'ol';
@@ -11,20 +10,25 @@ import { Point } from 'ol/geom';
 import { Style, Circle, Fill, Stroke, Text } from 'ol/style';
 import { stationAPI } from '../services/api';
 import { favoritesService } from '../services/favorites';
-
-const MOSCOW_CENTER = [37.6173, 55.7558];
+import { getVectorLayerByName, createNamedVectorLayer } from '../utils/layerInstruments';
+import { 
+  DEFAULT_MAP_CENTER, 
+  MAP_SEARCH_PARAMS, 
+  MAP_VIEW_CONFIG, 
+  LAYER_NAMES 
+} from '../config/mapConfig';
 
 export default function MapSearch({ onSelectStation, favorites, onToggleFavorite }) {
   const mapRef = useRef(null);
   const [map, setMap] = useState(null);
-  const [stationsLayer, setStationsLayer] = useState(null);
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     if (!mapRef.current) return;
 
     const stationsSource = new VectorSource();
-    const layer = new VectorLayer({
+    
+    const stationsLayer = createNamedVectorLayer({
       source: stationsSource,
       style: (feature) => {
         const code = feature.get('code');
@@ -46,21 +50,22 @@ export default function MapSearch({ onSelectStation, favorites, onToggleFavorite
           })
         });
       }
-    });
+    }, LAYER_NAMES.stations);
 
     const newMap = new Map({
       target: mapRef.current,
       layers: [
         new TileLayer({ source: new OSM() }),
-        layer
+        stationsLayer
       ],
       view: new View({
-        center: fromLonLat(MOSCOW_CENTER),
-        zoom: 10,
-        minZoom: 5,
-        maxZoom: 18
+        center: fromLonLat([DEFAULT_MAP_CENTER.lng, DEFAULT_MAP_CENTER.lat]),
+        zoom: MAP_VIEW_CONFIG.defaultZoom,
+        minZoom: MAP_VIEW_CONFIG.minZoom,
+        maxZoom: MAP_VIEW_CONFIG.maxZoom
       })
     });
+
 
     newMap.on('singleclick', async (event) => {
       const clickedFeature = newMap.forEachFeatureAtPixel(event.pixel, (feature) => {
@@ -73,7 +78,7 @@ export default function MapSearch({ onSelectStation, favorites, onToggleFavorite
         onSelectStation?.(station);
         return; 
       }
-      
+
       const lonLat = toLonLat(event.coordinate);
       const lng = lonLat[0];
       const lat = lonLat[1];
@@ -82,19 +87,28 @@ export default function MapSearch({ onSelectStation, favorites, onToggleFavorite
       setLoading(true);
       
       try {
-        const response = await stationAPI.nearby(lat, lng, 50, 30);
-        stationsSource.clear();
+        const { distance, limit } = MAP_SEARCH_PARAMS.click;
+        const response = await stationAPI.nearby(lat, lng, distance, limit);
+
+        const layer = getVectorLayerByName(newMap, LAYER_NAMES.stations);
+        if (!layer) {
+          console.error('Слой станций не найден');
+          return;
+        }
         
-        if (response.data?.stations && response.data.stations.length > 0) {
-          console.log(`Найдено ${response.data.stations.length} станций`);
+        const source = layer.getSource();
+        source.clear();
+        
+        if (response?.stations && response.stations.length > 0) {
+          console.log(`Найдено ${response.stations.length} станций`);
           
-          response.data.stations.forEach(station => {
+          response.stations.forEach(station => {
             if (station.latitude && station.longitude) {
               const feature = new Feature({
                 geometry: new Point(fromLonLat([station.longitude, station.latitude])),
                 ...station
               });
-              stationsSource.addFeature(feature);
+              source.addFeature(feature);
             }
           });
         } else {
@@ -108,22 +122,25 @@ export default function MapSearch({ onSelectStation, favorites, onToggleFavorite
     });
 
     setMap(newMap);
-    setStationsLayer(layer);
 
-    return () => newMap.setTarget(null);
-  }, []);
-
-  useEffect(() => {
-    if (!stationsLayer) return;
-    
     const loadInitial = async () => {
       try {
-        const response = await stationAPI.nearby(55.7558, 37.6173, 30, 30);
-        const source = stationsLayer.getSource();
-        source.clear();
+        const { distance, limit } = MAP_SEARCH_PARAMS.initial;
+        const response = await stationAPI.nearby(
+          DEFAULT_MAP_CENTER.lat, 
+          DEFAULT_MAP_CENTER.lng, 
+          distance, 
+          limit
+        );
         
-        if (response.data?.stations) {
-          response.data.stations.forEach(station => {
+        const layer = getVectorLayerByName(newMap, LAYER_NAMES.stations);
+        if (!layer) return;
+        
+        const source = layer.getSource();
+        source.clear();
+
+        if (response?.stations) {
+          response.stations.forEach(station => {
             if (station.latitude && station.longitude) {
               const feature = new Feature({
                 geometry: new Point(fromLonLat([station.longitude, station.latitude])),
@@ -138,13 +155,18 @@ export default function MapSearch({ onSelectStation, favorites, onToggleFavorite
       }
     };
     loadInitial();
-  }, [stationsLayer]);
+
+    return () => newMap.setTarget(null);
+  }, []);
 
   useEffect(() => {
-    if (!stationsLayer) return;
-    const source = stationsLayer.getSource();
-    source.changed();
-  }, [stationsLayer, favorites]);
+    if (!map) return;
+    
+    const layer = getVectorLayerByName(map, LAYER_NAMES.stations);
+    if (layer) {
+      layer.getSource().changed(); // Перерисовка с учётом новых цветов
+    }
+  }, [map, favorites]);
 
   return (
     <div>
@@ -155,7 +177,7 @@ export default function MapSearch({ onSelectStation, favorites, onToggleFavorite
         </h3>
         <p className="text-muted small mb-3">
           <i className="bi bi-info-circle me-1"></i>
-          При загрузке показаны ближайшие станции.
+          При загрузке показаны станции в радиусе {MAP_SEARCH_PARAMS.initial.distance} км от {DEFAULT_MAP_CENTER.label}.
           <br/>
           <strong>Кликните по маркеру</strong> — выбрать станцию.
           <br/>

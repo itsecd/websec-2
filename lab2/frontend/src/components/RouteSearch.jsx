@@ -20,8 +20,8 @@ export default function RouteSearch({ onSelect }) {
     const timer = setTimeout(async () => {
       try {
         const response = await stationAPI.search(fromQuery);
-        if (response.data?.stations) {
-          setFromStations(response.data.stations.slice(0, 5));
+        if (response?.stations) {
+          setFromStations(response.stations.slice(0, 5));
         }
       } catch (err) {
         console.error('Search error:', err);
@@ -47,8 +47,8 @@ export default function RouteSearch({ onSelect }) {
     const timer = setTimeout(async () => {
       try {
         const response = await stationAPI.search(toQuery);
-        if (response.data?.stations) {
-          setToStations(response.data.stations.slice(0, 5));
+        if (response?.stations) {
+          setToStations(response.stations.slice(0, 5));
         }
       } catch (err) {
         console.error('Search error:', err);
@@ -70,10 +70,10 @@ export default function RouteSearch({ onSelect }) {
         console.log('Загрузка направлений для:', selectedFrom.title);
         const response = await stationAPI.getSchedule(selectedFrom.code);
         
-        if (response.data?.schedule) {
+        if (response?.schedule) {
           const destinationsMap = new Map();
           
-          response.data.schedule.forEach(item => {
+          response.schedule.forEach(item => {
             const toStation = item.to;
             if (toStation?.code && toStation?.title) {
               if (!destinationsMap.has(toStation.code)) {
@@ -181,7 +181,7 @@ export default function RouteSearch({ onSelect }) {
                     setSelectedFrom(station);
                     setFromQuery(station.title);
                     setFromStations([]);
-                    setToQuery(''); // Очищаем "куда"
+                    setToQuery('');
                   }}
                 >
                   <div className="fw-medium">{station.title}</div>

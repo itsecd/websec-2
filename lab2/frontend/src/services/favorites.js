@@ -1,6 +1,7 @@
-const FAVORITES_KEY = 'pribyvalka_favorites';
+const FAVORITES_KEY = 'pribyvalka_favorites'; // думаю оставить, так как этот параметр не зависит от окружения
 
 export const favoritesService = {
+
   getAll() {
     try {
       const stored = localStorage.getItem(FAVORITES_KEY);
@@ -10,23 +11,41 @@ export const favoritesService = {
     }
   },
 
+  isFavorite(code) {
+    return this.getAll().some(s => s.code === code);
+  },
+
   add(station) {
-    const favorites = this.getAll();
-    if (!favorites.find(s => s.code === station.code)) {
-      favorites.push(station);
+    try {
+      if (this.isFavorite(station.code)) {
+        return false; // Уже в избранном
+      }
+      
+      const favorites = this.getAll();
+      favorites.push({
+        code: station.code,
+        title: station.title,
+        short_title: station.short_title,
+        station_type: station.station_type,
+        direction: station.direction,
+        latitude: station.latitude,
+        longitude: station.longitude
+      });
+      
       localStorage.setItem(FAVORITES_KEY, JSON.stringify(favorites));
       return true;
+    } catch {
+      return false;
     }
-    return false;
   },
 
   remove(code) {
-    const favorites = this.getAll().filter(s => s.code !== code);
-    localStorage.setItem(FAVORITES_KEY, JSON.stringify(favorites));
-    return true;
-  },
-
-  isFavorite(code) {
-    return this.getAll().some(s => s.code === code);
+    try {
+      const favorites = this.getAll().filter(s => s.code !== code);
+      localStorage.setItem(FAVORITES_KEY, JSON.stringify(favorites));
+      return true;
+    } catch {
+      return false;
+    }
   }
 };
