@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="description" content="Расписание электричек — Прибывалка">
+  <meta name="theme-color" content="#0066cc">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <title>Прибывалка: электрички</title>
+  
+  <style>
+    :root{--primary:#0066cc;--bg:#f5f7fa;--card:#fff;--text:#212529}
+    *{box-sizing:border-box;margin:0;padding:0}
+    body{font-family:system-ui,-apple-system,sans-serif;background:var(--bg);color:var(--text);line-height:1.5}
+    #root{min-height:100vh;display:flex;flex-direction:column}
+    .container{width:100%;max-width:1200px;margin:0 auto;padding:0 16px}
+    .header{background:var(--primary);color:#fff;padding:16px;position:sticky;top:0;z-index:10}
+    .btn-primary{background:var(--primary);color:#fff;border:none;padding:12px 20px;border-radius:8px}
+    .card{background:var(--card);border-radius:12px;padding:16px;margin:8px 0;box-shadow:0 2px 4px rgba(0,0,0,0.08)}
+    .train-item{display:flex;justify-content:space-between;padding:12px 0;border-bottom:1px solid #dee2e6}
+    .tabs{display:flex;gap:4px;background:#e9ecef;padding:4px;border-radius:10px;margin:16px 0}
+    .tab{flex:1;padding:10px;text-align:center;border-radius:8px;cursor:pointer}
+    .tab.active{background:#fff;box-shadow:0 2px 4px rgba(0,0,0,0.1)}
+    .loading{text-align:center;padding:24px;color:#6c757d}
+    .error{background:#ffebee;color:#dc3545;padding:12px;border-radius:8px}
+    footer{text-align:center;padding:24px;color:#6c757d;font-size:0.9rem;margin-top:auto}
+    footer a{color:var(--primary);text-decoration:none}
+    @media(min-width:768px){.container{padding:0 24px}}
+    .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0)}
+  </style>
+</head>
+<body>
+  <div id="root">
+    <main class="container">
+      <h1 class="mb-3">Прибывалка: расписание электричек</h1>
+      <p>Загрузка приложения...</p>
+    </main>
+  </div>
+  <script type="module" src="/src/main.jsx"></script>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"WebApplication","name":"Прибывалка Электрички"}
+  </script>
+</body>
+</html>

@@ -1,0 +1,77 @@
+body {
+  background: #f5f7fa;
+  font-family: system-ui, -apple-system, sans-serif;
+}
+
+#root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.header {
+  background: #0066cc;
+  color: white;
+  padding: 1rem 0;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.train-item {
+  border-bottom: 1px solid #dee2e6;
+  padding: 12px 0;
+}
+
+.train-item:last-child {
+  border-bottom: none;
+}
+
+.station-item {
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.station-item:hover {
+  background-color: #f8f9fa;
+}
+
+.loading {
+  text-align: center;
+  padding: 24px;
+  color: #6c757d;
+}
+
+.error {
+  background: #ffebee;
+  color: #c62828;
+  padding: 12px;
+  border-radius: 8px;
+  margin: 8px 0;
+}
+
+.empty {
+  text-align: center;
+  padding: 32px;
+  color: #6c757d;
+}
+
+footer {
+  text-align: center;
+  padding: 24px;
+  color: #6c757d;
+  font-size: 0.9rem;
+  margin-top: auto;
+}
+
+footer a {
+  color: #0066cc;
+  text-decoration: none;
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+}
