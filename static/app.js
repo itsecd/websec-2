@@ -1,10 +1,8 @@
-/* global $ */
-
 (function () {
   "use strict";
 
   const state = {
-    mode: "group",           // "group" | "teacher"
+    mode: "group",           
     instituteId: null,
     course: null,
     groupId: null,
@@ -129,7 +127,6 @@
     const $ws = $("#weekSelect");
     $ws.empty();
 
-    // SSAU PDF modal contains 1..52, but pages can also have 0 неделя. We'll show 0..52.
     for (let w = 0; w <= 52; w++) {
       const label = (w === 0) ? "0 (неделя 0)" : String(w);
       const opt = $('<option></option>').val(w).text(label);
@@ -210,7 +207,6 @@
     const days = schedule.days;
     const slots = schedule.time_slots || [];
 
-    // Map: dayIndex -> map slotKey -> [lessons]
     const map = buildLessonsMap(schedule);
 
     let html = '<table class="scheduleTable"><thead><tr>';
@@ -222,15 +218,13 @@
     });
     html += '</tr></thead><tbody>';
 
-    // If SSAU returns slots, show all rows (including empty)
-    // Otherwise compute from lessons present
     const slotList = slots.length ? slots : computeSlotsFromLessons(days);
 
     slotList.forEach(function (slot) {
       const key = slot.time_start + "|" + slot.time_end;
       html += '<tr>';
       html += '<td class="timeCell"><div class="timeCell__start">' + escapeHtml(slot.time_start) + '</div>' +
-              '<div class="timeCell__end">' + escapeHtml(slot.time_end) + '</div></td>';
+        '<div class="timeCell__end">' + escapeHtml(slot.time_end) + '</div></td>';
 
       for (let di = 0; di < days.length; di++) {
         const lessons = (map[di] && map[di][key]) ? map[di][key] : [];
@@ -259,7 +253,6 @@
       ? schedule.time_slots
       : computeSlotsFromLessons(days);
 
-    // Fill day selector
     const $ds = $("#daySelect");
     $ds.empty();
     days.forEach(function (d, idx) {
@@ -282,9 +275,9 @@
       let html = '<div class="dayView">';
       html += '<div class="dayBlock">';
       html += '<div class="dayBlock__header">' +
-              '<div class="dayBlock__title">' + escapeHtml(capitalize(day.weekday)) + '</div>' +
-              (day.date ? '<div class="dayBlock__date">' + escapeHtml(day.date) + '</div>' : '') +
-              '</div>';
+        '<div class="dayBlock__title">' + escapeHtml(capitalize(day.weekday)) + '</div>' +
+        (day.date ? '<div class="dayBlock__date">' + escapeHtml(day.date) + '</div>' : '') +
+        '</div>';
 
       slotList.forEach(function (slot) {
         const key = slot.time_start + "|" + slot.time_end;
@@ -324,7 +317,6 @@
         map[di][key].push(l);
       });
 
-      // Keep consistent order: subgroup first if present
       Object.keys(map[di]).forEach(function (k) {
         map[di][k].sort(function (a, b) {
           const sa = (a.subgroup || "");
@@ -378,13 +370,13 @@
 
     return '' +
       '<div class="lessonCard">' +
-        '<div class="lessonCard__top">' +
-          '<span class="lessonType">' + type + '</span>' +
-          subgroup +
-        '</div>' +
-        '<div class="lessonCard__subject">' + escapeHtml(l.subject || "—") + '</div>' +
-        '<div class="lessonCard__meta">' + meta + '</div>' +
-        comment +
+      '<div class="lessonCard__top">' +
+      '<span class="lessonType">' + type + '</span>' +
+      subgroup +
+      '</div>' +
+      '<div class="lessonCard__subject">' + escapeHtml(l.subject || "—") + '</div>' +
+      '<div class="lessonCard__meta">' + meta + '</div>' +
+      comment +
       '</div>';
   }
 
@@ -496,7 +488,6 @@
       doSearch($input.val());
     });
 
-    // close suggest on outside click
     $(document).on("click", function (e) {
       if ($(e.target).closest(".teacherSearch").length === 0) {
         $box.hide().empty();
@@ -512,13 +503,11 @@
   }
 
   function initEvents() {
-    // mode switch
     $('input[name="mode"]').on("change", function () {
       const m = $('input[name="mode"]:checked').val();
       setMode(m);
     });
 
-    // group filters
     $("#instituteSelect").on("change", function () {
       const id = parseInt($(this).val(), 10);
       state.instituteId = isNaN(id) ? null : id;
@@ -556,7 +545,6 @@
       loadSchedule("group", state.groupId, null);
     });
 
-    // week controls
     $("#prevWeekBtn").on("click", function () {
       if (!state.schedule) return;
       const w = state.schedule.prev_week;
@@ -580,13 +568,11 @@
       else loadSchedule("teacher", state.teacherId, w);
     });
 
-    // click teacher inside schedule -> switch to teacher mode and load same week
     $("#scheduleContainer").on("click", "a.teacherLink", function (e) {
       e.preventDefault();
       const staffId = parseInt($(this).attr("data-staff-id"), 10);
       if (!staffId) return;
 
-      // switch UI mode
       $('input[name="mode"][value="teacher"]').prop("checked", true);
       setMode("teacher");
 
@@ -599,7 +585,6 @@
       loadSchedule("teacher", staffId, currentWeek);
     });
 
-    // re-render on resize (switch desktop/mobile)
     let lastMobile = isMobile();
     $(window).on("resize", debounce(function () {
       const nowMobile = isMobile();
@@ -611,7 +596,6 @@
   }
 
   $(function () {
-    // init
     setMode("group");
     initTeacherSearch();
     initEvents();

@@ -11,6 +11,8 @@ from bs4 import BeautifulSoup
 
 @dataclass
 class ParsedLesson:
+    """One lesson parsed from ``div.schedule__lesson`` (time comes from the row slot)."""
+
     time_start: str
     time_end: str
     subject: str
@@ -24,6 +26,8 @@ class ParsedLesson:
 
 @dataclass
 class ParsedDay:
+    """One day column: weekday label, date, and accumulated lessons."""
+
     weekday: str
     date: Optional[str]
     date_iso: Optional[str]
@@ -32,6 +36,8 @@ class ParsedDay:
 
 @dataclass
 class ParsedSchedule:
+    """Full schedule for the displayed week plus unique lesson time intervals."""
+
     week_number: Optional[int]
     week_label: Optional[str]
     week_dates: Optional[str]
@@ -41,16 +47,18 @@ class ParsedSchedule:
     next_week: Optional[int]
     entity_name: str
     days: List[ParsedDay]
-    time_slots: List[Tuple[str, str]]  # (start,end) in appearance order
+    time_slots: List[Tuple[str, str]]  
 
 
 def _text(el) -> str:
+    """Concatenate text from a BeautifulSoup node with space separators and strip."""
     if not el:
         return ""
     return el.get_text(" ", strip=True)
 
 
 def _parse_ddmmyyyy(s: str) -> Optional[datetime]:
+    """Parse a DD.MM.YYYY date string; return None on failure."""
     s = (s or "").strip()
     try:
         return datetime.strptime(s, "%d.%m.%Y")
@@ -59,10 +67,12 @@ def _parse_ddmmyyyy(s: str) -> Optional[datetime]:
 
 
 def _to_iso(dt: Optional[datetime]) -> Optional[str]:
+    """Format a datetime as YYYY-MM-DD."""
     return dt.date().isoformat() if dt else None
 
 
 def _extract_week_from_href(href: str) -> Optional[int]:
+    """Read ``selectedWeek`` from prev/next week navigation link query strings."""
     if not href:
         return None
     try:
@@ -76,17 +86,21 @@ def _extract_week_from_href(href: str) -> Optional[int]:
 
 def parse_schedule(html: str) -> ParsedSchedule:
     """
-    Parses SSAU расписание page (group or teacher).
+    Parse group or teacher timetable HTML from ssau.ru.
 
-    Observed markup (2025-2026 academic year):
-      - container: div.container.timetable (or a div with class containing "timetable")
-      - week navigation:
-          .week-nav-current_week, .week-nav-prev, .week-nav-next
-      - schedule grid:
-          .schedule__items with direct children:
-            header row: several div.schedule__item.schedule__head ("Время" + day heads)
-            repeated blocks: div.schedule__time + N day cells (div.schedule__item)
-          each day cell contains K div.schedule__lesson (K can be >1 for subgroup case)
+    Container lookup tolerates ``div.container.timetable`` or any div whose class
+    contains ``timetable``. Grid: ``.schedule__items`` with day headers, then
+    repeating rows of ``schedule__time`` plus N day cells; a cell may hold several
+    ``.schedule__lesson`` nodes for different subgroups.
+
+    Args:
+        html: Response body for ``...?groupId=`` or ``...?staffId=`` (with optional week params).
+
+    Returns:
+        ``ParsedSchedule`` with days, time slots, and week metadata filled in.
+
+    Raises:
+        ValueError: Timetable container or grid structure is missing or invalid.
     """
     soup = BeautifulSoup(html, "lxml")
 
@@ -94,13 +108,11 @@ def parse_schedule(html: str) -> ParsedSchedule:
     if not container:
         raise ValueError("SSAU: не найден контейнер timetable")
 
-    # entity name: prefer H2 inside timetable
     entity_name = ""
     h2 = container.find("h2")
     if h2:
         entity_name = _text(h2)
     if not entity_name:
-        # fallback: from h1 after 'Расписание, '
         h1 = container.find("h1")
         if h1:
             t = _text(h1)
@@ -108,7 +120,6 @@ def parse_schedule(html: str) -> ParsedSchedule:
     if not entity_name:
         entity_name = "—"
 
-    # week
     week_label = _text(container.select_one(".week-nav-current_week"))
     week_number = None
     if week_label:
@@ -119,7 +130,6 @@ def parse_schedule(html: str) -> ParsedSchedule:
     prev_week = _extract_week_from_href((container.select_one(".week-nav-prev") or {}).get("href") if container.select_one(".week-nav-prev") else "")
     next_week = _extract_week_from_href((container.select_one(".week-nav-next") or {}).get("href") if container.select_one(".week-nav-next") else "")
 
-    # schedule grid container
     schedule_items = container.select_one(".schedule .schedule__items") or container.select_one(".schedule__items")
     if not schedule_items:
         raise ValueError("SSAU: не найден блок расписания schedule__items")
@@ -134,7 +144,6 @@ def parse_schedule(html: str) -> ParsedSchedule:
             first_time_idx = idx
             break
 
-    # header cells
     header_cells: List = []
     i = 0
     while i < len(children):
@@ -145,18 +154,15 @@ def parse_schedule(html: str) -> ParsedSchedule:
         else:
             break
 
-    # Fallback if schedule__head class changes: assume header is everything before first time block
     if len(header_cells) < 2:
         if first_time_idx is None or first_time_idx < 2:
             raise ValueError("SSAU: не удалось извлечь заголовки дней недели (нет schedule__head и нет schedule__time)")
         header_cells = children[:first_time_idx]
         i = first_time_idx
 
-    # Ensure i points at first time block when possible
     if first_time_idx is not None:
         i = first_time_idx
 
-    # day heads: skip 'Время' cell (usually first)
     if len(header_cells) < 2:
         raise ValueError("SSAU: слишком мало заголовков в расписании")
     day_headers = header_cells[1:]
@@ -165,7 +171,6 @@ def parse_schedule(html: str) -> ParsedSchedule:
     for dh in day_headers:
         text_dh = _text(dh)
 
-        # Expect: "понедельник 23.03.2026"
         date_match = re.search(r"(\d{2}\.\d{2}\.\d{4})", text_dh)
         date_str = date_match.group(1) if date_match else None
         dt = _parse_ddmmyyyy(date_str or "") if date_str else None
@@ -173,18 +178,15 @@ def parse_schedule(html: str) -> ParsedSchedule:
         weekday = text_dh.replace(date_str, "").strip() if date_str else text_dh.strip()
         weekday = re.sub(r"\s+", " ", weekday)
 
-        # Guard: if weekday accidentally equals "Время" due to weird markup, keep but don't crash
         days.append(ParsedDay(weekday=weekday or "—", date=date_str, date_iso=_to_iso(dt), lessons=[]))
 
     time_slots: List[Tuple[str, str]] = []
 
-    # iterate time slots: [schedule__time] + N day cells
     while i < len(children):
         time_block = children[i]
         i += 1
 
         if "schedule__time" not in (time_block.get("class") or []):
-            # If markup has extra nodes, skip until first schedule__time
             continue
 
         time_start, time_end = _parse_time_block(time_block)
@@ -202,7 +204,6 @@ def parse_schedule(html: str) -> ParsedSchedule:
             if lessons:
                 days[day_idx].lessons.extend(lessons)
 
-    # compute week dates by min/max day dates
     parsed_dates = [_parse_ddmmyyyy(d.date or "") for d in days if d.date]
     parsed_dates = [d for d in parsed_dates if d]
     week_dates = None
@@ -230,12 +231,16 @@ def parse_schedule(html: str) -> ParsedSchedule:
 
 
 def _parse_time_block(time_block) -> Tuple[str, str]:
+    """
+    Extract lesson start and end times from a ``.schedule__time`` block.
+
+    Fallback: first two H:MM / HH:MM matches anywhere in the block text.
+    """
     times = [t.get_text(" ", strip=True) for t in time_block.select(".schedule__time-item")]
     times = [t for t in times if re.search(r"\b\d{1,2}:\d{2}\b", t)]
     if len(times) >= 2:
         return times[0], times[1]
 
-    # fallback: extract from block text
     tt = _text(time_block)
     m = re.findall(r"\b\d{1,2}:\d{2}\b", tt)
     m = (m + ["", ""])[:2]
@@ -243,7 +248,11 @@ def _parse_time_block(time_block) -> Tuple[str, str]:
 
 
 def _parse_cell_lessons(cell, time_start: str, time_end: str) -> List[ParsedLesson]:
-    # Empty cell can contain whitespace only
+    """
+    All lessons in one day cell (multiple entries mean different subgroups/options).
+
+    Fills subject, type, room, teacher/group lists, and subgroup caption.
+    """
     lesson_divs = cell.find_all("div", class_="schedule__lesson", recursive=False)
     if not lesson_divs:
         return []
@@ -260,11 +269,9 @@ def _parse_cell_lessons(cell, time_start: str, time_end: str) -> List[ParsedLess
         subgroup = _parse_subgroup(ld)
         comment = _text(ld.select_one(".schedule__comment")) or None
 
-        # avoid duplicating subgroup info in comment
         if comment and re.search(r"Подгрупп", comment, flags=re.IGNORECASE):
             comment = None
 
-        # final fallbacks: sometimes discipline is the first .body-text
         if not subject:
             bt = ld.select_one(".body-text")
             subject = _text(bt)
@@ -290,6 +297,11 @@ def _parse_cell_lessons(cell, time_start: str, time_end: str) -> List[ParsedLess
 
 
 def _parse_teachers(lesson_div) -> List[dict]:
+    """
+    Teachers as ``{"staff_id": int | None, "name": str}``.
+
+    ``staffId=`` links populate id; otherwise only block text; duplicates collapse.
+    """
     teacher_block = lesson_div.select_one(".schedule__teacher")
     if not teacher_block:
         return []
@@ -310,12 +322,10 @@ def _parse_teachers(lesson_div) -> List[dict]:
             teachers.append({"staff_id": staff_id, "name": name})
 
     if not teachers:
-        # sometimes teacher is plain text
         name = _text(teacher_block)
         if name:
             teachers.append({"staff_id": None, "name": name})
 
-    # de-dup
     uniq = {}
     for t in teachers:
         key = (t.get("staff_id"), t.get("name"))
@@ -324,6 +334,12 @@ def _parse_teachers(lesson_div) -> List[dict]:
 
 
 def _parse_groups(lesson_div) -> List[dict]:
+    """
+    Groups/stream from ``.schedule__groups`` via ``groupId=`` links or plain text.
+
+    Returns:
+        List of ``{"group_id": int | None, "name": str}`` without duplicates.
+    """
     groups_block = lesson_div.select_one(".schedule__groups")
     if not groups_block:
         return []
@@ -344,7 +360,6 @@ def _parse_groups(lesson_div) -> List[dict]:
             groups.append({"group_id": group_id, "name": name})
 
     if not groups:
-        # sometimes groups are plain text
         text = _text(groups_block)
         if text:
             for part in re.split(r"\s{2,}|\n|,|;", text):
@@ -352,7 +367,6 @@ def _parse_groups(lesson_div) -> List[dict]:
                 if p:
                     groups.append({"group_id": None, "name": p})
 
-    # de-dup
     uniq = {}
     for g in groups:
         key = (g.get("group_id"), g.get("name"))
@@ -361,6 +375,7 @@ def _parse_groups(lesson_div) -> List[dict]:
 
 
 def _parse_subgroup(lesson_div) -> Optional[str]:
+    """Subgroup label from ``span.caption-text`` when it marks a subgroup assignment."""
     for span in lesson_div.select("span.caption-text"):
         t = _text(span)
         if not t:

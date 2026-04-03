@@ -13,6 +13,8 @@ SSAU_BASE = "https://ssau.ru"
 
 @dataclass(frozen=True)
 class SearchItem:
+    """One search result (group or teacher) from the ``/rasp/search`` JSON response."""
+
     id: int
     name: str
     type: Literal["group", "teacher"]
@@ -21,7 +23,7 @@ class SearchItem:
 
 class SsauClient:
     """
-    Thin client for ssau.ru endpoints used by расписание.
+    Thin client for ssau.ru endpoints used by the timetable feature.
 
     Note on /rasp/search:
     The SSAU timetable select (select2) posts to /rasp/search with:
@@ -31,6 +33,10 @@ class SsauClient:
     """
 
     def __init__(self, timeout_seconds: float = 25.0) -> None:
+        """
+        Args:
+            timeout_seconds: HTTP request timeout when talking to ssau.ru.
+        """
         self._client = httpx.AsyncClient(
             headers={
                 "User-Agent": "ssau-schedule-proxy/1.0 (+https://ssau.ru/)",
@@ -41,18 +47,20 @@ class SsauClient:
             follow_redirects=True,
         )
 
-        # Cached CSRF token required for POST /rasp/search
         self._cached_csrf: Optional[str] = None
 
     async def aclose(self) -> None:
+        """Close the underlying ``httpx.AsyncClient``."""
         await self._client.aclose()
 
     async def fetch_html(self, url: str) -> str:
+        """GET a page; raises ``httpx.HTTPStatusError`` on non-success status."""
         r = await self._client.get(url)
         r.raise_for_status()
         return r.text
 
     async def _post_form_json(self, url: str, form: Dict[str, str], headers: Dict[str, str]):
+        """POST ``application/x-www-form-urlencoded`` and parse the body as JSON."""
         r = await self._client.post(url, data=form, headers=headers)
         r.raise_for_status()
         return r.json()
@@ -66,10 +74,8 @@ class SsauClient:
             return self._cached_csrf
 
         html = await self.fetch_html(urljoin(SSAU_BASE, "/rasp"))
-        # Token is usually early in the document head, but we don't assume exact order.
         m = re.search(r'name="csrf-token"\s+content="([^"]+)"', html, flags=re.IGNORECASE)
         if not m:
-            # Some pages render it as name='csrf-token'
             m = re.search(r"name='csrf-token'\s+content='([^']+)'", html, flags=re.IGNORECASE)
         if not m:
             raise RuntimeError("SSAU: не удалось найти csrf-token на странице /rasp")
@@ -99,7 +105,6 @@ class SsauClient:
                 )
                 return _parse_search_items(data)
             except httpx.HTTPStatusError as e:
-                # CSRF/cookie can expire — refresh once
                 if e.response.status_code in (403, 419) and attempt == 0:
                     self._cached_csrf = None
                     try:
@@ -113,14 +118,14 @@ class SsauClient:
 
     async def get_institutes(self) -> List[Tuple[int, str, str]]:
         """
-        Parse https://ssau.ru/rasp and extract institutes/faculties list.
-        Link format: /rasp/faculty/<facultyId>?course=1
-        Returns: list of (facultyId, name, absolute url)
+        Parse ``/rasp/faculty/<id>`` links from the main timetable page.
+
+        Returns:
+            Tuples ``(facultyId, name, absolute_url)`` sorted by name (case-insensitive).
         """
         html = await self.fetch_html(urljoin(SSAU_BASE, "/rasp"))
         soup = BeautifulSoup(html, "lxml")
 
-        # Prefer the block under header "Институты и факультеты", but keep fallback:
         links = soup.select('a[href*="/rasp/faculty/"]')
         out: Dict[int, Tuple[int, str, str]] = {}
         for a in links:
@@ -140,7 +145,7 @@ class SsauClient:
 
     async def get_faculty_available_courses(self, faculty_id: int) -> List[int]:
         """
-        Faculty page has tabs like "1 курс", "2 курс"... Linking to ?course=N.
+        Discover course numbers from a faculty page (tabs link with ``?course=N``).
         """
         url = urljoin(SSAU_BASE, f"/rasp/faculty/{faculty_id}?course=1")
         html = await self.fetch_html(url)
@@ -158,13 +163,18 @@ class SsauClient:
             except Exception:
                 continue
 
-        # Fallback: if no tabs found, at least allow course=1
         if not courses:
             courses.add(1)
 
         return sorted(courses)
 
     async def get_groups_for_faculty(self, faculty_id: int, course: int) -> List[Tuple[int, str, str]]:
+        """
+        Extract groups from the faculty page for a given course.
+
+        Returns:
+            Tuples ``(groupId, group_name, url_with_groupId)``.
+        """
         url = urljoin(SSAU_BASE, f"/rasp/faculty/{faculty_id}?course={course}")
         html = await self.fetch_html(url)
         soup = BeautifulSoup(html, "lxml")
@@ -191,6 +201,12 @@ class SsauClient:
 
 
 def _parse_search_items(data) -> List[SearchItem]:
+    """
+    Parse the JSON array of ``{id, url, text}`` objects from ``/rasp/search``.
+
+    Item kind (group vs teacher) is inferred from ``groupId=`` / ``staffId=`` in
+    ``url``, with a small fallback heuristic.
+    """
     items: List[SearchItem] = []
     if not isinstance(data, list):
         return items
@@ -213,7 +229,6 @@ def _parse_search_items(data) -> List[SearchItem]:
         elif "staffId=" in url:
             type_ = "teacher"
         else:
-            # heuristic fallback
             type_ = "teacher" if "staff" in url.lower() else "group"
 
         items.append(SearchItem(id=id_, name=name, type=type_, url=url))

@@ -1,5 +1,6 @@
 <!doctype html>
 <html lang="ru">
+
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
@@ -7,12 +8,12 @@
   <link rel="stylesheet" href="/static/styles.css" />
   <link rel="preconnect" href="https://code.jquery.com" crossorigin>
 </head>
+
 <body>
   <header class="topbar">
     <div class="topbar__inner">
       <div class="brand">
         <div class="brand__title">Расписание SSAU</div>
-        <div class="brand__subtitle">через JSON API вашего FastAPI-сервера</div>
       </div>
 
       <div class="mode">
@@ -62,7 +63,8 @@
         <div class="field field--grow">
           <label class="field__label" for="teacherInput">Преподаватель</label>
           <div class="teacherSearch">
-            <input id="teacherInput" class="field__control" type="text" placeholder="Начните вводить фамилию…" autocomplete="off" />
+            <input id="teacherInput" class="field__control" type="text" placeholder="Начните вводить фамилию…"
+              autocomplete="off" />
             <input id="teacherId" type="hidden" value="" />
             <div id="teacherSuggest" class="teacherSuggest" style="display:none;"></div>
           </div>
@@ -111,10 +113,9 @@
     </div>
   </footer>
 
-  <!-- jQuery -->
   <script src="https://code.jquery.com/jquery-3.7.1.min.js"
-          integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
-          crossorigin="anonymous"></script>
+    integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
   <script src="/static/app.js"></script>
 </body>
+
 </html>

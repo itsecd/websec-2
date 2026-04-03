@@ -25,11 +25,13 @@ APP_ROOT = os.path.dirname(os.path.abspath(__file__))
 PROJECT_ROOT = os.path.dirname(APP_ROOT)
 STATIC_DIR = os.path.join(PROJECT_ROOT, "static")
 
-app = FastAPI(title="SSAU Schedule (FastAPI proxy)", version="1.0.0")
+app = FastAPI(
+    title="SSAU Schedule (FastAPI proxy)",
+    version="1.0.0",
+)
 
 ssau = SsauClient(timeout_seconds=25.0)
 
-# Caches (in-memory)
 institutes_cache = AsyncTTLCache(ttl_seconds=12 * 60 * 60, max_items=5)
 faculty_courses_cache = AsyncTTLCache(ttl_seconds=12 * 60 * 60, max_items=256)
 faculty_groups_cache = AsyncTTLCache(ttl_seconds=6 * 60 * 60, max_items=1024)
@@ -39,19 +41,21 @@ schedule_cache = AsyncTTLCache(ttl_seconds=5 * 60, max_items=2048)
 
 @app.on_event("shutdown")
 async def _shutdown():
+    """Close the SSAU HTTP client on application shutdown."""
     await ssau.aclose()
 
 
-# Static frontend
 app.mount("/static", StaticFiles(directory=STATIC_DIR), name="static")
 
 
 @app.get("/")
 async def index():
+    """Serve the SPA shell at `static/index.html`."""
     return FileResponse(os.path.join(STATIC_DIR, "index.html"))
 
 
 async def _get_institutes_cached() -> InstitutesResponse:
+    """Cached faculty list from `/rasp` as an ``InstitutesResponse``."""
     async def _fetch():
         items = await ssau.get_institutes()
         institutes = [{"id": i, "name": n, "url": u} for (i, n, u) in items]
@@ -61,6 +65,7 @@ async def _get_institutes_cached() -> InstitutesResponse:
 
 
 async def _get_courses_cached(institute_id: int) -> list[int]:
+    """Course numbers for a faculty, extracted from `?course=N` links on the page."""
     async def _fetch():
         return await ssau.get_faculty_available_courses(institute_id)
 
@@ -68,6 +73,7 @@ async def _get_courses_cached(institute_id: int) -> list[int]:
 
 
 async def _get_groups_cached(institute_id: int, course: int) -> list[dict]:
+    """Groups for the chosen faculty course: id, name, url (from `groupId=` links)."""
     async def _fetch():
         items = await ssau.get_groups_for_faculty(institute_id, course)
         return [{"id": gid, "name": name, "url": url} for (gid, name, url) in items]
@@ -77,6 +83,11 @@ async def _get_groups_cached(institute_id: int, course: int) -> list[dict]:
 
 @app.get("/api/institutes", response_model=InstitutesResponse)
 async def api_institutes():
+    """
+    Institute/faculty directory from the main timetable page (`/rasp`).
+
+    Returns facultyId, display name, and absolute faculty page URL.
+    """
     return await _get_institutes_cached()
 
 
@@ -85,6 +96,12 @@ async def api_groups(
     institute_id: int = Query(..., description="facultyId из /rasp/faculty/<id>"),
     course: Optional[int] = Query(None, ge=0, le=12, description="номер курса (как в SSAU: ?course=N)"),
 ):
+    """
+    Faculty groups for a course.
+
+    If ``course`` is omitted, the response contains only ``available_courses`` and
+    an empty ``groups`` list so the UI can pick a course first.
+    """
     available_courses = await _get_courses_cached(institute_id)
 
     if course is None:
@@ -111,6 +128,11 @@ async def api_groups(
 async def api_teachers(
     q: str = Query(..., min_length=2, max_length=64, description="строка поиска (>=2 символа)"),
 ):
+    """
+    Teacher search via the site API (`POST /rasp/search`).
+
+    Only items classified as teachers (URLs with ``staffId``) are returned.
+    """
     q_norm = q.strip()
 
     async def _fetch():
@@ -130,6 +152,12 @@ async def api_schedule_group(
     group_id: int = Query(..., description="groupId"),
     week: Optional[int] = Query(None, description="номер недели (selectedWeek)"),
 ):
+    """
+    Group timetable for one week.
+
+    ``week=None`` loads the page without ``selectedWeek`` (SSAU’s default week).
+    Otherwise ``selectedWeek`` and ``selectedWeekday=1`` are appended like on the site.
+    """
     week_key = "current" if week is None else str(week)
     cache_key = f"group:{group_id}:{week_key}"
 
@@ -185,6 +213,11 @@ async def api_schedule_teacher(
     staff_id: int = Query(..., description="staffId"),
     week: Optional[int] = Query(None, description="номер недели (selectedWeek)"),
 ):
+    """
+    Teacher timetable for one week.
+
+    Week handling matches ``api_schedule_group``; response ``mode`` is ``teacher``.
+    """
     week_key = "current" if week is None else str(week)
     cache_key = f"teacher:{staff_id}:{week_key}"
 
@@ -236,6 +269,13 @@ async def api_schedule_teacher(
 
 
 async def _schedule_try(cache_key: str, factory):
+    """
+    Cache ``factory`` output; map network and other failures to JSON 502/500.
+
+    Args:
+        cache_key: Key in ``schedule_cache``.
+        factory: Async no-arg callable returning a ``ScheduleOut``.
+    """
     try:
         return await schedule_cache.get_or_set(cache_key, factory)
     except httpx.HTTPStatusError as e:
@@ -258,6 +298,12 @@ async def api_weeks_current(
     group_id: Optional[int] = Query(None, description="Если указан — определяем текущую неделю по этой группе"),
     staff_id: Optional[int] = Query(None, description="Если указан — определяем текущую неделю по этому преподавателю"),
 ):
+    """
+    Current week metadata (label, number, dates) from timetable HTML.
+
+    With no parameters, resolves a default URL: first group of the first faculty
+    with available courses, otherwise falls back to ``/rasp``.
+    """
     if group_id is not None and staff_id is not None:
         return JSONResponse(
             status_code=400,
