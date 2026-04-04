@@ -15,9 +15,18 @@ type StationMapProps = {
   onStationSelect: (station: StationSearchItem) => void;
 };
 
-const selectedIcon = new L.Icon({
+const defaultIcon = new L.Icon({
   iconUrl: "https://unpkg.com/leaflet@1.9.4/dist/images/marker-icon.png",
   iconRetinaUrl: "https://unpkg.com/leaflet@1.9.4/dist/images/marker-icon-2x.png",
+  shadowUrl: "https://unpkg.com/leaflet@1.9.4/dist/images/marker-shadow.png",
+  iconSize: [25, 41],
+  iconAnchor: [12, 41]
+});
+
+const selectedIcon = new L.Icon({
+  iconUrl: "https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-red.png",
+  iconRetinaUrl:
+    "https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-red.png",
   shadowUrl: "https://unpkg.com/leaflet@1.9.4/dist/images/marker-shadow.png",
   iconSize: [25, 41],
   iconAnchor: [12, 41]
@@ -44,7 +53,7 @@ export function StationMap({
             <Marker
               key={station.id}
               position={[station.latitude, station.longitude]}
-              {...(selectedStation?.id === station.id ? { icon: selectedIcon } : {})}
+              icon={selectedStation?.id === station.id ? selectedIcon : defaultIcon}
               eventHandlers={{
                 click: () => onStationSelect(station)
               }}
