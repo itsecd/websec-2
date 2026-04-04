@@ -17,13 +17,21 @@ export default async function HomePage({ searchParams }: PageProps) {
   ]);
 
   return (
-    <Container maxWidth="lg" sx={{ py: { xs: 2, md: 4 } }}>
-      <Stack spacing={3}>
+    <Container
+      maxWidth="lg"
+      sx={{
+        py: { xs: 1.5, md: 2.5 },
+        minHeight: "100svh",
+        display: "flex",
+        alignItems: "stretch"
+      }}
+    >
+      <Stack spacing={2} sx={{ flex: 1, minHeight: 0 }}>
         <Stack spacing={1}>
-          <Typography variant="h3" component="h1" fontWeight={700}>
+          <Typography variant="h4" component="h1" fontWeight={700}>
             Прибывалка для электричек
           </Typography>
-          <Typography color="text.secondary">
+          <Typography color="text.secondary" sx={{ fontSize: { xs: 14, md: 16 } }}>
             Поиск станций по названию и карте, расписание по станции и между двумя остановками.
           </Typography>
         </Stack>

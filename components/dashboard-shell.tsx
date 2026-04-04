@@ -12,6 +12,7 @@ import {
   Tabs,
   Typography
 } from "@mui/material";
+import { styled } from "@mui/material/styles";
 import { useEffect, useState } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 import { RouteSearchForm } from "@/components/route-search-form";
@@ -60,8 +61,8 @@ export function DashboardShell({
   return (
     <Grid container spacing={3}>
       <Grid size={{ xs: 12 }}>
-        <Stack spacing={3}>
-          <Card elevation={0}>
+        <ShellStack spacing={2}>
+          <TabsCard elevation={0}>
             <CardContent>
               <Stack spacing={2}>
                 <Typography variant="h5" fontWeight={700}>
@@ -81,15 +82,19 @@ export function DashboardShell({
                     value="route"
                   />
                 </Tabs>
-                <Box hidden={tab !== "station"}>
-                  <StationBoardForm initialParams={initialParams} />
-                </Box>
-                <Box hidden={tab !== "route"}>
-                  <RouteSearchForm initialParams={initialParams} />
-                </Box>
               </Stack>
             </CardContent>
-          </Card>
+          </TabsCard>
+          {tab === "station" ? (
+            <Box>
+              <StationBoardForm initialParams={initialParams} />
+            </Box>
+          ) : null}
+          {tab === "route" ? (
+            <Box>
+              <RouteSearchForm initialParams={initialParams} />
+            </Box>
+          ) : null}
           <SchedulePanel
             mode={tab}
             stationSchedule={stationSchedule}
@@ -98,8 +103,17 @@ export function DashboardShell({
             fromTitle={initialParams.fromStationTitle}
             toTitle={initialParams.toStationTitle}
           />
-        </Stack>
+        </ShellStack>
       </Grid>
     </Grid>
   );
 }
+
+const ShellStack = styled(Stack)({
+  minHeight: 0
+});
+
+const TabsCard = styled(Card)({
+  position: "relative",
+  zIndex: 1300
+});

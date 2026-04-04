@@ -1,11 +1,11 @@
 "use client";
 
 import SearchRoundedIcon from "@mui/icons-material/SearchRounded";
+import { styled } from "@mui/material/styles";
 import {
   Alert,
   Button,
-  Card,
-  CardContent,
+  Paper,
   Stack,
   TextField,
   Typography
@@ -15,6 +15,7 @@ import { useState } from "react";
 import { StationAutocomplete } from "@/components/station-autocomplete";
 import { StationMapPicker } from "@/components/station-map-picker";
 import { SearchParams } from "@/lib/search-params";
+import { buildStationBoardQuery, createInitialStation } from "@/lib/station-form";
 import { StationSearchItem } from "@/lib/types";
 
 type StationBoardFormProps = {
@@ -24,16 +25,7 @@ type StationBoardFormProps = {
 export function StationBoardForm({ initialParams }: StationBoardFormProps) {
   const router = useRouter();
   const [station, setStation] = useState<StationSearchItem | null>(
-    initialParams.stationId && initialParams.stationTitle
-      ? {
-          id: initialParams.stationId,
-          title: initialParams.stationTitle,
-          regionTitle: null,
-          settlementTitle: null,
-          latitude: null,
-          longitude: null
-        }
-      : null
+    createInitialStation(initialParams.stationId, initialParams.stationTitle)
   );
   const [date, setDate] = useState(initialParams.date);
 
@@ -42,21 +34,17 @@ export function StationBoardForm({ initialParams }: StationBoardFormProps) {
       return;
     }
 
-    const params = new URLSearchParams();
-    params.set("mode", "station");
-    params.set("stationId", station.id);
-    params.set("stationTitle", station.title);
-    params.set("date", date);
-    router.push(`/?${params.toString()}`);
+    router.push(`/?${buildStationBoardQuery(station, date)}`);
   };
 
   return (
     <Stack spacing={2.5}>
       <Alert severity="info">Выберите станцию из поиска или нажмите на карту, чтобы найти ближайшие платформы.</Alert>
-      <Card variant="outlined">
-        <CardContent>
+      <HeroSection>
+        <StationMapPicker onSelect={setStation} selectedStation={station} />
+        <OverlayFormCard elevation={8}>
           <Stack spacing={2}>
-            <Typography fontWeight={600}>Станция</Typography>
+            <Typography fontWeight={700}>Станция</Typography>
             <StationAutocomplete
               label="Название станции"
               value={station}
@@ -71,21 +59,51 @@ export function StationBoardForm({ initialParams }: StationBoardFormProps) {
               InputLabelProps={{ shrink: true }}
               fullWidth
             />
-            <Stack direction={{ xs: "column", sm: "row" }} spacing={1.5}>
-              <Button
-                variant="contained"
-                size="large"
-                startIcon={<SearchRoundedIcon />}
-                disabled={!station}
-                onClick={handleSubmit}
-              >
-                Показать расписание
-              </Button>
-            </Stack>
+            <Button
+              variant="contained"
+              size="medium"
+              startIcon={<SearchRoundedIcon />}
+              disabled={!station}
+              onClick={handleSubmit}
+            >
+              Показать расписание
+            </Button>
           </Stack>
-        </CardContent>
-      </Card>
-      <StationMapPicker onSelect={setStation} selectedStation={station} />
+        </OverlayFormCard>
+      </HeroSection>
     </Stack>
   );
 }
+
+const HeroSection = styled("section")(({ theme }) => ({
+  position: "relative",
+  height: 430,
+  borderRadius: theme.spacing(2.5),
+  overflow: "hidden",
+  background: "linear-gradient(180deg, rgba(9, 30, 66, 0.12), rgba(9, 30, 66, 0.32))",
+  isolation: "isolate",
+  [theme.breakpoints.up("md")]: {
+    height: 460
+  }
+}));
+
+const OverlayFormCard = styled(Paper)(({ theme }) => ({
+  position: "absolute",
+  top: theme.spacing(2),
+  left: theme.spacing(2),
+  right: theme.spacing(2),
+  maxWidth: 320,
+  padding: theme.spacing(1.5),
+  borderRadius: theme.spacing(1.5),
+  backdropFilter: "blur(12px)",
+  backgroundColor: "rgba(255, 255, 255, 0.84)",
+  zIndex: 1200,
+  [theme.breakpoints.up("md")]: {
+    top: theme.spacing(3),
+    left: theme.spacing(3),
+    right: "auto",
+    width: 360,
+    maxWidth: 360,
+    padding: theme.spacing(2.5)
+  }
+}));

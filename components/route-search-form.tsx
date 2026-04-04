@@ -7,6 +7,7 @@ import { useRouter } from "next/navigation";
 import { useState } from "react";
 import { StationAutocomplete } from "@/components/station-autocomplete";
 import { SearchParams } from "@/lib/search-params";
+import { buildRouteQuery, createInitialStation } from "@/lib/station-form";
 import { StationSearchItem } from "@/lib/types";
 
 type RouteSearchFormProps = {
@@ -16,28 +17,10 @@ type RouteSearchFormProps = {
 export function RouteSearchForm({ initialParams }: RouteSearchFormProps) {
   const router = useRouter();
   const [fromStation, setFromStation] = useState<StationSearchItem | null>(
-    initialParams.fromStationId && initialParams.fromStationTitle
-      ? {
-          id: initialParams.fromStationId,
-          title: initialParams.fromStationTitle,
-          regionTitle: null,
-          settlementTitle: null,
-          latitude: null,
-          longitude: null
-        }
-      : null
+    createInitialStation(initialParams.fromStationId, initialParams.fromStationTitle)
   );
   const [toStation, setToStation] = useState<StationSearchItem | null>(
-    initialParams.toStationId && initialParams.toStationTitle
-      ? {
-          id: initialParams.toStationId,
-          title: initialParams.toStationTitle,
-          regionTitle: null,
-          settlementTitle: null,
-          latitude: null,
-          longitude: null
-        }
-      : null
+    createInitialStation(initialParams.toStationId, initialParams.toStationTitle)
   );
   const [date, setDate] = useState(initialParams.date);
 
@@ -46,14 +29,7 @@ export function RouteSearchForm({ initialParams }: RouteSearchFormProps) {
       return;
     }
 
-    const params = new URLSearchParams();
-    params.set("mode", "route");
-    params.set("fromStationId", fromStation.id);
-    params.set("fromStationTitle", fromStation.title);
-    params.set("toStationId", toStation.id);
-    params.set("toStationTitle", toStation.title);
-    params.set("date", date);
-    router.push(`/?${params.toString()}`);
+    router.push(`/?${buildRouteQuery(fromStation, toStation, date)}`);
   };
 
   const handleSwap = () => {
@@ -87,12 +63,12 @@ export function RouteSearchForm({ initialParams }: RouteSearchFormProps) {
             fullWidth
           />
           <Stack direction={{ xs: "column", sm: "row" }} spacing={1.5}>
-            <Button variant="outlined" size="large" startIcon={<SwapHorizRoundedIcon />} onClick={handleSwap}>
+            <Button variant="outlined" size="medium" startIcon={<SwapHorizRoundedIcon />} onClick={handleSwap}>
               Поменять станции
             </Button>
             <Button
               variant="contained"
-              size="large"
+              size="medium"
               startIcon={<SearchRoundedIcon />}
               disabled={!fromStation || !toStation}
               onClick={handleSubmit}

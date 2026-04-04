@@ -12,6 +12,7 @@ import {
   Stack,
   Typography
 } from "@mui/material";
+import { styled } from "@mui/material/styles";
 import { RouteScheduleResponse, StationScheduleResponse } from "@/lib/types";
 
 type SchedulePanelProps = {
@@ -37,7 +38,7 @@ export function SchedulePanel({
     }
 
     return (
-      <Card elevation={0}>
+      <ScheduleCard elevation={0}>
         <CardContent>
           <Stack spacing={2}>
             <Typography variant="h5" fontWeight={700}>
@@ -49,26 +50,27 @@ export function SchedulePanel({
             {stationSchedule.schedule.length === 0 ? (
               <Alert severity="info">На выбранную дату пригородных рейсов по станции не найдено.</Alert>
             ) : (
-              <List disablePadding>
+              <ScrollableList disablePadding>
                 {stationSchedule.schedule.map((item) => (
-                  <ListItem key={`${item.thread.uid}-${item.departure ?? item.arrival}`} sx={{ px: 0 }}>
+                  <ScheduleListItem key={`${item.thread.uid}-${item.departure ?? item.arrival}`}>
                     <ListItemText
                       primary={item.thread.title}
                       secondary={`${item.direction ?? "Без направления"} • ${
                         item.departure ? formatDateTime(item.departure) : "время не указано"
                       }`}
+                      secondaryTypographyProps={secondaryTypographyProps}
                     />
-                    <Stack direction="row" spacing={1} alignItems="center">
+                    <MetaStack direction={{ xs: "column", sm: "row" }} spacing={1} alignItems="center">
                       <Chip icon={<TrainRoundedIcon />} label={item.thread.number || "Без номера"} />
                       {item.platform ? <Chip icon={<AccessTimeRoundedIcon />} label={`Путь ${item.platform}`} /> : null}
-                    </Stack>
-                  </ListItem>
+                    </MetaStack>
+                  </ScheduleListItem>
                 ))}
-              </List>
+              </ScrollableList>
             )}
           </Stack>
         </CardContent>
-      </Card>
+      </ScheduleCard>
     );
   }
 
@@ -77,7 +79,7 @@ export function SchedulePanel({
   }
 
   return (
-    <Card elevation={0}>
+    <ScheduleCard elevation={0}>
       <CardContent>
         <Stack spacing={2}>
           <Typography variant="h5" fontWeight={700}>
@@ -87,24 +89,25 @@ export function SchedulePanel({
           {routeSchedule.segments.length === 0 ? (
             <Alert severity="info">На выбранную дату прямых пригородных рейсов между станциями не найдено.</Alert>
           ) : (
-            <List disablePadding>
+            <ScrollableList disablePadding>
               {routeSchedule.segments.map((segment) => (
-                <ListItem key={`${segment.thread.uid}-${segment.departure}`} sx={{ px: 0 }}>
+                <ScheduleListItem key={`${segment.thread.uid}-${segment.departure}`}>
                   <ListItemText
                     primary={segment.thread.title}
                     secondary={`${formatDateTime(segment.departure)} → ${formatDateTime(segment.arrival)}`}
+                    secondaryTypographyProps={secondaryTypographyProps}
                   />
-                  <Stack direction="row" spacing={1}>
+                  <MetaStack direction={{ xs: "column", sm: "row" }} spacing={1}>
                     <Chip icon={<AltRouteRoundedIcon />} label={segment.durationLabel} />
                     <Chip icon={<TrainRoundedIcon />} label={segment.thread.number || "Без номера"} />
-                  </Stack>
-                </ListItem>
+                  </MetaStack>
+                </ScheduleListItem>
               ))}
-            </List>
+            </ScrollableList>
           )}
         </Stack>
       </CardContent>
-    </Card>
+    </ScheduleCard>
   );
 }
 
@@ -131,3 +134,33 @@ function formatDateTime(value: string) {
     timeZone: "UTC"
   });
 }
+
+const ScheduleCard = styled(Card)({
+  minHeight: 0
+});
+
+const ScrollableList = styled(List)(({ theme }) => ({
+  maxHeight: 240,
+  overflowY: "auto",
+  paddingRight: theme.spacing(1),
+  [theme.breakpoints.up("md")]: {
+    maxHeight: 300
+  }
+}));
+
+const ScheduleListItem = styled(ListItem)({
+  paddingLeft: 0,
+  paddingRight: 0
+});
+
+const MetaStack = styled(Stack)(({ theme }) => ({
+  [theme.breakpoints.down("sm")]: {
+    alignItems: "flex-end"
+  }
+}));
+
+const secondaryTypographyProps = {
+  sx: {
+    wordBreak: "break-word"
+  }
+};

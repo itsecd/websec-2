@@ -31,6 +31,7 @@ export function StationAutocomplete({
   useEffect(() => {
     if (deferredInputValue.trim().length < 2) {
       setOptions([]);
+      setIsLoading(false);
       return;
     }
 
@@ -41,10 +42,10 @@ export function StationAutocomplete({
 
       try {
         const response = await fetch(`${endpoint}?q=${encodeURIComponent(deferredInputValue)}`);
-        const payload = (await response.json()) as { results: StationSearchItem[] };
+        const payload = (await response.json()) as { results?: StationSearchItem[] };
 
         if (!cancelled) {
-          setOptions(payload.results);
+          setOptions(Array.isArray(payload.results) ? payload.results : []);
         }
       } catch {
         if (!cancelled) {

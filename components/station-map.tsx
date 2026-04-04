@@ -40,8 +40,13 @@ export function StationMap({
   onStationSelect
 }: StationMapProps) {
   return (
-    <Box sx={{ height: 360, overflow: "hidden", borderRadius: 4 }}>
-      <MapContainer center={center} zoom={Number(process.env.NEXT_PUBLIC_DEFAULT_MAP_ZOOM ?? 11)} style={{ height: "100%", width: "100%" }}>
+    <Box sx={{ height: "100%", width: "100%", overflow: "hidden" }}>
+      <MapContainer
+        center={center}
+        zoom={Number(process.env.NEXT_PUBLIC_DEFAULT_MAP_ZOOM ?? 11)}
+        scrollWheelZoom
+        style={{ height: "100%", width: "100%" }}
+      >
         <TileLayer
           attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
@@ -90,6 +95,9 @@ function MapViewport({ center }: MapViewportProps) {
 
   useEffect(() => {
     map.setView(center);
+    window.setTimeout(() => {
+      map.invalidateSize();
+    }, 0);
   }, [center, map]);
 
   return null;
