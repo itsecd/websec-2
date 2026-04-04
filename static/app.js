@@ -181,7 +181,20 @@
       })
       .fail(function (xhr) {
         state.schedule = null;
-        setStatus("error", "Не удалось загрузить расписание: " + describeXhr(xhr));
+        resetWeekControls();
+
+        const isParseError = xhr.status === 500 || xhr.status === 502;
+        const errorCode = xhr.responseJSON && (xhr.responseJSON.error || "");
+        const isScheduleMissing =
+          isParseError ||
+          errorCode === "PARSE_ERROR" ||
+          errorCode === "SSAU_HTTP_ERROR";
+
+        if (isScheduleMissing) {
+          setStatus("idle", "Расписание пока не введено!");
+        } else {
+          setStatus("error", "Не удалось загрузить расписание: " + describeXhr(xhr));
+        }
       });
   }
 
