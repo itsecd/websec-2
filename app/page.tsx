@@ -29,10 +29,7 @@ export default async function HomePage({ searchParams }: PageProps) {
       <Stack spacing={2} sx={{ flex: 1, minHeight: 0 }}>
         <Stack spacing={1}>
           <Typography variant="h4" component="h1" fontWeight={700}>
-            Прибывалка для электричек
-          </Typography>
-          <Typography color="text.secondary" sx={{ fontSize: { xs: 14, md: 16 } }}>
-            Поиск станций по названию и карте, расписание по станции и между двумя остановками.
+            Рассписание поездов
           </Typography>
         </Stack>
         <DashboardShell

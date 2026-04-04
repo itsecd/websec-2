@@ -41,9 +41,6 @@ export function SchedulePanel({
       <ScheduleCard elevation={0}>
         <CardContent>
           <Stack spacing={2}>
-            <Typography variant="h5" fontWeight={700}>
-              Расписание по станции {stationTitle}
-            </Typography>
             <Typography color="text.secondary">
               Найдено рейсов: {stationSchedule.schedule.length}
             </Typography>

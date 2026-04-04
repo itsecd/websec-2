@@ -5,7 +5,6 @@ import "./globals.css";
 
 export const metadata: Metadata = {
   title: "Прибывалка для электричек",
-  description: "Веб-версия просмотра пригородных поездов на API Яндекс.Расписаний"
 };
 
 type RootLayoutProps = Readonly<{
