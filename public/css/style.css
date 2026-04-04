@@ -867,13 +867,20 @@ kbd {
   .schedule-title { font-size: 1.05rem; }
   .week-btn-current span { display: none; }
 
-  /* На мобилке прячем таблицу, показываем карточки */
   .schedule-table-wrap { display: none; }
   .day-cards-wrap { display: flex; flex-direction: column; gap: 12px; }
   .day-tabs-bar { display: flex; }
 
   .schedule-title-row { flex-direction: column; gap: 10px; }
   .week-nav { justify-content: flex-end; }
+
+  .site-footer-inner {
+    grid-template-columns: 1fr;
+    gap: 20px;
+    padding: 0 16px 20px;
+  }
+  .site-footer { margin-top: 24px; padding-top: 24px; }
+  .keyboard-hints { display: none; }
 }
 
 @media (max-width: 420px) {
