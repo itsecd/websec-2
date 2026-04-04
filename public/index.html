@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Расписание занятий Самарского университета — просмотр по группам и преподавателям">
+  <title>Расписание — Самарский университет</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+
+<noscript>
+  <div class="noscript-warn">
+    <i class="fa-solid fa-circle-exclamation"></i>
+    <span>Для работы сайта необходимо включить JavaScript в браузере.</span>
+  </div>
+</noscript>
+
+<header class="app-header">
+  <div class="header-inner">
+    <a class="header-brand" href="/">
+      <i class="fa-solid fa-calendar-days brand-icon"></i>
+      <div class="brand-text">
+        <span class="brand-title">Расписание</span>
+        <span class="brand-sub">Самарский университет</span>
+      </div>
+    </a>
+
+    <div class="header-search">
+      <div class="search-mode-tabs" role="group" aria-label="Режим поиска">
+        <button class="mode-tab active" data-mode="group" type="button">
+          <i class="fa-solid fa-users"></i>
+          <span>Группа</span>
+        </button>
+        <button class="mode-tab" data-mode="teacher" type="button">
+          <i class="fa-solid fa-chalkboard-user"></i>
+          <span>Преподаватель</span>
+        </button>
+      </div>
+      <div class="search-box">
+        <i class="fa-solid fa-magnifying-glass search-icon" aria-hidden="true"></i>
+        <input
+          type="search"
+          id="search-input"
+          class="search-input"
+          placeholder="Поиск группы..."
+          autocomplete="off"
+          aria-label="Поиск"
+          aria-autocomplete="list"
+          aria-controls="search-dropdown"
+        >
+        <button id="search-clear" class="search-clear" type="button" title="Очистить" aria-label="Очистить поиск">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+        <ul id="search-dropdown" class="search-dropdown" role="listbox" aria-label="Результаты поиска"></ul>
+      </div>
+    </div>
+
+    <button class="mobile-menu-btn" id="mobile-menu-btn" type="button" aria-label="Открыть меню" aria-expanded="false">
+      <i class="fa-solid fa-bars"></i>
+    </button>
+  </div>
+</header>
+
+<div class="mobile-panel" id="mobile-panel" aria-hidden="true">
+  <div class="mobile-panel-inner">
+    <div class="mobile-search-mode" role="group">
+      <button class="mode-tab active" data-mode="group" type="button">
+        <i class="fa-solid fa-users"></i>
+        <span>Группа</span>
+      </button>
+      <button class="mode-tab" data-mode="teacher" type="button">
+        <i class="fa-solid fa-chalkboard-user"></i>
+        <span>Преподаватель</span>
+      </button>
+    </div>
+    <div class="search-box">
+      <i class="fa-solid fa-magnifying-glass search-icon" aria-hidden="true"></i>
+      <input
+        type="search"
+        id="search-input-mobile"
+        class="search-input"
+        placeholder="Поиск..."
+        autocomplete="off"
+        aria-label="Поиск"
+      >
+      <ul id="search-dropdown-mobile" class="search-dropdown" role="listbox"></ul>
+    </div>
+  </div>
+</div>
+
+<main class="app-body">
+
+  <section class="state-empty" id="state-empty" aria-label="Начальный экран">
+    <div class="state-empty-inner">
+      <div class="state-icon">
+        <i class="fa-regular fa-calendar" aria-hidden="true"></i>
+      </div>
+      <h2 class="state-title">Выберите группу или преподавателя</h2>
+      <p class="state-desc">Воспользуйтесь поиском в верхней панели, чтобы найти расписание</p>
+      <div class="state-hints">
+        <div class="hint-card">
+          <i class="fa-solid fa-users hint-icon" aria-hidden="true"></i>
+          <div class="hint-card-body">
+            <strong>Группа</strong>
+            <p>Введите номер группы, например <em>6413-100503D</em></p>
+            <p class="hint-note">Можно искать по неполному номеру</p>
+          </div>
+        </div>
+        <div class="hint-card">
+          <i class="fa-solid fa-chalkboard-user hint-icon" aria-hidden="true"></i>
+          <div class="hint-card-body">
+            <strong>Преподаватель</strong>
+            <p>Введите фамилию преподавателя</p>
+            <p class="hint-note">Нажмите на имя преподавателя в расписании для быстрого перехода</p>
+          </div>
+        </div>
+      </div>
+      <div class="keyboard-hints">
+        <span class="kb-title">Клавиатурная навигация:</span>
+        <ul class="kb-list">
+          <li><kbd>↑</kbd><kbd>↓</kbd> <span>навигация по списку</span></li>
+          <li><kbd>Enter</kbd> <span>выбрать</span></li>
+          <li><kbd>Esc</kbd> <span>закрыть поиск</span></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="state-loading js-hidden" id="state-loading" aria-live="polite" aria-label="Загрузка">
+    <div class="spinner" role="status"></div>
+    <p>Загружаем расписание…</p>
+  </section>
+
+  <section class="state-error js-hidden" id="state-error" aria-live="assertive" aria-label="Ошибка">
+    <div class="state-error-inner">
+      <i class="fa-solid fa-triangle-exclamation error-icon" aria-hidden="true"></i>
+      <h3 id="error-title">Не удалось загрузить расписание</h3>
+      <p id="error-desc"></p>
+      <button class="btn-retry" id="btn-retry" type="button">
+        <i class="fa-solid fa-rotate-right" aria-hidden="true"></i>
+        <span>Попробовать снова</span>
+      </button>
+    </div>
+  </section>
+
+  <div class="schedule-container js-hidden" id="schedule-container">
+
+    <div class="schedule-header-card">
+      <div class="schedule-title-row">
+        <div class="schedule-title-info">
+          <h1 class="schedule-title" id="schedule-title">Расписание</h1>
+          <div class="schedule-meta">
+            <span class="meta-badge" id="meta-type"></span>
+            <span class="meta-week" id="meta-week"></span>
+          </div>
+        </div>
+        <nav class="week-nav" aria-label="Навигация по неделям">
+          <button class="week-btn" id="btn-prev-week" type="button" title="Предыдущая неделя" aria-label="Предыдущая неделя">
+            <i class="fa-solid fa-chevron-left" aria-hidden="true"></i>
+          </button>
+          <button class="week-btn week-btn-current" id="btn-current-week" type="button">
+            Текущая
+          </button>
+          <select class="week-select" id="week-select" aria-label="Выбор недели"></select>
+          <button class="week-btn" id="btn-next-week" type="button" title="Следующая неделя" aria-label="Следующая неделя">
+            <i class="fa-solid fa-chevron-right" aria-hidden="true"></i>
+          </button>
+        </nav>
+      </div>
+
+      <div class="legend" role="list" aria-label="Типы занятий">
+        <div class="legend-item" role="listitem">
+          <span class="legend-dot" data-type="1" aria-hidden="true"></span>
+          <span>Лекция</span>
+        </div>
+        <div class="legend-item" role="listitem">
+          <span class="legend-dot" data-type="2" aria-hidden="true"></span>
+          <span>Лабораторная</span>
+        </div>
+        <div class="legend-item" role="listitem">
+          <span class="legend-dot" data-type="3" aria-hidden="true"></span>
+          <span>Практика</span>
+        </div>
+        <div class="legend-item" role="listitem">
+          <span class="legend-dot" data-type="4" aria-hidden="true"></span>
+          <span>Другое</span>
+        </div>
+        <div class="legend-item" role="listitem">
+          <span class="legend-dot" data-type="5" aria-hidden="true"></span>
+          <span>Экзамен</span>
+        </div>
+        <div class="legend-item" role="listitem">
+          <span class="legend-dot" data-type="6" aria-hidden="true"></span>
+          <span>Зачёт</span>
+        </div>
+        <div class="legend-item" role="listitem">
+          <span class="legend-dot" data-type="7" aria-hidden="true"></span>
+          <span>Консультация</span>
+        </div>
+        <div class="legend-item" role="listitem">
+          <span class="legend-dot" data-type="0" aria-hidden="true"></span>
+          <span>Прочее</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="day-tabs-bar" id="day-tabs-bar" role="tablist" aria-label="Дни недели"></div>
+
+    <div class="schedule-table-wrap">
+      <table class="schedule-table" id="schedule-table" role="grid" aria-label="Расписание занятий">
+        <thead id="schedule-thead"></thead>
+        <tbody id="schedule-tbody"></tbody>
+      </table>
+    </div>
+
+    <div class="day-cards-wrap" id="day-cards-wrap" role="tabpanel"></div>
+
+  </div>
+
+</main>
+
+<footer class="site-footer">
+  <div class="site-footer-inner">
+    <div class="footer-col">
+      <div class="footer-brand">
+        <i class="fa-solid fa-calendar-days" aria-hidden="true"></i>
+        <span>Расписание СГАУ</span>
+      </div>
+      <p class="footer-desc">Просмотрщик расписания Самарского университета</p>
+    </div>
+    <div class="footer-col">
+      <h4 class="footer-heading">Источник данных</h4>
+      <ul class="footer-links">
+        <li>
+          <a href="https://ssau.ru/rasp" target="_blank" rel="noopener">
+            <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i>
+            ssau.ru/rasp
+          </a>
+        </li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4 class="footer-heading">Возможности</h4>
+      <ul class="footer-list">
+        <li>Расписание групп и преподавателей</li>
+        <li>Навигация по неделям</li>
+        <li>Адаптация под мобильные устройства</li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>Данные получены с </span>
+    <a href="https://ssau.ru/rasp" target="_blank" rel="noopener">ssau.ru</a>
+    <span> в режиме реального времени</span>
+  </div>
+</footer>
+
+<script src="/js/app.js"></script>
+</body>
+</html>

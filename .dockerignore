@@ -1,0 +1,6 @@
+.git
+Html/
+__pycache__/
+*.pyc
+*.pyo
+.env
