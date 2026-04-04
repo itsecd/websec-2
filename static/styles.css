@@ -277,127 +277,205 @@ body {
   margin: 0 auto;
 }
 
-/* Desktop week grid */
-.scheduleTable {
-  width: 100%;
-  border-collapse: separate;
-  border-spacing: 0;
+/* Desktop week grid — flex layout */
+.scheduleGrid {
   background: #fff;
   border: 1px solid var(--border);
   border-radius: var(--radius);
-  overflow: hidden;
   box-shadow: var(--shadow);
   margin-top: 12px;
+  overflow-x: auto;
 }
 
-.scheduleTable th,
-.scheduleTable td {
-  border-right: 1px solid var(--border);
-  border-bottom: 1px solid var(--border);
-  vertical-align: top;
-  padding: 8px;
-}
-
-.scheduleTable th:last-child,
-.scheduleTable td:last-child {
-  border-right: none
-}
-
-.scheduleTable tr:last-child td {
-  border-bottom: none
-}
-
-.scheduleTable thead th {
+.scheduleGrid__header {
+  display: flex;
+  border-bottom: 2px solid var(--border);
   background: #f8fafc;
-  font-size: 12px;
-  text-transform: none;
-  color: var(--muted);
-  font-weight: 700;
+  min-width: 680px;
+  position: sticky;
+  top: 0;
+  z-index: 2;
 }
 
-.timeCell {
-  width: 110px;
-  white-space: nowrap;
+.scheduleGrid__timeHead {
+  width: 88px;
+  min-width: 88px;
+  padding: 10px 8px;
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: .4px;
+  border-right: 1px solid var(--border);
+  flex-shrink: 0;
+}
+
+.scheduleGrid__dayHead {
+  flex: 1;
+  min-width: 130px;
+  padding: 10px 10px;
+  border-right: 1px solid var(--border);
+}
+
+.scheduleGrid__dayHead:last-child {
+  border-right: none;
+}
+
+.scheduleGrid__row {
+  display: flex;
+  border-bottom: 1px solid var(--border);
+  min-width: 680px;
+  align-items: stretch;
+}
+
+.scheduleGrid__row:last-child {
+  border-bottom: none;
+}
+
+.scheduleGrid__timeCell {
+  width: 88px;
+  min-width: 88px;
+  flex-shrink: 0;
+  padding: 10px 8px;
   background: #fafafa;
+  border-right: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.scheduleGrid__cell {
+  flex: 1;
+  min-width: 0;
+  padding: 6px;
+  border-right: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.scheduleGrid__cell:last-child {
+  border-right: none;
 }
 
 .timeCell__start {
-  font-weight: 700
+  font-weight: 700;
+  font-size: 13px;
 }
 
 .timeCell__end {
   color: var(--muted);
-  font-size: 12px;
-  margin-top: 2px
+  font-size: 11px;
+  margin-top: 2px;
 }
 
 .dayHeader__name {
   font-weight: 700;
-  color: var(--text)
+  color: var(--text);
+  font-size: 13px;
 }
 
 .dayHeader__date {
   font-size: 12px;
   color: var(--muted);
-  margin-top: 2px
+  margin-top: 2px;
+}
+
+.dayHeader__today .dayHeader__name {
+  color: var(--brand);
+}
+
+.dayHeader__today .dayHeader__date {
+  color: var(--brand);
 }
 
 .cellStack {
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 6px;
+  align-self: flex-start;
+  width: 100%;
 }
 
 /* Lesson cards */
 .lessonCard {
   border: 1px solid var(--border);
-  border-radius: 12px;
-  padding: 10px;
+  border-radius: 10px;
+  border-left-width: 4px;
+  border-left-color: #94a3b8;
+  padding: 9px 10px;
   background: #fff;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  overflow: hidden;
+  transition: box-shadow .15s;
+}
+
+.lessonCard:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, .08);
 }
 
 .lessonCard__top {
   display: flex;
-  gap: 8px;
-  align-items: center;
-  justify-content: space-between;
+  gap: 6px;
+  align-items: flex-start;
+  flex-wrap: wrap;
 }
 
 .lessonType {
   display: inline-flex;
   align-items: center;
-  padding: 4px 8px;
+  padding: 3px 8px;
   border-radius: 999px;
   background: var(--chip);
-  font-size: 12px;
+  font-size: 11px;
   font-weight: 700;
   color: #3730a3;
+  white-space: nowrap;
 }
 
 .lessonSubgroup {
-  font-size: 12px;
+  font-size: 11px;
   color: var(--muted);
+  background: #f1f5f9;
+  border-radius: 999px;
+  padding: 3px 8px;
+  white-space: nowrap;
 }
 
 .lessonCard__subject {
-  margin-top: 8px;
+  margin-top: 7px;
   font-weight: 700;
-  line-height: 1.25;
+  font-size: 13px;
+  line-height: 1.3;
+  word-break: break-word;
+  overflow-wrap: break-word;
 }
 
 .lessonCard__meta {
   margin-top: 8px;
   display: flex;
   flex-wrap: wrap;
-  gap: 8px 10px;
-  align-items: center;
+  gap: 6px 10px;
+  align-items: flex-start;
   color: var(--muted);
-  font-size: 12px;
+  font-size: 11px;
+}
+
+.metaItem {
+  display: flex;
+  align-items: baseline;
+  gap: 4px;
+  flex-wrap: wrap;
+  word-break: break-word;
+  overflow-wrap: break-word;
+  min-width: 0;
 }
 
 .metaItem b {
   color: var(--text);
-  font-weight: 700
+  font-weight: 700;
 }
 
 .metaItem a {
@@ -407,15 +485,92 @@ body {
 }
 
 .metaItem a:hover {
-  text-decoration: underline
+  text-decoration: underline;
+}
+
+.metaItem--groups {
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 3px;
+}
+
+.groupList {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.groupChip {
+  font-size: 11px;
+  color: var(--text);
+  line-height: 1.4;
 }
 
 .lessonCard__comment {
-  margin-top: 8px;
-  font-size: 12px;
+  margin-top: 7px;
+  font-size: 11px;
   color: var(--muted);
   border-left: 3px solid #e2e8f0;
-  padding-left: 8px;
+  padding-left: 7px;
+}
+
+/* Lesson type color variants */
+.lesson--lecture {
+  border-left-color: #3b82f6;
+}
+
+.lesson--lecture .lessonType {
+  background: #eff6ff;
+  color: #1d4ed8;
+}
+
+.lesson--practice {
+  border-left-color: #22c55e;
+}
+
+.lesson--practice .lessonType {
+  background: #f0fdf4;
+  color: #15803d;
+}
+
+.lesson--lab {
+  border-left-color: #f97316;
+}
+
+.lesson--lab .lessonType {
+  background: #fff7ed;
+  color: #c2410c;
+}
+
+.lesson--exam {
+  border-left-color: #ef4444;
+}
+
+.lesson--exam .lessonType {
+  background: #fef2f2;
+  color: #b91c1c;
+}
+
+.lesson--credit {
+  border-left-color: #a855f7;
+}
+
+.lesson--credit .lessonType {
+  background: #faf5ff;
+  color: #7e22ce;
+}
+
+.lesson--consult {
+  border-left-color: #14b8a6;
+}
+
+.lesson--consult .lessonType {
+  background: #f0fdfa;
+  color: #0f766e;
+}
+
+.lesson--other {
+  border-left-color: #94a3b8;
 }
 
 /* Mobile day view */
@@ -441,13 +596,13 @@ body {
 }
 
 .dayBlock__title {
-  font-weight: 700
+  font-weight: 700;
 }
 
 .dayBlock__date {
   font-size: 12px;
   color: var(--muted);
-  margin-top: 2px
+  margin-top: 2px;
 }
 
 .slot {
@@ -456,7 +611,7 @@ body {
 }
 
 .slot:last-child {
-  border-bottom: none
+  border-bottom: none;
 }
 
 .slot__time {
@@ -467,12 +622,16 @@ body {
 }
 
 .slot__time b {
-  font-size: 13px
+  font-size: 13px;
 }
 
 .slot__time span {
   font-size: 12px;
-  color: var(--muted)
+  color: var(--muted);
+}
+
+.slot .cellStack {
+  height: auto;
 }
 
 /* Responsive */

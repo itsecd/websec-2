@@ -206,43 +206,51 @@
   function renderDesktop(schedule) {
     const days = schedule.days;
     const slots = schedule.time_slots || [];
-
     const map = buildLessonsMap(schedule);
-
-    let html = '<table class="scheduleTable"><thead><tr>';
-    html += '<th class="timeCell">Время</th>';
-    days.forEach(function (d) {
-      html += '<th><div class="dayHeader__name">' + escapeHtml(capitalize(d.weekday)) + '</div>';
-      if (d.date) html += '<div class="dayHeader__date">' + escapeHtml(d.date) + '</div>';
-      html += '</th>';
-    });
-    html += '</tr></thead><tbody>';
-
     const slotList = slots.length ? slots : computeSlotsFromLessons(days);
+
+    const todayStr = new Date().toLocaleDateString("ru-RU", {
+      day: "2-digit", month: "2-digit", year: "numeric"
+    });
+
+    let html = '<div class="scheduleGrid">';
+
+    html += '<div class="scheduleGrid__header">';
+    html += '<div class="scheduleGrid__timeHead">Время</div>';
+    days.forEach(function (d) {
+      const isToday = d.date && d.date === todayStr;
+      html += '<div class="scheduleGrid__dayHead' + (isToday ? ' dayHeader__today' : '') + '">';
+      html += '<div class="dayHeader__name">' + escapeHtml(capitalize(d.weekday)) + '</div>';
+      if (d.date) html += '<div class="dayHeader__date">' + escapeHtml(d.date) + '</div>';
+      html += '</div>';
+    });
+    html += '</div>';
 
     slotList.forEach(function (slot) {
       const key = slot.time_start + "|" + slot.time_end;
-      html += '<tr>';
-      html += '<td class="timeCell"><div class="timeCell__start">' + escapeHtml(slot.time_start) + '</div>' +
-        '<div class="timeCell__end">' + escapeHtml(slot.time_end) + '</div></td>';
+      html += '<div class="scheduleGrid__row">';
+      html += '<div class="scheduleGrid__timeCell">' +
+        '<div class="timeCell__start">' + escapeHtml(slot.time_start) + '</div>' +
+        '<div class="timeCell__end">' + escapeHtml(slot.time_end) + '</div>' +
+        '</div>';
 
       for (let di = 0; di < days.length; di++) {
         const lessons = (map[di] && map[di][key]) ? map[di][key] : [];
-        html += '<td><div class="cellStack">';
-        if (lessons.length === 0) {
-          html += '</div></td>';
-          continue;
+        html += '<div class="scheduleGrid__cell">';
+        if (lessons.length > 0) {
+          html += '<div class="cellStack">';
+          lessons.forEach(function (l) {
+            html += lessonCardHtml(l);
+          });
+          html += '</div>';
         }
-        lessons.forEach(function (l) {
-          html += lessonCardHtml(l);
-        });
-        html += '</div></td>';
+        html += '</div>';
       }
 
-      html += '</tr>';
+      html += '</div>';
     });
 
-    html += '</tbody></table>';
+    html += '</div>';
 
     $("#scheduleContainer").append(html);
   }
@@ -341,11 +349,25 @@
       .sort(function (a, b) { return (a.time_start || "").localeCompare(b.time_start || ""); });
   }
 
-  function lessonCardHtml(l) {
-    const subgroup = l.subgroup ? ('<span class="lessonSubgroup">подгруппа: ' + escapeHtml(l.subgroup) + '</span>') : '';
+  function getLessonTypeClass(type) {
+    const t = (type || "").toLowerCase();
+    if (t.includes("лекц")) return "lesson--lecture";
+    if (t.includes("практ")) return "lesson--practice";
+    if (t.includes("лаб")) return "lesson--lab";
+    if (t.includes("экза")) return "lesson--exam";
+    if (t.includes("зачёт") || t.includes("зачет")) return "lesson--credit";
+    if (t.includes("консульт")) return "lesson--consult";
+    return "lesson--other";
+  }
 
+  function lessonCardHtml(l) {
+    const typeClass = getLessonTypeClass(l.lesson_type);
     const type = l.lesson_type ? escapeHtml(l.lesson_type) : "—";
     const room = l.room ? escapeHtml(l.room) : "—";
+
+    const subgroup = l.subgroup
+      ? '<span class="lessonSubgroup">Подгруппа\u00a0' + escapeHtml(l.subgroup) + '</span>'
+      : '';
 
     const teachersHtml = (l.teachers || []).map(function (t) {
       if (t.staff_id) {
@@ -354,22 +376,31 @@
       return '<span>' + escapeHtml(t.name) + '</span>';
     }).join(", ");
 
-    const groupsHtml = (l.groups || []).map(function (g) {
-      if (g.group_id) {
-        return '<span class="groupChip" data-group-id="' + g.group_id + '">' + escapeHtml(g.name) + '</span>';
-      }
-      return '<span class="groupChip">' + escapeHtml(g.name) + '</span>';
-    }).join(" ");
+    const filteredGroups = (l.groups || []).filter(function (g) {
+      return !/подгрупп/i.test(g.name);
+    });
+
+    let groupsHtml = '';
+    if (filteredGroups.length > 0) {
+      groupsHtml = '<div class="groupList">' +
+        filteredGroups.map(function (g) {
+          const attr = g.group_id ? ' data-group-id="' + g.group_id + '"' : '';
+          return '<span class="groupChip"' + attr + '>' + escapeHtml(g.name) + '</span>';
+        }).join('') +
+        '</div>';
+    }
 
     let meta = '';
-    meta += '<span class="metaItem"><b>Ауд.</b> ' + room + '</span>';
-    if (teachersHtml) meta += '<span class="metaItem"><b>Преп.</b> ' + teachersHtml + '</span>';
-    if (groupsHtml) meta += '<span class="metaItem"><b>Группы</b> ' + groupsHtml + '</span>';
+    meta += '<span class="metaItem"><b>Ауд.</b>\u00a0' + room + '</span>';
+    if (teachersHtml) meta += '<span class="metaItem"><b>Преп.</b>\u00a0' + teachersHtml + '</span>';
+    if (groupsHtml) {
+      meta += '<div class="metaItem metaItem--groups"><b>Группы</b>' + groupsHtml + '</div>';
+    }
 
     const comment = l.comment ? ('<div class="lessonCard__comment">' + escapeHtml(l.comment) + '</div>') : '';
 
     return '' +
-      '<div class="lessonCard">' +
+      '<div class="lessonCard ' + typeClass + '">' +
       '<div class="lessonCard__top">' +
       '<span class="lessonType">' + type + '</span>' +
       subgroup +
