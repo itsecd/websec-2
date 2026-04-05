@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Расписание Самарского университета</title>
+    <link rel="stylesheet" href="schedule.css">
+</head>
+<body>
+    <div class="container">
+        <div class="schedule-header">
+            <h1 id="groupTitle">Расписание</h1>
+            <div class="divider"></div>
+        </div>
+
+        <div class="search-trigger" id="searchTrigger">
+            <span class="trigger-text">Поиск...</span>
+            <span class="search-arrow">▼</span>
+        </div>
+
+        <div class="search-dropdown" id="searchDropdown">
+            <div class="dropdown-inner">
+                <input type="text" id="groupInput" class="dropdown-input" autocomplete="off">
+                <div class="dropdown-hint">Для поиска введите номер группы или ФИО преподавателя</div>
+            </div>
+        </div>
+
+        <div class="group-info" id="groupInfo">
+            <div class="group-name" id="groupNameDisplay"></div>
+            <div class="group-details" id="groupDetailsDisplay"></div>
+            <div class="group-start-year" id="startYearDisplay"></div>
+        </div>
+
+        <div class="legend">
+            <div class="legend-item lecture-bg"><span class="legend-color lecture-color"></span><span class="legend-dash">–</span><span class="legend-text">ЛЕКЦИЯ</span></div>
+            <div class="legend-item practice-bg"><span class="legend-color practice-color"></span><span class="legend-dash">–</span><span class="legend-text">ПРАКТИКА</span></div>
+            <div class="legend-item lab-bg"><span class="legend-color lab-color"></span><span class="legend-dash">–</span><span class="legend-text">ЛАБОРАТОРНАЯ</span></div>
+            <div class="legend-item exam-bg"><span class="legend-color exam-color"></span><span class="legend-dash">–</span><span class="legend-text">ЭКЗАМЕН</span></div>
+            <div class="legend-item test-bg"><span class="legend-color test-color"></span><span class="legend-dash">–</span><span class="legend-text">ЗАЧЁТ</span></div>
+            <div class="legend-item consultation-bg"><span class="legend-color consultation-color"></span><span class="legend-dash">–</span><span class="legend-text">КОНСУЛЬТАЦИЯ</span></div>
+            <div class="legend-item other-bg"><span class="legend-color other-color"></span><span class="legend-dash">–</span><span class="legend-text">ДРУГОЕ</span></div>
+        </div>
+
+        <div id="scheduleContainer" class="schedule-container"></div>
+    </div>
+    
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
