@@ -1,35 +1,33 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
-<head>
-    <meta charset="utf-8">
+  <head>
+    <meta charset="utf-8" />
     <title>Расписание</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
     <h1>Институт информатики и кибернетики</h1>
     <div>
-        <p>Введите номер группы:</p>
-        <input type="text" id="groupId">
-        <button onclick="loadTimetable()">Найти</button>
+      <p>Введите номер группы:</p>
+      <input type="text" id="groupId" />
+      <button onclick="loadTimetable()">Найти</button>
     </div>
     <div>
-        <p>Выберите неделю:</p>
-        <select id="weekSelect">
-            <option value="29">29 неделя</option>
-            <option value="30">30 неделя</option>
-            <option value="31">31 неделя</option>
-            <option value="32">32 неделя</option>
-        </select>
+      <p>Выберите неделю:</p>
+      <select id="weekSelect">
+        <option value="29">29 неделя</option>
+        <option value="30">30 неделя</option>
+        <option value="31">31 неделя</option>
+        <option value="32">32 неделя</option>
+      </select>
     </div>
-    <div> 
-        <p>Введите фамилию преподавателя</p>
-        <input type="text" id="teacherName">
-        <button onclick="loadTeacherTimetable()">Найти</button>
+    <div>
+      <p>Введите фамилию преподавателя</p>
+      <input type="text" id="teacherName" />
+      <button onclick="loadTeacherTimetable()">Найти</button>
     </div>
-    <div id="result" class="result-container">
-
-    </div>
+    <div id="result" class="result-container"></div>
 
     <script src="script.js"></script>
-</body>
+  </body>
 </html>

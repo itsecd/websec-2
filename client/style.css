@@ -1,16 +1,16 @@
 body {
-    font-family:'Segoe UI', Helvetica, sans-serif;
+    font-family: 'Segoe UI', Helvetica, sans-serif;
     margin: 0px auto;
-    padding: 20px; 
+    padding: 20px;
     font-size: 18px;
     font-weight: bold;
     background-color: rgb(141, 173, 217);
 }
 
-h1{
-    color:rgb(5, 5, 71);
+h1 {
+    color: rgb(5, 5, 71);
     margin-bottom: 15px;
-    font-size:  30px;
+    font-size: 30px;
 }
 
 .container {
@@ -18,7 +18,8 @@ h1{
     margin: 0 auto;
 }
 
-input, select {
+input,
+select {
     padding: 6px;
     width: 250 px;
     border: 1px solid #b7b8c4;
@@ -30,40 +31,40 @@ input, select {
 button {
     padding: 6px, 12px;
     background-color: #1565c0;
-    color:aliceblue;
+    color: aliceblue;
     border: none;
     border-radius: 10px;
     font-size: 14px;
 }
 
 button:hover {
-    background-color: #0b3c74; 
+    background-color: #0b3c74;
 }
 
-.result-container{
-    background-color:white ;
+.result-container {
+    background-color: white;
     padding: 15px;
     border-radius: 8px;
-    margin-top:15px;
+    margin-top: 15px;
     border: 1px solid #b7b8c4;
-     overflow-x: auto; 
+    overflow-x: auto;
 }
 
 .dates-row {
     display: flex;
-    gap:10px;
-    margin:20px 0;
-    flex-wrap:wrap;
+    gap: 10px;
+    margin: 20px 0;
+    flex-wrap: wrap;
 }
 
-.date-item{
+.date-item {
     background-color: aliceblue;
     font-size: 14px;
     border-radius: 10px;
-    padding:5px 12px;
+    padding: 5px 12px;
 }
 
-.loading{
+.loading {
     color: #5d5b5b;
 }
 
@@ -72,7 +73,7 @@ button:hover {
     margin-bottom: 25px;
     background: #f8f9fa;
     overflow: hidden;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .day-header {
@@ -98,14 +99,14 @@ button:hover {
     background: white;
     border-radius: 10px;
     padding: 10px;
-    box-shadow: 0 1px 4px rgba(0,0,0,0.1); 
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
     transition: transform 0.15s ease;
     border-left: 3px solid #667eea;
 }
 
 .lesson-card:hover {
     transform: translateY(-3px);
-    box-shadow: 0 6px 16px rgba(0,0,0,0.15);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
 }
 
 .lesson-time {
@@ -180,7 +181,8 @@ button:hover {
     margin-top: 20px;
 }
 
-.timetable th, .timetable td {
+.timetable th,
+.timetable td {
     border: 1px solid #ccc;
     padding: 8px;
     vertical-align: top;
@@ -193,7 +195,9 @@ button:hover {
 
 
 @media (max-width: 768px) {
-    .timetable th, .timetable td {
+
+    .timetable th,
+    .timetable td {
         font-size: 12px;
         padding: 6px 4px;
     }
