@@ -1,0 +1,62 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #F5F7FC;
+}
+
+.main-container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    background-color: #b5d7de;
+    padding-left: 30px;
+}
+
+.h1-group-name {
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.search-block {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 30px;
+}
+
+.teacherSearch>p,
+.groupSearch>p {
+    font-weight: bold;
+}
+
+.teacherSearch {
+    padding-bottom: 20px;
+}
+
+.teacherSearchInput,
+.groupSearchInput {
+    height: 30px;
+    width: 200px;
+    font-size: 15px;
+    border-radius: 8px;
+}
+
+button {
+    height: 30px;
+    width: 70px;
+    font-size: 15px;
+    border-radius: 8px;
+}
+
+.info-block {
+    display: flex;
+    flex-direction: column;
+}
+
+.h2-group-name {
+    text-align: center;
+}
+
