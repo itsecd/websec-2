@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Лабораторная работа №2 - Прогноз погоды</title>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+  <link rel="stylesheet" href="style.css">
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+<div class="app-container">
+  <aside class="sidebar">
+    <div class="search-box">
+      <input type="text" id="searchInput" placeholder="Введите название города...">
+      <button id="searchBtn">Найти</button>
+    </div>
+    <ul id="cityList"></ul>
+  </aside>
+  <main class="map-container">
+    <div class="map-controls">
+      <button id="toggleSidebarBtn" class="toggle-btn">☰</button>
+      <h1 class="app-title">Интерактивный прогноз</h1>
+    </div>
+    <div id="map"></div>
+  </main>
+</div>
+<div id="weatherModal" class="modal">
+  <div class="modal-content">
+    <span class="close-btn">&times;</span>
+    <h2 id="modalCityName"></h2>
+    <div class="charts-wrapper">
+      <div class="chart-block"><canvas id="tempChart"></canvas></div>
+      <div class="chart-block"><canvas id="precipChart"></canvas></div>
+      <div class="chart-block"><canvas id="windChart"></canvas></div>
+    </div>
+  </div>
+</div>
+<script src="script.js"></script>
+</body>
+</html>
