@@ -1,4 +1,4 @@
-import requests
+import aiohttp
 from bs4 import BeautifulSoup
 from typing import List, Dict, Optional, Any
 
@@ -12,7 +12,7 @@ def get_headers() -> Dict[str, str]:
     }
 
 
-def get_groups() -> List[Dict[str, str]]:
+async def get_groups() -> List[Dict[str, str]]:
     return [
         {"id": "1213641978", "name": "6413-100503D"},
         {"id": "1282690301", "name": "6411-100503D"},
@@ -20,7 +20,7 @@ def get_groups() -> List[Dict[str, str]]:
     ]
 
 
-def get_teachers() -> List[Dict[str, str]]:
+async def get_teachers() -> List[Dict[str, str]]:
     return [
         {"id": "432837452", "name": "Юзькив Р.Р."},
         {"id": "114869468", "name": "Сергеев А.В."},
@@ -163,13 +163,15 @@ def get_time_slots(soup: BeautifulSoup) -> List[str]:
     return time_slots
 
 
-def get_schedule(schedule_type: str, entity_id: str, week: Optional[int] = None) -> Dict[str, Any]:
+async def get_schedule(schedule_type: str, entity_id: str, week: Optional[int] = None) -> Dict[str, Any]:
     url = build_url(schedule_type, entity_id, week)
     
-    response = requests.get(url, headers=get_headers())
-    response.raise_for_status()
+    async with aiohttp.ClientSession() as session:
+        async with session.get(url, headers=get_headers()) as response:
+            response.raise_for_status()
+            html = await response.text()
     
-    soup = BeautifulSoup(response.text, "html.parser")
+    soup = BeautifulSoup(html, "html.parser")
     
     current_week = get_week_number(soup)
     entity_name = get_entity_name(soup, entity_id)
