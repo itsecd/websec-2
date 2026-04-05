@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Прогноз погоды</title>
+    <script src="https://api-maps.yandex.ru/2.1/?apikey=7ef9aed5-1f3b-4e72-a1d1-f1996574f399&lang=ru_RU" type="text/javascript"></script>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div id="map"></div>
+    <div id="weather-panel" class="weather-panel hidden">
+        <div class="panel-header">
+            <h2 id="city-title">Определение местоположения...</h2>
+            <button id="close-carousel">×</button>
+        </div>
+        <div id="weather-carousel" class="weather-carousel">
+        </div>
+        <div class="chart-wrapper">
+            <div class="chart-container" style="position: relative; height: 150px; flex-grow: 1;">
+                <canvas id="weather-chart"></canvas>
+            </div>
+            <div class="chart-controls">
+                <div class="switch-item">
+                    <span class="switch-label">Температура</span>
+                    <label class="switch">
+                        <input type="checkbox" id="toggle-temp" checked>
+                        <span class="slider round"></span>
+                    </label>
+                 </div>
+                <div class="switch-item">
+                    <span class="switch-label">Ветер</span>
+                    <label class="switch">
+                        <input type="checkbox" id="toggle-wind">
+                        <span class="slider round"></span>
+                    </label>
+                 </div>
+                <div class="switch-item">
+                    <span class="switch-label">Осадки</span>
+                    <label class="switch">
+                        <input type="checkbox" id="toggle-precip">
+                        <span class="slider round"></span>
+                    </label>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.4.1/papaparse.min.js"></script>
+    <script src="{{ url_for('static', filename='js/app.js') }}"></script>
+</body>
+</html>
