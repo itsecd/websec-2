@@ -124,17 +124,23 @@ app.get('/api/rasp/schedule', async (req, res) => {
     if (!station_code) {
       return res.status(400).json({ error: 'Требуется station_code' })
     }
-    
+
+    const today = new Date().toISOString().slice(0, 10)
+    const requestDate = date || today
+
+    console.log(`Запрос расписания для станции ${station_code} на ${requestDate}`)
+
     const data = await yandexRequest('/schedule/', {
       station: station_code,
-      date: date || new Date().toISOString().slice(0, 10),
-      transport_types: 'suburban'
+      date: requestDate,
+      transport_type: 'suburban'
     })
-    
+
+    console.log('Расписание получено:', data.schedule?.length || 0, 'поездов')
     res.json(data)
   } catch (error) {
     console.error('Ошибка расписания:', error.message)
-    res.status(500).json({ message: error.message })
+    res.status(500).json({ error: error.message, fallback: true })
   }
 })
 

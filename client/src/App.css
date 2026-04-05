@@ -78,7 +78,6 @@
   padding: 2rem;
 }
 
-/* Адаптив для мобильных */
 @media (max-width: 600px) {
   .search-form {
     flex-direction: column;
@@ -86,5 +85,59 @@
   
   .search-btn {
     width: 100%;
+  }
+}
+
+.station-item.selected {
+  background: #e3f2fd;
+  border-left: 4px solid #2196F3;
+}
+
+.selected-station {
+  animation: fadeIn 0.3s ease-in;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.schedule-container {
+  background: white;
+  border-radius: 12px;
+  padding: 1rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  margin-top: 1rem;
+}
+
+.schedule-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 0.5rem;
+  font-size: 0.95rem;
+}
+
+.schedule-table th {
+  text-align: left;
+  padding: 0.5rem;
+  border-bottom: 2px solid #eee;
+  color: #555;
+}
+
+.schedule-table td {
+  padding: 0.5rem;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.schedule-table tr:last-child td {
+  border-bottom: none;
+}
+
+@media (max-width: 600px) {
+  .schedule-table {
+    font-size: 0.85rem;
+  }
+  .schedule-table th, .schedule-table td {
+    padding: 0.4rem;
   }
 }
