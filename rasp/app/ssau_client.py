@@ -79,7 +79,7 @@ class SsauClient:
                 params = parse_qs(parsed.query)
                 if "course" in params:
                     course_num = int(params["course"][0])
-                    if 1 <= course_num <= 6:  # Обычно курсы 1-5, иногда 6
+                    if 1 <= course_num <= 5:
                         courses.add(course_num)
             except (ValueError, TypeError):
                 continue
