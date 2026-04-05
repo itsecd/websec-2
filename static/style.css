@@ -1,0 +1,360 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: #eef2f3;
+    color: #333;
+    padding: 15px;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    background: white;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    overflow: hidden;
+}
+
+.header {
+    background: #2780E3;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+.header__inner {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.header__title {
+    font-size: 20px;
+    font-weight: normal;
+    margin-bottom: 5px;
+}
+
+.header__subtitle {
+    font-size: 14px;
+    opacity: 0.9;
+}
+
+.mode-switch {
+    display: flex;
+    gap: 5px;
+    margin: 15px 20px;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 10px;
+}
+
+.mode-btn {
+    background: none;
+    border: none;
+    padding: 6px 15px;
+    font-size: 14px;
+    cursor: pointer;
+    color: #666;
+    border-radius: 4px;
+}
+
+.mode-btn:hover {
+    background: #e8e8e8;
+}
+
+.mode-btn--active {
+    background: #2780E3;
+    color: white;
+}
+
+.search-panel {
+    background: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    padding: 15px;
+    margin: 0 20px 20px;
+}
+
+.form-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    align-items: flex-end;
+}
+
+.form-group {
+    flex: 1;
+    min-width: 150px;
+}
+
+.form-group--button {
+    flex: 0;
+}
+
+.form-label {
+    display: block;
+    font-size: 12px;
+    color: #555;
+    margin-bottom: 4px;
+}
+
+.form-control {
+    width: 100%;
+    padding: 6px 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 13px;
+}
+
+.form-control:focus {
+    outline: none;
+    border-color: #2780E3;
+}
+
+.btn {
+    padding: 6px 20px;
+    background: #2780E3;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 13px;
+}
+
+.btn:hover:not(:disabled) {
+    background: #1a66c4;
+}
+
+.btn:disabled {
+    background: #aaa;
+    cursor: not-allowed;
+}
+
+.search-wrapper {
+    position: relative;
+}
+
+.suggestions-dropdown {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: white;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    max-height: 200px;
+    overflow-y: auto;
+    z-index: 1000;
+}
+
+.suggestions-dropdown div {
+    padding: 6px 10px;
+    cursor: pointer;
+    border-bottom: 1px solid #eee;
+}
+
+.suggestions-dropdown div:hover {
+    background: #e8f0f8;
+}
+
+.week-nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin: 0 20px 20px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    background: #f9f9f9;
+}
+
+.week-nav__btn {
+    padding: 4px 12px;
+    background: #e0e0e0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.week-nav__btn:hover:not(:disabled) {
+    background: #d0d0d0;
+}
+
+.week-nav__btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.week-nav__info {
+    font-size: 14px;
+    font-weight: bold;
+    color: #2780E3;
+}
+
+.status {
+    padding: 8px 15px;
+    margin: 0 20px 20px;
+    background: #e8f0f8;
+    border-radius: 4px;
+    text-align: center;
+    font-size: 13px;
+    color: #2780E3;
+}
+
+.status--error {
+    background: #ffebee;
+    color: #c62828;
+}
+
+.schedule-container {
+    margin: 0 20px 20px;
+    overflow-x: auto;
+}
+
+.schedule-table {
+    width: 100%;
+    border-collapse: collapse;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    overflow: hidden;
+    font-size: 13px;
+}
+
+.schedule-table th {
+    background: #2780E3;
+    color: white;
+    padding: 8px;
+    text-align: center;
+    font-weight: normal;
+}
+
+.schedule-table td {
+    border: 1px solid #ddd;
+    padding: 6px;
+    vertical-align: top;
+}
+
+.lesson-time {
+    font-weight: bold;
+    text-align: center;
+    white-space: nowrap;
+    background: #f5f5f5;
+}
+
+.lesson-card {
+    margin-bottom: 4px;
+    padding-bottom: 4px;
+    border-bottom: 1px dashed #eee;
+}
+
+.lesson-card:last-child {
+    margin-bottom: 0;
+    padding-bottom: 0;
+    border-bottom: none;
+}
+
+.lesson-name {
+    font-weight: normal;
+    font-size: 12px;
+}
+
+.lesson-type {
+    display: inline-block;
+    font-size: 10px;
+    color: #888;
+    margin-bottom: 2px;
+}
+
+.lesson-room {
+    font-size: 10px;
+    color: #999;
+}
+
+.lesson-teacher {
+    font-size: 10px;
+    color: #2780E3;
+    cursor: pointer;
+}
+
+.lesson-teacher:hover {
+    text-decoration: underline;
+}
+
+.no-lesson {
+    text-align: center;
+    color: #bbb;
+}
+
+.empty-state {
+    text-align: center;
+    padding: 40px;
+    color: #999;
+}
+
+@media (max-width: 768px) {
+    body {
+        padding: 10px;
+    }
+    
+    .form-row {
+        flex-direction: column;
+    }
+    
+    .form-group--button {
+        width: 100%;
+    }
+    
+    .btn {
+        width: 100%;
+    }
+    
+    .mode-switch {
+        flex-wrap: wrap;
+    }
+    
+    .week-nav {
+        flex-wrap: wrap;
+    }
+    
+    .schedule-table {
+        font-size: 11px;
+    }
+    
+    .schedule-table th,
+    .schedule-table td {
+        padding: 4px;
+    }
+}
+
+@media (max-width: 480px) {
+    .header__title {
+        font-size: 18px;
+    }
+    
+    .header__subtitle {
+        font-size: 12px;
+    }
+}
+
+@media print {
+    body {
+        background: white;
+        padding: 0;
+    }
+    
+    .mode-switch,
+    .search-panel,
+    .week-nav,
+    .btn,
+    .status {
+        display: none;
+    }
+    
+    .schedule-container {
+        margin: 0;
+    }
+}
