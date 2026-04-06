@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Расписание SSAU</title>
+  <link rel="stylesheet" href="/assets/css/main.css" />
+  <link rel="preconnect" href="https://code.jquery.com" crossorigin />
+</head>
+<body>
+  <div class="shell">
+    <aside class="sidebar">
+      <div class="brand">
+        <div class="brand__logo">🎓</div>
+        <div>
+          <div class="brand__title">Расписание SSAU</div>
+          <div class="brand__subtitle">просмотр учебного расписания</div>
+        </div>
+      </div>
+
+      <div class="mode-switch">
+        <label class="mode-switch__item">
+          <input type="radio" name="mode" value="group" checked />
+          <span>По группе</span>
+        </label>
+        <label class="mode-switch__item">
+          <input type="radio" name="mode" value="teacher" />
+          <span>По преподавателю</span>
+        </label>
+      </div>
+
+      <div id="groupModePanel" class="panel-block">
+        <label class="field-label" for="instituteSelect">Институт / факультет</label>
+        <select id="instituteSelect" class="field-control">
+          <option value="">Загрузка...</option>
+        </select>
+
+        <label class="field-label" for="courseSelect">Курс</label>
+        <select id="courseSelect" class="field-control" disabled>
+          <option value="">Сначала выберите институт</option>
+        </select>
+
+        <label class="field-label" for="groupSelect">Группа</label>
+        <select id="groupSelect" class="field-control" disabled>
+          <option value="">Сначала выберите курс</option>
+        </select>
+
+        <button id="showGroupBtn" class="action-btn" disabled>Показать расписание</button>
+      </div>
+
+      <div id="teacherModePanel" class="panel-block" style="display: none;">
+        <label class="field-label" for="teacherInput">Преподаватель</label>
+        <div class="suggest-wrap">
+          <input id="teacherInput" class="field-control" type="text" placeholder="Начните вводить фамилию..." autocomplete="off" />
+          <input id="teacherId" type="hidden" />
+          <div id="teacherSuggest" class="suggest-box" style="display:none;"></div>
+        </div>
+
+        <button id="showTeacherBtn" class="action-btn" disabled>Показать расписание</button>
+      </div>
+
+      <div class="panel-block">
+        <label class="field-label" for="weekSelect">Неделя</label>
+        <div class="week-box">
+          <button id="prevWeekBtn" class="ghost-btn" disabled>←</button>
+          <select id="weekSelect" class="field-control">
+            <option value="">Сначала загрузите расписание</option>
+          </select>
+          <button id="nextWeekBtn" class="ghost-btn" disabled>→</button>
+        </div>
+      </div>
+    </aside>
+
+    <main class="content">
+      <div class="hero">
+        <div>
+          <div class="hero__caption">Панель просмотра</div>
+          <h1 class="hero__title">Расписание</h1>
+          <div id="entityName" class="hero__entity">—</div>
+          <div class="hero__meta">
+            <span id="weekLabel">—</span>
+            <span id="weekDates"></span>
+          </div>
+        </div>
+      </div>
+
+      <div id="status" class="status-box">Выберите группу или преподавателя.</div>
+
+      <div id="mobileDayWrap" class="mobile-day-wrap" style="display:none;">
+        <label class="field-label" for="daySelect">День</label>
+        <select id="daySelect" class="field-control"></select>
+      </div>
+
+      <div id="scheduleContainer"></div>
+    </main>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+          integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+          crossorigin="anonymous"></script>
+  <script src="/assets/js/app.js"></script>
+</body>
+</html>
