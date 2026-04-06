@@ -82,14 +82,16 @@ app.get('/api/rasp/find-stations', async (req, res) => {
 
     const now = Date.now()
     if (!stationsCache.length || !cacheTimestamp || (now - cacheTimestamp) > CACHE_TTL) {
-      console.log('📦 Загрузка списка станций...')
+      console.log('Загрузка списка станций...')
       await loadStations()
     }
 
-    let filtered = stationsCache.filter(station => {
-      const searchText = `${station.title} ${station.settlement} ${station.region}`.toLowerCase()
-      return searchText.includes(query)
-    })
+    let filtered = stationsCache;
+    if (query !== 'самара' && query !== 'самарская область') {
+    filtered = filtered.filter(station => 
+        station.title.toLowerCase().includes(query)
+    );
+    }
 
     if (region === 'samara') {
       const SAMARA_BBOX = {
@@ -147,21 +149,26 @@ app.get('/api/rasp/schedule', async (req, res) => {
 app.get('/api/rasp/route', async (req, res) => {
   try {
     const { from, to, date } = req.query
-    if (!from || !to) {
-      return res.status(400).json({ error: 'Требуются from и to' })
-    }
     
-    const data = await yandexRequest('/schedule/', {
+    if (!from || !to) {
+      return res.status(400).json({ error: 'Требуются параметры from и to' })
+    }
+
+    console.log(`Поиск маршрута: ${from} → ${to} на ${date}`)
+
+    const data = await yandexRequest('/search/', {
       from,
       to,
       date: date || new Date().toISOString().slice(0, 10),
-      transport_types: 'suburban'
+      transport_type: 'suburban'
     })
-    
+
+    console.log('Найдено сегментов:', data.segments?.length || 0)
     res.json(data)
+    
   } catch (error) {
     console.error('Ошибка маршрута:', error.message)
-    res.status(500).json({ message: error.message })
+    res.status(500).json({ error: error.message })
   }
 })
 

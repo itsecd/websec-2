@@ -47,7 +47,7 @@ useEffect(() => {
 
   return (
     <div className="schedule-container">
-      <h3>📅 Расписание: {station.title}</h3>
+      <h3>Расписание: {station.title}</h3>
       <div style={{ overflowX: 'auto' }}>
         <table className="schedule-table">
           <thead>
