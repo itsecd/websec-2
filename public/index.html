@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>Прогноз погоды на карте</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="app">
+        <div class="header">
+            <h1>🌤 Прогноз погоды</h1>
+            <div class="search-box">
+                <input type="text" id="citySearch" placeholder="Поиск города..." autocomplete="off">
+                <div id="searchResults" class="search-results"></div>
+            </div>
+        </div>
+        <div id="map" class="map"></div>
+    </div>
+    
+    <div id="weatherModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2 id="modalCityName">Загрузка...</h2>
+            <div id="weatherContent">
+                <p>Кликни на город, чтобы увидеть прогноз</p>
+            </div>
+            <div id="chartsContainer" style="display: none;">
+                <h3>📈 Температура</h3>
+                <canvas id="tempChart"></canvas>
+                <h3>💧 Осадки</h3>
+                <canvas id="precipChart"></canvas>
+                <h3>💨 Ветер</h3>
+                <canvas id="windChart"></canvas>
+            </div>
+        </div>
+    </div>
+    
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>
