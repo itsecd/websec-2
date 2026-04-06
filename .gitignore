@@ -1,0 +1,11 @@
+.DS_Store
+.playwright-cli/
+.cache/
+backend/node_modules/
+backend/.cache/
+backend/.env
+backend/package-lock.json
+client/node_modules/
+client/dist/
+client/.env
+client/package-lock.json

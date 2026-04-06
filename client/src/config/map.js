@@ -1,0 +1,3 @@
+export const DEFAULT_MAP_CENTER = [50.121252, 53.185568];
+export const DEFAULT_MAP_ZOOM = 11;
+export const MAP_POINT_SEARCH_DISTANCE = 25;
