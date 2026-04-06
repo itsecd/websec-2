@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Университетское расписание</title>
+    <link rel="stylesheet" href="/static/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="app-wrapper">
+        <div class="top-panel">
+            <div class="main-container">
+                <div class="panel-row">
+                    <div class="university-title">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                            <path d="M4 12 L12 3 L20 12 L12 21 Z"/>
+                            <path d="M8 12 L12 8 L16 12 L12 16 Z"/>
+                        </svg>
+                        <span>Расписание учебных занятий</span>
+                    </div>
+                    <div class="week-status">
+                        <span id="currentWeekBadge"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="content-area">
+            <div class="main-container">
+                <div class="mode-selector">
+                    <button id="btnGroups" class="mode-btn active">Студенческие группы</button>
+                    <button id="btnTeachers" class="mode-btn">Преподавательский состав</button>
+                </div>
+
+                <div class="settings-block">
+                    <div class="setting-item">
+                        <div class="setting-caption">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                                <path d="M12 2 L12 7 M12 2 L9 5 M12 2 L15 5"/>
+                                <circle cx="12" cy="12" r="4"/>
+                                <path d="M5 5 L7 7 M19 5 L17 7"/>
+                            </svg>
+                            <span id="selectLabel">Группа</span>
+                        </div>
+                        <select id="entitySelect" class="custom-select">
+                            <option value="">Загрузка...</option>
+                        </select>
+                    </div>
+
+                    <div class="setting-item">
+                        <div class="setting-caption">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                                <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
+                                <line x1="16" y1="2" x2="16" y2="6"/>
+                                <line x1="8" y1="2" x2="8" y2="6"/>
+                                <line x1="3" y1="10" x2="21" y2="10"/>
+                            </svg>
+                            Учебная неделя
+                        </div>
+                        <div class="week-navigation">
+                            <button class="nav-btn" id="weekPrev">‹</button>
+                            <input type="number" id="weekInput" class="week-field" min="1" max="52" value="1">
+                            <button class="nav-btn" id="weekNext">›</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="type-legend">
+                    <div class="legend-label">Виды занятий:</div>
+                    <div class="legend-items">
+                        <div class="legend-entry"><div class="legend-marker mark-lecture"></div><span>Лекционное</span></div>
+                        <div class="legend-entry"><div class="legend-marker mark-practical"></div><span>Практическое</span></div>
+                        <div class="legend-entry"><div class="legend-marker mark-labwork"></div><span>Лабораторное</span></div>
+                        <div class="legend-entry"><div class="legend-marker mark-exam"></div><span>Экзамен</span></div>
+                        <div class="legend-entry"><div class="legend-marker mark-credit"></div><span>Зачёт</span></div>
+                        <div class="legend-entry"><div class="legend-marker mark-other"></div><span>Прочее</span></div>
+                    </div>
+                </div>
+
+                <div id="loadingIndicator" class="loading-panel" style="display: none;">
+                    <div class="loading-spinner"></div>
+                    <span>Обработка данных...</span>
+                </div>
+
+                <div class="timetable-block">
+                    <div class="timetable-scroll">
+                        <table class="timetable-grid">
+                            <thead>
+                                <tr>
+                                    <th>Временной интервал</th>
+                                    <th>ПН</th>
+                                    <th>ВТ</th>
+                                    <th>СР</th>
+                                    <th>ЧТ</th>
+                                    <th>ПТ</th>
+                                    <th>СБ</th>
+                                </tr>
+                            </thead>
+                            <tbody id="scheduleBody">
+                                <tr>
+                                    <td colspan="7" class="info-placeholder">Необходимо выбрать группу или преподавателя</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="bottom-footer">
+            <div class="main-container">
+                <p>Самарский университет | Автоматическое обновление данных</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="/static/script.js"></script>
+</body>
+</html>
