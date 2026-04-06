@@ -1,0 +1,7002 @@
+[
+  {
+    "settlement":null,
+    "region":"Москва",
+    "latitude_dadata":55.7540584,
+    "longitude_dadata":37.62049,
+    "population":13010112
+  },
+  {
+    "settlement":null,
+    "region":"Санкт-Петербург",
+    "latitude_dadata":59.9390012,
+    "longitude_dadata":30.3158184,
+    "population":5601911
+  },
+  {
+    "settlement":"г. Новосибирск",
+    "region":"Новосибирская область",
+    "latitude_dadata":55.030187,
+    "longitude_dadata":82.920426,
+    "population":1633595
+  },
+  {
+    "settlement":"г. Екатеринбург",
+    "region":"Свердловская область",
+    "latitude_dadata":56.8387061,
+    "longitude_dadata":60.6054943,
+    "population":1544376
+  },
+  {
+    "settlement":"г. Казань",
+    "region":"Республика Татарстан",
+    "latitude_dadata":55.7944326,
+    "longitude_dadata":49.1115164,
+    "population":1308660
+  },
+  {
+    "settlement":"г. Нижний Новгород",
+    "region":"Нижегородская область",
+    "latitude_dadata":56.326794,
+    "longitude_dadata":44.006495,
+    "population":1226076
+  },
+  {
+    "settlement":"г. Челябинск",
+    "region":"Челябинская область",
+    "latitude_dadata":55.1602292,
+    "longitude_dadata":61.4007614,
+    "population":1189525
+  },
+  {
+    "settlement":"г. Красноярск",
+    "region":"Красноярский край",
+    "latitude_dadata":56.0095312,
+    "longitude_dadata":92.8525234,
+    "population":1187771
+  },
+  {
+    "settlement":"г. Самара",
+    "region":"Самарская область",
+    "latitude_dadata":53.1951774,
+    "longitude_dadata":50.1069625,
+    "population":1173299
+  },
+  {
+    "settlement":"г. Уфа",
+    "region":"Республика Башкортостан",
+    "latitude_dadata":54.734856,
+    "longitude_dadata":55.9577802,
+    "population":1144809
+  },
+  {
+    "settlement":"г. Ростов-на-Дону",
+    "region":"Ростовская область",
+    "latitude_dadata":47.2180329,
+    "longitude_dadata":39.6902714,
+    "population":1142162
+  },
+  {
+    "settlement":"г. Омск",
+    "region":"Омская область",
+    "latitude_dadata":54.9849581,
+    "longitude_dadata":73.3675684,
+    "population":1125695
+  },
+  {
+    "settlement":"г. Краснодар",
+    "region":"Краснодарский край",
+    "latitude_dadata":45.035453,
+    "longitude_dadata":38.975301,
+    "population":1099344
+  },
+  {
+    "settlement":"г. Воронеж",
+    "region":"Воронежская область",
+    "latitude_dadata":51.6593943,
+    "longitude_dadata":39.196922,
+    "population":1057681
+  },
+  {
+    "settlement":"г. Пермь",
+    "region":"Пермский край",
+    "latitude_dadata":58.0102668,
+    "longitude_dadata":56.2342725,
+    "population":1034002
+  },
+  {
+    "settlement":"г. Волгоград",
+    "region":"Волгоградская область",
+    "latitude_dadata":48.7071653,
+    "longitude_dadata":44.5170212,
+    "population":1028036
+  },
+  {
+    "settlement":"г. Саратов",
+    "region":"Саратовская область",
+    "latitude_dadata":51.533557,
+    "longitude_dadata":46.034257,
+    "population":901361
+  },
+  {
+    "settlement":"г. Тюмень",
+    "region":"Тюменская область",
+    "latitude_dadata":57.1531178,
+    "longitude_dadata":65.5343535,
+    "population":847488
+  },
+  {
+    "settlement":"г. Тольятти",
+    "region":"Самарская область",
+    "latitude_dadata":53.5205003,
+    "longitude_dadata":49.3895011,
+    "population":684709
+  },
+  {
+    "settlement":"г. Барнаул",
+    "region":"Алтайский край",
+    "latitude_dadata":53.3479774,
+    "longitude_dadata":83.7798977,
+    "population":630877
+  },
+  {
+    "settlement":"г. Ижевск",
+    "region":"Удмуртская Республика",
+    "latitude_dadata":56.8528384,
+    "longitude_dadata":53.211509,
+    "population":623472
+  },
+  {
+    "settlement":"г. Махачкала",
+    "region":"Республика Дагестан",
+    "latitude_dadata":42.9849039,
+    "longitude_dadata":47.5045541,
+    "population":623254
+  },
+  {
+    "settlement":"г. Хабаровск",
+    "region":"Хабаровский край",
+    "latitude_dadata":48.4648124,
+    "longitude_dadata":135.0598539,
+    "population":617441
+  },
+  {
+    "settlement":"г. Ульяновск",
+    "region":"Ульяновская область",
+    "latitude_dadata":54.3079032,
+    "longitude_dadata":48.3748473,
+    "population":617352
+  },
+  {
+    "settlement":"г. Иркутск",
+    "region":"Иркутская область",
+    "latitude_dadata":52.2863483,
+    "longitude_dadata":104.2806793,
+    "population":617264
+  },
+  {
+    "settlement":"г. Владивосток",
+    "region":"Приморский край",
+    "latitude_dadata":43.1163208,
+    "longitude_dadata":131.8824988,
+    "population":603519
+  },
+  {
+    "settlement":"г. Ярославль",
+    "region":"Ярославская область",
+    "latitude_dadata":57.6216293,
+    "longitude_dadata":39.8978921,
+    "population":577279
+  },
+  {
+    "settlement":"г. Кемерово",
+    "region":"Кемеровская область",
+    "latitude_dadata":55.3910176,
+    "longitude_dadata":86.0469193,
+    "population":557119
+  },
+  {
+    "settlement":"г. Томск",
+    "region":"Томская область",
+    "latitude_dadata":56.4846736,
+    "longitude_dadata":84.9482929,
+    "population":556478
+  },
+  {
+    "settlement":"г. Набережные Челны",
+    "region":"Республика Татарстан",
+    "latitude_dadata":55.6948843,
+    "longitude_dadata":52.3279115,
+    "population":548434
+  },
+  {
+    "settlement":null,
+    "region":"Севастополь",
+    "latitude_dadata":44.6167087,
+    "longitude_dadata":33.5253617,
+    "population":547820
+  },
+  {
+    "settlement":"г. Ставрополь",
+    "region":"Ставропольский край",
+    "latitude_dadata":45.0444563,
+    "longitude_dadata":41.9691349,
+    "population":547443
+  },
+  {
+    "settlement":"г. Оренбург",
+    "region":"Оренбургская область",
+    "latitude_dadata":51.7875335,
+    "longitude_dadata":55.1017803,
+    "population":543654
+  },
+  {
+    "settlement":"г. Новокузнецк",
+    "region":"Кемеровская область",
+    "latitude_dadata":53.7943459,
+    "longitude_dadata":87.2142908,
+    "population":537480
+  },
+  {
+    "settlement":"г. Рязань",
+    "region":"Рязанская область",
+    "latitude_dadata":54.6255345,
+    "longitude_dadata":39.7359162,
+    "population":528599
+  },
+  {
+    "settlement":"г. Балашиха",
+    "region":"Московская область",
+    "latitude_dadata":55.796991,
+    "longitude_dadata":37.938104,
+    "population":520962
+  },
+  {
+    "settlement":"г. Пенза",
+    "region":"Пензенская область",
+    "latitude_dadata":53.1753947,
+    "longitude_dadata":45.0347408,
+    "population":501109
+  },
+  {
+    "settlement":"г. Чебоксары",
+    "region":"Чувашская Республика",
+    "latitude_dadata":56.125485,
+    "longitude_dadata":47.377328,
+    "population":497807
+  },
+  {
+    "settlement":"г. Липецк",
+    "region":"Липецкая область",
+    "latitude_dadata":52.6101389,
+    "longitude_dadata":39.5947287,
+    "population":496403
+  },
+  {
+    "settlement":"г. Калининград",
+    "region":"Калининградская область",
+    "latitude_dadata":54.7074298,
+    "longitude_dadata":20.5073482,
+    "population":490449
+  },
+  {
+    "settlement":"г. Астрахань",
+    "region":"Астраханская область",
+    "latitude_dadata":46.3656435,
+    "longitude_dadata":48.0559229,
+    "population":475629
+  },
+  {
+    "settlement":"г. Тула",
+    "region":"Тульская область",
+    "latitude_dadata":54.1918898,
+    "longitude_dadata":37.6153644,
+    "population":473622
+  },
+  {
+    "settlement":"г. Киров",
+    "region":"Кировская область",
+    "latitude_dadata":58.6034972,
+    "longitude_dadata":49.6680445,
+    "population":468212
+  },
+  {
+    "settlement":"г. Сочи",
+    "region":"Краснодарский край",
+    "latitude_dadata":43.5855182,
+    "longitude_dadata":39.7229922,
+    "population":466078
+  },
+  {
+    "settlement":"г. Курск",
+    "region":"Курская область",
+    "latitude_dadata":51.7303825,
+    "longitude_dadata":36.1925546,
+    "population":440052
+  },
+  {
+    "settlement":"г. Улан-Удэ",
+    "region":"Республика Бурятия",
+    "latitude_dadata":51.8334492,
+    "longitude_dadata":107.584068,
+    "population":437565
+  },
+  {
+    "settlement":"г. Тверь",
+    "region":"Тверская область",
+    "latitude_dadata":56.8586556,
+    "longitude_dadata":35.9118279,
+    "population":416219
+  },
+  {
+    "settlement":"г. Магнитогорск",
+    "region":"Челябинская область",
+    "latitude_dadata":53.4072599,
+    "longitude_dadata":58.9791822,
+    "population":410594
+  },
+  {
+    "settlement":"г. Сургут",
+    "region":"Ханты-Мансийский автономный округ — Югра",
+    "latitude_dadata":61.2541492,
+    "longitude_dadata":73.396236,
+    "population":396443
+  },
+  {
+    "settlement":"г. Брянск",
+    "region":"Брянская область",
+    "latitude_dadata":53.2420053,
+    "longitude_dadata":34.3653002,
+    "population":379152
+  },
+  {
+    "settlement":"г. Иваново",
+    "region":"Ивановская область",
+    "latitude_dadata":56.9994066,
+    "longitude_dadata":40.9729071,
+    "population":361644
+  },
+  {
+    "settlement":"г. Якутск",
+    "region":"Республика Саха (Якутия)",
+    "latitude_dadata":62.0280605,
+    "longitude_dadata":129.7324858,
+    "population":355443
+  },
+  {
+    "settlement":"г. Владимир",
+    "region":"Владимирская область",
+    "latitude_dadata":56.1280444,
+    "longitude_dadata":40.4082983,
+    "population":349951
+  },
+  {
+    "settlement":"г. Симферополь",
+    "region":"Республика Крым",
+    "latitude_dadata":44.9482789,
+    "longitude_dadata":34.1001275,
+    "population":340540
+  },
+  {
+    "settlement":"г. Белгород",
+    "region":"Белгородская область",
+    "latitude_dadata":50.5975582,
+    "longitude_dadata":36.5858422,
+    "population":339978
+  },
+  {
+    "settlement":"г. Нижний Тагил",
+    "region":"Свердловская область",
+    "latitude_dadata":57.9102289,
+    "longitude_dadata":59.9814188,
+    "population":338966
+  },
+  {
+    "settlement":"г. Калуга",
+    "region":"Калужская область",
+    "latitude_dadata":54.506025,
+    "longitude_dadata":36.2516145,
+    "population":337058
+  },
+  {
+    "settlement":"г. Чита",
+    "region":"Забайкальский край",
+    "latitude_dadata":52.0338828,
+    "longitude_dadata":113.499487,
+    "population":334427
+  },
+  {
+    "settlement":"г. Грозный",
+    "region":"Чеченская Республика",
+    "latitude_dadata":43.3178923,
+    "longitude_dadata":45.6981421,
+    "population":328533
+  },
+  {
+    "settlement":"г. Волжский",
+    "region":"Волгоградская область",
+    "latitude_dadata":48.7979775,
+    "longitude_dadata":44.7462572,
+    "population":321479
+  },
+  {
+    "settlement":"город Смоленск",
+    "region":"Смоленская область",
+    "latitude_dadata":54.782635,
+    "longitude_dadata":32.045251,
+    "population":316570
+  },
+  {
+    "settlement":"г. Подольск",
+    "region":"Московская область",
+    "latitude_dadata":55.4389616,
+    "longitude_dadata":37.5703052,
+    "population":314934
+  },
+  {
+    "settlement":"г. Саранск",
+    "region":"Республика Мордовия",
+    "latitude_dadata":54.1808234,
+    "longitude_dadata":45.1863143,
+    "population":314871
+  },
+  {
+    "settlement":"г. Вологда",
+    "region":"Вологодская область",
+    "latitude_dadata":59.220501,
+    "longitude_dadata":39.891523,
+    "population":313944
+  },
+  {
+    "settlement":"г. Курган",
+    "region":"Курганская область",
+    "latitude_dadata":55.4443683,
+    "longitude_dadata":65.3162142,
+    "population":310911
+  },
+  {
+    "settlement":"г. Череповец",
+    "region":"Вологодская область",
+    "latitude_dadata":59.1268743,
+    "longitude_dadata":37.9090556,
+    "population":305185
+  },
+  {
+    "settlement":"г. Орёл",
+    "region":"Орловская область",
+    "latitude_dadata":52.9671928,
+    "longitude_dadata":36.0695725,
+    "population":303169
+  },
+  {
+    "settlement":"г. Архангельск",
+    "region":"Архангельская область",
+    "latitude_dadata":64.53939,
+    "longitude_dadata":40.5170011,
+    "population":301199
+  },
+  {
+    "settlement":"г. Владикавказ",
+    "region":"Республика Северная Осетия — Алания",
+    "latitude_dadata":43.020552,
+    "longitude_dadata":44.681905,
+    "population":295830
+  },
+  {
+    "settlement":"г. Нижневартовск",
+    "region":"Ханты-Мансийский автономный округ — Югра",
+    "latitude_dadata":60.9397399,
+    "longitude_dadata":76.5695505,
+    "population":283256
+  },
+  {
+    "settlement":"г. Йошкар-Ола",
+    "region":"Республика Марий Эл",
+    "latitude_dadata":56.6343266,
+    "longitude_dadata":47.8999167,
+    "population":281248
+  },
+  {
+    "settlement":"г. Стерлитамак",
+    "region":"Республика Башкортостан",
+    "latitude_dadata":53.6302062,
+    "longitude_dadata":55.9317313,
+    "population":277410
+  },
+  {
+    "settlement":"г. Мурманск",
+    "region":"Мурманская область",
+    "latitude_dadata":68.970663,
+    "longitude_dadata":33.074918,
+    "population":270384
+  },
+  {
+    "settlement":"г. Кострома",
+    "region":"Костромская область",
+    "latitude_dadata":57.768,
+    "longitude_dadata":40.927,
+    "population":267481
+  },
+  {
+    "settlement":"г. Новороссийск",
+    "region":"Краснодарский край",
+    "latitude_dadata":44.7234226,
+    "longitude_dadata":37.7686906,
+    "population":262293
+  },
+  {
+    "settlement":"г. Тамбов",
+    "region":"Тамбовская область",
+    "latitude_dadata":52.7211576,
+    "longitude_dadata":41.4522156,
+    "population":261803
+  },
+  {
+    "settlement":"г. Химки",
+    "region":"Московская область",
+    "latitude_dadata":55.8888467,
+    "longitude_dadata":37.430372,
+    "population":257128
+  },
+  {
+    "settlement":"г. Мытищи",
+    "region":"Московская область",
+    "latitude_dadata":55.9104655,
+    "longitude_dadata":37.7363923,
+    "population":255429
+  },
+  {
+    "settlement":"г. Нальчик",
+    "region":"Кабардино-Балкарская Республика",
+    "latitude_dadata":43.4846449,
+    "longitude_dadata":43.6070943,
+    "population":247054
+  },
+  {
+    "settlement":"г. Таганрог",
+    "region":"Ростовская область",
+    "latitude_dadata":47.2096599,
+    "longitude_dadata":38.9352459,
+    "population":245120
+  },
+  {
+    "settlement":"г. Нижнекамск",
+    "region":"Республика Татарстан",
+    "latitude_dadata":55.6312304,
+    "longitude_dadata":51.8144719,
+    "population":241479
+  },
+  {
+    "settlement":"г. Благовещенск",
+    "region":"Амурская область",
+    "latitude_dadata":50.290659,
+    "longitude_dadata":127.527198,
+    "population":241437
+  },
+  {
+    "settlement":"г. Комсомольск-на-Амуре",
+    "region":"Хабаровский край",
+    "latitude_dadata":50.5525092,
+    "longitude_dadata":136.9895507,
+    "population":238505
+  },
+  {
+    "settlement":"г. Петрозаводск",
+    "region":"Республика Карелия",
+    "latitude_dadata":61.7889739,
+    "longitude_dadata":34.3596538,
+    "population":234897
+  },
+  {
+    "settlement":"г. Королёв",
+    "region":"Московская область",
+    "latitude_dadata":55.9161885,
+    "longitude_dadata":37.854422,
+    "population":228095
+  },
+  {
+    "settlement":"г. Шахты",
+    "region":"Ростовская область",
+    "latitude_dadata":47.7085649,
+    "longitude_dadata":40.2158665,
+    "population":226452
+  },
+  {
+    "settlement":"г. Энгельс",
+    "region":"Саратовская область",
+    "latitude_dadata":51.4855068,
+    "longitude_dadata":46.1267008,
+    "population":225428
+  },
+  {
+    "settlement":"г. Великий Новгород",
+    "region":"Новгородская область",
+    "latitude_dadata":58.5214164,
+    "longitude_dadata":31.2754186,
+    "population":224286
+  },
+  {
+    "settlement":"г. Люберцы",
+    "region":"Московская область",
+    "latitude_dadata":55.676499,
+    "longitude_dadata":37.898125,
+    "population":224195
+  },
+  {
+    "settlement":"г. Братск",
+    "region":"Иркутская область",
+    "latitude_dadata":56.1514087,
+    "longitude_dadata":101.6341027,
+    "population":224071
+  },
+  {
+    "settlement":"г. Старый Оскол",
+    "region":"Белгородская область",
+    "latitude_dadata":51.297974,
+    "longitude_dadata":37.833231,
+    "population":221676
+  },
+  {
+    "settlement":"город Ангарск",
+    "region":"Иркутская область",
+    "latitude_dadata":52.544898,
+    "longitude_dadata":103.8884509,
+    "population":221296
+  },
+  {
+    "settlement":"г. Сыктывкар",
+    "region":"Республика Коми",
+    "latitude_dadata":61.6687212,
+    "longitude_dadata":50.8356788,
+    "population":220580
+  },
+  {
+    "settlement":"г. Дзержинск",
+    "region":"Нижегородская область",
+    "latitude_dadata":56.2375332,
+    "longitude_dadata":43.4598979,
+    "population":218630
+  },
+  {
+    "settlement":"г. Псков",
+    "region":"Псковская область",
+    "latitude_dadata":57.819825,
+    "longitude_dadata":28.3950685,
+    "population":193082
+  },
+  {
+    "settlement":"г. Орск",
+    "region":"Оренбургская область",
+    "latitude_dadata":51.2292952,
+    "longitude_dadata":58.4752502,
+    "population":189195
+  },
+  {
+    "settlement":"г. Красногорск",
+    "region":"Московская область",
+    "latitude_dadata":55.8318647,
+    "longitude_dadata":37.3294489,
+    "population":187634
+  },
+  {
+    "settlement":"г. Армавир",
+    "region":"Краснодарский край",
+    "latitude_dadata":45.0011356,
+    "longitude_dadata":41.1324283,
+    "population":187177
+  },
+  {
+    "settlement":"г. Абакан",
+    "region":"Республика Хакасия",
+    "latitude_dadata":53.7223055,
+    "longitude_dadata":91.4436926,
+    "population":184769
+  },
+  {
+    "settlement":"г. Балаково",
+    "region":"Саратовская область",
+    "latitude_dadata":52.0222817,
+    "longitude_dadata":47.7827796,
+    "population":184466
+  },
+  {
+    "settlement":"г. Бийск",
+    "region":"Алтайский край",
+    "latitude_dadata":52.5392784,
+    "longitude_dadata":85.213843,
+    "population":183852
+  },
+  {
+    "settlement":"г. Южно-Сахалинск",
+    "region":"Сахалинская область",
+    "latitude_dadata":46.9667029,
+    "longitude_dadata":142.7212958,
+    "population":181587
+  },
+  {
+    "settlement":"г. Одинцово",
+    "region":"Московская область",
+    "latitude_dadata":55.6790296,
+    "longitude_dadata":37.2635177,
+    "population":180530
+  },
+  {
+    "settlement":"г. Уссурийск",
+    "region":"Приморский край",
+    "latitude_dadata":43.8048438,
+    "longitude_dadata":131.9367538,
+    "population":180393
+  },
+  {
+    "settlement":"г. Прокопьевск",
+    "region":"Кемеровская область",
+    "latitude_dadata":53.8604228,
+    "longitude_dadata":86.7183302,
+    "population":177819
+  },
+  {
+    "settlement":"г. Рыбинск",
+    "region":"Ярославская область",
+    "latitude_dadata":58.0484021,
+    "longitude_dadata":38.858475,
+    "population":177295
+  },
+  {
+    "settlement":"г. Норильск",
+    "region":"Красноярский край",
+    "latitude_dadata":69.3489906,
+    "longitude_dadata":88.2009379,
+    "population":174453
+  },
+  {
+    "settlement":"г. Волгодонск",
+    "region":"Ростовская область",
+    "latitude_dadata":47.5165757,
+    "longitude_dadata":42.1984573,
+    "population":168048
+  },
+  {
+    "settlement":"г. Сызрань",
+    "region":"Самарская область",
+    "latitude_dadata":53.1557162,
+    "longitude_dadata":48.4744217,
+    "population":165725
+  },
+  {
+    "settlement":"г. Петропавловск-Камчатский",
+    "region":"Камчатский край",
+    "latitude_dadata":53.0370074,
+    "longitude_dadata":158.65595,
+    "population":164900
+  },
+  {
+    "settlement":"г. Каменск-Уральский",
+    "region":"Свердловская область",
+    "latitude_dadata":56.4148539,
+    "longitude_dadata":61.9188448,
+    "population":164192
+  },
+  {
+    "settlement":"г. Новочеркасск",
+    "region":"Ростовская область",
+    "latitude_dadata":47.4118469,
+    "longitude_dadata":40.1040646,
+    "population":163674
+  },
+  {
+    "settlement":"г. Альметьевск",
+    "region":"Республика Татарстан",
+    "latitude_dadata":54.9014385,
+    "longitude_dadata":52.297123,
+    "population":163512
+  },
+  {
+    "settlement":"г. Златоуст",
+    "region":"Челябинская область",
+    "latitude_dadata":55.1714213,
+    "longitude_dadata":59.6726478,
+    "population":161774
+  },
+  {
+    "settlement":"г. Северодвинск",
+    "region":"Архангельская область",
+    "latitude_dadata":64.5625626,
+    "longitude_dadata":39.8182183,
+    "population":157213
+  },
+  {
+    "settlement":"г. Хасавюрт",
+    "region":"Республика Дагестан",
+    "latitude_dadata":43.2504341,
+    "longitude_dadata":46.5850867,
+    "population":155144
+  },
+  {
+    "settlement":"г. Керчь",
+    "region":"Республика Крым",
+    "latitude_dadata":45.3561252,
+    "longitude_dadata":36.4673129,
+    "population":154621
+  },
+  {
+    "settlement":"г. Домодедово",
+    "region":"Московская область",
+    "latitude_dadata":55.436403,
+    "longitude_dadata":37.7666001,
+    "population":152404
+  },
+  {
+    "settlement":"г. Салават",
+    "region":"Республика Башкортостан",
+    "latitude_dadata":53.362823,
+    "longitude_dadata":55.9154367,
+    "population":148575
+  },
+  {
+    "settlement":"г. Миасс",
+    "region":"Челябинская область",
+    "latitude_dadata":55.0552642,
+    "longitude_dadata":60.0791765,
+    "population":147995
+  },
+  {
+    "settlement":"г. Копейск",
+    "region":"Челябинская область",
+    "latitude_dadata":55.1167381,
+    "longitude_dadata":61.6179305,
+    "population":147806
+  },
+  {
+    "settlement":"г. Пятигорск",
+    "region":"Ставропольский край",
+    "latitude_dadata":44.041234,
+    "longitude_dadata":43.0660504,
+    "population":146473
+  },
+  {
+    "settlement":"г. Электросталь",
+    "region":"Московская область",
+    "latitude_dadata":55.784633,
+    "longitude_dadata":38.444699,
+    "population":146403
+  },
+  {
+    "settlement":"г. Майкоп",
+    "region":"Республика Адыгея",
+    "latitude_dadata":44.609792,
+    "longitude_dadata":40.1005698,
+    "population":143385
+  },
+  {
+    "settlement":"г. Находка",
+    "region":"Приморский край",
+    "latitude_dadata":42.8111483,
+    "longitude_dadata":132.8844502,
+    "population":139931
+  },
+  {
+    "settlement":"г. Березники",
+    "region":"Пермский край",
+    "latitude_dadata":59.4079119,
+    "longitude_dadata":56.8039179,
+    "population":138069
+  },
+  {
+    "settlement":"г. Коломна",
+    "region":"Московская область",
+    "latitude_dadata":55.1026926,
+    "longitude_dadata":38.7530213,
+    "population":134850
+  },
+  {
+    "settlement":"г. Щёлково",
+    "region":"Московская область",
+    "latitude_dadata":55.9233436,
+    "longitude_dadata":37.9783923,
+    "population":134211
+  },
+  {
+    "settlement":"г. Серпухов",
+    "region":"Московская область",
+    "latitude_dadata":54.9226176,
+    "longitude_dadata":37.4033624,
+    "population":133793
+  },
+  {
+    "settlement":"г. Ковров",
+    "region":"Владимирская область",
+    "latitude_dadata":56.3554229,
+    "longitude_dadata":41.3171096,
+    "population":132417
+  },
+  {
+    "settlement":"г. Нефтекамск",
+    "region":"Республика Башкортостан",
+    "latitude_dadata":56.0883752,
+    "longitude_dadata":54.2482411,
+    "population":131942
+  },
+  {
+    "settlement":"г. Кисловодск",
+    "region":"Ставропольский край",
+    "latitude_dadata":43.9052745,
+    "longitude_dadata":42.7167964,
+    "population":127521
+  },
+  {
+    "settlement":"г. Батайск",
+    "region":"Ростовская область",
+    "latitude_dadata":47.1382139,
+    "longitude_dadata":39.750662,
+    "population":126988
+  },
+  {
+    "settlement":"г. Рубцовск",
+    "region":"Алтайский край",
+    "latitude_dadata":51.5012963,
+    "longitude_dadata":81.2078042,
+    "population":126834
+  },
+  {
+    "settlement":"г. Обнинск",
+    "region":"Калужская область",
+    "latitude_dadata":55.0944881,
+    "longitude_dadata":36.6121565,
+    "population":125376
+  },
+  {
+    "settlement":"г. Кызыл",
+    "region":"Республика Тыва",
+    "latitude_dadata":51.7190588,
+    "longitude_dadata":94.4376984,
+    "population":125241
+  },
+  {
+    "settlement":"г. Дербент",
+    "region":"Республика Дагестан",
+    "latitude_dadata":42.0590354,
+    "longitude_dadata":48.2908599,
+    "population":124953
+  },
+  {
+    "settlement":"г. Нефтеюганск",
+    "region":"Ханты-Мансийский автономный округ — Югра",
+    "latitude_dadata":61.0881688,
+    "longitude_dadata":72.6163369,
+    "population":124732
+  },
+  {
+    "settlement":"г. Назрань",
+    "region":"Республика Ингушетия",
+    "latitude_dadata":43.2256598,
+    "longitude_dadata":44.7646901,
+    "population":122350
+  },
+  {
+    "settlement":"г. Каспийск",
+    "region":"Республика Дагестан",
+    "latitude_dadata":42.8916263,
+    "longitude_dadata":47.6366936,
+    "population":121140
+  },
+  {
+    "settlement":"г. Долгопрудный",
+    "region":"Московская область",
+    "latitude_dadata":55.9385975,
+    "longitude_dadata":37.5100337,
+    "population":120907
+  },
+  {
+    "settlement":"г. Новочебоксарск",
+    "region":"Чувашская Республика",
+    "latitude_dadata":56.1095538,
+    "longitude_dadata":47.4791596,
+    "population":120375
+  },
+  {
+    "settlement":"г. Новомосковск",
+    "region":"Тульская область",
+    "latitude_dadata":54.010957,
+    "longitude_dadata":38.2915047,
+    "population":119697
+  },
+  {
+    "settlement":"г. Ессентуки",
+    "region":"Ставропольский край",
+    "latitude_dadata":44.0444693,
+    "longitude_dadata":42.8589782,
+    "population":119658
+  },
+  {
+    "settlement":"г. Невинномысск",
+    "region":"Ставропольский край",
+    "latitude_dadata":44.6226742,
+    "longitude_dadata":41.9476424,
+    "population":117562
+  },
+  {
+    "settlement":"г. Октябрьский",
+    "region":"Республика Башкортостан",
+    "latitude_dadata":54.4814637,
+    "longitude_dadata":53.4654836,
+    "population":115557
+  },
+  {
+    "settlement":"г. Раменское",
+    "region":"Московская область",
+    "latitude_dadata":55.5495378,
+    "longitude_dadata":38.2728835,
+    "population":114537
+  },
+  {
+    "settlement":"г. Первоуральск",
+    "region":"Свердловская область",
+    "latitude_dadata":56.9080096,
+    "longitude_dadata":59.9429936,
+    "population":114450
+  },
+  {
+    "settlement":"г. Михайловск",
+    "region":"Ставропольский край",
+    "latitude_dadata":45.1297467,
+    "longitude_dadata":42.0287477,
+    "population":114133
+  },
+  {
+    "settlement":"г. Реутов",
+    "region":"Московская область",
+    "latitude_dadata":55.7582708,
+    "longitude_dadata":37.8618288,
+    "population":113871
+  },
+  {
+    "settlement":"г. Черкесск",
+    "region":"Карачаево-Черкесская Республика",
+    "latitude_dadata":44.228353,
+    "longitude_dadata":42.048278,
+    "population":113226
+  },
+  {
+    "settlement":"г. Жуковский",
+    "region":"Московская область",
+    "latitude_dadata":55.5999747,
+    "longitude_dadata":38.1224066,
+    "population":111222
+  },
+  {
+    "settlement":"г. Димитровград",
+    "region":"Ульяновская область",
+    "latitude_dadata":54.2168413,
+    "longitude_dadata":49.6262388,
+    "population":110968
+  },
+  {
+    "settlement":"г. Пушкино",
+    "region":"Московская область",
+    "latitude_dadata":56.0104754,
+    "longitude_dadata":37.847161,
+    "population":110868
+  },
+  {
+    "settlement":"г. Артем",
+    "region":"Приморский край",
+    "latitude_dadata":43.3501868,
+    "longitude_dadata":132.1595835,
+    "population":109556
+  },
+  {
+    "settlement":"г. Камышин",
+    "region":"Волгоградская область",
+    "latitude_dadata":50.0652955,
+    "longitude_dadata":45.384535,
+    "population":107927
+  },
+  {
+    "settlement":"г. Евпатория",
+    "region":"Республика Крым",
+    "latitude_dadata":45.190629,
+    "longitude_dadata":33.367634,
+    "population":107877
+  },
+  {
+    "settlement":"г. Муром",
+    "region":"Владимирская область",
+    "latitude_dadata":55.563153,
+    "longitude_dadata":42.0230298,
+    "population":107497
+  },
+  {
+    "settlement":"г. Ханты-Мансийск",
+    "region":"Ханты-Мансийский автономный округ — Югра",
+    "latitude_dadata":61.0025598,
+    "longitude_dadata":69.0183366,
+    "population":107473
+  },
+  {
+    "settlement":"г. Новый Уренгой",
+    "region":"Ямало-Ненецкий автономный округ",
+    "latitude_dadata":66.0839904,
+    "longitude_dadata":76.6810104,
+    "population":107251
+  },
+  {
+    "settlement":"г. Северск",
+    "region":"Томская область",
+    "latitude_dadata":56.6032343,
+    "longitude_dadata":84.881027,
+    "population":106648
+  },
+  {
+    "settlement":"г. Орехово-Зуево",
+    "region":"Московская область",
+    "latitude_dadata":55.8164825,
+    "longitude_dadata":38.9368137,
+    "population":105745
+  },
+  {
+    "settlement":"г. Арзамас",
+    "region":"Нижегородская область",
+    "latitude_dadata":55.3946343,
+    "longitude_dadata":43.8408135,
+    "population":104908
+  },
+  {
+    "settlement":"г. Ногинск",
+    "region":"Московская область",
+    "latitude_dadata":55.8760353,
+    "longitude_dadata":38.4231801,
+    "population":103891
+  },
+  {
+    "settlement":"г. Новошахтинск",
+    "region":"Ростовская область",
+    "latitude_dadata":47.7576743,
+    "longitude_dadata":39.9364541,
+    "population":103480
+  },
+  {
+    "settlement":"г. Бердск",
+    "region":"Новосибирская область",
+    "latitude_dadata":54.7582184,
+    "longitude_dadata":83.1071527,
+    "population":102850
+  },
+  {
+    "settlement":"г. Элиста",
+    "region":"Республика Калмыкия",
+    "latitude_dadata":46.30821,
+    "longitude_dadata":44.2702746,
+    "population":102583
+  },
+  {
+    "settlement":"г. Сергиев Посад",
+    "region":"Московская область",
+    "latitude_dadata":56.3063854,
+    "longitude_dadata":38.1502956,
+    "population":101756
+  },
+  {
+    "settlement":"г. Видное",
+    "region":"Московская область",
+    "latitude_dadata":55.5517857,
+    "longitude_dadata":37.7062236,
+    "population":101490
+  },
+  {
+    "settlement":"г. Ачинск",
+    "region":"Красноярский край",
+    "latitude_dadata":56.2537315,
+    "longitude_dadata":90.4793969,
+    "population":100621
+  },
+  {
+    "settlement":"г. Тобольск",
+    "region":"Тюменская область",
+    "latitude_dadata":58.2017257,
+    "longitude_dadata":68.2538473,
+    "population":100352
+  },
+  {
+    "settlement":"г. Ноябрьск",
+    "region":"Ямало-Ненецкий автономный округ",
+    "latitude_dadata":63.1920786,
+    "longitude_dadata":75.4454918,
+    "population":100188
+  },
+  {
+    "settlement":"г. Елец",
+    "region":"Липецкая область",
+    "latitude_dadata":52.6152577,
+    "longitude_dadata":38.528899,
+    "population":99875
+  },
+  {
+    "settlement":"г. Зеленодольск",
+    "region":"Республика Татарстан",
+    "latitude_dadata":55.8465861,
+    "longitude_dadata":48.500966,
+    "population":99137
+  },
+  {
+    "settlement":"г. Новокуйбышевск",
+    "region":"Самарская область",
+    "latitude_dadata":53.0994719,
+    "longitude_dadata":49.9477255,
+    "population":98306
+  },
+  {
+    "settlement":"г. Воткинск",
+    "region":"Удмуртская Республика",
+    "latitude_dadata":57.0518828,
+    "longitude_dadata":53.9874914,
+    "population":97471
+  },
+  {
+    "settlement":"г. Железногорск",
+    "region":"Курская область",
+    "latitude_dadata":52.3379241,
+    "longitude_dadata":35.3517678,
+    "population":97038
+  },
+  {
+    "settlement":"г. Междуреченск",
+    "region":"Кемеровская область",
+    "latitude_dadata":53.6865918,
+    "longitude_dadata":88.0702782,
+    "population":96174
+  },
+  {
+    "settlement":"г. Воскресенск",
+    "region":"Московская область",
+    "latitude_dadata":55.3070155,
+    "longitude_dadata":38.7028385,
+    "population":95495
+  },
+  {
+    "settlement":"г. Гатчина",
+    "region":"Ленинградская область",
+    "latitude_dadata":59.5651362,
+    "longitude_dadata":30.1281234,
+    "population":94377
+  },
+  {
+    "settlement":"г. Серов",
+    "region":"Свердловская область",
+    "latitude_dadata":59.6047459,
+    "longitude_dadata":60.5752389,
+    "population":94211
+  },
+  {
+    "settlement":"г. Саров",
+    "region":"Нижегородская область",
+    "latitude_dadata":54.922813,
+    "longitude_dadata":43.3447953,
+    "population":93357
+  },
+  {
+    "settlement":"г. Ленинск-Кузнецкий",
+    "region":"Кемеровская область",
+    "latitude_dadata":54.6674801,
+    "longitude_dadata":86.1796673,
+    "population":92244
+  },
+  {
+    "settlement":"г. Сарапул",
+    "region":"Удмуртская Республика",
+    "latitude_dadata":56.4616582,
+    "longitude_dadata":53.8036826,
+    "population":91115
+  },
+  {
+    "settlement":"г. Магадан",
+    "region":"Магаданская область",
+    "latitude_dadata":59.5681947,
+    "longitude_dadata":150.8086939,
+    "population":90757
+  },
+  {
+    "settlement":"г. Мичуринск",
+    "region":"Тамбовская область",
+    "latitude_dadata":52.8913406,
+    "longitude_dadata":40.5103713,
+    "population":90451
+  },
+  {
+    "settlement":"г. Соликамск",
+    "region":"Пермский край",
+    "latitude_dadata":59.6483298,
+    "longitude_dadata":56.7710196,
+    "population":89473
+  },
+  {
+    "settlement":"г. Мурино",
+    "region":"Ленинградская область",
+    "latitude_dadata":60.0448984,
+    "longitude_dadata":30.4573012,
+    "population":89083
+  },
+  {
+    "settlement":"г. Чехов",
+    "region":"Московская область",
+    "latitude_dadata":55.1506335,
+    "longitude_dadata":37.4532854,
+    "population":89025
+  },
+  {
+    "settlement":"г. Клин",
+    "region":"Московская область",
+    "latitude_dadata":56.3424345,
+    "longitude_dadata":36.7240443,
+    "population":88511
+  },
+  {
+    "settlement":"г. Бузулук",
+    "region":"Оренбургская область",
+    "latitude_dadata":52.7881715,
+    "longitude_dadata":52.2623964,
+    "population":88341
+  },
+  {
+    "settlement":"г. Глазов",
+    "region":"Удмуртская Республика",
+    "latitude_dadata":58.1359039,
+    "longitude_dadata":52.6634921,
+    "population":87762
+  },
+  {
+    "settlement":"г. Канск",
+    "region":"Красноярский край",
+    "latitude_dadata":56.2050971,
+    "longitude_dadata":95.7051994,
+    "population":86816
+  },
+  {
+    "settlement":"г. Великие Луки",
+    "region":"Псковская область",
+    "latitude_dadata":56.343703,
+    "longitude_dadata":30.515671,
+    "population":86711
+  },
+  {
+    "settlement":"г. Каменск-Шахтинский",
+    "region":"Ростовская область",
+    "latitude_dadata":48.3204742,
+    "longitude_dadata":40.2689608,
+    "population":86365
+  },
+  {
+    "settlement":"г. Губкин",
+    "region":"Белгородская область",
+    "latitude_dadata":51.2836227,
+    "longitude_dadata":37.5347995,
+    "population":85225
+  },
+  {
+    "settlement":"г. Киселевск",
+    "region":"Кемеровская область",
+    "latitude_dadata":54.0383268,
+    "longitude_dadata":86.6605444,
+    "population":83431
+  },
+  {
+    "settlement":"г. Ейск",
+    "region":"Краснодарский край",
+    "latitude_dadata":46.7114714,
+    "longitude_dadata":38.2764767,
+    "population":82943
+  },
+  {
+    "settlement":"г. Ивантеевка",
+    "region":"Московская область",
+    "latitude_dadata":55.9741839,
+    "longitude_dadata":37.9208717,
+    "population":82827
+  },
+  {
+    "settlement":"г. Лобня",
+    "region":"Московская область",
+    "latitude_dadata":56.0328978,
+    "longitude_dadata":37.4614808,
+    "population":82764
+  },
+  {
+    "settlement":"г. Железногорск",
+    "region":"Красноярский край",
+    "latitude_dadata":56.2528775,
+    "longitude_dadata":93.532226,
+    "population":82723
+  },
+  {
+    "settlement":"г. Азов",
+    "region":"Ростовская область",
+    "latitude_dadata":47.1122112,
+    "longitude_dadata":39.4233596,
+    "population":81924
+  },
+  {
+    "settlement":"г. Анапа",
+    "region":"Краснодарский край",
+    "latitude_dadata":44.8948984,
+    "longitude_dadata":37.3162896,
+    "population":81863
+  },
+  {
+    "settlement":"г. Бугульма",
+    "region":"Республика Татарстан",
+    "latitude_dadata":54.5364489,
+    "longitude_dadata":52.7894083,
+    "population":81677
+  },
+  {
+    "settlement":"г. Московский",
+    "region":"Москва",
+    "latitude_dadata":55.597255,
+    "longitude_dadata":37.359448,
+    "population":81309
+  },
+  {
+    "settlement":"г. Геленджик",
+    "region":"Краснодарский край",
+    "latitude_dadata":44.5631183,
+    "longitude_dadata":38.0791049,
+    "population":80204
+  },
+  {
+    "settlement":"г. Ухта",
+    "region":"Республика Коми",
+    "latitude_dadata":63.5563841,
+    "longitude_dadata":53.7013827,
+    "population":79899
+  },
+  {
+    "settlement":"г. Юрга",
+    "region":"Кемеровская область",
+    "latitude_dadata":55.7202352,
+    "longitude_dadata":84.8885927,
+    "population":79693
+  },
+  {
+    "settlement":"г. Усть-Илимск",
+    "region":"Иркутская область",
+    "latitude_dadata":58.0189147,
+    "longitude_dadata":102.6855314,
+    "population":79570
+  },
+  {
+    "settlement":"г. Всеволожск",
+    "region":"Ленинградская область",
+    "latitude_dadata":60.0190286,
+    "longitude_dadata":30.6456654,
+    "population":79038
+  },
+  {
+    "settlement":"г. Новоуральск",
+    "region":"Свердловская область",
+    "latitude_dadata":57.2472236,
+    "longitude_dadata":60.0955422,
+    "population":78479
+  },
+  {
+    "settlement":"г. Кузнецк",
+    "region":"Пензенская область",
+    "latitude_dadata":53.1130584,
+    "longitude_dadata":46.6052642,
+    "population":78390
+  },
+  {
+    "settlement":"г. Бор",
+    "region":"Нижегородская область",
+    "latitude_dadata":56.3565886,
+    "longitude_dadata":44.0645547,
+    "population":78372
+  },
+  {
+    "settlement":"г. Кинешма",
+    "region":"Ивановская область",
+    "latitude_dadata":57.442535,
+    "longitude_dadata":42.1689258,
+    "population":77694
+  },
+  {
+    "settlement":"г. Озерск",
+    "region":"Челябинская область",
+    "latitude_dadata":55.7632143,
+    "longitude_dadata":60.7076521,
+    "population":76896
+  },
+  {
+    "settlement":"г. Новотроицк",
+    "region":"Оренбургская область",
+    "latitude_dadata":51.1963401,
+    "longitude_dadata":58.3017089,
+    "population":75960
+  },
+  {
+    "settlement":"г. Кропоткин",
+    "region":"Краснодарский край",
+    "latitude_dadata":45.4332835,
+    "longitude_dadata":40.5728945,
+    "population":75858
+  },
+  {
+    "settlement":"г. Чайковский",
+    "region":"Пермский край",
+    "latitude_dadata":56.7780683,
+    "longitude_dadata":54.1477844,
+    "population":75837
+  },
+  {
+    "settlement":"г. Черногорск",
+    "region":"Республика Хакасия",
+    "latitude_dadata":53.8258374,
+    "longitude_dadata":91.3259463,
+    "population":75745
+  },
+  {
+    "settlement":"г. Усолье-Сибирское",
+    "region":"Иркутская область",
+    "latitude_dadata":52.7566823,
+    "longitude_dadata":103.6387415,
+    "population":74762
+  },
+  {
+    "settlement":"г. Ялта",
+    "region":"Республика Крым",
+    "latitude_dadata":44.4952969,
+    "longitude_dadata":34.1663516,
+    "population":74652
+  },
+  {
+    "settlement":"г. Дубна",
+    "region":"Московская область",
+    "latitude_dadata":56.7416155,
+    "longitude_dadata":37.1756531,
+    "population":74183
+  },
+  {
+    "settlement":"г. Балашов",
+    "region":"Саратовская область",
+    "latitude_dadata":51.5388261,
+    "longitude_dadata":43.1839668,
+    "population":74057
+  },
+  {
+    "settlement":"посёлок Коммунарка",
+    "region":"Москва",
+    "latitude_dadata":55.570388,
+    "longitude_dadata":37.475469,
+    "population":73735
+  },
+  {
+    "settlement":"г. Елабуга",
+    "region":"Республика Татарстан",
+    "latitude_dadata":55.7566788,
+    "longitude_dadata":52.0545017,
+    "population":73630
+  },
+  {
+    "settlement":"г. Новоалтайск",
+    "region":"Алтайский край",
+    "latitude_dadata":53.4120027,
+    "longitude_dadata":83.9309813,
+    "population":73049
+  },
+  {
+    "settlement":"г. Выборг",
+    "region":"Ленинградская область",
+    "latitude_dadata":60.7129589,
+    "longitude_dadata":28.7328799,
+    "population":72530
+  },
+  {
+    "settlement":"г. Егорьевск",
+    "region":"Московская область",
+    "latitude_dadata":55.3831202,
+    "longitude_dadata":39.0358883,
+    "population":71686
+  },
+  {
+    "settlement":"г. Верхняя Пышма",
+    "region":"Свердловская область",
+    "latitude_dadata":56.9758868,
+    "longitude_dadata":60.5649684,
+    "population":71335
+  },
+  {
+    "settlement":"г. Наро-Фоминск",
+    "region":"Московская область",
+    "latitude_dadata":55.386185,
+    "longitude_dadata":36.734484,
+    "population":71121
+  },
+  {
+    "settlement":"г. Минеральные Воды",
+    "region":"Ставропольский край",
+    "latitude_dadata":44.2087295,
+    "longitude_dadata":43.1383447,
+    "population":70485
+  },
+  {
+    "settlement":"г. Троицк",
+    "region":"Челябинская область",
+    "latitude_dadata":54.0843322,
+    "longitude_dadata":61.5587093,
+    "population":70301
+  },
+  {
+    "settlement":"г. Чапаевск",
+    "region":"Самарская область",
+    "latitude_dadata":52.929023,
+    "longitude_dadata":49.8673246,
+    "population":70228
+  },
+  {
+    "settlement":"г. Минусинск",
+    "region":"Красноярский край",
+    "latitude_dadata":53.7104585,
+    "longitude_dadata":91.6871667,
+    "population":70089
+  },
+  {
+    "settlement":"г. Биробиджан",
+    "region":"Еврейская автономная область",
+    "latitude_dadata":48.7946217,
+    "longitude_dadata":132.9217228,
+    "population":70064
+  },
+  {
+    "settlement":"г. Шадринск",
+    "region":"Курганская область",
+    "latitude_dadata":56.0871041,
+    "longitude_dadata":63.6297172,
+    "population":68609
+  },
+  {
+    "settlement":"г. Белово",
+    "region":"Кемеровская область",
+    "latitude_dadata":54.4221568,
+    "longitude_dadata":86.3037406,
+    "population":68542
+  },
+  {
+    "settlement":"г. Туймазы",
+    "region":"Республика Башкортостан",
+    "latitude_dadata":54.5999395,
+    "longitude_dadata":53.6950191,
+    "population":68349
+  },
+  {
+    "settlement":"г. Сертолово",
+    "region":"Ленинградская область",
+    "latitude_dadata":60.1446697,
+    "longitude_dadata":30.209571,
+    "population":68241
+  },
+  {
+    "settlement":"г. Буйнакск",
+    "region":"Республика Дагестан",
+    "latitude_dadata":42.8213541,
+    "longitude_dadata":47.116407,
+    "population":68121
+  },
+  {
+    "settlement":"г. Ишим",
+    "region":"Тюменская область",
+    "latitude_dadata":56.1104734,
+    "longitude_dadata":69.4797226,
+    "population":67614
+  },
+  {
+    "settlement":"г. Кирово-Чепецк",
+    "region":"Кировская область",
+    "latitude_dadata":58.5560037,
+    "longitude_dadata":50.0317344,
+    "population":66651
+  },
+  {
+    "settlement":"г. Анжеро-Судженск",
+    "region":"Кемеровская область",
+    "latitude_dadata":56.0787454,
+    "longitude_dadata":86.0200409,
+    "population":66583
+  },
+  {
+    "settlement":"г. Феодосия",
+    "region":"Республика Крым",
+    "latitude_dadata":45.0320187,
+    "longitude_dadata":35.382384,
+    "population":66293
+  },
+  {
+    "settlement":"г. Дмитров",
+    "region":"Московская область",
+    "latitude_dadata":56.3476745,
+    "longitude_dadata":37.5266195,
+    "population":65574
+  },
+  {
+    "settlement":"г. Сосновый Бор",
+    "region":"Ленинградская область",
+    "latitude_dadata":59.904224,
+    "longitude_dadata":29.092209,
+    "population":65367
+  },
+  {
+    "settlement":"г. Горно-Алтайск",
+    "region":"Республика Алтай",
+    "latitude_dadata":51.9581885,
+    "longitude_dadata":85.9603499,
+    "population":65342
+  },
+  {
+    "settlement":"г. Лыткарино",
+    "region":"Московская область",
+    "latitude_dadata":55.5778267,
+    "longitude_dadata":37.9034779,
+    "population":65212
+  },
+  {
+    "settlement":"г. Павловский Посад",
+    "region":"Московская область",
+    "latitude_dadata":55.780723,
+    "longitude_dadata":38.6596371,
+    "population":65098
+  },
+  {
+    "settlement":"г. Троицк",
+    "region":"Москва",
+    "latitude_dadata":55.4844981,
+    "longitude_dadata":37.3067485,
+    "population":65043
+  },
+  {
+    "settlement":"г. Белорецк",
+    "region":"Республика Башкортостан",
+    "latitude_dadata":53.967626,
+    "longitude_dadata":58.4100433,
+    "population":64525
+  },
+  {
+    "settlement":"г. Ступино",
+    "region":"Московская область",
+    "latitude_dadata":54.886274,
+    "longitude_dadata":38.078228,
+    "population":64412
+  },
+  {
+    "settlement":"г. Гудермес",
+    "region":"Чеченская Республика",
+    "latitude_dadata":43.3518339,
+    "longitude_dadata":46.1034832,
+    "population":64376
+  },
+  {
+    "settlement":"г. Ишимбай",
+    "region":"Республика Башкортостан",
+    "latitude_dadata":53.4545688,
+    "longitude_dadata":56.0440089,
+    "population":64041
+  },
+  {
+    "settlement":"г. Донской",
+    "region":"Тульская область",
+    "latitude_dadata":53.9678617,
+    "longitude_dadata":38.3372254,
+    "population":63837
+  },
+  {
+    "settlement":"г. Котельники",
+    "region":"Московская область",
+    "latitude_dadata":55.6599375,
+    "longitude_dadata":37.8631583,
+    "population":63728
+  },
+  {
+    "settlement":"г. Кстово",
+    "region":"Нижегородская область",
+    "latitude_dadata":56.1432079,
+    "longitude_dadata":44.1663972,
+    "population":63646
+  },
+  {
+    "settlement":"г. Урус-Мартан",
+    "region":"Чеченская Республика",
+    "latitude_dadata":43.120175,
+    "longitude_dadata":45.539276,
+    "population":63449
+  },
+  {
+    "settlement":"г. Георгиевск",
+    "region":"Ставропольский край",
+    "latitude_dadata":44.14794,
+    "longitude_dadata":43.474254,
+    "population":63221
+  },
+  {
+    "settlement":"г. Клинцы",
+    "region":"Брянская область",
+    "latitude_dadata":52.752875,
+    "longitude_dadata":32.2337792,
+    "population":63059
+  },
+  {
+    "settlement":"г. Нягань",
+    "region":"Ханты-Мансийский автономный округ — Югра",
+    "latitude_dadata":62.1454886,
+    "longitude_dadata":65.3945936,
+    "population":63034
+  },
+  {
+    "settlement":"г. Славянск-на-Кубани",
+    "region":"Краснодарский край",
+    "latitude_dadata":45.2604694,
+    "longitude_dadata":38.1259659,
+    "population":62985
+  },
+  {
+    "settlement":"г. Кунгур",
+    "region":"Пермский край",
+    "latitude_dadata":57.4284056,
+    "longitude_dadata":56.9438416,
+    "population":62673
+  },
+  {
+    "settlement":"город Сунжа",
+    "region":"Республика Ингушетия",
+    "latitude_dadata":43.3203629,
+    "longitude_dadata":45.0477848,
+    "population":62078
+  },
+  {
+    "settlement":"г. Туапсе",
+    "region":"Краснодарский край",
+    "latitude_dadata":44.1104007,
+    "longitude_dadata":39.0825379,
+    "population":61571
+  },
+  {
+    "settlement":"г. Когалым",
+    "region":"Ханты-Мансийский автономный округ — Югра",
+    "latitude_dadata":62.2639797,
+    "longitude_dadata":74.482946,
+    "population":61441
+  },
+  {
+    "settlement":"г. Белогорск",
+    "region":"Амурская область",
+    "latitude_dadata":50.921219,
+    "longitude_dadata":128.4737866,
+    "population":61440
+  },
+  {
+    "settlement":"г. Лениногорск",
+    "region":"Республика Татарстан",
+    "latitude_dadata":54.5966119,
+    "longitude_dadata":52.4433347,
+    "population":60993
+  },
+  {
+    "settlement":"город Россошь",
+    "region":"Воронежская область",
+    "latitude_dadata":50.1701985,
+    "longitude_dadata":39.6226453,
+    "population":60879
+  },
+  {
+    "settlement":"г. Алексин",
+    "region":"Тульская область",
+    "latitude_dadata":54.5084968,
+    "longitude_dadata":37.0478364,
+    "population":60842
+  },
+  {
+    "settlement":"г. Кудрово",
+    "region":"Ленинградская область",
+    "latitude_dadata":59.9076688,
+    "longitude_dadata":30.5119611,
+    "population":60791
+  },
+  {
+    "settlement":"г. Борисоглебск",
+    "region":"Воронежская область",
+    "latitude_dadata":51.3654207,
+    "longitude_dadata":42.1009542,
+    "population":60687
+  },
+  {
+    "settlement":"г. Фрязино",
+    "region":"Московская область",
+    "latitude_dadata":55.9589291,
+    "longitude_dadata":38.0409827,
+    "population":60580
+  },
+  {
+    "settlement":"г. Гуково",
+    "region":"Ростовская область",
+    "latitude_dadata":48.0450292,
+    "longitude_dadata":39.9485638,
+    "population":60361
+  },
+  {
+    "settlement":"г. Ревда",
+    "region":"Свердловская область",
+    "latitude_dadata":56.7987642,
+    "longitude_dadata":59.9071644,
+    "population":60200
+  },
+  {
+    "settlement":"г. Прохладный",
+    "region":"Кабардино-Балкарская Республика",
+    "latitude_dadata":43.7590107,
+    "longitude_dadata":44.010051,
+    "population":59938
+  },
+  {
+    "settlement":"г. Березовский",
+    "region":"Свердловская область",
+    "latitude_dadata":56.9136462,
+    "longitude_dadata":60.7852371,
+    "population":59698
+  },
+  {
+    "settlement":"г. Белебей",
+    "region":"Республика Башкортостан",
+    "latitude_dadata":54.1034535,
+    "longitude_dadata":54.1112181,
+    "population":59195
+  },
+  {
+    "settlement":"г. Чистополь",
+    "region":"Республика Татарстан",
+    "latitude_dadata":55.3699331,
+    "longitude_dadata":50.6285823,
+    "population":58815
+  },
+  {
+    "settlement":"г. Заречный",
+    "region":"Пензенская область",
+    "latitude_dadata":53.1961885,
+    "longitude_dadata":45.1691136,
+    "population":58510
+  },
+  {
+    "settlement":"г. Будённовск",
+    "region":"Ставропольский край",
+    "latitude_dadata":44.781467,
+    "longitude_dadata":44.164948,
+    "population":58103
+  },
+  {
+    "settlement":"г. Кумертау",
+    "region":"Республика Башкортостан",
+    "latitude_dadata":52.756471,
+    "longitude_dadata":55.7970469,
+    "population":57949
+  },
+  {
+    "settlement":"г. Сальск",
+    "region":"Ростовская область",
+    "latitude_dadata":46.475234,
+    "longitude_dadata":41.541039,
+    "population":57937
+  },
+  {
+    "settlement":"г. Дзержинский",
+    "region":"Московская область",
+    "latitude_dadata":55.6241057,
+    "longitude_dadata":37.8441593,
+    "population":57918
+  },
+  {
+    "settlement":"г. Лабинск",
+    "region":"Краснодарский край",
+    "latitude_dadata":44.6354147,
+    "longitude_dadata":40.7244209,
+    "population":57428
+  },
+  {
+    "settlement":"г. Асбест",
+    "region":"Свердловская область",
+    "latitude_dadata":57.0052534,
+    "longitude_dadata":61.4581769,
+    "population":57317
+  },
+  {
+    "settlement":"г. Искитим",
+    "region":"Новосибирская область",
+    "latitude_dadata":54.626704,
+    "longitude_dadata":83.2949994,
+    "population":57147
+  },
+  {
+    "settlement":"г. Павлово",
+    "region":"Нижегородская область",
+    "latitude_dadata":55.965103,
+    "longitude_dadata":43.064848,
+    "population":57116
+  },
+  {
+    "settlement":"г. Александров",
+    "region":"Владимирская область",
+    "latitude_dadata":56.3918756,
+    "longitude_dadata":38.7110582,
+    "population":57053
+  },
+  {
+    "settlement":"г. Воркута",
+    "region":"Республика Коми",
+    "latitude_dadata":67.497434,
+    "longitude_dadata":64.0611813,
+    "population":56985
+  },
+  {
+    "settlement":"г. Щербинка",
+    "region":"Москва",
+    "latitude_dadata":55.50868,
+    "longitude_dadata":37.5633253,
+    "population":56531
+  },
+  {
+    "settlement":"г. Сибай",
+    "region":"Республика Башкортостан",
+    "latitude_dadata":52.7204622,
+    "longitude_dadata":58.6663921,
+    "population":56514
+  },
+  {
+    "settlement":"г. Мелеуз",
+    "region":"Республика Башкортостан",
+    "latitude_dadata":52.9589874,
+    "longitude_dadata":55.9282514,
+    "population":56505
+  },
+  {
+    "settlement":"г. Котлас",
+    "region":"Архангельская область",
+    "latitude_dadata":61.2528975,
+    "longitude_dadata":46.6332216,
+    "population":56093
+  },
+  {
+    "settlement":"г. Михайловка",
+    "region":"Волгоградская область",
+    "latitude_dadata":50.0708708,
+    "longitude_dadata":43.2401092,
+    "population":56031
+  },
+  {
+    "settlement":"г. Избербаш",
+    "region":"Республика Дагестан",
+    "latitude_dadata":42.5652081,
+    "longitude_dadata":47.8710684,
+    "population":55996
+  },
+  {
+    "settlement":"г. Краснотурьинск",
+    "region":"Свердловская область",
+    "latitude_dadata":59.7638319,
+    "longitude_dadata":60.1935754,
+    "population":55875
+  },
+  {
+    "settlement":"г. Белореченск",
+    "region":"Краснодарский край",
+    "latitude_dadata":44.7652692,
+    "longitude_dadata":39.8781164,
+    "population":55870
+  },
+  {
+    "settlement":"г. Ржев",
+    "region":"Тверская область",
+    "latitude_dadata":56.2629154,
+    "longitude_dadata":34.3290948,
+    "population":55757
+  },
+  {
+    "settlement":"г. Лесосибирск",
+    "region":"Красноярский край",
+    "latitude_dadata":58.2216981,
+    "longitude_dadata":92.503692,
+    "population":55730
+  },
+  {
+    "settlement":"г. Тихорецк",
+    "region":"Краснодарский край",
+    "latitude_dadata":45.8546923,
+    "longitude_dadata":40.1258776,
+    "population":55686
+  },
+  {
+    "settlement":"г. Тихвин",
+    "region":"Ленинградская область",
+    "latitude_dadata":59.644619,
+    "longitude_dadata":33.54193,
+    "population":55415
+  },
+  {
+    "settlement":"г. Шуя",
+    "region":"Ивановская область",
+    "latitude_dadata":56.8507513,
+    "longitude_dadata":41.3516168,
+    "population":55225
+  },
+  {
+    "settlement":"г. Полевской",
+    "region":"Свердловская область",
+    "latitude_dadata":56.4958618,
+    "longitude_dadata":60.2366252,
+    "population":55182
+  },
+  {
+    "settlement":"г. Щекино",
+    "region":"Тульская область",
+    "latitude_dadata":54.0021718,
+    "longitude_dadata":37.5177177,
+    "population":55109
+  },
+  {
+    "settlement":"г. Шали",
+    "region":"Чеченская Республика",
+    "latitude_dadata":43.1487442,
+    "longitude_dadata":45.9010465,
+    "population":55054
+  },
+  {
+    "settlement":"г. Вольск",
+    "region":"Саратовская область",
+    "latitude_dadata":52.0459603,
+    "longitude_dadata":47.3873,
+    "population":55035
+  },
+  {
+    "settlement":"г. Крымск",
+    "region":"Краснодарский край",
+    "latitude_dadata":44.9343723,
+    "longitude_dadata":37.9854857,
+    "population":54597
+  },
+  {
+    "settlement":"пгт Яблоновский",
+    "region":"Республика Адыгея",
+    "latitude_dadata":44.981266,
+    "longitude_dadata":38.936362,
+    "population":54291
+  },
+  {
+    "settlement":"г. Зеленогорск",
+    "region":"Красноярский край",
+    "latitude_dadata":56.1133542,
+    "longitude_dadata":94.5889359,
+    "population":54279
+  },
+  {
+    "settlement":"г. Лиски",
+    "region":"Воронежская область",
+    "latitude_dadata":50.9945381,
+    "longitude_dadata":39.5183454,
+    "population":54147
+  },
+  {
+    "settlement":"г. Черемхово",
+    "region":"Иркутская область",
+    "latitude_dadata":53.1233358,
+    "longitude_dadata":103.1574108,
+    "population":53958
+  },
+  {
+    "settlement":"г. Лысьва",
+    "region":"Пермский край",
+    "latitude_dadata":58.0996742,
+    "longitude_dadata":57.8087369,
+    "population":53855
+  },
+  {
+    "settlement":"г. Нерюнгри",
+    "region":"Республика Саха (Якутия)",
+    "latitude_dadata":56.6599502,
+    "longitude_dadata":124.7201885,
+    "population":53409
+  },
+  {
+    "settlement":"г. Волжск",
+    "region":"Республика Марий Эл",
+    "latitude_dadata":55.8623164,
+    "longitude_dadata":48.3715777,
+    "population":53013
+  },
+  {
+    "settlement":"г. Мегион",
+    "region":"Ханты-Мансийский автономный округ — Югра",
+    "latitude_dadata":61.0318864,
+    "longitude_dadata":76.102504,
+    "population":52887
+  },
+  {
+    "settlement":"г. Вязьма",
+    "region":"Смоленская область",
+    "latitude_dadata":55.2116645,
+    "longitude_dadata":34.2952096,
+    "population":51950
+  },
+  {
+    "settlement":"г. Тимашевск",
+    "region":"Краснодарский край",
+    "latitude_dadata":45.6158949,
+    "longitude_dadata":38.9351457,
+    "population":51858
+  },
+  {
+    "settlement":"г. Гусь-Хрустальный",
+    "region":"Владимирская область",
+    "latitude_dadata":55.6199041,
+    "longitude_dadata":40.6578219,
+    "population":51552
+  },
+  {
+    "settlement":"г. Краснокаменск",
+    "region":"Забайкальский край",
+    "latitude_dadata":50.09868,
+    "longitude_dadata":118.034118,
+    "population":51137
+  },
+  {
+    "settlement":"г. Кириши",
+    "region":"Ленинградская область",
+    "latitude_dadata":59.449699,
+    "longitude_dadata":32.008705,
+    "population":51028
+  },
+  {
+    "settlement":"пгт Нахабино рп",
+    "region":"Московская область",
+    "latitude_dadata":55.840381,
+    "longitude_dadata":37.175899,
+    "population":50916
+  },
+  {
+    "settlement":"г. Снежинск",
+    "region":"Челябинская область",
+    "latitude_dadata":56.0852853,
+    "longitude_dadata":60.73251,
+    "population":50619
+  },
+  {
+    "settlement":"г. Жигулевск",
+    "region":"Самарская область",
+    "latitude_dadata":53.4012735,
+    "longitude_dadata":49.4944877,
+    "population":50466
+  },
+  {
+    "settlement":"г. Кизляр",
+    "region":"Республика Дагестан",
+    "latitude_dadata":43.8484072,
+    "longitude_dadata":46.7232534,
+    "population":49999
+  },
+  {
+    "settlement":"г. Кингисепп",
+    "region":"Ленинградская область",
+    "latitude_dadata":59.3741261,
+    "longitude_dadata":28.611223,
+    "population":49716
+  },
+  {
+    "settlement":"г. Апатиты",
+    "region":"Мурманская область",
+    "latitude_dadata":67.567731,
+    "longitude_dadata":33.4067789,
+    "population":49647
+  },
+  {
+    "settlement":"г. Узловая",
+    "region":"Тульская область",
+    "latitude_dadata":53.9731953,
+    "longitude_dadata":38.1764288,
+    "population":49427
+  },
+  {
+    "settlement":"г. Краснокамск",
+    "region":"Пермский край",
+    "latitude_dadata":58.0820673,
+    "longitude_dadata":55.7478889,
+    "population":48778
+  },
+  {
+    "settlement":"г. Балахна",
+    "region":"Нижегородская область",
+    "latitude_dadata":56.4950365,
+    "longitude_dadata":43.575846,
+    "population":48569
+  },
+  {
+    "settlement":"г. Свободный",
+    "region":"Амурская область",
+    "latitude_dadata":51.3612532,
+    "longitude_dadata":128.122028,
+    "population":48517
+  },
+  {
+    "settlement":"г. Солнечногорск",
+    "region":"Московская область",
+    "latitude_dadata":56.185102,
+    "longitude_dadata":36.977631,
+    "population":48413
+  },
+  {
+    "settlement":"г. Аксай",
+    "region":"Ростовская область",
+    "latitude_dadata":47.2675888,
+    "longitude_dadata":39.8755792,
+    "population":48372
+  },
+  {
+    "settlement":"г. Лесной",
+    "region":"Свердловская область",
+    "latitude_dadata":58.6349153,
+    "longitude_dadata":59.7980136,
+    "population":48261
+  },
+  {
+    "settlement":"г. Арсеньев",
+    "region":"Приморский край",
+    "latitude_dadata":44.1621626,
+    "longitude_dadata":133.2696658,
+    "population":47937
+  },
+  {
+    "settlement":"г. Салехард",
+    "region":"Ямало-Ненецкий автономный округ",
+    "latitude_dadata":66.5493706,
+    "longitude_dadata":66.6084227,
+    "population":47910
+  },
+  {
+    "settlement":"г. Боровичи",
+    "region":"Новгородская область",
+    "latitude_dadata":58.3840076,
+    "longitude_dadata":33.9176708,
+    "population":47883
+  },
+  {
+    "settlement":"г. Рассказово",
+    "region":"Тамбовская область",
+    "latitude_dadata":52.6538108,
+    "longitude_dadata":41.8743764,
+    "population":47644
+  },
+  {
+    "settlement":"г. Курганинск",
+    "region":"Краснодарский край",
+    "latitude_dadata":44.8877061,
+    "longitude_dadata":40.5914627,
+    "population":47305
+  },
+  {
+    "settlement":"г. Отрадный",
+    "region":"Самарская область",
+    "latitude_dadata":53.380127,
+    "longitude_dadata":51.3440385,
+    "population":46984
+  },
+  {
+    "settlement":"г. Донецк",
+    "region":"Ростовская область",
+    "latitude_dadata":48.3350869,
+    "longitude_dadata":39.9459603,
+    "population":46623
+  },
+  {
+    "settlement":"г. Надым",
+    "region":"Ямало-Ненецкий автономный округ",
+    "latitude_dadata":65.528146,
+    "longitude_dadata":72.514417,
+    "population":45973
+  },
+  {
+    "settlement":"г. Кашира",
+    "region":"Московская область",
+    "latitude_dadata":54.8532793,
+    "longitude_dadata":38.1904181,
+    "population":45922
+  },
+  {
+    "settlement":"г. Вышний Волочек",
+    "region":"Тверская область",
+    "latitude_dadata":57.5684471,
+    "longitude_dadata":34.5404365,
+    "population":45830
+  },
+  {
+    "settlement":"г. Чусовой",
+    "region":"Пермский край",
+    "latitude_dadata":58.2975271,
+    "longitude_dadata":57.8193629,
+    "population":45471
+  },
+  {
+    "settlement":"г. Рославль",
+    "region":"Смоленская область",
+    "latitude_dadata":53.9449217,
+    "longitude_dadata":32.847942,
+    "population":45416
+  },
+  {
+    "settlement":"г. Назарово",
+    "region":"Красноярский край",
+    "latitude_dadata":56.0115024,
+    "longitude_dadata":90.4169443,
+    "population":45333
+  },
+  {
+    "settlement":"г. Выкса",
+    "region":"Нижегородская область",
+    "latitude_dadata":55.3206313,
+    "longitude_dadata":42.1679983,
+    "population":45240
+  },
+  {
+    "settlement":"г. Саяногорск",
+    "region":"Республика Хакасия",
+    "latitude_dadata":53.1007127,
+    "longitude_dadata":91.4122756,
+    "population":44872
+  },
+  {
+    "settlement":"г. Чебаркуль",
+    "region":"Челябинская область",
+    "latitude_dadata":54.9818594,
+    "longitude_dadata":60.3774264,
+    "population":44693
+  },
+  {
+    "settlement":"г. Канаш",
+    "region":"Чувашская Республика",
+    "latitude_dadata":55.5068806,
+    "longitude_dadata":47.4917914,
+    "population":44354
+  },
+  {
+    "settlement":"г. Можга",
+    "region":"Удмуртская Республика",
+    "latitude_dadata":56.4427514,
+    "longitude_dadata":52.2137584,
+    "population":44345
+  },
+  {
+    "settlement":"г. Бирск",
+    "region":"Республика Башкортостан",
+    "latitude_dadata":55.4156358,
+    "longitude_dadata":55.5583061,
+    "population":44295
+  },
+  {
+    "settlement":"г. Березовский",
+    "region":"Кемеровская область",
+    "latitude_dadata":55.6693866,
+    "longitude_dadata":86.2745058,
+    "population":44073
+  },
+  {
+    "settlement":"г. Грязи",
+    "region":"Липецкая область",
+    "latitude_dadata":52.4872943,
+    "longitude_dadata":39.9331152,
+    "population":43908
+  },
+  {
+    "settlement":"г. Краснознаменск",
+    "region":"Московская область",
+    "latitude_dadata":55.5978331,
+    "longitude_dadata":37.039529,
+    "population":43868
+  },
+  {
+    "settlement":"г. Бугуруслан",
+    "region":"Оренбургская область",
+    "latitude_dadata":53.6522761,
+    "longitude_dadata":52.4326104,
+    "population":43593
+  },
+  {
+    "settlement":"г. Радужный",
+    "region":"Ханты-Мансийский автономный округ — Югра",
+    "latitude_dadata":62.1342204,
+    "longitude_dadata":77.458477,
+    "population":43577
+  },
+  {
+    "settlement":"г. Ливны",
+    "region":"Орловская область",
+    "latitude_dadata":52.4286428,
+    "longitude_dadata":37.6040201,
+    "population":43549
+  },
+  {
+    "settlement":"г. Североморск",
+    "region":"Мурманская область",
+    "latitude_dadata":69.07651,
+    "longitude_dadata":33.4178343,
+    "population":43327
+  },
+  {
+    "settlement":"г. Карабулак",
+    "region":"Республика Ингушетия",
+    "latitude_dadata":43.3055756,
+    "longitude_dadata":44.9095113,
+    "population":43037
+  },
+  {
+    "settlement":"г. Рузаевка",
+    "region":"Республика Мордовия",
+    "latitude_dadata":54.0582232,
+    "longitude_dadata":44.949083,
+    "population":42989
+  },
+  {
+    "settlement":"г. Лангепас",
+    "region":"Ханты-Мансийский автономный округ — Югра",
+    "latitude_dadata":61.2537123,
+    "longitude_dadata":75.1806961,
+    "population":42701
+  },
+  {
+    "settlement":"г. Сатка",
+    "region":"Челябинская область",
+    "latitude_dadata":55.0404006,
+    "longitude_dadata":59.0288229,
+    "population":42597
+  },
+  {
+    "settlement":"г. Шелехов",
+    "region":"Иркутская область",
+    "latitude_dadata":52.2101358,
+    "longitude_dadata":104.0973332,
+    "population":41998
+  },
+  {
+    "settlement":"г. Куйбышев",
+    "region":"Новосибирская область",
+    "latitude_dadata":55.445949,
+    "longitude_dadata":78.311108,
+    "population":41946
+  },
+  {
+    "settlement":"г. Малоярославец",
+    "region":"Калужская область",
+    "latitude_dadata":55.0177696,
+    "longitude_dadata":36.4633694,
+    "population":41836
+  },
+  {
+    "settlement":"г. Кореновск",
+    "region":"Краснодарский край",
+    "latitude_dadata":45.4642106,
+    "longitude_dadata":39.4589751,
+    "population":41826
+  },
+  {
+    "settlement":"г. Большой Камень",
+    "region":"Приморский край",
+    "latitude_dadata":43.1111521,
+    "longitude_dadata":132.3479458,
+    "population":41825
+  },
+  {
+    "settlement":"станица Каневская",
+    "region":"Краснодарский край",
+    "latitude_dadata":46.0847521,
+    "longitude_dadata":38.9719273,
+    "population":41721
+  },
+  {
+    "settlement":"г. Аргун",
+    "region":"Чеченская Республика",
+    "latitude_dadata":43.2917917,
+    "longitude_dadata":45.8722923,
+    "population":41622
+  },
+  {
+    "settlement":"г. Темрюк",
+    "region":"Краснодарский край",
+    "latitude_dadata":45.2610243,
+    "longitude_dadata":37.4455473,
+    "population":41608
+  },
+  {
+    "settlement":"г. Ярцево",
+    "region":"Смоленская область",
+    "latitude_dadata":55.0565468,
+    "longitude_dadata":32.6902745,
+    "population":41452
+  },
+  {
+    "settlement":"г. Урай",
+    "region":"Ханты-Мансийский автономный округ — Югра",
+    "latitude_dadata":60.1297244,
+    "longitude_dadata":64.8038858,
+    "population":41315
+  },
+  {
+    "settlement":"г. Заринск",
+    "region":"Алтайский край",
+    "latitude_dadata":53.7064163,
+    "longitude_dadata":84.93148,
+    "population":41272
+  },
+  {
+    "settlement":"г. Торжок",
+    "region":"Тверская область",
+    "latitude_dadata":57.041349,
+    "longitude_dadata":34.9602076,
+    "population":41116
+  },
+  {
+    "settlement":"г. Верхняя Салда",
+    "region":"Свердловская область",
+    "latitude_dadata":58.0466272,
+    "longitude_dadata":60.5560133,
+    "population":41034
+  },
+  {
+    "settlement":"г. Лянтор",
+    "region":"Ханты-Мансийский автономный округ — Югра",
+    "latitude_dadata":61.6392893,
+    "longitude_dadata":72.1793962,
+    "population":40977
+  },
+  {
+    "settlement":"г. Горячий Ключ",
+    "region":"Краснодарский край",
+    "latitude_dadata":44.6344393,
+    "longitude_dadata":39.1355285,
+    "population":40903
+  },
+  {
+    "settlement":"г. Кимры",
+    "region":"Тверская область",
+    "latitude_dadata":56.8732554,
+    "longitude_dadata":37.3557008,
+    "population":40875
+  },
+  {
+    "settlement":"г. Мариинск",
+    "region":"Кемеровская область",
+    "latitude_dadata":56.2128227,
+    "longitude_dadata":87.7454299,
+    "population":40779
+  },
+  {
+    "settlement":"г. Белая Калитва",
+    "region":"Ростовская область",
+    "latitude_dadata":48.176882,
+    "longitude_dadata":40.8032881,
+    "population":40448
+  },
+  {
+    "settlement":"г. Сосновоборск",
+    "region":"Красноярский край",
+    "latitude_dadata":56.120075,
+    "longitude_dadata":93.3354461,
+    "population":40442
+  },
+  {
+    "settlement":"г. Осинники",
+    "region":"Кемеровская область",
+    "latitude_dadata":53.598681,
+    "longitude_dadata":87.3371253,
+    "population":40367
+  },
+  {
+    "settlement":"г. Курчатов",
+    "region":"Курская область",
+    "latitude_dadata":51.6605387,
+    "longitude_dadata":35.6571025,
+    "population":40318
+  },
+  {
+    "settlement":"г. Апшеронск",
+    "region":"Краснодарский край",
+    "latitude_dadata":44.4583753,
+    "longitude_dadata":39.7301418,
+    "population":40289
+  },
+  {
+    "settlement":"г. Пыть-Ях",
+    "region":"Ханты-Мансийский автономный округ — Югра",
+    "latitude_dadata":60.7586475,
+    "longitude_dadata":72.8366942,
+    "population":40180
+  },
+  {
+    "settlement":"г. Усть-Лабинск",
+    "region":"Краснодарский край",
+    "latitude_dadata":45.2226625,
+    "longitude_dadata":39.6929278,
+    "population":40158
+  },
+  {
+    "settlement":"г. Пугачев",
+    "region":"Саратовская область",
+    "latitude_dadata":52.0159472,
+    "longitude_dadata":48.797175,
+    "population":40127
+  },
+  {
+    "settlement":"г. Мыски",
+    "region":"Кемеровская область",
+    "latitude_dadata":53.7126111,
+    "longitude_dadata":87.8056844,
+    "population":40109
+  },
+  {
+    "settlement":"г. Мончегорск",
+    "region":"Мурманская область",
+    "latitude_dadata":67.9386512,
+    "longitude_dadata":32.9359042,
+    "population":39962
+  },
+  {
+    "settlement":"г. Заинск",
+    "region":"Республика Татарстан",
+    "latitude_dadata":55.2988956,
+    "longitude_dadata":52.0063163,
+    "population":39739
+  },
+  {
+    "settlement":"г. Шебекино",
+    "region":"Белгородская область",
+    "latitude_dadata":50.4004378,
+    "longitude_dadata":36.8878943,
+    "population":39680
+  },
+  {
+    "settlement":"г. Тутаев",
+    "region":"Ярославская область",
+    "latitude_dadata":57.8674415,
+    "longitude_dadata":39.536868,
+    "population":39643
+  },
+  {
+    "settlement":"г. Баксан",
+    "region":"Кабардино-Балкарская Республика",
+    "latitude_dadata":43.6819288,
+    "longitude_dadata":43.5344884,
+    "population":39593
+  },
+  {
+    "settlement":"г. Абинск",
+    "region":"Краснодарский край",
+    "latitude_dadata":44.8679116,
+    "longitude_dadata":38.1617987,
+    "population":39511
+  },
+  {
+    "settlement":"г. Кольчугино",
+    "region":"Владимирская область",
+    "latitude_dadata":56.3328004,
+    "longitude_dadata":39.391268,
+    "population":39410
+  },
+  {
+    "settlement":"г. Стрежевой",
+    "region":"Томская область",
+    "latitude_dadata":60.7327472,
+    "longitude_dadata":77.6039789,
+    "population":39169
+  },
+  {
+    "settlement":"г. Моршанск",
+    "region":"Тамбовская область",
+    "latitude_dadata":53.4436449,
+    "longitude_dadata":41.8115193,
+    "population":39023
+  },
+  {
+    "settlement":"г. Советск",
+    "region":"Калининградская область",
+    "latitude_dadata":55.0811102,
+    "longitude_dadata":21.8887115,
+    "population":38910
+  },
+  {
+    "settlement":"г. Ялуторовск",
+    "region":"Тюменская область",
+    "latitude_dadata":56.6546647,
+    "longitude_dadata":66.3121926,
+    "population":38853
+  },
+  {
+    "settlement":"г. Новозыбков",
+    "region":"Брянская область",
+    "latitude_dadata":52.5371414,
+    "longitude_dadata":31.9357361,
+    "population":38680
+  },
+  {
+    "settlement":"г. Изобильный",
+    "region":"Ставропольский край",
+    "latitude_dadata":45.3684383,
+    "longitude_dadata":41.7085873,
+    "population":38614
+  },
+  {
+    "settlement":"г. Амурск",
+    "region":"Хабаровский край",
+    "latitude_dadata":50.2345703,
+    "longitude_dadata":136.8791531,
+    "population":38606
+  },
+  {
+    "settlement":"г. Волхов",
+    "region":"Ленинградская область",
+    "latitude_dadata":59.9004589,
+    "longitude_dadata":32.3520685,
+    "population":38511
+  },
+  {
+    "settlement":"г. Тулун",
+    "region":"Иркутская область",
+    "latitude_dadata":54.5570223,
+    "longitude_dadata":100.5779905,
+    "population":38440
+  },
+  {
+    "settlement":"г. Луга",
+    "region":"Ленинградская область",
+    "latitude_dadata":58.735207,
+    "longitude_dadata":29.847945,
+    "population":38407
+  },
+  {
+    "settlement":"г. Сафоново",
+    "region":"Смоленская область",
+    "latitude_dadata":55.1200105,
+    "longitude_dadata":33.233658,
+    "population":38403
+  },
+  {
+    "settlement":"г. Кизилюрт",
+    "region":"Республика Дагестан",
+    "latitude_dadata":43.2038278,
+    "longitude_dadata":46.872864,
+    "population":38335
+  },
+  {
+    "settlement":"г. Югорск",
+    "region":"Ханты-Мансийский автономный округ — Югра",
+    "latitude_dadata":61.3124125,
+    "longitude_dadata":63.3364948,
+    "population":38238
+  },
+  {
+    "settlement":"г. Шатура",
+    "region":"Московская область",
+    "latitude_dadata":55.5778265,
+    "longitude_dadata":39.5445373,
+    "population":38230
+  },
+  {
+    "settlement":"г. Ртищево",
+    "region":"Саратовская область",
+    "latitude_dadata":52.2616938,
+    "longitude_dadata":43.7842747,
+    "population":37850
+  },
+  {
+    "settlement":"г. Переславль-Залесский",
+    "region":"Ярославская область",
+    "latitude_dadata":56.7360013,
+    "longitude_dadata":38.8543687,
+    "population":37738
+  },
+  {
+    "settlement":"г. Протвино",
+    "region":"Московская область",
+    "latitude_dadata":54.8705841,
+    "longitude_dadata":37.2182922,
+    "population":37735
+  },
+  {
+    "settlement":"г. Южноуральск",
+    "region":"Челябинская область",
+    "latitude_dadata":54.4490432,
+    "longitude_dadata":61.2581713,
+    "population":37478
+  },
+  {
+    "settlement":"г. Истра",
+    "region":"Московская область",
+    "latitude_dadata":55.9061876,
+    "longitude_dadata":36.8600649,
+    "population":37474
+  },
+  {
+    "settlement":"г. Качканар",
+    "region":"Свердловская область",
+    "latitude_dadata":58.7050979,
+    "longitude_dadata":59.4839558,
+    "population":37307
+  },
+  {
+    "settlement":"г. Красноуфимск",
+    "region":"Свердловская область",
+    "latitude_dadata":56.612429,
+    "longitude_dadata":57.7635494,
+    "population":37301
+  },
+  {
+    "settlement":"г. Коркино",
+    "region":"Челябинская область",
+    "latitude_dadata":54.8903864,
+    "longitude_dadata":61.4032939,
+    "population":37224
+  },
+  {
+    "settlement":"г. Джанкой",
+    "region":"Республика Крым",
+    "latitude_dadata":45.7092913,
+    "longitude_dadata":34.3883718,
+    "population":37014
+  },
+  {
+    "settlement":"г. Ирбит",
+    "region":"Свердловская область",
+    "latitude_dadata":57.683808,
+    "longitude_dadata":63.0576929,
+    "population":37009
+  },
+  {
+    "settlement":"пгт Маркова рп",
+    "region":"Иркутская область",
+    "latitude_dadata":52.211106,
+    "longitude_dadata":104.207909,
+    "population":36971
+  },
+  {
+    "settlement":"г. Мценск",
+    "region":"Орловская область",
+    "latitude_dadata":53.2789769,
+    "longitude_dadata":36.5749963,
+    "population":36960
+  },
+  {
+    "settlement":"г. Усть-Кут",
+    "region":"Иркутская область",
+    "latitude_dadata":56.780878,
+    "longitude_dadata":105.745373,
+    "population":36918
+  },
+  {
+    "settlement":"г. Моздок",
+    "region":"Республика Северная Осетия — Алания",
+    "latitude_dadata":43.7472597,
+    "longitude_dadata":44.657072,
+    "population":36784
+  },
+  {
+    "settlement":"г. Заволжье",
+    "region":"Нижегородская область",
+    "latitude_dadata":56.6404919,
+    "longitude_dadata":43.3870929,
+    "population":36763
+  },
+  {
+    "settlement":"г. Кинель",
+    "region":"Самарская область",
+    "latitude_dadata":53.2209314,
+    "longitude_dadata":50.6343567,
+    "population":36729
+  },
+  {
+    "settlement":"г. Урюпинск",
+    "region":"Волгоградская область",
+    "latitude_dadata":50.7904909,
+    "longitude_dadata":42.0289034,
+    "population":36669
+  },
+  {
+    "settlement":"г. Реж",
+    "region":"Свердловская область",
+    "latitude_dadata":57.3716798,
+    "longitude_dadata":61.38338,
+    "population":36585
+  },
+  {
+    "settlement":"г. Алексеевка",
+    "region":"Белгородская область",
+    "latitude_dadata":50.6299988,
+    "longitude_dadata":38.6881066,
+    "population":36578
+  },
+  {
+    "settlement":"станица Динская",
+    "region":"Краснодарский край",
+    "latitude_dadata":45.2362774,
+    "longitude_dadata":39.2405427,
+    "population":36576
+  },
+  {
+    "settlement":"г. Ефремов",
+    "region":"Тульская область",
+    "latitude_dadata":53.137603,
+    "longitude_dadata":38.117673,
+    "population":36545
+  },
+  {
+    "settlement":"г. Малгобек",
+    "region":"Республика Ингушетия",
+    "latitude_dadata":43.5097018,
+    "longitude_dadata":44.5901112,
+    "population":36480
+  },
+  {
+    "settlement":"г. Елизово",
+    "region":"Камчатский край",
+    "latitude_dadata":53.1829398,
+    "longitude_dadata":158.3884312,
+    "population":36240
+  },
+  {
+    "settlement":"г. Вязники",
+    "region":"Владимирская область",
+    "latitude_dadata":56.2977573,
+    "longitude_dadata":42.268676,
+    "population":36203
+  },
+  {
+    "settlement":"г. Алапаевск",
+    "region":"Свердловская область",
+    "latitude_dadata":57.8476947,
+    "longitude_dadata":61.6695786,
+    "population":36189
+  },
+  {
+    "settlement":"г. Учалы",
+    "region":"Республика Башкортостан",
+    "latitude_dadata":54.3066963,
+    "longitude_dadata":59.4127255,
+    "population":36175
+  },
+  {
+    "settlement":"г. Черняховск",
+    "region":"Калининградская область",
+    "latitude_dadata":54.6245018,
+    "longitude_dadata":21.7969164,
+    "population":36128
+  },
+  {
+    "settlement":"г. Кыштым",
+    "region":"Челябинская область",
+    "latitude_dadata":55.706159,
+    "longitude_dadata":60.5562529,
+    "population":36045
+  },
+  {
+    "settlement":"пгт Горячеводский рп",
+    "region":"Ставропольский край",
+    "latitude_dadata":44.0236208,
+    "longitude_dadata":43.0973777,
+    "population":36032
+  },
+  {
+    "settlement":"г. Беслан",
+    "region":"Республика Северная Осетия — Алания",
+    "latitude_dadata":43.1936637,
+    "longitude_dadata":44.533792,
+    "population":35929
+  },
+  {
+    "settlement":"Балаклава",
+    "region":"Севастополь",
+    "latitude_dadata":44.501414,
+    "longitude_dadata":33.600037,
+    "population":35919
+  },
+  {
+    "settlement":"г. Людиново",
+    "region":"Калужская область",
+    "latitude_dadata":53.8701272,
+    "longitude_dadata":34.4385772,
+    "population":35874
+  },
+  {
+    "settlement":"г. Звенигород",
+    "region":"Московская область",
+    "latitude_dadata":55.7295881,
+    "longitude_dadata":36.8553623,
+    "population":35842
+  },
+  {
+    "settlement":"г. Спасск-Дальний",
+    "region":"Приморский край",
+    "latitude_dadata":44.5900901,
+    "longitude_dadata":132.8158275,
+    "population":35732
+  },
+  {
+    "settlement":"г. Светлоград",
+    "region":"Ставропольский край",
+    "latitude_dadata":45.3286594,
+    "longitude_dadata":42.856594,
+    "population":35703
+  },
+  {
+    "settlement":"г. Красный Сулин",
+    "region":"Ростовская область",
+    "latitude_dadata":47.883196,
+    "longitude_dadata":40.0781926,
+    "population":35697
+  },
+  {
+    "settlement":"г. Фролово",
+    "region":"Волгоградская область",
+    "latitude_dadata":49.7648209,
+    "longitude_dadata":43.6649431,
+    "population":35661
+  },
+  {
+    "settlement":"г. Ахтубинск",
+    "region":"Астраханская область",
+    "latitude_dadata":48.2753708,
+    "longitude_dadata":46.1905298,
+    "population":35635
+  },
+  {
+    "settlement":"г. Саянск",
+    "region":"Иркутская область",
+    "latitude_dadata":54.1108195,
+    "longitude_dadata":102.1802309,
+    "population":35561
+  },
+  {
+    "settlement":"станица Ленинградская",
+    "region":"Краснодарский край",
+    "latitude_dadata":46.3449638,
+    "longitude_dadata":39.3907816,
+    "population":35561
+  },
+  {
+    "settlement":"г. Апрелевка",
+    "region":"Московская область",
+    "latitude_dadata":55.527617,
+    "longitude_dadata":37.0650837,
+    "population":35514
+  },
+  {
+    "settlement":"г. Благовещенск",
+    "region":"Республика Башкортостан",
+    "latitude_dadata":55.0498049,
+    "longitude_dadata":55.9553149,
+    "population":35481
+  },
+  {
+    "settlement":"г. Лесозаводск",
+    "region":"Приморский край",
+    "latitude_dadata":45.4780131,
+    "longitude_dadata":133.4185314,
+    "population":35433
+  },
+  {
+    "settlement":"г. Печора",
+    "region":"Республика Коми",
+    "latitude_dadata":65.1486942,
+    "longitude_dadata":57.2239645,
+    "population":35254
+  },
+  {
+    "settlement":"г. Богородск",
+    "region":"Нижегородская область",
+    "latitude_dadata":56.1020008,
+    "longitude_dadata":43.5135913,
+    "population":35068
+  },
+  {
+    "settlement":"г. Миллерово",
+    "region":"Ростовская область",
+    "latitude_dadata":48.9259954,
+    "longitude_dadata":40.3982659,
+    "population":34841
+  },
+  {
+    "settlement":"г. Азнакаево",
+    "region":"Республика Татарстан",
+    "latitude_dadata":54.8597519,
+    "longitude_dadata":53.0744925,
+    "population":34750
+  },
+  {
+    "settlement":"г. Сокол",
+    "region":"Вологодская область",
+    "latitude_dadata":59.4757853,
+    "longitude_dadata":40.1114848,
+    "population":34742
+  },
+  {
+    "settlement":"деревня Ватутинки",
+    "region":"Москва",
+    "latitude_dadata":55.4942411,
+    "longitude_dadata":37.3288668,
+    "population":34697
+  },
+  {
+    "settlement":"г. Сланцы",
+    "region":"Ленинградская область",
+    "latitude_dadata":59.1177053,
+    "longitude_dadata":28.0882334,
+    "population":34628
+  },
+  {
+    "settlement":"г. Коряжма",
+    "region":"Архангельская область",
+    "latitude_dadata":61.2886248,
+    "longitude_dadata":47.1002365,
+    "population":34523
+  },
+  {
+    "settlement":"г. Тайшет",
+    "region":"Иркутская область",
+    "latitude_dadata":55.9405482,
+    "longitude_dadata":98.0030449,
+    "population":34491
+  },
+  {
+    "settlement":"г. Ликино-Дулёво",
+    "region":"Московская область",
+    "latitude_dadata":55.7077293,
+    "longitude_dadata":38.9577959,
+    "population":34191
+  },
+  {
+    "settlement":"г. Тосно",
+    "region":"Ленинградская область",
+    "latitude_dadata":59.540686,
+    "longitude_dadata":30.8777641,
+    "population":34066
+  },
+  {
+    "settlement":"г. Мирный",
+    "region":"Республика Саха (Якутия)",
+    "latitude_dadata":62.5362564,
+    "longitude_dadata":113.9667642,
+    "population":34045
+  },
+  {
+    "settlement":"г. Новокубанск",
+    "region":"Краснодарский край",
+    "latitude_dadata":45.1036986,
+    "longitude_dadata":41.0475442,
+    "population":34000
+  },
+  {
+    "settlement":"г. Нурлат",
+    "region":"Республика Татарстан",
+    "latitude_dadata":54.4281036,
+    "longitude_dadata":50.8049432,
+    "population":33990
+  },
+  {
+    "settlement":"г. Шарыпово",
+    "region":"Красноярский край",
+    "latitude_dadata":55.5391274,
+    "longitude_dadata":89.1801041,
+    "population":33961
+  },
+  {
+    "settlement":"г. Корсаков",
+    "region":"Сахалинская область",
+    "latitude_dadata":46.6324255,
+    "longitude_dadata":142.7994957,
+    "population":33950
+  },
+  {
+    "settlement":"г. Можайск",
+    "region":"Московская область",
+    "latitude_dadata":55.5069403,
+    "longitude_dadata":36.0239829,
+    "population":33880
+  },
+  {
+    "settlement":"г. Партизанск",
+    "region":"Приморский край",
+    "latitude_dadata":43.1504279,
+    "longitude_dadata":133.1666126,
+    "population":33832
+  },
+  {
+    "settlement":"г. Дальнегорск",
+    "region":"Приморский край",
+    "latitude_dadata":44.5541197,
+    "longitude_dadata":135.566156,
+    "population":33655
+  },
+  {
+    "settlement":"г. Конаково",
+    "region":"Тверская область",
+    "latitude_dadata":56.7275398,
+    "longitude_dadata":36.801348,
+    "population":33560
+  },
+  {
+    "settlement":"г. Каменка",
+    "region":"Пензенская область",
+    "latitude_dadata":53.1855489,
+    "longitude_dadata":44.0468101,
+    "population":33491
+  },
+  {
+    "settlement":"г. Гулькевичи",
+    "region":"Краснодарский край",
+    "latitude_dadata":45.3605339,
+    "longitude_dadata":40.6918433,
+    "population":33357
+  },
+  {
+    "settlement":"г. Новодвинск",
+    "region":"Архангельская область",
+    "latitude_dadata":64.4136473,
+    "longitude_dadata":40.8206783,
+    "population":33294
+  },
+  {
+    "settlement":"г. Гай",
+    "region":"Оренбургская область",
+    "latitude_dadata":51.4650759,
+    "longitude_dadata":58.4436431,
+    "population":33280
+  },
+  {
+    "settlement":"г. Губкинский",
+    "region":"Ямало-Ненецкий автономный округ",
+    "latitude_dadata":64.4456403,
+    "longitude_dadata":76.4713798,
+    "population":33273
+  },
+  {
+    "settlement":"деревня Рассказовка",
+    "region":"Москва",
+    "latitude_dadata":55.6317853,
+    "longitude_dadata":37.3132339,
+    "population":33259
+  },
+  {
+    "settlement":"г. Нарткала",
+    "region":"Кабардино-Балкарская Республика",
+    "latitude_dadata":43.5578132,
+    "longitude_dadata":43.8576082,
+    "population":33203
+  },
+  {
+    "settlement":"г. Зеленокумск",
+    "region":"Ставропольский край",
+    "latitude_dadata":44.4032361,
+    "longitude_dadata":43.8841172,
+    "population":33187
+  },
+  {
+    "settlement":"пгт Приволжский рп",
+    "region":"Саратовская область",
+    "latitude_dadata":51.4109503,
+    "longitude_dadata":46.0481131,
+    "population":33096
+  },
+  {
+    "settlement":"г. Валуйки",
+    "region":"Белгородская область",
+    "latitude_dadata":50.211172,
+    "longitude_dadata":38.0999436,
+    "population":33032
+  },
+  {
+    "settlement":"г. Чернушка",
+    "region":"Пермский край",
+    "latitude_dadata":56.515934,
+    "longitude_dadata":56.0764463,
+    "population":32991
+  },
+  {
+    "settlement":"г. Тавда",
+    "region":"Свердловская область",
+    "latitude_dadata":58.0434995,
+    "longitude_dadata":65.274369,
+    "population":32749
+  },
+  {
+    "settlement":"г. Сухой Лог",
+    "region":"Свердловская область",
+    "latitude_dadata":56.9074957,
+    "longitude_dadata":62.0357985,
+    "population":32748
+  },
+  {
+    "settlement":"г. Углич",
+    "region":"Ярославская область",
+    "latitude_dadata":57.522461,
+    "longitude_dadata":38.3018763,
+    "population":32719
+  },
+  {
+    "settlement":"г. Трехгорный",
+    "region":"Челябинская область",
+    "latitude_dadata":54.8177944,
+    "longitude_dadata":58.4463721,
+    "population":32463
+  },
+  {
+    "settlement":"г. Камень-на-Оби",
+    "region":"Алтайский край",
+    "latitude_dadata":53.7914749,
+    "longitude_dadata":81.3545962,
+    "population":32385
+  },
+  {
+    "settlement":"г. Алатырь",
+    "region":"Чувашская Республика",
+    "latitude_dadata":54.8372699,
+    "longitude_dadata":46.5339898,
+    "population":32265
+  },
+  {
+    "settlement":"г. Кулебаки",
+    "region":"Нижегородская область",
+    "latitude_dadata":55.4296716,
+    "longitude_dadata":42.5124575,
+    "population":32184
+  },
+  {
+    "settlement":"г. Усинск",
+    "region":"Республика Коми",
+    "latitude_dadata":65.9940586,
+    "longitude_dadata":57.5569288,
+    "population":32182
+  },
+  {
+    "settlement":"г. Острогожск",
+    "region":"Воронежская область",
+    "latitude_dadata":50.867943,
+    "longitude_dadata":39.0406177,
+    "population":31699
+  },
+  {
+    "settlement":"станица Новотитаровская",
+    "region":"Краснодарский край",
+    "latitude_dadata":45.2376345,
+    "longitude_dadata":38.9765189,
+    "population":31520
+  },
+  {
+    "settlement":"г. Дагестанские Огни",
+    "region":"Республика Дагестан",
+    "latitude_dadata":42.1152854,
+    "longitude_dadata":48.193977,
+    "population":31412
+  },
+  {
+    "settlement":"г. Алушта",
+    "region":"Республика Крым",
+    "latitude_dadata":44.6763996,
+    "longitude_dadata":34.4100439,
+    "population":31364
+  },
+  {
+    "settlement":"г. Тейково",
+    "region":"Ивановская область",
+    "latitude_dadata":56.8542792,
+    "longitude_dadata":40.5353799,
+    "population":31305
+  },
+  {
+    "settlement":"г. Дюртюли",
+    "region":"Республика Башкортостан",
+    "latitude_dadata":55.4848147,
+    "longitude_dadata":54.8524883,
+    "population":31185
+  },
+  {
+    "settlement":"село Иглино",
+    "region":"Республика Башкортостан",
+    "latitude_dadata":54.834468,
+    "longitude_dadata":56.416165,
+    "population":31169
+  },
+  {
+    "settlement":"г. Советский",
+    "region":"Ханты-Мансийский автономный округ — Югра",
+    "latitude_dadata":61.3707009,
+    "longitude_dadata":63.5667177,
+    "population":31138
+  },
+  {
+    "settlement":"г. Усть-Джегута",
+    "region":"Карачаево-Черкесская Республика",
+    "latitude_dadata":44.0838556,
+    "longitude_dadata":41.9710356,
+    "population":31137
+  },
+  {
+    "settlement":"г. Приморско-Ахтарск",
+    "region":"Краснодарский край",
+    "latitude_dadata":46.0515858,
+    "longitude_dadata":38.1704382,
+    "population":31087
+  },
+  {
+    "settlement":"Фактория",
+    "region":"Архангельская область",
+    "latitude_dadata":64.53939,
+    "longitude_dadata":40.5170011,
+    "population":31008
+  },
+  {
+    "settlement":"г. Кохма",
+    "region":"Ивановская область",
+    "latitude_dadata":56.9325054,
+    "longitude_dadata":41.0931324,
+    "population":30940
+  },
+  {
+    "settlement":"г. Благодарный",
+    "region":"Ставропольский край",
+    "latitude_dadata":45.098943,
+    "longitude_dadata":43.4306154,
+    "population":30827
+  },
+  {
+    "settlement":"село Ачхой-Мартан",
+    "region":"Чеченская Республика",
+    "latitude_dadata":43.1872011,
+    "longitude_dadata":45.2863481,
+    "population":30739
+  },
+  {
+    "settlement":"г. Дедовск",
+    "region":"Московская область",
+    "latitude_dadata":55.8704582,
+    "longitude_dadata":37.124447,
+    "population":30731
+  },
+  {
+    "settlement":"г. Вичуга",
+    "region":"Ивановская область",
+    "latitude_dadata":57.2044884,
+    "longitude_dadata":41.9131422,
+    "population":30694
+  },
+  {
+    "settlement":"город Нововоронеж",
+    "region":"Воронежская область",
+    "latitude_dadata":51.3091935,
+    "longitude_dadata":39.216289,
+    "population":30658
+  },
+  {
+    "settlement":"г. Зима",
+    "region":"Иркутская область",
+    "latitude_dadata":53.9336544,
+    "longitude_dadata":102.0498973,
+    "population":30640
+  },
+  {
+    "settlement":"станица Кущевская",
+    "region":"Краснодарский край",
+    "latitude_dadata":46.569894,
+    "longitude_dadata":39.619836,
+    "population":30375
+  },
+  {
+    "settlement":"г. Обь",
+    "region":"Новосибирская область",
+    "latitude_dadata":54.9945378,
+    "longitude_dadata":82.6937661,
+    "population":30369
+  },
+  {
+    "settlement":"станица Староминская",
+    "region":"Краснодарский край",
+    "latitude_dadata":46.5331093,
+    "longitude_dadata":39.0535727,
+    "population":30362
+  },
+  {
+    "settlement":"пгт Томилино рп",
+    "region":"Московская область",
+    "latitude_dadata":55.663107,
+    "longitude_dadata":37.949918,
+    "population":30306
+  },
+  {
+    "settlement":"г. Сердобск",
+    "region":"Пензенская область",
+    "latitude_dadata":52.4697777,
+    "longitude_dadata":44.2123029,
+    "population":30220
+  },
+  {
+    "settlement":"г. Богданович",
+    "region":"Свердловская область",
+    "latitude_dadata":56.7764214,
+    "longitude_dadata":62.0462888,
+    "population":30142
+  },
+  {
+    "settlement":"г. Нижнеудинск",
+    "region":"Иркутская область",
+    "latitude_dadata":54.896942,
+    "longitude_dadata":99.031408,
+    "population":29995
+  },
+  {
+    "settlement":"г. Электрогорск",
+    "region":"Московская область",
+    "latitude_dadata":55.8778372,
+    "longitude_dadata":38.7805887,
+    "population":29982
+  },
+  {
+    "settlement":"г. Луховицы",
+    "region":"Московская область",
+    "latitude_dadata":54.7659596,
+    "longitude_dadata":39.2706433,
+    "population":29889
+  },
+  {
+    "settlement":"г. Вятские Поляны",
+    "region":"Кировская область",
+    "latitude_dadata":56.2285162,
+    "longitude_dadata":51.0616058,
+    "population":29742
+  },
+  {
+    "settlement":"г. Фурманов",
+    "region":"Ивановская область",
+    "latitude_dadata":57.2537548,
+    "longitude_dadata":41.1054731,
+    "population":29715
+  },
+  {
+    "settlement":"г. Борзя",
+    "region":"Забайкальский край",
+    "latitude_dadata":50.3877136,
+    "longitude_dadata":116.5235118,
+    "population":29596
+  },
+  {
+    "settlement":"г. Богородицк",
+    "region":"Тульская область",
+    "latitude_dadata":53.7700594,
+    "longitude_dadata":38.1225087,
+    "population":29560
+  },
+  {
+    "settlement":"станица Павловская",
+    "region":"Краснодарский край",
+    "latitude_dadata":46.122016,
+    "longitude_dadata":39.781416,
+    "population":29514
+  },
+  {
+    "settlement":"г. Гусев",
+    "region":"Калининградская область",
+    "latitude_dadata":54.5915197,
+    "longitude_dadata":22.1942896,
+    "population":29234
+  },
+  {
+    "settlement":"г. Муравленко",
+    "region":"Ямало-Ненецкий автономный округ",
+    "latitude_dadata":63.795443,
+    "longitude_dadata":74.494826,
+    "population":29233
+  },
+  {
+    "settlement":"г. Слободской",
+    "region":"Кировская область",
+    "latitude_dadata":58.7312106,
+    "longitude_dadata":50.1669806,
+    "population":29148
+  },
+  {
+    "settlement":"г. Кандалакша",
+    "region":"Мурманская область",
+    "latitude_dadata":67.1566641,
+    "longitude_dadata":32.4142961,
+    "population":29138
+  },
+  {
+    "settlement":"пгт Краснообск рп",
+    "region":"Новосибирская область",
+    "latitude_dadata":54.921237,
+    "longitude_dadata":82.991197,
+    "population":29086
+  },
+  {
+    "settlement":"пгт Дрожжино рп",
+    "region":"Московская область",
+    "latitude_dadata":55.5277293,
+    "longitude_dadata":37.5937701,
+    "population":29072
+  },
+  {
+    "settlement":"г. Балабаново",
+    "region":"Калужская область",
+    "latitude_dadata":55.1774068,
+    "longitude_dadata":36.656839,
+    "population":29029
+  },
+  {
+    "settlement":"г. Лосино-Петровский",
+    "region":"Московская область",
+    "latitude_dadata":55.869566,
+    "longitude_dadata":38.202852,
+    "population":29000
+  },
+  {
+    "settlement":"г. Артемовский",
+    "region":"Свердловская область",
+    "latitude_dadata":57.3384593,
+    "longitude_dadata":61.8945883,
+    "population":28943
+  },
+  {
+    "settlement":"г. Добрянка",
+    "region":"Пермский край",
+    "latitude_dadata":58.542592,
+    "longitude_dadata":56.293958,
+    "population":28782
+  },
+  {
+    "settlement":"г. Маркс",
+    "region":"Саратовская область",
+    "latitude_dadata":51.7133247,
+    "longitude_dadata":46.7400877,
+    "population":28749
+  },
+  {
+    "settlement":"г. Великий Устюг",
+    "region":"Вологодская область",
+    "latitude_dadata":60.7602824,
+    "longitude_dadata":46.3053948,
+    "population":28670
+  },
+  {
+    "settlement":"г. Городец",
+    "region":"Нижегородская область",
+    "latitude_dadata":56.644865,
+    "longitude_dadata":43.4722664,
+    "population":28660
+  },
+  {
+    "settlement":"г. Тында",
+    "region":"Амурская область",
+    "latitude_dadata":55.1546593,
+    "longitude_dadata":124.7468001,
+    "population":28625
+  },
+  {
+    "settlement":"г. Бахчисарай",
+    "region":"Республика Крым",
+    "latitude_dadata":44.751299,
+    "longitude_dadata":33.8750748,
+    "population":28609
+  },
+  {
+    "settlement":"г. Сорочинск",
+    "region":"Оренбургская область",
+    "latitude_dadata":52.4266473,
+    "longitude_dadata":53.1541824,
+    "population":28478
+  },
+  {
+    "settlement":"г. Касимов",
+    "region":"Рязанская область",
+    "latitude_dadata":54.9373071,
+    "longitude_dadata":41.3913313,
+    "population":28443
+  },
+  {
+    "settlement":"г. Кудымкар",
+    "region":"Пермский край",
+    "latitude_dadata":59.0168409,
+    "longitude_dadata":54.6573613,
+    "population":28293
+  },
+  {
+    "settlement":"пгт Власиха",
+    "region":"Московская область",
+    "latitude_dadata":55.680815,
+    "longitude_dadata":37.1902369,
+    "population":28240
+  },
+  {
+    "settlement":"пгт Разумное",
+    "region":"Белгородская область",
+    "latitude_dadata":50.533611,
+    "longitude_dadata":36.689562,
+    "population":28192
+  },
+  {
+    "settlement":"г. Ростов",
+    "region":"Ярославская область",
+    "latitude_dadata":57.2050397,
+    "longitude_dadata":39.4378513,
+    "population":28122
+  },
+  {
+    "settlement":"г. Заречный",
+    "region":"Свердловская область",
+    "latitude_dadata":56.8103256,
+    "longitude_dadata":61.3380277,
+    "population":28112
+  },
+  {
+    "settlement":"г. Киров",
+    "region":"Калужская область",
+    "latitude_dadata":54.0789799,
+    "longitude_dadata":34.3076309,
+    "population":28097
+  },
+  {
+    "settlement":"город Семилуки",
+    "region":"Воронежская область",
+    "latitude_dadata":51.6951946,
+    "longitude_dadata":39.0188991,
+    "population":27938
+  },
+  {
+    "settlement":"г. Славгород",
+    "region":"Алтайский край",
+    "latitude_dadata":52.999413,
+    "longitude_dadata":78.6458451,
+    "population":27900
+  },
+  {
+    "settlement":"г. Аша",
+    "region":"Челябинская область",
+    "latitude_dadata":54.990582,
+    "longitude_dadata":57.2784381,
+    "population":27890
+  },
+  {
+    "settlement":"пгт Энем",
+    "region":"Республика Адыгея",
+    "latitude_dadata":44.9263995,
+    "longitude_dadata":38.9107709,
+    "population":27717
+  },
+  {
+    "settlement":"г. Барабинск",
+    "region":"Новосибирская область",
+    "latitude_dadata":55.3515169,
+    "longitude_dadata":78.3464604,
+    "population":27648
+  },
+  {
+    "settlement":"г. Еманжелинск",
+    "region":"Челябинская область",
+    "latitude_dadata":54.7554485,
+    "longitude_dadata":61.3243638,
+    "population":27632
+  },
+  {
+    "settlement":"посёлок Придорожный",
+    "region":"Самарская область",
+    "latitude_dadata":53.0860041,
+    "longitude_dadata":50.1587223,
+    "population":27515
+  },
+  {
+    "settlement":"пгт Иноземцево кп",
+    "region":"Ставропольский край",
+    "latitude_dadata":44.0970899,
+    "longitude_dadata":43.0894193,
+    "population":27500
+  },
+  {
+    "settlement":"г. Старая Русса",
+    "region":"Новгородская область",
+    "latitude_dadata":57.9907473,
+    "longitude_dadata":31.355452,
+    "population":27487
+  },
+  {
+    "settlement":"г. Дивногорск",
+    "region":"Красноярский край",
+    "latitude_dadata":55.9577356,
+    "longitude_dadata":92.380129,
+    "population":27477
+  },
+  {
+    "settlement":"г. Похвистнево",
+    "region":"Самарская область",
+    "latitude_dadata":53.6497658,
+    "longitude_dadata":52.1234466,
+    "population":27333
+  },
+  {
+    "settlement":"г. Киржач",
+    "region":"Владимирская область",
+    "latitude_dadata":56.1486461,
+    "longitude_dadata":38.8635967,
+    "population":27318
+  },
+  {
+    "settlement":"пгт Красково дп",
+    "region":"Московская область",
+    "latitude_dadata":55.65879,
+    "longitude_dadata":37.9885476,
+    "population":27306
+  },
+  {
+    "settlement":"г. Кушва",
+    "region":"Свердловская область",
+    "latitude_dadata":58.2825138,
+    "longitude_dadata":59.7647615,
+    "population":27306
+  },
+  {
+    "settlement":"г. Мирный",
+    "region":"Архангельская область",
+    "latitude_dadata":62.764551,
+    "longitude_dadata":40.336094,
+    "population":27262
+  },
+  {
+    "settlement":"г. Кировск",
+    "region":"Ленинградская область",
+    "latitude_dadata":59.875234,
+    "longitude_dadata":30.9815172,
+    "population":27238
+  },
+  {
+    "settlement":"село Экажево",
+    "region":"Республика Ингушетия",
+    "latitude_dadata":43.2082923,
+    "longitude_dadata":44.8190051,
+    "population":27224
+  },
+  {
+    "settlement":"г. Топки",
+    "region":"Кемеровская область",
+    "latitude_dadata":55.2765207,
+    "longitude_dadata":85.6152094,
+    "population":27158
+  },
+  {
+    "settlement":"г. Камышлов",
+    "region":"Свердловская область",
+    "latitude_dadata":56.8464908,
+    "longitude_dadata":62.7120309,
+    "population":27117
+  },
+  {
+    "settlement":"г. Карталы",
+    "region":"Челябинская область",
+    "latitude_dadata":53.0537382,
+    "longitude_dadata":60.6477347,
+    "population":27103
+  },
+  {
+    "settlement":"г. Заводоуковск",
+    "region":"Тюменская область",
+    "latitude_dadata":56.5028398,
+    "longitude_dadata":66.5513555,
+    "population":27100
+  },
+  {
+    "settlement":"деревня Мисайлово",
+    "region":"Московская область",
+    "latitude_dadata":55.5639995,
+    "longitude_dadata":37.8255811,
+    "population":27093
+  },
+  {
+    "settlement":"деревня Путилково",
+    "region":"Московская область",
+    "latitude_dadata":55.865253,
+    "longitude_dadata":37.392526,
+    "population":27081
+  },
+  {
+    "settlement":"станица Северская",
+    "region":"Краснодарский край",
+    "latitude_dadata":44.8562413,
+    "longitude_dadata":38.6959282,
+    "population":26973
+  },
+  {
+    "settlement":"г. Тара",
+    "region":"Омская область",
+    "latitude_dadata":56.9159295,
+    "longitude_dadata":74.3648797,
+    "population":26878
+  },
+  {
+    "settlement":"село Засечное",
+    "region":"Пензенская область",
+    "latitude_dadata":53.105904,
+    "longitude_dadata":45.0717034,
+    "population":26878
+  },
+  {
+    "settlement":"г. Шумерля",
+    "region":"Чувашская Республика",
+    "latitude_dadata":55.5229338,
+    "longitude_dadata":46.3752894,
+    "population":26873
+  },
+  {
+    "settlement":"г. Балтийск",
+    "region":"Калининградская область",
+    "latitude_dadata":54.6513858,
+    "longitude_dadata":19.9140642,
+    "population":26796
+  },
+  {
+    "settlement":"г. Новоалександровск",
+    "region":"Ставропольский край",
+    "latitude_dadata":45.4932983,
+    "longitude_dadata":41.2153595,
+    "population":26767
+  },
+  {
+    "settlement":"г. Гурьевск",
+    "region":"Калининградская область",
+    "latitude_dadata":54.7705454,
+    "longitude_dadata":20.6039948,
+    "population":26760
+  },
+  {
+    "settlement":"г. Котовск",
+    "region":"Тамбовская область",
+    "latitude_dadata":52.5923425,
+    "longitude_dadata":41.5102238,
+    "population":26694
+  },
+  {
+    "settlement":"село Кочубеевское",
+    "region":"Ставропольский край",
+    "latitude_dadata":44.6907487,
+    "longitude_dadata":41.8242914,
+    "population":26645
+  },
+  {
+    "settlement":"г. Майский",
+    "region":"Кабардино-Балкарская Республика",
+    "latitude_dadata":43.6283265,
+    "longitude_dadata":44.051839,
+    "population":26632
+  },
+  {
+    "settlement":"г. Кувандык",
+    "region":"Оренбургская область",
+    "latitude_dadata":51.4785827,
+    "longitude_dadata":57.3610986,
+    "population":26596
+  },
+  {
+    "settlement":"г. Гагарин",
+    "region":"Смоленская область",
+    "latitude_dadata":55.5526733,
+    "longitude_dadata":34.9950319,
+    "population":26500
+  },
+  {
+    "settlement":"г. Красноармейск",
+    "region":"Московская область",
+    "latitude_dadata":56.105426,
+    "longitude_dadata":38.140838,
+    "population":26492
+  },
+  {
+    "settlement":"г. Кимовск",
+    "region":"Тульская область",
+    "latitude_dadata":53.9698013,
+    "longitude_dadata":38.538127,
+    "population":26475
+  },
+  {
+    "settlement":"г. Волоколамск",
+    "region":"Московская область",
+    "latitude_dadata":56.0356464,
+    "longitude_dadata":35.958479,
+    "population":26389
+  },
+  {
+    "settlement":"г. Петровск",
+    "region":"Саратовская область",
+    "latitude_dadata":52.3094724,
+    "longitude_dadata":45.3851898,
+    "population":26319
+  },
+  {
+    "settlement":"г. Соль-Илецк",
+    "region":"Оренбургская область",
+    "latitude_dadata":51.1634754,
+    "longitude_dadata":54.9895396,
+    "population":26149
+  },
+  {
+    "settlement":"г. Ипатово",
+    "region":"Ставропольский край",
+    "latitude_dadata":45.7181195,
+    "longitude_dadata":42.8970759,
+    "population":26122
+  },
+  {
+    "settlement":"г. Костомукша",
+    "region":"Республика Карелия",
+    "latitude_dadata":64.5890912,
+    "longitude_dadata":30.6015362,
+    "population":26048
+  },
+  {
+    "settlement":"пгт Малаховка рп",
+    "region":"Московская область",
+    "latitude_dadata":55.6452616,
+    "longitude_dadata":38.0042385,
+    "population":25989
+  },
+  {
+    "settlement":"г. Удомля",
+    "region":"Тверская область",
+    "latitude_dadata":57.8787641,
+    "longitude_dadata":35.0166208,
+    "population":25950
+  },
+  {
+    "settlement":"г. Янаул",
+    "region":"Республика Башкортостан",
+    "latitude_dadata":56.2649073,
+    "longitude_dadata":54.9297772,
+    "population":25908
+  },
+  {
+    "settlement":"г. Карпинск",
+    "region":"Свердловская область",
+    "latitude_dadata":59.766559,
+    "longitude_dadata":60.0012125,
+    "population":25879
+  },
+  {
+    "settlement":"г. Кондопога",
+    "region":"Республика Карелия",
+    "latitude_dadata":62.2059903,
+    "longitude_dadata":34.2681816,
+    "population":25851
+  },
+  {
+    "settlement":"г. Коммунар",
+    "region":"Ленинградская область",
+    "latitude_dadata":59.6215741,
+    "longitude_dadata":30.3935534,
+    "population":25793
+  },
+  {
+    "settlement":"г. Отрадное",
+    "region":"Ленинградская область",
+    "latitude_dadata":59.7726485,
+    "longitude_dadata":30.798845,
+    "population":25706
+  },
+  {
+    "settlement":"г. Холмск",
+    "region":"Сахалинская область",
+    "latitude_dadata":47.0408656,
+    "longitude_dadata":142.0416132,
+    "population":25677
+  },
+  {
+    "settlement":"станица Тбилисская",
+    "region":"Краснодарский край",
+    "latitude_dadata":45.3644521,
+    "longitude_dadata":40.2016871,
+    "population":25650
+  },
+  {
+    "settlement":"г. Полысаево",
+    "region":"Кемеровская область",
+    "latitude_dadata":54.6054908,
+    "longitude_dadata":86.2809963,
+    "population":25631
+  },
+  {
+    "settlement":"г. Красноперекопск",
+    "region":"Республика Крым",
+    "latitude_dadata":45.9536596,
+    "longitude_dadata":33.792071,
+    "population":25569
+  },
+  {
+    "settlement":"г. Киреевск",
+    "region":"Тульская область",
+    "latitude_dadata":53.9320407,
+    "longitude_dadata":37.9219941,
+    "population":25560
+  },
+  {
+    "settlement":"пгт Мостовской",
+    "region":"Краснодарский край",
+    "latitude_dadata":44.4144395,
+    "longitude_dadata":40.790292,
+    "population":25548
+  },
+  {
+    "settlement":"г. Лабытнанги",
+    "region":"Ямало-Ненецкий автономный округ",
+    "latitude_dadata":66.6593565,
+    "longitude_dadata":66.3881811,
+    "population":25501
+  },
+  {
+    "settlement":"село Александровское",
+    "region":"Ставропольский край",
+    "latitude_dadata":44.7105748,
+    "longitude_dadata":43.0049484,
+    "population":25479
+  },
+  {
+    "settlement":"город Десногорск",
+    "region":"Смоленская область",
+    "latitude_dadata":54.1463618,
+    "longitude_dadata":33.2834089,
+    "population":25414
+  },
+  {
+    "settlement":"г. Алейск",
+    "region":"Алтайский край",
+    "latitude_dadata":52.4922482,
+    "longitude_dadata":82.7795177,
+    "population":25380
+  },
+  {
+    "settlement":"г. Десногорск",
+    "region":"Смоленская область",
+    "latitude_dadata":54.1463618,
+    "longitude_dadata":33.2834089,
+    "population":25345
+  },
+  {
+    "settlement":"г. Дятьково",
+    "region":"Брянская область",
+    "latitude_dadata":53.5958143,
+    "longitude_dadata":34.355106,
+    "population":25255
+  },
+  {
+    "settlement":"г. Скопин",
+    "region":"Рязанская область",
+    "latitude_dadata":53.8235282,
+    "longitude_dadata":39.5493392,
+    "population":25238
+  },
+  {
+    "settlement":"пгт Калининец рп",
+    "region":"Московская область",
+    "latitude_dadata":55.559738,
+    "longitude_dadata":36.981914,
+    "population":25082
+  },
+  {
+    "settlement":"г. Семенов",
+    "region":"Нижегородская область",
+    "latitude_dadata":56.7890706,
+    "longitude_dadata":44.4902872,
+    "population":25075
+  },
+  {
+    "settlement":"пгт Ильский",
+    "region":"Краснодарский край",
+    "latitude_dadata":44.804549,
+    "longitude_dadata":38.546089,
+    "population":24932
+  },
+  {
+    "settlement":"г. Асино",
+    "region":"Томская область",
+    "latitude_dadata":56.990811,
+    "longitude_dadata":86.1764966,
+    "population":24913
+  },
+  {
+    "settlement":"г. Карасук",
+    "region":"Новосибирская область",
+    "latitude_dadata":53.7343642,
+    "longitude_dadata":78.0422879,
+    "population":24890
+  },
+  {
+    "settlement":"г. Кировск",
+    "region":"Мурманская область",
+    "latitude_dadata":67.6151587,
+    "longitude_dadata":33.6636568,
+    "population":24857
+  },
+  {
+    "settlement":"станица Ессентукская",
+    "region":"Ставропольский край",
+    "latitude_dadata":44.0267307,
+    "longitude_dadata":42.8764379,
+    "population":24710
+  },
+  {
+    "settlement":"пгт Октябрьский рп",
+    "region":"Московская область",
+    "latitude_dadata":55.6110724,
+    "longitude_dadata":37.9737423,
+    "population":24704
+  },
+  {
+    "settlement":"г. Знаменск",
+    "region":"Астраханская область",
+    "latitude_dadata":48.5866454,
+    "longitude_dadata":45.7369007,
+    "population":24628
+  },
+  {
+    "settlement":"г. Гусиноозерск",
+    "region":"Республика Бурятия",
+    "latitude_dadata":51.2865987,
+    "longitude_dadata":106.5229836,
+    "population":24451
+  },
+  {
+    "settlement":"пгт Пойковский",
+    "region":"Ханты-Мансийский автономный округ — Югра",
+    "latitude_dadata":60.996548,
+    "longitude_dadata":71.902431,
+    "population":24440
+  },
+  {
+    "settlement":"г. Североуральск",
+    "region":"Свердловская область",
+    "latitude_dadata":60.1533388,
+    "longitude_dadata":59.952553,
+    "population":24428
+  },
+  {
+    "settlement":"г. Бутурлиновка",
+    "region":"Воронежская область",
+    "latitude_dadata":50.8312775,
+    "longitude_dadata":40.5977424,
+    "population":24397
+  },
+  {
+    "settlement":"г. Озёры",
+    "region":"Московская область",
+    "latitude_dadata":54.8540209,
+    "longitude_dadata":38.5598706,
+    "population":24359
+  },
+  {
+    "settlement":"г. Саки",
+    "region":"Республика Крым",
+    "latitude_dadata":45.13433,
+    "longitude_dadata":33.6032255,
+    "population":24285
+  },
+  {
+    "settlement":"г. Калач-на-Дону",
+    "region":"Волгоградская область",
+    "latitude_dadata":48.6889101,
+    "longitude_dadata":43.5307585,
+    "population":24277
+  },
+  {
+    "settlement":"г. Унеча",
+    "region":"Брянская область",
+    "latitude_dadata":52.8461971,
+    "longitude_dadata":32.6757398,
+    "population":24274
+  },
+  {
+    "settlement":"г. Морозовск",
+    "region":"Ростовская область",
+    "latitude_dadata":48.351132,
+    "longitude_dadata":41.8307844,
+    "population":24258
+  },
+  {
+    "settlement":"г. Северобайкальск",
+    "region":"Республика Бурятия",
+    "latitude_dadata":55.6355591,
+    "longitude_dadata":109.3361645,
+    "population":24233
+  },
+  {
+    "settlement":"г. Советская Гавань",
+    "region":"Хабаровский край",
+    "latitude_dadata":48.9663668,
+    "longitude_dadata":140.2852088,
+    "population":24231
+  },
+  {
+    "settlement":"станица Полтавская",
+    "region":"Краснодарский край",
+    "latitude_dadata":45.3654401,
+    "longitude_dadata":38.2109117,
+    "population":24164
+  },
+  {
+    "settlement":"г. Родники",
+    "region":"Ивановская область",
+    "latitude_dadata":57.1024811,
+    "longitude_dadata":41.7298234,
+    "population":24101
+  },
+  {
+    "settlement":"г. Зерноград",
+    "region":"Ростовская область",
+    "latitude_dadata":46.849613,
+    "longitude_dadata":40.3128993,
+    "population":24076
+  },
+  {
+    "settlement":"пгт Северный",
+    "region":"Белгородская область",
+    "latitude_dadata":50.6774988,
+    "longitude_dadata":36.5607698,
+    "population":24070
+  },
+  {
+    "settlement":"деревня Новое Девяткино",
+    "region":"Ленинградская область",
+    "latitude_dadata":60.0572998,
+    "longitude_dadata":30.4762703,
+    "population":23988
+  },
+  {
+    "settlement":"посёлок Тельмана",
+    "region":"Ленинградская область",
+    "latitude_dadata":59.725444,
+    "longitude_dadata":30.612106,
+    "population":23986
+  },
+  {
+    "settlement":"г. Карачаевск",
+    "region":"Карачаево-Черкесская Республика",
+    "latitude_dadata":43.7731804,
+    "longitude_dadata":41.9144084,
+    "population":23867
+  },
+  {
+    "settlement":"станица Елизаветинская",
+    "region":"Краснодарский край",
+    "latitude_dadata":45.0484348,
+    "longitude_dadata":38.7999276,
+    "population":23841
+  },
+  {
+    "settlement":"г. Строитель",
+    "region":"Белгородская область",
+    "latitude_dadata":50.785172,
+    "longitude_dadata":36.486998,
+    "population":23780
+  },
+  {
+    "settlement":"г. Татарск",
+    "region":"Новосибирская область",
+    "latitude_dadata":55.2144722,
+    "longitude_dadata":75.9740764,
+    "population":23711
+  },
+  {
+    "settlement":"г. Медногорск",
+    "region":"Оренбургская область",
+    "latitude_dadata":51.4038655,
+    "longitude_dadata":57.5831571,
+    "population":23693
+  },
+  {
+    "settlement":"пгт Федоровский",
+    "region":"Ханты-Мансийский автономный округ — Югра",
+    "latitude_dadata":61.6484245,
+    "longitude_dadata":73.488652,
+    "population":23614
+  },
+  {
+    "settlement":"г. Дальнереченск",
+    "region":"Приморский край",
+    "latitude_dadata":45.9308807,
+    "longitude_dadata":133.7316844,
+    "population":23613
+  },
+  {
+    "settlement":"пгт Афипский",
+    "region":"Краснодарский край",
+    "latitude_dadata":44.9034044,
+    "longitude_dadata":38.8411512,
+    "population":23592
+  },
+  {
+    "settlement":"г. Уварово",
+    "region":"Тамбовская область",
+    "latitude_dadata":51.983084,
+    "longitude_dadata":42.261,
+    "population":23584
+  },
+  {
+    "settlement":"г. Сегежа",
+    "region":"Республика Карелия",
+    "latitude_dadata":63.7437691,
+    "longitude_dadata":34.3126737,
+    "population":23543
+  },
+  {
+    "settlement":"г Курчалой",
+    "region":"Чеченская Республика",
+    "latitude_dadata":43.2045354,
+    "longitude_dadata":46.0889297,
+    "population":23425
+  },
+  {
+    "settlement":"г. Нарьян-Мар",
+    "region":"Ненецкий автономный округ",
+    "latitude_dadata":67.6379742,
+    "longitude_dadata":53.0069529,
+    "population":23399
+  },
+  {
+    "settlement":"г. Губаха",
+    "region":"Пермский край",
+    "latitude_dadata":58.8370347,
+    "longitude_dadata":57.5544775,
+    "population":23397
+  },
+  {
+    "settlement":"г. Среднеуральск",
+    "region":"Свердловская область",
+    "latitude_dadata":56.9919113,
+    "longitude_dadata":60.4771159,
+    "population":23344
+  },
+  {
+    "settlement":"г. Кубинка",
+    "region":"Московская область",
+    "latitude_dadata":55.6790296,
+    "longitude_dadata":37.2635177,
+    "population":23146
+  },
+  {
+    "settlement":"г. Нефтекумск",
+    "region":"Ставропольский край",
+    "latitude_dadata":44.7545311,
+    "longitude_dadata":44.9865999,
+    "population":23137
+  },
+  {
+    "settlement":"станица Троицкая",
+    "region":"Республика Ингушетия",
+    "latitude_dadata":43.3060175,
+    "longitude_dadata":44.9893927,
+    "population":23078
+  },
+  {
+    "settlement":"пгт Свердловский рп",
+    "region":"Московская область",
+    "latitude_dadata":55.9032059,
+    "longitude_dadata":38.1361082,
+    "population":23058
+  },
+  {
+    "settlement":"станица Отрадная",
+    "region":"Краснодарский край",
+    "latitude_dadata":44.39317,
+    "longitude_dadata":41.5156681,
+    "population":23041
+  },
+  {
+    "settlement":"г. Верхний Уфалей",
+    "region":"Челябинская область",
+    "latitude_dadata":56.0487398,
+    "longitude_dadata":60.2320146,
+    "population":22981
+  },
+  {
+    "settlement":"пгт Городище рп",
+    "region":"Волгоградская область",
+    "latitude_dadata":48.8096322,
+    "longitude_dadata":44.4761656,
+    "population":22905
+  },
+  {
+    "settlement":"г. Старая Купавна",
+    "region":"Московская область",
+    "latitude_dadata":55.810648,
+    "longitude_dadata":38.175624,
+    "population":22898
+  },
+  {
+    "settlement":"г. Менделеевск",
+    "region":"Республика Татарстан",
+    "latitude_dadata":55.8951887,
+    "longitude_dadata":52.3143634,
+    "population":22875
+  },
+  {
+    "settlement":"г. Железноводск",
+    "region":"Ставропольский край",
+    "latitude_dadata":44.1320536,
+    "longitude_dadata":43.0304695,
+    "population":22863
+  },
+  {
+    "settlement":"г. Голицыно",
+    "region":"Московская область",
+    "latitude_dadata":55.6189919,
+    "longitude_dadata":36.9856491,
+    "population":22733
+  },
+  {
+    "settlement":"г. Аткарск",
+    "region":"Саратовская область",
+    "latitude_dadata":51.8737167,
+    "longitude_dadata":45.000324,
+    "population":22709
+  },
+  {
+    "settlement":"пгт Тучково рп",
+    "region":"Московская область",
+    "latitude_dadata":55.6007848,
+    "longitude_dadata":36.4718788,
+    "population":22657
+  },
+  {
+    "settlement":"рп Чишмы",
+    "region":"Республика Башкортостан",
+    "latitude_dadata":54.5892603,
+    "longitude_dadata":55.3803504,
+    "population":22597
+  },
+  {
+    "settlement":"г. Лермонтов",
+    "region":"Ставропольский край",
+    "latitude_dadata":44.1053341,
+    "longitude_dadata":42.9731493,
+    "population":22444
+  },
+  {
+    "settlement":"посёлок Бугры",
+    "region":"Ленинградская область",
+    "latitude_dadata":60.0700161,
+    "longitude_dadata":30.3997764,
+    "population":22428
+  },
+  {
+    "settlement":"город Павловск",
+    "region":"Воронежская область",
+    "latitude_dadata":50.4533503,
+    "longitude_dadata":40.1369424,
+    "population":22384
+  },
+  {
+    "settlement":"г. Тайга",
+    "region":"Кемеровская область",
+    "latitude_dadata":56.1723887,
+    "longitude_dadata":85.4268959,
+    "population":22375
+  },
+  {
+    "settlement":"г. Никольское",
+    "region":"Ленинградская область",
+    "latitude_dadata":59.7042138,
+    "longitude_dadata":30.7874065,
+    "population":22355
+  },
+  {
+    "settlement":"г. Верещагино",
+    "region":"Пермский край",
+    "latitude_dadata":58.0798499,
+    "longitude_dadata":54.6579923,
+    "population":22239
+  },
+  {
+    "settlement":"г. Сосногорск",
+    "region":"Республика Коми",
+    "latitude_dadata":63.599118,
+    "longitude_dadata":53.8762442,
+    "population":22189
+  },
+  {
+    "settlement":"г. Гурьевск",
+    "region":"Кемеровская область",
+    "latitude_dadata":54.2859162,
+    "longitude_dadata":85.9477116,
+    "population":22134
+  },
+  {
+    "settlement":"г. Хадыженск",
+    "region":"Краснодарский край",
+    "latitude_dadata":44.412253,
+    "longitude_dadata":39.5320316,
+    "population":22094
+  },
+  {
+    "settlement":"г. Невьянск",
+    "region":"Свердловская область",
+    "latitude_dadata":57.4912147,
+    "longitude_dadata":60.218324,
+    "population":22061
+  },
+  {
+    "settlement":"г. Тырныауз",
+    "region":"Кабардино-Балкарская Республика",
+    "latitude_dadata":43.3981998,
+    "longitude_dadata":42.9214143,
+    "population":22056
+  },
+  {
+    "settlement":"г. Котельниково",
+    "region":"Волгоградская область",
+    "latitude_dadata":47.6310339,
+    "longitude_dadata":43.1330384,
+    "population":22016
+  },
+  {
+    "settlement":"г. Таштагол",
+    "region":"Кемеровская область",
+    "latitude_dadata":52.7594115,
+    "longitude_dadata":87.8476574,
+    "population":21980
+  },
+  {
+    "settlement":"г. Давлеканово",
+    "region":"Республика Башкортостан",
+    "latitude_dadata":54.222692,
+    "longitude_dadata":55.0311854,
+    "population":21834
+  },
+  {
+    "settlement":"г. Бронницы",
+    "region":"Московская область",
+    "latitude_dadata":55.4254542,
+    "longitude_dadata":38.264161,
+    "population":21831
+  },
+  {
+    "settlement":"г. Вилючинск",
+    "region":"Камчатский край",
+    "latitude_dadata":52.9302624,
+    "longitude_dadata":158.4057425,
+    "population":21774
+  },
+  {
+    "settlement":"г. Калтан",
+    "region":"Кемеровская область",
+    "latitude_dadata":53.521076,
+    "longitude_dadata":87.2771909,
+    "population":21752
+  },
+  {
+    "settlement":"пгт Медведево",
+    "region":"Республика Марий Эл",
+    "latitude_dadata":56.6332603,
+    "longitude_dadata":47.8032407,
+    "population":21752
+  },
+  {
+    "settlement":"г. Вихоревка",
+    "region":"Иркутская область",
+    "latitude_dadata":56.1208112,
+    "longitude_dadata":101.1704184,
+    "population":21719
+  },
+  {
+    "settlement":"г. Семикаракорск",
+    "region":"Ростовская область",
+    "latitude_dadata":47.517792,
+    "longitude_dadata":40.811485,
+    "population":21719
+  },
+  {
+    "settlement":"г. Лысково",
+    "region":"Нижегородская область",
+    "latitude_dadata":56.0262601,
+    "longitude_dadata":45.0357974,
+    "population":21657
+  },
+  {
+    "settlement":"г. Сасово",
+    "region":"Рязанская область",
+    "latitude_dadata":54.3508047,
+    "longitude_dadata":41.9117508,
+    "population":21628
+  },
+  {
+    "settlement":"г. Бавлы",
+    "region":"Республика Татарстан",
+    "latitude_dadata":54.4063524,
+    "longitude_dadata":53.2458119,
+    "population":21628
+  },
+  {
+    "settlement":"г. Железногорск-Илимский",
+    "region":"Иркутская область",
+    "latitude_dadata":56.5847582,
+    "longitude_dadata":104.1142358,
+    "population":21621
+  },
+  {
+    "settlement":"г. Вельск",
+    "region":"Архангельская область",
+    "latitude_dadata":61.0658321,
+    "longitude_dadata":42.1032464,
+    "population":21613
+  },
+  {
+    "settlement":"г. Алдан",
+    "region":"Республика Саха (Якутия)",
+    "latitude_dadata":58.6095359,
+    "longitude_dadata":125.3817685,
+    "population":21590
+  },
+  {
+    "settlement":"пгт Стройкерамика",
+    "region":"Самарская область",
+    "latitude_dadata":53.2766484,
+    "longitude_dadata":50.3870415,
+    "population":21567
+  },
+  {
+    "settlement":"г. Алагир",
+    "region":"Республика Северная Осетия — Алания",
+    "latitude_dadata":43.0416623,
+    "longitude_dadata":44.2197807,
+    "population":21550
+  },
+  {
+    "settlement":"пгт Ахтырский",
+    "region":"Краснодарский край",
+    "latitude_dadata":44.8503138,
+    "longitude_dadata":38.2998264,
+    "population":21515
+  },
+  {
+    "settlement":"г. Красноуральск",
+    "region":"Свердловская область",
+    "latitude_dadata":58.3486753,
+    "longitude_dadata":60.0408929,
+    "population":21507
+  },
+  {
+    "settlement":"г. Бежецк",
+    "region":"Тверская область",
+    "latitude_dadata":57.7859527,
+    "longitude_dadata":36.6905192,
+    "population":21466
+  },
+  {
+    "settlement":"г. Усть-Катав",
+    "region":"Челябинская область",
+    "latitude_dadata":54.9260247,
+    "longitude_dadata":58.1528932,
+    "population":21439
+  },
+  {
+    "settlement":"г. Оленегорск",
+    "region":"Мурманская область",
+    "latitude_dadata":68.1420962,
+    "longitude_dadata":33.2669298,
+    "population":21438
+  },
+  {
+    "settlement":"г. Рошаль",
+    "region":"Московская область",
+    "latitude_dadata":55.6632087,
+    "longitude_dadata":39.8656345,
+    "population":21401
+  },
+  {
+    "settlement":"г. Ленск",
+    "region":"Республика Саха (Якутия)",
+    "latitude_dadata":60.7276227,
+    "longitude_dadata":114.9548502,
+    "population":21392
+  },
+  {
+    "settlement":"пгт Излучинск",
+    "region":"Ханты-Мансийский автономный округ — Югра",
+    "latitude_dadata":60.9530651,
+    "longitude_dadata":76.891202,
+    "population":21389
+  },
+  {
+    "settlement":"г. Калачинск",
+    "region":"Омская область",
+    "latitude_dadata":55.059708,
+    "longitude_dadata":74.5655042,
+    "population":21378
+  },
+  {
+    "settlement":"г. Красноармейск",
+    "region":"Саратовская область",
+    "latitude_dadata":51.0235479,
+    "longitude_dadata":45.6951366,
+    "population":21350
+  },
+  {
+    "settlement":"г. Светлый",
+    "region":"Калининградская область",
+    "latitude_dadata":54.6773492,
+    "longitude_dadata":20.1356707,
+    "population":21114
+  },
+  {
+    "settlement":"г. Рыбное",
+    "region":"Рязанская область",
+    "latitude_dadata":54.7256308,
+    "longitude_dadata":39.5135902,
+    "population":21069
+  },
+  {
+    "settlement":"г. Котово",
+    "region":"Волгоградская область",
+    "latitude_dadata":50.3205819,
+    "longitude_dadata":44.803057,
+    "population":21028
+  },
+  {
+    "settlement":"г. Остров",
+    "region":"Псковская область",
+    "latitude_dadata":57.3452065,
+    "longitude_dadata":28.3437983,
+    "population":20923
+  },
+  {
+    "settlement":"г. Бобров",
+    "region":"Воронежская область",
+    "latitude_dadata":51.0902207,
+    "longitude_dadata":40.031849,
+    "population":20871
+  },
+  {
+    "settlement":"пгт Кольцово рп",
+    "region":"Новосибирская область",
+    "latitude_dadata":54.939754,
+    "longitude_dadata":83.189226,
+    "population":20862
+  },
+  {
+    "settlement":"село Дыгулыбгей",
+    "region":"Кабардино-Балкарская Республика",
+    "latitude_dadata":43.6605157,
+    "longitude_dadata":43.5399799,
+    "population":20852
+  },
+  {
+    "settlement":"г. Колпашево",
+    "region":"Томская область",
+    "latitude_dadata":58.3114151,
+    "longitude_dadata":82.9027717,
+    "population":20824
+  },
+  {
+    "settlement":"г. Новопавловск",
+    "region":"Ставропольский край",
+    "latitude_dadata":43.957372,
+    "longitude_dadata":43.631908,
+    "population":20781
+  },
+  {
+    "settlement":"г. Тогучин",
+    "region":"Новосибирская область",
+    "latitude_dadata":55.2251228,
+    "longitude_dadata":84.4103609,
+    "population":20766
+  },
+  {
+    "settlement":"г. Чегем",
+    "region":"Кабардино-Балкарская Республика",
+    "latitude_dadata":43.567119,
+    "longitude_dadata":43.5866245,
+    "population":20736
+  },
+  {
+    "settlement":"г. Зарайск",
+    "region":"Московская область",
+    "latitude_dadata":54.7624731,
+    "longitude_dadata":38.8851435,
+    "population":20736
+  },
+  {
+    "settlement":"село Карабудахкент",
+    "region":"Республика Дагестан",
+    "latitude_dadata":42.7101719,
+    "longitude_dadata":47.5652001,
+    "population":20710
+  },
+  {
+    "settlement":"г. Октябрьск",
+    "region":"Самарская область",
+    "latitude_dadata":53.1641278,
+    "longitude_dadata":48.6707034,
+    "population":20703
+  },
+  {
+    "settlement":"г. Армянск",
+    "region":"Республика Крым",
+    "latitude_dadata":46.1058917,
+    "longitude_dadata":33.6911918,
+    "population":20692
+  },
+  {
+    "settlement":"г. Ряжск",
+    "region":"Рязанская область",
+    "latitude_dadata":53.7068457,
+    "longitude_dadata":40.0521364,
+    "population":20634
+  },
+  {
+    "settlement":"г. Сысерть",
+    "region":"Свердловская область",
+    "latitude_dadata":56.5005302,
+    "longitude_dadata":60.8190383,
+    "population":20634
+  },
+  {
+    "settlement":"г. Буй",
+    "region":"Костромская область",
+    "latitude_dadata":58.4733865,
+    "longitude_dadata":41.5306164,
+    "population":20564
+  },
+  {
+    "settlement":"пгт Безенчук",
+    "region":"Самарская область",
+    "latitude_dadata":52.9844016,
+    "longitude_dadata":49.4332576,
+    "population":20516
+  },
+  {
+    "settlement":"г. Исилькуль",
+    "region":"Омская область",
+    "latitude_dadata":54.9095226,
+    "longitude_dadata":71.2815165,
+    "population":20515
+  },
+  {
+    "settlement":"г. Хотьково",
+    "region":"Московская область",
+    "latitude_dadata":56.2515987,
+    "longitude_dadata":37.9394556,
+    "population":20466
+  },
+  {
+    "settlement":"г. Шарья",
+    "region":"Костромская область",
+    "latitude_dadata":58.3760015,
+    "longitude_dadata":45.4060912,
+    "population":20439
+  },
+  {
+    "settlement":"г. Нижний Ломов",
+    "region":"Пензенская область",
+    "latitude_dadata":53.5301144,
+    "longitude_dadata":43.6730824,
+    "population":20421
+  },
+  {
+    "settlement":"г. Арск",
+    "region":"Республика Татарстан",
+    "latitude_dadata":56.0913566,
+    "longitude_dadata":49.8769472,
+    "population":20421
+  },
+  {
+    "settlement":"г. Пикалево",
+    "region":"Ленинградская область",
+    "latitude_dadata":59.5131477,
+    "longitude_dadata":34.1772986,
+    "population":20388
+  },
+  {
+    "settlement":"г. Оха",
+    "region":"Сахалинская область",
+    "latitude_dadata":53.5868177,
+    "longitude_dadata":142.9412704,
+    "population":20357
+  },
+  {
+    "settlement":"пгт Монино рп",
+    "region":"Московская область",
+    "latitude_dadata":55.8393791,
+    "longitude_dadata":38.1953929,
+    "population":20313
+  },
+  {
+    "settlement":"г. Инта",
+    "region":"Республика Коми",
+    "latitude_dadata":66.0367224,
+    "longitude_dadata":60.1153645,
+    "population":20271
+  },
+  {
+    "settlement":"г. Сергач",
+    "region":"Нижегородская область",
+    "latitude_dadata":55.5200817,
+    "longitude_dadata":45.4813786,
+    "population":20256
+  },
+  {
+    "settlement":"г. Бологое",
+    "region":"Тверская область",
+    "latitude_dadata":57.8855456,
+    "longitude_dadata":34.0537078,
+    "population":20234
+  },
+  {
+    "settlement":"г. Котельнич",
+    "region":"Кировская область",
+    "latitude_dadata":58.3034526,
+    "longitude_dadata":48.3475879,
+    "population":20144
+  },
+  {
+    "settlement":"г. Лебедянь",
+    "region":"Липецкая область",
+    "latitude_dadata":53.0155445,
+    "longitude_dadata":39.143535,
+    "population":20049
+  },
+  {
+    "settlement":"станица Зеленчукская",
+    "region":"Карачаево-Черкесская Республика",
+    "latitude_dadata":43.8608392,
+    "longitude_dadata":41.5827377,
+    "population":20009
+  },
+  {
+    "settlement":"г. Белоярский",
+    "region":"Ханты-Мансийский автономный округ — Югра",
+    "latitude_dadata":63.7120526,
+    "longitude_dadata":66.6773163,
+    "population":19994
+  },
+  {
+    "settlement":"г. Агрыз",
+    "region":"Республика Татарстан",
+    "latitude_dadata":56.5234282,
+    "longitude_dadata":52.9943111,
+    "population":19991
+  },
+  {
+    "settlement":"г. Нерехта",
+    "region":"Костромская область",
+    "latitude_dadata":57.4543591,
+    "longitude_dadata":40.5725027,
+    "population":19977
+  },
+  {
+    "settlement":"пгт Боровский рп",
+    "region":"Тюменская область",
+    "latitude_dadata":57.0437279,
+    "longitude_dadata":65.7219998,
+    "population":19972
+  },
+  {
+    "settlement":"г. Буинск",
+    "region":"Республика Татарстан",
+    "latitude_dadata":54.964071,
+    "longitude_dadata":48.2901712,
+    "population":19968
+  },
+  {
+    "settlement":"станица Выселки",
+    "region":"Краснодарский край",
+    "latitude_dadata":45.5801087,
+    "longitude_dadata":39.6553854,
+    "population":19955
+  },
+  {
+    "settlement":"г. Терек",
+    "region":"Кабардино-Балкарская Республика",
+    "latitude_dadata":43.4837944,
+    "longitude_dadata":44.140333,
+    "population":19948
+  },
+  {
+    "settlement":"село Новая Усмань (часть 2)",
+    "region":"Воронежская область",
+    "latitude_dadata":51.6440564,
+    "longitude_dadata":39.4129162,
+    "population":19939
+  },
+  {
+    "settlement":"г. Черепаново",
+    "region":"Новосибирская область",
+    "latitude_dadata":54.2206618,
+    "longitude_dadata":83.3724671,
+    "population":19900
+  },
+  {
+    "settlement":"г. Тарко-Сале",
+    "region":"Ямало-Ненецкий автономный округ",
+    "latitude_dadata":64.9117423,
+    "longitude_dadata":77.7610229,
+    "population":19900
+  },
+  {
+    "settlement":"г. Никольск",
+    "region":"Пензенская область",
+    "latitude_dadata":53.7138244,
+    "longitude_dadata":46.0799725,
+    "population":19873
+  },
+  {
+    "settlement":"г. Куровское",
+    "region":"Московская область",
+    "latitude_dadata":55.5790488,
+    "longitude_dadata":38.920837,
+    "population":19857
+  },
+  {
+    "settlement":"г. Ковылкино",
+    "region":"Республика Мордовия",
+    "latitude_dadata":54.0391206,
+    "longitude_dadata":43.9191408,
+    "population":19793
+  },
+  {
+    "settlement":"г. Козьмодемьянск",
+    "region":"Республика Марий Эл",
+    "latitude_dadata":56.3333702,
+    "longitude_dadata":46.5465866,
+    "population":19731
+  },
+  {
+    "settlement":"г. Данков",
+    "region":"Липецкая область",
+    "latitude_dadata":53.2576888,
+    "longitude_dadata":39.1456386,
+    "population":19726
+  },
+  {
+    "settlement":"г. Фокино",
+    "region":"Приморский край",
+    "latitude_dadata":42.9707585,
+    "longitude_dadata":132.4110104,
+    "population":19711
+  },
+  {
+    "settlement":"пгт Каа-Хем",
+    "region":"Республика Тыва",
+    "latitude_dadata":51.6974519,
+    "longitude_dadata":94.559472,
+    "population":19686
+  },
+  {
+    "settlement":"г. Усмань",
+    "region":"Липецкая область",
+    "latitude_dadata":52.0444077,
+    "longitude_dadata":39.7263813,
+    "population":19662
+  },
+  {
+    "settlement":"посёлок Строитель",
+    "region":"Тамбовская область",
+    "latitude_dadata":52.6512001,
+    "longitude_dadata":41.4310661,
+    "population":19647
+  },
+  {
+    "settlement":"г. Омутнинск",
+    "region":"Кировская область",
+    "latitude_dadata":58.6698906,
+    "longitude_dadata":52.189375,
+    "population":19629
+  },
+  {
+    "settlement":"рп Приютово",
+    "region":"Республика Башкортостан",
+    "latitude_dadata":53.8951581,
+    "longitude_dadata":53.9369819,
+    "population":19595
+  },
+  {
+    "settlement":"село Чалтырь",
+    "region":"Ростовская область",
+    "latitude_dadata":47.2826729,
+    "longitude_dadata":39.4992447,
+    "population":19583
+  },
+  {
+    "settlement":"г. Пущино",
+    "region":"Московская область",
+    "latitude_dadata":54.8351813,
+    "longitude_dadata":37.6265045,
+    "population":19578
+  },
+  {
+    "settlement":"г. Дудинка",
+    "region":"Красноярский край",
+    "latitude_dadata":69.4032072,
+    "longitude_dadata":86.1909075,
+    "population":19556
+  },
+  {
+    "settlement":"поселок Трудовое",
+    "region":"Приморский край",
+    "latitude_dadata":43.3002872,
+    "longitude_dadata":132.0632507,
+    "population":19543
+  },
+  {
+    "settlement":"г. Черноголовка",
+    "region":"Московская область",
+    "latitude_dadata":56.0099863,
+    "longitude_dadata":38.3792964,
+    "population":19530
+  },
+  {
+    "settlement":"г. Оса",
+    "region":"Пермский край",
+    "latitude_dadata":57.2889708,
+    "longitude_dadata":55.468868,
+    "population":19523
+  },
+  {
+    "settlement":"пгт Кокошкино дп",
+    "region":"Москва",
+    "latitude_dadata":55.598467,
+    "longitude_dadata":37.167633,
+    "population":19490
+  },
+  {
+    "settlement":"пгт Промышленная",
+    "region":"Кемеровская область",
+    "latitude_dadata":54.916573,
+    "longitude_dadata":85.6376222,
+    "population":19484
+  },
+  {
+    "settlement":"пгт Ленинкент",
+    "region":"Республика Дагестан",
+    "latitude_dadata":42.9703441,
+    "longitude_dadata":47.3535191,
+    "population":19438
+  },
+  {
+    "settlement":"поселок Ойсхара",
+    "region":"Чеченская Республика",
+    "latitude_dadata":43.2627893,
+    "longitude_dadata":46.2498555,
+    "population":19415
+  },
+  {
+    "settlement":"г. Зея",
+    "region":"Амурская область",
+    "latitude_dadata":53.7340347,
+    "longitude_dadata":127.2657094,
+    "population":19414
+  },
+  {
+    "settlement":"станица Суворовская",
+    "region":"Ставропольский край",
+    "latitude_dadata":44.1975139,
+    "longitude_dadata":42.6499527,
+    "population":19378
+  },
+  {
+    "settlement":"г. Зверево",
+    "region":"Ростовская область",
+    "latitude_dadata":48.0434167,
+    "longitude_dadata":40.1265252,
+    "population":19353
+  },
+  {
+    "settlement":"поселок Игра",
+    "region":"Удмуртская Республика",
+    "latitude_dadata":57.5401354,
+    "longitude_dadata":53.0861913,
+    "population":19319
+  },
+  {
+    "settlement":"село Гойты",
+    "region":"Чеченская Республика",
+    "latitude_dadata":43.1609736,
+    "longitude_dadata":45.6212637,
+    "population":19198
+  },
+  {
+    "settlement":"станица Брюховецкая",
+    "region":"Краснодарский край",
+    "latitude_dadata":45.8020888,
+    "longitude_dadata":38.9971898,
+    "population":19154
+  },
+  {
+    "settlement":"станица Незлобная",
+    "region":"Ставропольский край",
+    "latitude_dadata":44.1168985,
+    "longitude_dadata":43.408563,
+    "population":19068
+  },
+  {
+    "settlement":"пгт Березовка",
+    "region":"Красноярский край",
+    "latitude_dadata":56.037108,
+    "longitude_dadata":93.1266,
+    "population":19059
+  },
+  {
+    "settlement":"поселок Ува",
+    "region":"Удмуртская Республика",
+    "latitude_dadata":56.9820545,
+    "longitude_dadata":52.1873031,
+    "population":19057
+  },
+  {
+    "settlement":"г. Арамиль",
+    "region":"Свердловская область",
+    "latitude_dadata":56.6915504,
+    "longitude_dadata":60.8441135,
+    "population":19013
+  },
+  {
+    "settlement":"г. Пролетарск",
+    "region":"Ростовская область",
+    "latitude_dadata":46.7038132,
+    "longitude_dadata":41.7276002,
+    "population":18983
+  },
+  {
+    "settlement":"г. Ардон",
+    "region":"Республика Северная Осетия — Алания",
+    "latitude_dadata":43.1755904,
+    "longitude_dadata":44.2956828,
+    "population":18956
+  },
+  {
+    "settlement":"г. Лодейное Поле",
+    "region":"Ленинградская область",
+    "latitude_dadata":60.7320844,
+    "longitude_dadata":33.5522164,
+    "population":18905
+  },
+  {
+    "settlement":"посёлок Саракташ",
+    "region":"Оренбургская область",
+    "latitude_dadata":51.7830951,
+    "longitude_dadata":56.3652582,
+    "population":18789
+  },
+  {
+    "settlement":"г. Приозерск",
+    "region":"Ленинградская область",
+    "latitude_dadata":61.03598,
+    "longitude_dadata":30.115586,
+    "population":18777
+  },
+  {
+    "settlement":"станица Холмская",
+    "region":"Краснодарский край",
+    "latitude_dadata":44.848128,
+    "longitude_dadata":38.3892456,
+    "population":18699
+  },
+  {
+    "settlement":"г. Кировград",
+    "region":"Свердловская область",
+    "latitude_dadata":57.4298874,
+    "longitude_dadata":60.0624019,
+    "population":18698
+  },
+  {
+    "settlement":"село Раевский",
+    "region":"Республика Башкортостан",
+    "latitude_dadata":54.0650359,
+    "longitude_dadata":54.932837,
+    "population":18698
+  },
+  {
+    "settlement":"г. Николаевск-на-Амуре",
+    "region":"Хабаровский край",
+    "latitude_dadata":53.1461923,
+    "longitude_dadata":140.7110577,
+    "population":18631
+  },
+  {
+    "settlement":"г. Нелидово",
+    "region":"Тверская область",
+    "latitude_dadata":56.223391,
+    "longitude_dadata":32.7766208,
+    "population":18603
+  },
+  {
+    "settlement":"пгт Свободы рп",
+    "region":"Ставропольский край",
+    "latitude_dadata":44.0248348,
+    "longitude_dadata":43.0514483,
+    "population":18582
+  },
+  {
+    "settlement":"станица Новопокровская",
+    "region":"Краснодарский край",
+    "latitude_dadata":45.9538509,
+    "longitude_dadata":40.7070143,
+    "population":18559
+  },
+  {
+    "settlement":"село Чигири",
+    "region":"Амурская область",
+    "latitude_dadata":50.3391503,
+    "longitude_dadata":127.5076851,
+    "population":18538
+  },
+  {
+    "settlement":"г. Харабали",
+    "region":"Астраханская область",
+    "latitude_dadata":47.4089236,
+    "longitude_dadata":47.2525264,
+    "population":18514
+  },
+  {
+    "settlement":"г. Няндома",
+    "region":"Архангельская область",
+    "latitude_dadata":61.6654144,
+    "longitude_dadata":40.2063093,
+    "population":18473
+  },
+  {
+    "settlement":"село Автуры",
+    "region":"Чеченская Республика",
+    "latitude_dadata":43.163267,
+    "longitude_dadata":46.0031899,
+    "population":18446
+  },
+  {
+    "settlement":"г. Нижняя Тура",
+    "region":"Свердловская область",
+    "latitude_dadata":58.6310449,
+    "longitude_dadata":59.8520228,
+    "population":18392
+  },
+  {
+    "settlement":"г. Пласт",
+    "region":"Челябинская область",
+    "latitude_dadata":54.3691735,
+    "longitude_dadata":60.815252,
+    "population":18379
+  },
+  {
+    "settlement":"г. Новый Оскол",
+    "region":"Белгородская область",
+    "latitude_dadata":50.764439,
+    "longitude_dadata":37.863064,
+    "population":18359
+  },
+  {
+    "settlement":"пгт Тарки",
+    "region":"Республика Дагестан",
+    "latitude_dadata":42.9445024,
+    "longitude_dadata":47.4957949,
+    "population":18233
+  },
+  {
+    "settlement":"г. Суровикино",
+    "region":"Волгоградская область",
+    "latitude_dadata":48.6189098,
+    "longitude_dadata":42.8542126,
+    "population":18227
+  },
+  {
+    "settlement":"г. Боготол",
+    "region":"Красноярский край",
+    "latitude_dadata":56.2098683,
+    "longitude_dadata":89.5300867,
+    "population":18206
+  },
+  {
+    "settlement":"рп Южный",
+    "region":"Алтайский край",
+    "latitude_dadata":53.2513304,
+    "longitude_dadata":83.6947313,
+    "population":18098
+  },
+  {
+    "settlement":"г. Ершов",
+    "region":"Саратовская область",
+    "latitude_dadata":51.35079,
+    "longitude_dadata":48.2763191,
+    "population":18095
+  },
+  {
+    "settlement":"г. Нефтегорск",
+    "region":"Самарская область",
+    "latitude_dadata":52.79725,
+    "longitude_dadata":51.1638245,
+    "population":18076
+  },
+  {
+    "settlement":"пгт Тальменка рп",
+    "region":"Алтайский край",
+    "latitude_dadata":53.8172662,
+    "longitude_dadata":83.5691716,
+    "population":18070
+  },
+  {
+    "settlement":"г. Слюдянка",
+    "region":"Иркутская область",
+    "latitude_dadata":51.6563035,
+    "longitude_dadata":103.7186495,
+    "population":18058
+  },
+  {
+    "settlement":"село Бабаюрт",
+    "region":"Республика Дагестан",
+    "latitude_dadata":43.6011227,
+    "longitude_dadata":46.7793044,
+    "population":18039
+  },
+  {
+    "settlement":"станица Нестеровская",
+    "region":"Республика Ингушетия",
+    "latitude_dadata":43.2381741,
+    "longitude_dadata":45.0491681,
+    "population":17981
+  },
+  {
+    "settlement":"г. Электроугли",
+    "region":"Московская область",
+    "latitude_dadata":55.7170793,
+    "longitude_dadata":38.219367,
+    "population":17944
+  },
+  {
+    "settlement":"г. Кукмор",
+    "region":"Республика Татарстан",
+    "latitude_dadata":56.1860939,
+    "longitude_dadata":50.8971592,
+    "population":17886
+  },
+  {
+    "settlement":"г. Кяхта",
+    "region":"Республика Бурятия",
+    "latitude_dadata":50.3466144,
+    "longitude_dadata":106.453365,
+    "population":17877
+  },
+  {
+    "settlement":"пгт Удельная дп",
+    "region":"Московская область",
+    "latitude_dadata":55.6349087,
+    "longitude_dadata":38.049353,
+    "population":17846
+  },
+  {
+    "settlement":"г. Судак",
+    "region":"Республика Крым",
+    "latitude_dadata":44.8505071,
+    "longitude_dadata":34.9761502,
+    "population":17834
+  },
+  {
+    "settlement":"г. Баймак",
+    "region":"Республика Башкортостан",
+    "latitude_dadata":52.5913527,
+    "longitude_dadata":58.3111821,
+    "population":17833
+  },
+  {
+    "settlement":"пгт Линево рп",
+    "region":"Новосибирская область",
+    "latitude_dadata":54.4570315,
+    "longitude_dadata":83.3815692,
+    "population":17779
+  },
+  {
+    "settlement":"посёлок завода Мосрентген",
+    "region":"Москва",
+    "latitude_dadata":55.620947,
+    "longitude_dadata":37.473815,
+    "population":17758
+  },
+  {
+    "settlement":"г. Покров",
+    "region":"Владимирская область",
+    "latitude_dadata":55.9167157,
+    "longitude_dadata":39.1733602,
+    "population":17747
+  },
+  {
+    "settlement":"село Высокая Гора",
+    "region":"Республика Татарстан",
+    "latitude_dadata":55.912126,
+    "longitude_dadata":49.312767,
+    "population":17736
+  },
+  {
+    "settlement":"г. Стародуб",
+    "region":"Брянская область",
+    "latitude_dadata":52.5853129,
+    "longitude_dadata":32.7603416,
+    "population":17687
+  },
+  {
+    "settlement":"г. Жуковка",
+    "region":"Брянская область",
+    "latitude_dadata":53.5340871,
+    "longitude_dadata":33.7302336,
+    "population":17628
+  },
+  {
+    "settlement":"г. Шахунья",
+    "region":"Нижегородская область",
+    "latitude_dadata":57.6763123,
+    "longitude_dadata":46.6128512,
+    "population":17626
+  },
+  {
+    "settlement":"г. Калач",
+    "region":"Воронежская область",
+    "latitude_dadata":50.4240228,
+    "longitude_dadata":41.0162465,
+    "population":17624
+  },
+  {
+    "settlement":"г. Суворов",
+    "region":"Тульская область",
+    "latitude_dadata":54.122088,
+    "longitude_dadata":36.490348,
+    "population":17598
+  },
+  {
+    "settlement":"посёлок ВНИИССОК",
+    "region":"Московская область",
+    "latitude_dadata":55.6569429,
+    "longitude_dadata":37.2117743,
+    "population":17597
+  },
+  {
+    "settlement":"г. Радужный",
+    "region":"Владимирская область",
+    "latitude_dadata":55.9960812,
+    "longitude_dadata":40.3322223,
+    "population":17569
+  },
+  {
+    "settlement":"г. Льгов",
+    "region":"Курская область",
+    "latitude_dadata":51.65971,
+    "longitude_dadata":35.261144,
+    "population":17557
+  },
+  {
+    "settlement":"г. Енисейск",
+    "region":"Красноярский край",
+    "latitude_dadata":58.4485678,
+    "longitude_dadata":92.1650748,
+    "population":17537
+  },
+  {
+    "settlement":"село Белая Глина",
+    "region":"Краснодарский край",
+    "latitude_dadata":46.0736706,
+    "longitude_dadata":40.8713114,
+    "population":17470
+  },
+  {
+    "settlement":"г. Карачев",
+    "region":"Брянская область",
+    "latitude_dadata":53.1296862,
+    "longitude_dadata":34.9887384,
+    "population":17449
+  },
+  {
+    "settlement":"г. Белогорск",
+    "region":"Республика Крым",
+    "latitude_dadata":45.0570816,
+    "longitude_dadata":34.599941,
+    "population":17445
+  },
+  {
+    "settlement":"г. Собинка",
+    "region":"Владимирская область",
+    "latitude_dadata":55.9938217,
+    "longitude_dadata":40.0178919,
+    "population":17444
+  },
+  {
+    "settlement":"пгт Лучегорск",
+    "region":"Приморский край",
+    "latitude_dadata":46.438443,
+    "longitude_dadata":134.289358,
+    "population":17437
+  },
+  {
+    "settlement":"станица Медведовская",
+    "region":"Краснодарский край",
+    "latitude_dadata":45.4491448,
+    "longitude_dadata":39.0101617,
+    "population":17404
+  },
+  {
+    "settlement":"пгт Ванино",
+    "region":"Хабаровский край",
+    "latitude_dadata":49.0909744,
+    "longitude_dadata":140.2563927,
+    "population":17326
+  },
+  {
+    "settlement":"г. Талдом",
+    "region":"Московская область",
+    "latitude_dadata":56.7308601,
+    "longitude_dadata":37.5276018,
+    "population":17317
+  },
+  {
+    "settlement":"пгт Васильево",
+    "region":"Республика Татарстан",
+    "latitude_dadata":55.8369276,
+    "longitude_dadata":48.7040265,
+    "population":17286
+  },
+  {
+    "settlement":"г. Юрьев-Польский",
+    "region":"Владимирская область",
+    "latitude_dadata":56.4936868,
+    "longitude_dadata":39.6680526,
+    "population":17276
+  },
+  {
+    "settlement":"г. Абдулино",
+    "region":"Оренбургская область",
+    "latitude_dadata":53.6778052,
+    "longitude_dadata":53.6473384,
+    "population":17274
+  },
+  {
+    "settlement":"станица Старощербиновская",
+    "region":"Краснодарский край",
+    "latitude_dadata":46.6297567,
+    "longitude_dadata":38.6673969,
+    "population":17251
+  },
+  {
+    "settlement":"г. Константиновск",
+    "region":"Ростовская область",
+    "latitude_dadata":47.5773447,
+    "longitude_dadata":41.0967357,
+    "population":17207
+  },
+  {
+    "settlement":"село Бачи-Юрт",
+    "region":"Чеченская Республика",
+    "latitude_dadata":43.2209854,
+    "longitude_dadata":46.194994,
+    "population":17173
+  },
+  {
+    "settlement":"г. Куса",
+    "region":"Челябинская область",
+    "latitude_dadata":55.3386556,
+    "longitude_dadata":59.4386134,
+    "population":17136
+  },
+  {
+    "settlement":"пгт Коченево рп",
+    "region":"Новосибирская область",
+    "latitude_dadata":55.019014,
+    "longitude_dadata":82.2060574,
+    "population":17053
+  },
+  {
+    "settlement":"село Осиново",
+    "region":"Республика Татарстан",
+    "latitude_dadata":55.8775039,
+    "longitude_dadata":48.8897995,
+    "population":16991
+  },
+  {
+    "settlement":"село Нижнее Казанище",
+    "region":"Республика Дагестан",
+    "latitude_dadata":42.760984,
+    "longitude_dadata":47.161627,
+    "population":16984
+  },
+  {
+    "settlement":"г. Онега",
+    "region":"Архангельская область",
+    "latitude_dadata":63.9162842,
+    "longitude_dadata":38.0805165,
+    "population":16947
+  },
+  {
+    "settlement":"г. Новомичуринск",
+    "region":"Рязанская область",
+    "latitude_dadata":54.037654,
+    "longitude_dadata":39.7466785,
+    "population":16900
+  },
+  {
+    "settlement":"г. Плавск",
+    "region":"Тульская область",
+    "latitude_dadata":53.7095277,
+    "longitude_dadata":37.2862058,
+    "population":16893
+  },
+  {
+    "settlement":"село Майма",
+    "region":"Республика Алтай",
+    "latitude_dadata":52.0037707,
+    "longitude_dadata":85.8962579,
+    "population":16890
+  },
+  {
+    "settlement":"село Цоци-Юрт",
+    "region":"Чеченская Республика",
+    "latitude_dadata":43.2426159,
+    "longitude_dadata":46.0018219,
+    "population":16890
+  },
+  {
+    "settlement":"пгт Янино-1",
+    "region":"Ленинградская область",
+    "latitude_dadata":59.945394,
+    "longitude_dadata":30.5611967,
+    "population":16886
+  },
+  {
+    "settlement":"деревня Сапроново",
+    "region":"Московская область",
+    "latitude_dadata":55.529323,
+    "longitude_dadata":37.712318,
+    "population":16817
+  },
+  {
+    "settlement":"деревня Пыхтино",
+    "region":"Москва",
+    "latitude_dadata":55.6209417,
+    "longitude_dadata":37.3002729,
+    "population":16803
+  },
+  {
+    "settlement":"село Кантышево",
+    "region":"Республика Ингушетия",
+    "latitude_dadata":43.2281058,
+    "longitude_dadata":44.6484198,
+    "population":16783
+  },
+  {
+    "settlement":"г. Козельск",
+    "region":"Калужская область",
+    "latitude_dadata":54.0348045,
+    "longitude_dadata":35.7806829,
+    "population":16759
+  },
+  {
+    "settlement":"село Краснокумское",
+    "region":"Ставропольский край",
+    "latitude_dadata":44.1748104,
+    "longitude_dadata":43.4967116,
+    "population":16702
+  },
+  {
+    "settlement":"г. Нытва",
+    "region":"Пермский край",
+    "latitude_dadata":57.9336576,
+    "longitude_dadata":55.3355911,
+    "population":16675
+  },
+  {
+    "settlement":"г. Осташков",
+    "region":"Тверская область",
+    "latitude_dadata":57.1457822,
+    "longitude_dadata":33.1116377,
+    "population":16674
+  },
+  {
+    "settlement":"село Кинель-Черкассы",
+    "region":"Самарская область",
+    "latitude_dadata":53.4640756,
+    "longitude_dadata":51.5193824,
+    "population":16658
+  },
+  {
+    "settlement":"г. Зеленоградск",
+    "region":"Калининградская область",
+    "latitude_dadata":54.9599261,
+    "longitude_dadata":20.4752742,
+    "population":16625
+  },
+  {
+    "settlement":"село Новая Усмань (часть 1)",
+    "region":"Воронежская область",
+    "latitude_dadata":51.6440564,
+    "longitude_dadata":39.4129162,
+    "population":16601
+  },
+  {
+    "settlement":"пгт Шушенское",
+    "region":"Красноярский край",
+    "latitude_dadata":53.333753,
+    "longitude_dadata":91.935624,
+    "population":16573
+  },
+  {
+    "settlement":"г. Туринск",
+    "region":"Свердловская область",
+    "latitude_dadata":58.0394946,
+    "longitude_dadata":63.6981776,
+    "population":16561
+  },
+  {
+    "settlement":"г. Краснослободск",
+    "region":"Волгоградская область",
+    "latitude_dadata":48.7068501,
+    "longitude_dadata":44.5631832,
+    "population":16545
+  },
+  {
+    "settlement":"пгт Агинское",
+    "region":"Забайкальский край",
+    "latitude_dadata":51.1036078,
+    "longitude_dadata":114.5378536,
+    "population":16511
+  },
+  {
+    "settlement":"г. Нижняя Салда",
+    "region":"Свердловская область",
+    "latitude_dadata":58.0749078,
+    "longitude_dadata":60.7025219,
+    "population":16505
+  },
+  {
+    "settlement":"г. Шимановск",
+    "region":"Амурская область",
+    "latitude_dadata":52.005177,
+    "longitude_dadata":127.7005913,
+    "population":16488
+  },
+  {
+    "settlement":"село Плиево",
+    "region":"Республика Ингушетия",
+    "latitude_dadata":43.2854671,
+    "longitude_dadata":44.8359413,
+    "population":16440
+  },
+  {
+    "settlement":"станица Гостагаевская",
+    "region":"Краснодарский край",
+    "latitude_dadata":44.8948984,
+    "longitude_dadata":37.3162896,
+    "population":16438
+  },
+  {
+    "settlement":"г. Яровое",
+    "region":"Алтайский край",
+    "latitude_dadata":52.9252719,
+    "longitude_dadata":78.5729219,
+    "population":16424
+  },
+  {
+    "settlement":"город Поворино",
+    "region":"Воронежская область",
+    "latitude_dadata":51.195289,
+    "longitude_dadata":42.2473555,
+    "population":16417
+  },
+  {
+    "settlement":"г. Бакал",
+    "region":"Челябинская область",
+    "latitude_dadata":54.9406707,
+    "longitude_dadata":58.8051112,
+    "population":16345
+  },
+  {
+    "settlement":"г. Инза",
+    "region":"Ульяновская область",
+    "latitude_dadata":53.8549261,
+    "longitude_dadata":46.353359,
+    "population":16293
+  },
+  {
+    "settlement":"г. Шумиха",
+    "region":"Курганская область",
+    "latitude_dadata":55.2281331,
+    "longitude_dadata":63.2901783,
+    "population":16264
+  },
+  {
+    "settlement":"пгт Шексна",
+    "region":"Вологодская область",
+    "latitude_dadata":59.2361104,
+    "longitude_dadata":38.5112653,
+    "population":16246
+  },
+  {
+    "settlement":"г. Бикин",
+    "region":"Хабаровский край",
+    "latitude_dadata":46.8185692,
+    "longitude_dadata":134.2550619,
+    "population":16240
+  },
+  {
+    "settlement":"г. Жуков",
+    "region":"Калужская область",
+    "latitude_dadata":55.0302319,
+    "longitude_dadata":36.7393387,
+    "population":16224
+  },
+  {
+    "settlement":"г. Светлогорск",
+    "region":"Калининградская область",
+    "latitude_dadata":54.9439073,
+    "longitude_dadata":20.1514612,
+    "population":16207
+  },
+  {
+    "settlement":"г. Бокситогорск",
+    "region":"Ленинградская область",
+    "latitude_dadata":59.473579,
+    "longitude_dadata":33.8457452,
+    "population":16185
+  },
+  {
+    "settlement":"г. Кирсанов",
+    "region":"Тамбовская область",
+    "latitude_dadata":52.6506577,
+    "longitude_dadata":42.7284824,
+    "population":16164
+  },
+  {
+    "settlement":"пгт Рощино",
+    "region":"Ленинградская область",
+    "latitude_dadata":60.2408076,
+    "longitude_dadata":29.6288048,
+    "population":16162
+  },
+  {
+    "settlement":"г. Камызяк",
+    "region":"Астраханская область",
+    "latitude_dadata":46.1106454,
+    "longitude_dadata":48.0732549,
+    "population":16154
+  },
+  {
+    "settlement":"пгт Белый Яр",
+    "region":"Ханты-Мансийский автономный округ — Югра",
+    "latitude_dadata":61.260563,
+    "longitude_dadata":73.252472,
+    "population":16141
+  },
+  {
+    "settlement":"пгт им. Воровского рп",
+    "region":"Московская область",
+    "latitude_dadata":55.7219506,
+    "longitude_dadata":38.3276944,
+    "population":16127
+  },
+  {
+    "settlement":"г. Подпорожье",
+    "region":"Ленинградская область",
+    "latitude_dadata":60.912778,
+    "longitude_dadata":34.1567171,
+    "population":16123
+  },
+  {
+    "settlement":"посёлок Дубовое",
+    "region":"Белгородская область",
+    "latitude_dadata":50.5303214,
+    "longitude_dadata":36.5682872,
+    "population":16101
+  },
+  {
+    "settlement":"г. Гаврилов-Ям",
+    "region":"Ярославская область",
+    "latitude_dadata":57.3091517,
+    "longitude_dadata":39.8544895,
+    "population":16084
+  },
+  {
+    "settlement":"село Нартан",
+    "region":"Кабардино-Балкарская Республика",
+    "latitude_dadata":43.5054195,
+    "longitude_dadata":43.7016693,
+    "population":16075
+  },
+  {
+    "settlement":"г. Покачи",
+    "region":"Ханты-Мансийский автономный округ — Югра",
+    "latitude_dadata":61.7422837,
+    "longitude_dadata":75.5940895,
+    "population":16040
+  },
+  {
+    "settlement":"г. Поронайск",
+    "region":"Сахалинская область",
+    "latitude_dadata":49.2387506,
+    "longitude_dadata":143.1008839,
+    "population":16026
+  },
+  {
+    "settlement":"г. Руза",
+    "region":"Московская область",
+    "latitude_dadata":55.7015428,
+    "longitude_dadata":36.1959789,
+    "population":16014
+  },
+  {
+    "settlement":"г. Мензелинск",
+    "region":"Республика Татарстан",
+    "latitude_dadata":55.7270085,
+    "longitude_dadata":53.1005154,
+    "population":16008
+  },
+  {
+    "settlement":"деревня Куюки",
+    "region":"Республика Татарстан",
+    "latitude_dadata":55.7128384,
+    "longitude_dadata":49.3565309,
+    "population":15977
+  },
+  {
+    "settlement":"г. Иланский",
+    "region":"Красноярский край",
+    "latitude_dadata":56.2375329,
+    "longitude_dadata":96.0673849,
+    "population":15945
+  },
+  {
+    "settlement":"посёлок Орловский",
+    "region":"Ростовская область",
+    "latitude_dadata":46.874451,
+    "longitude_dadata":42.05931,
+    "population":15942
+  },
+  {
+    "settlement":"село Каякент",
+    "region":"Республика Дагестан",
+    "latitude_dadata":42.3862993,
+    "longitude_dadata":47.9054979,
+    "population":15923
+  },
+  {
+    "settlement":"г. Сельцо",
+    "region":"Брянская область",
+    "latitude_dadata":53.3739073,
+    "longitude_dadata":34.106007,
+    "population":15906
+  },
+  {
+    "settlement":"станица Раевская",
+    "region":"Краснодарский край",
+    "latitude_dadata":44.836305,
+    "longitude_dadata":37.5496436,
+    "population":15902
+  },
+  {
+    "settlement":"село Учкекен",
+    "region":"Карачаево-Черкесская Республика",
+    "latitude_dadata":43.9390432,
+    "longitude_dadata":42.5155851,
+    "population":15849
+  },
+  {
+    "settlement":"г. Райчихинск",
+    "region":"Амурская область",
+    "latitude_dadata":49.7941325,
+    "longitude_dadata":129.411213,
+    "population":15797
+  },
+  {
+    "settlement":"г. Ковдор",
+    "region":"Мурманская область",
+    "latitude_dadata":67.5662699,
+    "longitude_dadata":30.4741763,
+    "population":15770
+  },
+  {
+    "settlement":"деревня Островцы",
+    "region":"Московская область",
+    "latitude_dadata":55.5912674,
+    "longitude_dadata":37.9926244,
+    "population":15752
+  },
+  {
+    "settlement":"село Супсех",
+    "region":"Краснодарский край",
+    "latitude_dadata":44.8948984,
+    "longitude_dadata":37.3162896,
+    "population":15736
+  },
+  {
+    "settlement":"г. Кондрово",
+    "region":"Калужская область",
+    "latitude_dadata":54.7959825,
+    "longitude_dadata":35.9275777,
+    "population":15734
+  },
+  {
+    "settlement":"г. Мамадыш",
+    "region":"Республика Татарстан",
+    "latitude_dadata":55.7150947,
+    "longitude_dadata":51.4128069,
+    "population":15726
+  },
+  {
+    "settlement":"г. Межгорье",
+    "region":"Республика Башкортостан",
+    "latitude_dadata":54.2396811,
+    "longitude_dadata":57.9612743,
+    "population":15697
+  },
+  {
+    "settlement":"посёлок Зимовники",
+    "region":"Ростовская область",
+    "latitude_dadata":47.1453719,
+    "longitude_dadata":42.4676643,
+    "population":15691
+  },
+  {
+    "settlement":"пгт Емельяново",
+    "region":"Красноярский край",
+    "latitude_dadata":56.1686437,
+    "longitude_dadata":92.6866976,
+    "population":15649
+  },
+  {
+    "settlement":"г. Болотное",
+    "region":"Новосибирская область",
+    "latitude_dadata":55.6692803,
+    "longitude_dadata":84.3906602,
+    "population":15644
+  },
+  {
+    "settlement":"г. Кизел",
+    "region":"Пермский край",
+    "latitude_dadata":59.0512352,
+    "longitude_dadata":57.6471132,
+    "population":15619
+  },
+  {
+    "settlement":"пгт Товарково",
+    "region":"Калужская область",
+    "latitude_dadata":54.67724,
+    "longitude_dadata":35.942735,
+    "population":15606
+  },
+  {
+    "settlement":"село Поселье",
+    "region":"Республика Бурятия",
+    "latitude_dadata":51.8057402,
+    "longitude_dadata":107.5376329,
+    "population":15603
+  },
+  {
+    "settlement":"станица Анапская",
+    "region":"Краснодарский край",
+    "latitude_dadata":44.8948984,
+    "longitude_dadata":37.3162896,
+    "population":15593
+  },
+  {
+    "settlement":"пгт Семендер",
+    "region":"Республика Дагестан",
+    "latitude_dadata":42.9911799,
+    "longitude_dadata":47.4021163,
+    "population":15565
+  },
+  {
+    "settlement":"пгт Кратово дп",
+    "region":"Московская область",
+    "latitude_dadata":55.5973949,
+    "longitude_dadata":38.1635172,
+    "population":15565
+  },
+  {
+    "settlement":"г. Жирновск",
+    "region":"Волгоградская область",
+    "latitude_dadata":50.9769212,
+    "longitude_dadata":44.7857873,
+    "population":15555
+  },
+  {
+    "settlement":"посёлок Навля",
+    "region":"Брянская область",
+    "latitude_dadata":52.8301087,
+    "longitude_dadata":34.5066338,
+    "population":15536
+  },
+  {
+    "settlement":"пгт Заводской",
+    "region":"Республика Северная Осетия — Алания",
+    "latitude_dadata":43.1077853,
+    "longitude_dadata":44.6453692,
+    "population":15508
+  },
+  {
+    "settlement":"г. Дегтярск",
+    "region":"Свердловская область",
+    "latitude_dadata":56.7048,
+    "longitude_dadata":60.0790826,
+    "population":15497
+  },
+  {
+    "settlement":"г. Свирск",
+    "region":"Иркутская область",
+    "latitude_dadata":53.0838888,
+    "longitude_dadata":103.3413682,
+    "population":15485
+  },
+  {
+    "settlement":"пгт Сузун рп",
+    "region":"Новосибирская область",
+    "latitude_dadata":53.7891996,
+    "longitude_dadata":82.3161043,
+    "population":15482
+  },
+  {
+    "settlement":"г. Ясный",
+    "region":"Оренбургская область",
+    "latitude_dadata":51.0368874,
+    "longitude_dadata":59.8742748,
+    "population":15471
+  },
+  {
+    "settlement":"село Подстепки",
+    "region":"Самарская область",
+    "latitude_dadata":53.5179261,
+    "longitude_dadata":49.1533951,
+    "population":15455
+  },
+  {
+    "settlement":"посёлок Зональная Станция",
+    "region":"Томская область",
+    "latitude_dadata":56.4268771,
+    "longitude_dadata":85.0227819,
+    "population":15421
+  },
+  {
+    "settlement":"станица Варениковская",
+    "region":"Краснодарский край",
+    "latitude_dadata":45.1198484,
+    "longitude_dadata":37.6385129,
+    "population":15385
+  },
+  {
+    "settlement":"г. Касли",
+    "region":"Челябинская область",
+    "latitude_dadata":55.8869825,
+    "longitude_dadata":60.7422584,
+    "population":15383
+  },
+  {
+    "settlement":"посёлок Усть-Ордынский",
+    "region":"Иркутская область",
+    "latitude_dadata":52.8052189,
+    "longitude_dadata":104.7536738,
+    "population":15364
+  },
+  {
+    "settlement":"село Гехи",
+    "region":"Чеченская Республика",
+    "latitude_dadata":43.1606137,
+    "longitude_dadata":45.4742778,
+    "population":15352
+  },
+  {
+    "settlement":"г. Новоаннинский",
+    "region":"Волгоградская область",
+    "latitude_dadata":50.5295721,
+    "longitude_dadata":42.6666194,
+    "population":15351
+  },
+  {
+    "settlement":"пгт Анна",
+    "region":"Воронежская область",
+    "latitude_dadata":51.489329,
+    "longitude_dadata":40.4242248,
+    "population":15316
+  },
+  {
+    "settlement":"посёлок подсобного хозяйства \"Воскресенское\"",
+    "region":"Москва",
+    "latitude_dadata":55.5296175,
+    "longitude_dadata":37.4458356,
+    "population":15293
+  },
+  {
+    "settlement":"г. Нерчинск",
+    "region":"Забайкальский край",
+    "latitude_dadata":51.9594649,
+    "longitude_dadata":116.5853127,
+    "population":15290
+  },
+  {
+    "settlement":"село Ахты",
+    "region":"Республика Дагестан",
+    "latitude_dadata":41.4591981,
+    "longitude_dadata":47.7495262,
+    "population":15285
+  },
+  {
+    "settlement":"г. Магас",
+    "region":"Республика Ингушетия",
+    "latitude_dadata":43.1686871,
+    "longitude_dadata":44.8131101,
+    "population":15271
+  },
+  {
+    "settlement":"г. Ясногорск",
+    "region":"Тульская область",
+    "latitude_dadata":54.4794749,
+    "longitude_dadata":37.689663,
+    "population":15269
+  },
+  {
+    "settlement":"г. Новоузенск",
+    "region":"Саратовская область",
+    "latitude_dadata":50.4551199,
+    "longitude_dadata":48.1411389,
+    "population":15216
+  },
+  {
+    "settlement":"посёлок Знамя Октября",
+    "region":"Москва",
+    "latitude_dadata":55.47574,
+    "longitude_dadata":37.538359,
+    "population":15199
+  },
+  {
+    "settlement":"село Катар-Юрт",
+    "region":"Чеченская Республика",
+    "latitude_dadata":43.1688806,
+    "longitude_dadata":45.370387,
+    "population":15199
+  },
+  {
+    "settlement":"пгт Запрудня рп",
+    "region":"Московская область",
+    "latitude_dadata":56.5609117,
+    "longitude_dadata":37.4336132,
+    "population":15189
+  },
+  {
+    "settlement":"г. Бородино",
+    "region":"Красноярский край",
+    "latitude_dadata":55.9053464,
+    "longitude_dadata":94.9022323,
+    "population":15174
+  },
+  {
+    "settlement":"пгт Рефтинский",
+    "region":"Свердловская область",
+    "latitude_dadata":57.0906513,
+    "longitude_dadata":61.6564554,
+    "population":15164
+  },
+  {
+    "settlement":"пгт Софрино рп",
+    "region":"Московская область",
+    "latitude_dadata":56.1354141,
+    "longitude_dadata":37.9260237,
+    "population":15136
+  },
+  {
+    "settlement":"пгт Вырица",
+    "region":"Ленинградская область",
+    "latitude_dadata":59.4172905,
+    "longitude_dadata":30.3469408,
+    "population":15086
+  },
+  {
+    "settlement":"г. Рыльск",
+    "region":"Курская область",
+    "latitude_dadata":51.568137,
+    "longitude_dadata":34.6802211,
+    "population":15069
+  },
+  {
+    "settlement":"г. Купино",
+    "region":"Новосибирская область",
+    "latitude_dadata":54.3661206,
+    "longitude_dadata":77.2973372,
+    "population":15065
+  },
+  {
+    "settlement":"село Хомутово",
+    "region":"Иркутская область",
+    "latitude_dadata":52.4652523,
+    "longitude_dadata":104.3620353,
+    "population":15064
+  },
+  {
+    "settlement":"пгт Большие Вязёмы рп",
+    "region":"Московская область",
+    "latitude_dadata":55.6291397,
+    "longitude_dadata":37.0053667,
+    "population":15060
+  },
+  {
+    "settlement":"г. Петровск-Забайкальский",
+    "region":"Забайкальский край",
+    "latitude_dadata":51.2748412,
+    "longitude_dadata":108.8468131,
+    "population":15015
+  },
+  {
+    "settlement":"г. Почеп",
+    "region":"Брянская область",
+    "latitude_dadata":52.9153976,
+    "longitude_dadata":33.4745131,
+    "population":14991
+  },
+  {
+    "settlement":"г. Палласовка",
+    "region":"Волгоградская область",
+    "latitude_dadata":50.0502023,
+    "longitude_dadata":46.8804085,
+    "population":14966
+  },
+  {
+    "settlement":"г. Калининск",
+    "region":"Саратовская область",
+    "latitude_dadata":51.4993043,
+    "longitude_dadata":44.4710883,
+    "population":14949
+  },
+  {
+    "settlement":"г. Щигры",
+    "region":"Курская область",
+    "latitude_dadata":51.8785827,
+    "longitude_dadata":36.8911689,
+    "population":14927
+  },
+  {
+    "settlement":"г. Барыш",
+    "region":"Ульяновская область",
+    "latitude_dadata":53.6534032,
+    "longitude_dadata":47.1180501,
+    "population":14924
+  },
+  {
+    "settlement":"пгт Чернянка",
+    "region":"Белгородская область",
+    "latitude_dadata":50.940917,
+    "longitude_dadata":37.804134,
+    "population":14896
+  },
+  {
+    "settlement":"г. Сортавала",
+    "region":"Республика Карелия",
+    "latitude_dadata":61.7032224,
+    "longitude_dadata":30.6917823,
+    "population":14867
+  },
+  {
+    "settlement":"пгт Грибановский",
+    "region":"Воронежская область",
+    "latitude_dadata":51.4564459,
+    "longitude_dadata":41.9799021,
+    "population":14830
+  },
+  {
+    "settlement":"станица Васюринская",
+    "region":"Краснодарский край",
+    "latitude_dadata":45.1181463,
+    "longitude_dadata":39.4216389,
+    "population":14829
+  },
+  {
+    "settlement":"г. Талица",
+    "region":"Свердловская область",
+    "latitude_dadata":57.0123163,
+    "longitude_dadata":63.7320587,
+    "population":14808
+  },
+  {
+    "settlement":"г. Сухиничи",
+    "region":"Калужская область",
+    "latitude_dadata":54.0973084,
+    "longitude_dadata":35.344484,
+    "population":14806
+  },
+  {
+    "settlement":"г. Куртамыш",
+    "region":"Курганская область",
+    "latitude_dadata":54.9369493,
+    "longitude_dadata":64.4203207,
+    "population":14806
+  },
+  {
+    "settlement":"г. Заполярный",
+    "region":"Мурманская область",
+    "latitude_dadata":69.4131822,
+    "longitude_dadata":30.7985579,
+    "population":14791
+  },
+  {
+    "settlement":"посёлок Развилка",
+    "region":"Московская область",
+    "latitude_dadata":55.5910519,
+    "longitude_dadata":37.7529499,
+    "population":14788
+  },
+  {
+    "settlement":"г. Дубовка",
+    "region":"Волгоградская область",
+    "latitude_dadata":49.0554351,
+    "longitude_dadata":44.8269342,
+    "population":14779
+  },
+  {
+    "settlement":"пгт Лесной Городок дп",
+    "region":"Московская область",
+    "latitude_dadata":55.636239,
+    "longitude_dadata":37.212612,
+    "population":14765
+  },
+  {
+    "settlement":"г. Белокуриха",
+    "region":"Алтайский край",
+    "latitude_dadata":51.9961123,
+    "longitude_dadata":84.9839441,
+    "population":14735
+  },
+  {
+    "settlement":"г. Цимлянск",
+    "region":"Ростовская область",
+    "latitude_dadata":47.6477932,
+    "longitude_dadata":42.092975,
+    "population":14731
+  },
+  {
+    "settlement":"село Кулунда",
+    "region":"Алтайский край",
+    "latitude_dadata":52.5661304,
+    "longitude_dadata":78.9368917,
+    "population":14708
+  },
+  {
+    "settlement":"пгт Новый Городок",
+    "region":"Кемеровская область",
+    "latitude_dadata":54.3036194,
+    "longitude_dadata":86.2934438,
+    "population":14691
+  },
+  {
+    "settlement":"г. Навашино",
+    "region":"Нижегородская область",
+    "latitude_dadata":55.5438077,
+    "longitude_dadata":42.1887675,
+    "population":14664
+  },
+  {
+    "settlement":"г. Катав-Ивановск",
+    "region":"Челябинская область",
+    "latitude_dadata":54.7520677,
+    "longitude_dadata":58.1984888,
+    "population":14663
+  },
+  {
+    "settlement":"пгт Ильинский рп",
+    "region":"Московская область",
+    "latitude_dadata":55.6202604,
+    "longitude_dadata":38.1055975,
+    "population":14645
+  },
+  {
+    "settlement":"г. Краснозаводск",
+    "region":"Московская область",
+    "latitude_dadata":56.4409201,
+    "longitude_dadata":38.2320198,
+    "population":14639
+  },
+  {
+    "settlement":"деревня Кондратово",
+    "region":"Пермский край",
+    "latitude_dadata":57.9760676,
+    "longitude_dadata":56.1090821,
+    "population":14631
+  },
+  {
+    "settlement":"г. Советск",
+    "region":"Кировская область",
+    "latitude_dadata":57.5841376,
+    "longitude_dadata":48.9589455,
+    "population":14626
+  },
+  {
+    "settlement":"станица Егорлыкская",
+    "region":"Ростовская область",
+    "latitude_dadata":46.553251,
+    "longitude_dadata":40.683235,
+    "population":14602
+  },
+  {
+    "settlement":"село Кулешовка",
+    "region":"Ростовская область",
+    "latitude_dadata":47.0857816,
+    "longitude_dadata":39.5270717,
+    "population":14568
+  },
+  {
+    "settlement":"пгт Селятино рп",
+    "region":"Московская область",
+    "latitude_dadata":55.5141029,
+    "longitude_dadata":36.9798359,
+    "population":14523
+  },
+  {
+    "settlement":"г. Грязовец",
+    "region":"Вологодская область",
+    "latitude_dadata":58.875883,
+    "longitude_dadata":40.2485948,
+    "population":14505
+  },
+  {
+    "settlement":"г. Красновишерск",
+    "region":"Пермский край",
+    "latitude_dadata":60.3903039,
+    "longitude_dadata":57.0535948,
+    "population":14460
+  },
+  {
+    "settlement":"поселок Балезино",
+    "region":"Удмуртская Республика",
+    "latitude_dadata":57.983878,
+    "longitude_dadata":53.012307,
+    "population":14459
+  },
+  {
+    "settlement":"станица Гиагинская",
+    "region":"Республика Адыгея",
+    "latitude_dadata":44.8847971,
+    "longitude_dadata":40.0577305,
+    "population":14445
+  },
+  {
+    "settlement":"село Алхан-Кала",
+    "region":"Чеченская Республика",
+    "latitude_dadata":43.2624396,
+    "longitude_dadata":45.534823,
+    "population":14423
+  },
+  {
+    "settlement":"г. Очер",
+    "region":"Пермский край",
+    "latitude_dadata":57.8852534,
+    "longitude_dadata":54.7161526,
+    "population":14385
+  },
+  {
+    "settlement":"город Богучар",
+    "region":"Воронежская область",
+    "latitude_dadata":49.93528,
+    "longitude_dadata":40.5591512,
+    "population":14370
+  },
+  {
+    "settlement":"г. Волгореченск",
+    "region":"Костромская область",
+    "latitude_dadata":57.4424513,
+    "longitude_dadata":41.1592512,
+    "population":14355
+  },
+  {
+    "settlement":"село Донское",
+    "region":"Ставропольский край",
+    "latitude_dadata":45.4672559,
+    "longitude_dadata":41.989783,
+    "population":14338
+  },
+  {
+    "settlement":"г. Приволжск",
+    "region":"Ивановская область",
+    "latitude_dadata":57.380718,
+    "longitude_dadata":41.2807571,
+    "population":14332
+  },
+  {
+    "settlement":"станица Старовеличковская",
+    "region":"Краснодарский край",
+    "latitude_dadata":45.4329681,
+    "longitude_dadata":38.7244163,
+    "population":14310
+  },
+  {
+    "settlement":"г. Ивдель",
+    "region":"Свердловская область",
+    "latitude_dadata":60.6945985,
+    "longitude_dadata":60.4245258,
+    "population":14306
+  },
+  {
+    "settlement":"г. Чудово",
+    "region":"Новгородская область",
+    "latitude_dadata":59.1248174,
+    "longitude_dadata":31.6866267,
+    "population":14302
+  },
+  {
+    "settlement":"г. Красный Кут",
+    "region":"Саратовская область",
+    "latitude_dadata":50.9597049,
+    "longitude_dadata":46.9711885,
+    "population":14296
+  },
+  {
+    "settlement":"г. Яранск",
+    "region":"Кировская область",
+    "latitude_dadata":57.3041231,
+    "longitude_dadata":47.8478976,
+    "population":14284
+  },
+  {
+    "settlement":"село Старые-Атаги",
+    "region":"Чеченская Республика",
+    "latitude_dadata":43.1229624,
+    "longitude_dadata":45.7414172,
+    "population":14280
+  },
+  {
+    "settlement":"пгт Средняя Ахтуба рп",
+    "region":"Волгоградская область",
+    "latitude_dadata":48.7136601,
+    "longitude_dadata":44.8600821,
+    "population":14241
+  },
+  {
+    "settlement":"г. Агидель",
+    "region":"Республика Башкортостан",
+    "latitude_dadata":55.8997421,
+    "longitude_dadata":53.9221357,
+    "population":14219
+  },
+  {
+    "settlement":"посёлок Нижнесортымский",
+    "region":"Ханты-Мансийский автономный округ — Югра",
+    "latitude_dadata":62.4428117,
+    "longitude_dadata":71.7652884,
+    "population":14217
+  },
+  {
+    "settlement":"рп Усть-Абакан",
+    "region":"Республика Хакасия",
+    "latitude_dadata":53.8329508,
+    "longitude_dadata":91.3943386,
+    "population":14210
+  },
+  {
+    "settlement":"село Красногвардейское",
+    "region":"Ставропольский край",
+    "latitude_dadata":45.8450489,
+    "longitude_dadata":41.5144643,
+    "population":14200
+  },
+  {
+    "settlement":"село Новый Хушет",
+    "region":"Республика Дагестан",
+    "latitude_dadata":42.8993406,
+    "longitude_dadata":47.5613354,
+    "population":14180
+  },
+  {
+    "settlement":"г. Полярные Зори",
+    "region":"Мурманская область",
+    "latitude_dadata":67.3738152,
+    "longitude_dadata":32.4891688,
+    "population":14146
+  },
+  {
+    "settlement":"посёлок Майский",
+    "region":"Белгородская область",
+    "latitude_dadata":50.5218213,
+    "longitude_dadata":36.4544411,
+    "population":14143
+  },
+  {
+    "settlement":"г. Ужур",
+    "region":"Красноярский край",
+    "latitude_dadata":55.3142192,
+    "longitude_dadata":89.8334338,
+    "population":14134
+  },
+  {
+    "settlement":"г. Шлиссельбург",
+    "region":"Ленинградская область",
+    "latitude_dadata":59.9443081,
+    "longitude_dadata":31.0332835,
+    "population":14131
+  }
+]
