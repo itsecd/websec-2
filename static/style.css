@@ -201,3 +201,114 @@ button:hover {
     font-size: 16px;
     font-weight: bold;
 }
+
+@media screen and (max-width: 980px) {
+    .main-container {
+        padding: 15px;
+    }
+
+    .schedule-table {
+        min-width: 700px;
+        font-size: 13px;
+    }
+
+    .time-slot {
+        width: 70px;
+        font-size: 12px;
+    }
+
+    .schedule-table th {
+        padding: 10px 6px;
+        font-size: 12px;
+    }
+
+    p {
+        margin-bottom: 10px;
+    }
+
+    .current-week-info {
+        text-align: center;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .main-container {
+        padding: 15px;
+    }
+
+    p {
+        margin-bottom: 10px;
+    }
+
+    .h1-group-name {
+        font-size: 20px;
+        padding-top: 15px;
+        padding-bottom: 15px;
+    }
+
+    .teacherSearch,
+    .groupSearch {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .teacherSearchInput,
+    .groupSearchInput {
+        width: 100%;
+        margin-bottom: 8px;
+    }
+
+    .teacherSearch button,
+    .groupSearch button {
+        width: 100%;
+    }
+
+    .week-navigation {
+        gap: 10px;
+        padding: 8px;
+    }
+
+    .prev-week-btn,
+    .next-week-btn {
+        padding: 0 12px;
+        font-size: 13px;
+        height: 32px;
+    }
+
+    .current-week-info {
+        font-size: 14px;
+    }
+
+    .h2-group-name {
+        font-size: 16px;
+    }
+
+    .schedule-table {
+        font-size: 12px;
+        min-width: 650px;
+    }
+
+    .schedule-table th {
+        padding: 8px 4px;
+        font-size: 11px;
+    }
+
+    .schedule-table td {
+        padding: 6px 4px;
+    }
+
+    .time-slot {
+        width: 60px;
+        font-size: 11px;
+    }
+
+    .lesson-subject {
+        font-size: 11px;
+    }
+
+    .lesson-type,
+    .lesson-teacher,
+    .lesson-room {
+        font-size: 10px;
+    }
+}

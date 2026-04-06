@@ -1,6 +1,5 @@
 from aiohttp import web
 from aiohttp.web import Request, FileResponse
-import os
 
 from parser import get_groups, get_teachers, get_schedule
 
