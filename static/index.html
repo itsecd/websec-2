@@ -11,19 +11,25 @@
 <body>
     <div class="main-container">
         <div class="container-header">
-            <h1 class="h1-group-name">Расписание, 6411-100503DX</h1>
+            <h1 class="h1-group-name">Расписание, 641X-100503D</h1>
         </div>
         <div class="search-block">
             <div class="teacherSearch">
                 <p>Введите ФИО преподавателя</p>
-                <input type="text" class="teacherSearchInput">
+                <input type="text" class="teacherSearchInput" id="teacherInput">
                 <button class="teacherSearchBtn">Найти</button>
             </div>
             <div class="groupSearch">
                 <p>Введите номер группы</p>
-                <input type="text" class="groupSearchInput">
+                <input type="text" class="groupSearchInput" id="groupInput">
                 <button class="groupSearchBtn">Найти</button>
             </div>
+        </div>
+
+        <div class="week-navigation">
+            <button class="prev-week-btn" id="prevWeekBtn">← Пред.</button>
+            <span class="current-week-info" id="currentWeekInfo"></span>
+            <button class="next-week-btn" id="nextWeekBtn">След. →</button>
         </div>
 
         <div class="info-block">
@@ -31,6 +37,7 @@
         </div>
         <div class="schedule"></div>
     </div>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="/static/script.js"></script>
 </body>
-
 </html>

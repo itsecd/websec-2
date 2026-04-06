@@ -50,7 +50,7 @@ app.router.add_get("/", handle_root)
 app.router.add_get("/api/groups", handle_api_groups)
 app.router.add_get("/api/teachers", handle_api_teachers)
 app.router.add_get("/api/schedule", handle_api_schedule)
-app.router.add_static("/static", "static")
+app.router.add_static('/static/', path='static', name='static')
 
 
 
