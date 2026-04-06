@@ -1,0 +1,285 @@
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&display=swap");
+
+:root {
+  --bg-main: #ecf1f4;
+  --panel: #ffffff;
+  --text: #1d2c36;
+  --accent: #25756a;
+  --accent-soft: rgba(37, 117, 106, 0.2);
+  --border: rgba(29, 44, 54, 0.15);
+  --error: #b43636;
+  --shadow: 0 14px 30px rgba(21, 43, 60, 0.13);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: "Manrope", "Segoe UI", sans-serif;
+  color: var(--text);
+  background: radial-gradient(circle at 10% -10%, #ffffff 0, #f3f8f9 32%, var(--bg-main) 68%, #d9e5e9 100%);
+}
+
+.top-banner {
+  width: min(1240px, calc(100% - 2rem));
+  margin: 1rem auto 0;
+  padding: 0.85rem;
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.88);
+  box-shadow: var(--shadow);
+  backdrop-filter: blur(8px);
+  display: grid;
+  gap: 0.75rem;
+}
+
+.ticker {
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: linear-gradient(90deg, #22404d, #1f5a64);
+  color: #f4fffe;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.ticker-track {
+  display: inline-flex;
+  align-items: center;
+  min-width: 100%;
+  padding: 0.6rem 0;
+  animation: ticker-move 14s linear infinite;
+}
+
+.ticker-track span {
+  font-size: 1.35rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  margin-right: 2.2rem;
+  text-transform: uppercase;
+}
+
+.banner-controls {
+  display: grid;
+  gap: 0.65rem;
+}
+
+.control-row {
+  display: grid;
+  gap: 0.3rem;
+}
+
+.control-row label {
+  font-size: 0.86rem;
+  font-weight: 600;
+}
+
+.banner-controls input,
+.banner-controls button {
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 0.62rem 0.75rem;
+  font-size: 0.95rem;
+}
+
+.banner-controls input {
+  background: rgba(255, 255, 255, 0.96);
+}
+
+.search-line {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 150px;
+  gap: 0.6rem;
+}
+
+.banner-controls button {
+  border: none;
+  color: #fff;
+  font-weight: 700;
+  cursor: pointer;
+  background: linear-gradient(135deg, var(--accent), #2f6977);
+  transition: transform 180ms ease, box-shadow 180ms ease;
+}
+
+.banner-controls button:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 8px 16px rgba(32, 86, 98, 0.28);
+}
+
+.page-main {
+  width: min(1240px, calc(100% - 2rem));
+  margin: 1rem auto;
+  display: grid;
+  gap: 1rem;
+}
+
+.map-wrap {
+  height: 58vh;
+  min-height: 430px;
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: var(--shadow);
+}
+
+#map {
+  width: 100%;
+  height: 100%;
+}
+
+.forecast-panel {
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  background: var(--panel);
+  box-shadow: var(--shadow);
+  padding: 0.95rem;
+  transition: box-shadow 220ms ease, opacity 220ms ease;
+}
+
+.forecast-panel.state-ready {
+  box-shadow: var(--shadow), 0 0 0 2px var(--accent-soft);
+}
+
+.forecast-panel.state-loading {
+  opacity: 0.88;
+}
+
+.forecast-panel.state-error {
+  box-shadow: var(--shadow), 0 0 0 2px rgba(180, 54, 54, 0.18);
+}
+
+.status {
+  margin-bottom: 0.75rem;
+  padding: 0.7rem 0.85rem;
+  border-radius: 10px;
+  background: rgba(29, 44, 54, 0.06);
+  font-size: 0.96rem;
+}
+
+.state-error .status {
+  color: var(--error);
+  background: rgba(180, 54, 54, 0.1);
+}
+
+.place-card {
+  margin-bottom: 0.75rem;
+  padding: 0.8rem;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: #fff;
+}
+
+.place-card:empty {
+  display: none;
+}
+
+.place-card h2 {
+  margin: 0;
+  font-size: 1.24rem;
+}
+
+.place-card p {
+  margin: 0.35rem 0 0;
+  font-size: 0.92rem;
+}
+
+.charts {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.8rem;
+  animation: rise-in 280ms ease;
+}
+
+.hidden {
+  display: none;
+}
+
+.chart-block {
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: #fff;
+  box-shadow: var(--shadow);
+  padding: 0.72rem;
+  display: grid;
+  grid-template-rows: auto 220px;
+}
+
+.chart-block h3 {
+  margin: 0 0 0.45rem;
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+
+.chart-block canvas {
+  width: 100% !important;
+  height: 220px !important;
+}
+
+.leaflet-popup-content {
+  font-family: "Manrope", "Segoe UI", sans-serif;
+}
+
+@keyframes ticker-move {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes rise-in {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 1080px) {
+  .map-wrap {
+    height: 52vh;
+  }
+
+  .charts {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 760px) {
+  .top-banner,
+  .page-main {
+    width: calc(100% - 1rem);
+  }
+
+  .search-line {
+    grid-template-columns: 1fr;
+  }
+
+  .map-wrap {
+    height: 50vh;
+    min-height: 330px;
+  }
+
+  .charts {
+    grid-template-columns: 1fr;
+  }
+
+  .chart-block {
+    grid-template-rows: auto 210px;
+  }
+
+  .chart-block canvas {
+    height: 210px !important;
+  }
+
+  .ticker-track span {
+    font-size: 1.12rem;
+    margin-right: 1.4rem;
+  }
+}

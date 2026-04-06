@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Погода</title>
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+      integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+      crossorigin=""
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="top-banner">
+      <div class="ticker" aria-label="Бегущая строка погоды">
+        <div class="ticker-track">
+          <span>Погода</span><span>Погода</span><span>Погода</span><span>Погода</span><span>Погода</span>
+          <span>Погода</span><span>Погода</span><span>Погода</span><span>Погода</span><span>Погода</span>
+        </div>
+      </div>
+
+      <form id="search-form" class="banner-controls" autocomplete="off">
+        <div class="control-row">
+          <label for="token-input">Токен ProjectEol</label>
+          <input id="token-input" type="password" placeholder="Нужен только если EOL_API_TOKEN не задан" />
+        </div>
+
+        <div class="control-row">
+          <label for="settlement-search">Населенный пункт</label>
+          <div class="search-line">
+            <input id="settlement-search" list="settlements-list" placeholder="Поиск по названию" />
+            <button type="submit">Найти</button>
+          </div>
+        </div>
+
+        <datalist id="settlements-list"></datalist>
+      </form>
+    </header>
+
+    <main class="page-main">
+      <section class="map-wrap">
+        <div id="map"></div>
+      </section>
+
+      <section id="forecast-panel" class="forecast-panel state-idle">
+        <div id="status" class="status">Выберите населенный пункт на карте или через поиск.</div>
+        <div id="place-card" class="place-card"></div>
+        <div id="charts" class="charts hidden">
+          <section class="chart-block">
+            <h3>Температура на 2 м (°C)</h3>
+            <canvas id="chart-temp"></canvas>
+          </section>
+          <section class="chart-block">
+            <h3>Интенсивность осадков (мм/ч)</h3>
+            <canvas id="chart-prate"></canvas>
+          </section>
+          <section class="chart-block">
+            <h3>Скорость ветра на 10 м (м/с)</h3>
+            <canvas id="chart-wind"></canvas>
+          </section>
+        </div>
+      </section>
+    </main>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script
+      src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+      integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+      crossorigin=""
+    ></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.2/dist/chart.umd.min.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>

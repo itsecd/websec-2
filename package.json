@@ -1,0 +1,16 @@
+{
+  "name": "websec-2-weather-map",
+  "version": "1.0.0",
+  "description": "Single-page weather forecast map app",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "build:settlements": "python3 scripts/build_settlements.py"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "dependencies": {
+    "express": "^4.21.2"
+  }
+}
