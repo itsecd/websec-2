@@ -1,0 +1,26 @@
+{
+  "name": "websec-2",
+  "version": "1.0.0",
+  "description": "1. Получить задание\r 2. Сделать форк данного репозитория\r 3. Выполнить задание согласно полученному варианту\r 4. Сделать PR (pull request) в данный репозиторий \r 6. Исправить замечания после code review\r 7. Получить approve \r 8. Прийти на занятие и защитить работу",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Annaprogrammer300/websec-2.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/Annaprogrammer300/websec-2/issues"
+  },
+  "homepage": "https://github.com/Annaprogrammer300/websec-2#readme",
+  "dependencies": {
+    "axios": "^1.14.0",
+    "cheerio": "^1.2.0",
+    "express": "^5.2.1"
+  }
+}

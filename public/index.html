@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Расписание СГАУ</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <header class="top-nav">
+        <div class="container nav-flex">
+            <div class="nav-group">
+                <div class="input-group">
+                    <label>Тип</label>
+                    <select id="targetType">
+                        <option value="group">Группа</option>
+                        <option value="staff">Преподаватель</option>
+                    </select>
+                </div>
+                <div class="input-group">
+                    <label>Объект</label>
+                    <select id="targetSelect"></select>
+                </div>
+            </div>
+            
+            <div class="nav-group">
+                <div class="week-controls">
+                    <button id="prevW" class="nav-btn">◀</button>
+                    <span id="weekNum">...</span>
+                    <button id="nextW" class="nav-btn">▶</button>
+                </div>
+                <button id="updateBtn" class="main-btn">Показать</button>
+            </div>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="legend-wrapper">
+            <div class="legend-item"><span class="legend-dot type-lec"></span>Лекция</div>
+            <div class="legend-item"><span class="legend-dot type-lab"></span>Лабораторная</div>
+            <div class="legend-item"><span class="legend-dot type-prac"></span>Практика</div>
+        </div>
+
+        <div id="grid-container" class="schedule-grid"></div>
+    </div>
+
+    <footer class="main-footer">
+        <div class="container">
+            <p>© 2026 Учебный проект | Аналог ssau.ru</p>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
