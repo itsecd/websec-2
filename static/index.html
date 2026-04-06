@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Расписание СГАУ</title>
+    <link rel="stylesheet" href="/static/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="app">
+        <header class="header">
+            <div class="container">
+                <h1 class="logo">📅 СГАУ Расписание</h1>
+                <div class="mode-switch">
+                    <button class="mode-btn" data-mode="group">👥 По группе</button>
+                    <button class="mode-btn" data-mode="teacher">👨‍🏫 По преподавателю</button>
+                </div>
+            </div>
+        </header>
+
+        <main class="main">
+            <div class="container">
+                <div class="filters-panel" id="groupFilters">
+                    <div class="filter-group">
+                        <label>Институт / Факультет</label>
+                        <select id="instituteSelect" class="filter-select">
+                            <option value="">Загрузка...</option>
+                        </select>
+                    </div>
+                    <div class="filter-group">
+                        <label>Курс</label>
+                        <select id="courseSelect" class="filter-select" disabled>
+                            <option value="">Сначала выберите институт</option>
+                        </select>
+                    </div>
+                    <div class="filter-group">
+                        <label>Группа</label>
+                        <select id="groupSelect" class="filter-select" disabled>
+                            <option value="">Сначала выберите курс</option>
+                        </select>
+                    </div>
+                    <button id="showScheduleBtn" class="btn-primary" disabled>📖 Показать расписание</button>
+                </div>
+
+                <div class="filters-panel" id="teacherFilters" style="display: none;">
+                    <div class="filter-group search-group">
+                        <label>Преподаватель</label>
+                        <div class="search-wrapper">
+                            <input type="text" id="teacherInput" placeholder="Введите фамилию преподавателя..." class="filter-input">
+                            <div id="teacherSuggestions" class="suggestions-dropdown" style="display: none;"></div>
+                        </div>
+                    </div>
+                    <button id="showTeacherScheduleBtn" class="btn-primary" disabled>📖 Показать расписание</button>
+                </div>
+
+                <div class="week-controls" id="weekControls" style="display: none;">
+                    <div class="week-info">
+                        <span class="entity-name" id="entityName">—</span>
+                        <span class="week-badge" id="weekBadge">—</span>
+                    </div>
+                    <div class="week-nav">
+                        <button id="prevWeekBtn" class="week-nav-btn" disabled>← Пред.</button>
+                        <select id="weekSelect" class="week-select"></select>
+                        <button id="nextWeekBtn" class="week-nav-btn" disabled>След. →</button>
+                    </div>
+                </div>
+
+                <div id="scheduleContainer" class="schedule-container">
+                    <div class="placeholder">
+                        <div class="placeholder-icon">📋</div>
+                        <p>Выберите группу или преподавателя, чтобы увидеть расписание</p>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <footer class="footer">
+            <div class="container">
+                <p>Источник: <a href="https://ssau.ru/rasp" target="_blank">ssau.ru/rasp</a> • Данные обновляются автоматически</p>
+            </div>
+        </footer>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="/static/app.js"></script>
+</body>
+</html>
