@@ -1,0 +1,63 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Расписание СГАУ</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>Институт информатики и кибернетики</h1>
+        
+        <aside class="sidebar">
+            <section class="selector-panel">
+                <h3>Выбор группы</h3>
+                <select id="group-select" class="custom-select">
+                    <option value="">Загрузка групп...</option>
+                </select>
+            </section>
+            
+            <section class="info-card">
+                <h4>Подсказка</h4>
+                <p>Выберите группу, чтобы увидеть расписание.</p>
+                <p>Неделя переключается кнопками ◀ ▶</p>
+            </section>
+        </aside>
+        
+        <section class="schedule-section">
+            <nav id="week-nav" class="week-nav">
+                <button id="btn-prev-week" class="btn-week">◀</button>
+                <div class="week-info">
+                    <span id="current-week-label" class="week-label">Неделя: определяется...</span>
+                </div>
+                <button id="btn-next-week" class="btn-week">▶</button>
+            </nav>
+
+            <div id="error-msg" class="error-message" style="display: none;"></div>
+            <div id="empty-message" class="empty-state">
+                <p>Выберите группу для отображения расписания</p>
+            </div>
+            <div id="schedule-content" style="display: none;"></div>
+        </section>
+    </div>
+    
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-info">
+                    <p>Данные с ssau.ru</p>
+                </div>
+                <div class="footer-legend">
+                    <span class="badge lec">Лекция</span>
+                    <span class="badge lab">Лабораторная</span>
+                    <span class="badge prc">Практика</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+    <script src="script.js"></script>
+</body>
+</html>

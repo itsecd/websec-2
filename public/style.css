@@ -1,0 +1,283 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #e9ecef;
+    color: #333;
+    line-height: 1.5;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+html, body {
+    height: 100%;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    width: 100%;
+    flex: 1 0 auto;
+}
+
+.site-header {
+    background: #0054a6;
+    color: white;
+    padding: 15px 0;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.header-flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.4rem;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.site-footer {
+    margin-top: 40px;
+    background: #333;
+    color: #ccc;
+    padding: 20px 0;
+    font-size: 14px;
+}
+
+.footer-grid {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer-legend {
+    display: flex;
+    gap: 15px;
+}
+
+.footer-legend span {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.main-content {
+    display: flex;
+    gap: 25px;
+    margin-top: 25px;
+}
+
+.sidebar {
+    width: 280px;
+    flex-shrink: 0;
+}
+
+.schedule-section {
+    flex: 1;
+    background: white;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    padding: 20px;
+    min-height: 600px;
+}
+
+.selector-panel, .info-card {
+    background: white;
+    padding: 15px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    margin-bottom: 20px;
+}
+
+.selector-panel h3, .info-card h4 {
+    margin-bottom: 10px;
+    color: #0054a6;
+    font-size: 1.1rem;
+}
+
+.custom-select {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.week-nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.btn-week {
+    background: #0054a6;
+    color: white;
+    border: none;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 18px;
+    transition: background 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn-week:hover {
+    background: #003d7a;
+}
+
+.week-info {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.schedule-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+    table-layout: fixed;
+}
+
+.schedule-table th {
+    background: #f2f2f2;
+    padding: 12px 8px;
+    border: 1px solid #ddd;
+    text-align: center;
+    font-size: 12px;
+    color: #666;
+}
+
+.schedule-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    vertical-align: top;
+}
+
+.time-cell {
+    background: #f8f9fa;
+    font-weight: bold;
+    text-align: center;
+    width: 90px;
+    font-size: 13px;
+    vertical-align: middle;
+}
+
+.lesson-card {
+    font-size: 12px;
+    padding: 6px 0;
+    margin-bottom: 8px;
+}
+
+.lesson-name {
+    font-weight: bold;
+    margin: 4px 0;
+    color: #222;
+}
+
+.lesson-details {
+    color: #555;
+    font-size: 11px;
+    line-height: 1.4;
+}
+
+.lesson-details div {
+    margin-top: 2px;
+}
+
+.subgroups {
+    margin-top: 4px;
+}
+
+.subgroups span, .subgroups a {
+    display: inline-block;
+}
+
+.subgroups br {
+    display: none;
+}
+
+.group-nav-link, .teacher-nav-link {
+    color: #0054a6;
+    text-decoration: none;
+    border-bottom: 1px dashed #0054a6;
+}
+
+.group-nav-link:hover, .teacher-nav-link:hover {
+    color: #f44336;
+    border-bottom-style: solid;
+}
+
+.badge {
+    display: inline-block;
+    padding: 2px 8px;
+    border-radius: 10px;
+    font-size: 10px;
+    color: white;
+    font-weight: bold;
+    margin-bottom: 4px;
+}
+
+.lec { background-color: #4caf50; }
+.lab { background-color: #f44336; }
+.prc { background-color: #2196f3; }
+
+.group-info {
+    background: #e3f2fd;
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    border: 1px solid #bbdefb;
+}
+
+.group-info h3 {
+    color: #0054a6;
+    margin-bottom: 5px;
+}
+
+.group-info p {
+    font-size: 14px;
+    color: #444;
+}
+
+.empty-day-cell {
+    text-align: center;
+    vertical-align: middle;
+    color: #bbb;
+    font-style: italic;
+    font-size: 12px;
+}
+
+.empty-state {
+    text-align: center;
+    padding: 60px;
+    color: #999;
+}
+
+.error-message {
+    background: #ffebee;
+    color: #c62828;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    margin: 20px 0;
+}
+
+.hidden {
+    display: none;
+}
