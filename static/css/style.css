@@ -284,21 +284,22 @@ body {
     .main {
         padding: 15px;
     }
-    
+
     .schedule-table {
         display: none;
     }
-    
+
     .mode-switch {
         flex-direction: column;
     }
-    
+
     .week-controls {
         flex-wrap: wrap;
     }
 }
 
 @media (min-width: 769px) {
+
     .mobile-day-nav,
     .mobile-lessons {
         display: none;
