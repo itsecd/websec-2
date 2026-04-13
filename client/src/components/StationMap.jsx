@@ -10,6 +10,9 @@ import OSM from "ol/source/OSM.js";
 import VectorSource from "ol/source/Vector.js";
 import { Circle as CircleStyle, Fill, Stroke, Style } from "ol/style.js";
 import { DEFAULT_MAP_CENTER, DEFAULT_MAP_ZOOM } from "../config/map";
+import { getVectorSourceByLayerName } from "../utils/map";
+
+const MARKERS_LAYER_NAME = "station-markers";
 
 const defaultMarkerStyle = new Style({
     image: new CircleStyle({
@@ -51,7 +54,6 @@ function makePointFeature(longitude, latitude, style) {
 export function StationMap({ nearbyStations, selectedStation, pickedPoint, onMapPointPick }) {
     const mapElementRef = useRef(null);
     const mapInstanceRef = useRef(null);
-    const markersRef = useRef(new VectorSource());
 
     useEffect(() => {
         if (!mapElementRef.current || mapInstanceRef.current) {
@@ -59,8 +61,9 @@ export function StationMap({ nearbyStations, selectedStation, pickedPoint, onMap
         }
 
         const markerLayer = new VectorLayer({
-            source: markersRef.current,
+            source: new VectorSource(),
         });
+        markerLayer.set("name", MARKERS_LAYER_NAME);
 
         const map = new Map({
             target: mapElementRef.current,
@@ -88,7 +91,12 @@ export function StationMap({ nearbyStations, selectedStation, pickedPoint, onMap
     }, [onMapPointPick]);
 
     useEffect(() => {
-        const source = markersRef.current;
+        const source = getVectorSourceByLayerName(mapInstanceRef.current, MARKERS_LAYER_NAME);
+
+        if (!source) {
+            return;
+        }
+
         source.clear();
         const renderedCodes = new Set();
 
@@ -107,12 +115,8 @@ export function StationMap({ nearbyStations, selectedStation, pickedPoint, onMap
             renderedCodes.add(station.code);
         }
 
-        if (selectedStation?.code && hasCoordinates(selectedStation)) {
-            if (!renderedCodes.has(selectedStation.code)) {
-                source.addFeature(
-                    makePointFeature(selectedStation.lng, selectedStation.lat, activeMarkerStyle),
-                );
-            }
+        if (selectedStation?.code && hasCoordinates(selectedStation) && !renderedCodes.has(selectedStation.code)) {
+            source.addFeature(makePointFeature(selectedStation.lng, selectedStation.lat, activeMarkerStyle));
         }
 
         if (hasCoordinates(selectedStation) && mapInstanceRef.current) {
@@ -121,9 +125,10 @@ export function StationMap({ nearbyStations, selectedStation, pickedPoint, onMap
                 zoom: 12,
             });
         } else if (hasCoordinates(pickedPoint) && mapInstanceRef.current) {
-            mapInstanceRef.current
-                .getView()
-                .animate({ center: fromLonLat([pickedPoint.lng, pickedPoint.lat]), zoom: 12 });
+            mapInstanceRef.current.getView().animate({
+                center: fromLonLat([pickedPoint.lng, pickedPoint.lat]),
+                zoom: 12,
+            });
         }
     }, [nearbyStations, pickedPoint, selectedStation]);
 

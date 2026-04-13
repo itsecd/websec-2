@@ -6,24 +6,10 @@ import {
     formatTransportLabel,
 } from "../utils/formatters";
 import { EmptyState } from "./EmptyState";
+import { FavoriteButton } from "./FavoriteButton";
 import { LoadingBlock } from "./LoadingBlock";
 import { StationAutocomplete } from "./StationAutocomplete";
 import { StationMap } from "./StationMap";
-
-function FavoriteButton({ active, onClick }) {
-    return (
-        <button
-            type="button"
-            className={`favorite-button ${active ? "is-active" : ""}`}
-            onClick={onClick}
-        >
-            <span className="favorite-button__icon" aria-hidden="true">
-                {active ? "★" : "☆"}
-            </span>
-            <span className="favorite-button__text">{active ? "В избранном" : "В избранное"}</span>
-        </button>
-    );
-}
 
 export function StationSearchPanel({
     selectedStation,
@@ -92,10 +78,7 @@ export function StationSearchPanel({
 
                 <div className="panel-card">
                     <div className="map-note">
-                        <p>
-                            Клик по карте ищет ближайшие станции в радиусе{" "}
-                            {MAP_POINT_SEARCH_DISTANCE} км.
-                        </p>
+                        <p>Клик по карте ищет ближайшие станции в радиусе {MAP_POINT_SEARCH_DISTANCE} км.</p>
                     </div>
                     <StationMap
                         nearbyStations={nearbyStations}
@@ -105,17 +88,9 @@ export function StationSearchPanel({
                     />
 
                     {nearbyStationsLoading ? <LoadingBlock text="Ищу станции рядом..." /> : null}
-                    {nearbyStationsError ? (
-                        <p className="field-error">{nearbyStationsError}</p>
-                    ) : null}
-                    {!nearbyStationsLoading &&
-                    !nearbyStationsError &&
-                    pickedPoint &&
-                    nearbyStations.length === 0 ? (
-                        <EmptyState
-                            title="Ничего не найдено"
-                            text="Кликните по другой точке карты."
-                        />
+                    {nearbyStationsError ? <p className="field-error">{nearbyStationsError}</p> : null}
+                    {!nearbyStationsLoading && !nearbyStationsError && pickedPoint && nearbyStations.length === 0 ? (
+                        <EmptyState title="Ничего не найдено" text="Кликните по другой точке карты." />
                     ) : null}
 
                     {nearbyStations.length > 0 ? (

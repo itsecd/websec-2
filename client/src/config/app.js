@@ -6,3 +6,5 @@ export const FAVORITES_STORAGE_KEY =
 export const THEME_STORAGE_KEY = import.meta.env.VITE_THEME_STORAGE_KEY || "suburban_lab_theme";
 
 export const APP_NAME = "Прибывалка для электричек";
+
+export const DEFAULT_THEME = import.meta.env.VITE_DEFAULT_THEME || "light";

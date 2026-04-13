@@ -3,10 +3,8 @@ import { suggestStations } from "../api/client";
 import { formatStationLabel } from "../utils/formatters";
 import { LoadingBlock } from "./LoadingBlock";
 
-export function StationAutocomplete({ label, placeholder, selectedStation, onSelect, inputId }) {
-    const [inputValue, setInputValue] = useState(
-        selectedStation ? formatStationLabel(selectedStation) : "",
-    );
+export function StationAutocomplete({ label, inputId, placeholder, selectedStation, onSelect }) {
+    const [inputValue, setInputValue] = useState("");
     const [stationSuggestions, setStationSuggestions] = useState([]);
     const [isLoading, setIsLoading] = useState(false);
     const [errorText, setErrorText] = useState("");
@@ -29,7 +27,7 @@ export function StationAutocomplete({ label, placeholder, selectedStation, onSel
         }
 
         let isCancelled = false;
-        const timeoutId = window.setTimeout(async () => {
+        const timeoutId = setTimeout(async () => {
             setIsLoading(true);
             setErrorText("");
 
@@ -57,7 +55,7 @@ export function StationAutocomplete({ label, placeholder, selectedStation, onSel
 
         return () => {
             isCancelled = true;
-            window.clearTimeout(timeoutId);
+            clearTimeout(timeoutId);
         };
     }, [inputValue]);
 
@@ -112,11 +110,7 @@ export function StationAutocomplete({ label, placeholder, selectedStation, onSel
                                 onClick={() => handleSuggestionClick(station)}
                             >
                                 <strong>{station.title}</strong>
-                                <span>
-                                    {[station.settlement, station.region]
-                                        .filter(Boolean)
-                                        .join(", ")}
-                                </span>
+                                <span>{[station.settlement, station.region].filter(Boolean).join(", ")}</span>
                             </button>
                         </li>
                     ))}

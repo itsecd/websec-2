@@ -1,14 +1,32 @@
+function getStorageSafe(storageName) {
+    if (typeof window === "undefined") {
+        return null;
+    }
+
+    try {
+        const storage = window[storageName];
+        const testKey = "__storage_test__";
+        storage.setItem(testKey, testKey);
+        storage.removeItem(testKey);
+        return storage;
+    } catch {
+        return null;
+    }
+}
+
 export function canUseStorage() {
-    return typeof window !== "undefined" && typeof window.localStorage !== "undefined";
+    return Boolean(getStorageSafe("localStorage"));
 }
 
 export function readStoredList(storageKey) {
-    if (!canUseStorage()) {
+    const storage = getStorageSafe("localStorage");
+
+    if (!storage) {
         return [];
     }
 
     try {
-        const rawValue = window.localStorage.getItem(storageKey);
+        const rawValue = storage.getItem(storageKey);
 
         if (!rawValue) {
             return [];
@@ -23,12 +41,14 @@ export function readStoredList(storageKey) {
 }
 
 export function readStoredValue(storageKey, fallbackValue = "") {
-    if (!canUseStorage()) {
+    const storage = getStorageSafe("localStorage");
+
+    if (!storage) {
         return fallbackValue;
     }
 
     try {
-        const rawValue = window.localStorage.getItem(storageKey);
+        const rawValue = storage.getItem(storageKey);
         return rawValue ?? fallbackValue;
     } catch (error) {
         console.error("Не удалось прочитать localStorage", error);
@@ -37,24 +57,28 @@ export function readStoredValue(storageKey, fallbackValue = "") {
 }
 
 export function writeStoredList(storageKey, items) {
-    if (!canUseStorage()) {
+    const storage = getStorageSafe("localStorage");
+
+    if (!storage) {
         return;
     }
 
     try {
-        window.localStorage.setItem(storageKey, JSON.stringify(items));
+        storage.setItem(storageKey, JSON.stringify(items));
     } catch (error) {
         console.error("Не удалось записать localStorage", error);
     }
 }
 
 export function writeStoredValue(storageKey, value) {
-    if (!canUseStorage()) {
+    const storage = getStorageSafe("localStorage");
+
+    if (!storage) {
         return;
     }
 
     try {
-        window.localStorage.setItem(storageKey, String(value));
+        storage.setItem(storageKey, String(value));
     } catch (error) {
         console.error("Не удалось записать localStorage", error);
     }

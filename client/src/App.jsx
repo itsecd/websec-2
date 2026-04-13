@@ -5,13 +5,12 @@ import { FavoritesPanel } from "./components/FavoritesPanel";
 import { RouteSearchPanel } from "./components/RouteSearchPanel";
 import { StationSchedulePanel } from "./components/StationSchedulePanel";
 import { StationSearchPanel } from "./components/StationSearchPanel";
-import { THEME_STORAGE_KEY } from "./config/app";
+import { DEFAULT_THEME, THEME_STORAGE_KEY } from "./config/app";
 import { MAP_POINT_SEARCH_DISTANCE } from "./config/map";
 import { useFavorites } from "./hooks/useFavorites";
 import { todayDateValue } from "./utils/dates";
 import { readStoredValue, writeStoredValue } from "./utils/storage";
 
-const DEFAULT_THEME = "light";
 
 function getSavedTheme() {
     const savedTheme = readStoredValue(THEME_STORAGE_KEY, DEFAULT_THEME);
@@ -19,7 +18,7 @@ function getSavedTheme() {
 }
 
 function openSection(sectionId) {
-    window.location.hash = sectionId;
+    window.location.hash = `#${sectionId}`;
 }
 
 export default function App() {
@@ -159,17 +158,17 @@ export default function App() {
 
     function handleFavoritePick(station) {
         selectStation(station);
-        openSection("#station-panel");
+        openSection("station-panel");
     }
 
     function handleFavoriteUseAsRouteFrom(station) {
         setRouteFromStation(station);
-        openSection("#route-panel");
+        openSection("route-panel");
     }
 
     function handleFavoriteUseAsRouteTo(station) {
         setRouteToStation(station);
-        openSection("#route-panel");
+        openSection("route-panel");
     }
 
     function handleThemeToggle() {
