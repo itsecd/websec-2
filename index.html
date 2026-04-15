@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Погода России</title>
+
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.3/dist/chart.umd.min.js"></script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@300;500;700&family=JetBrains+Mono:wght@300;400&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <aside id="sidebar">
+    <div id="sidebar-header">
+      <div id="logo">
+        <span class="logo-icon">◈</span>
+        <div>
+          <div class="logo-title">ПОГОДА</div>
+          <div class="logo-sub">РОССИЯ · 1000 ГОРОДОВ</div>
+        </div>
+      </div>
+      <div id="search-wrap">
+        <input id="search-input" type="text" placeholder="Поиск города..." autocomplete="off" />
+        <div id="search-results"></div>
+      </div>
+      <div id="sidebar-hint">← Нажмите на точку на карте</div>
+    </div>
+
+    <div id="weather-panel" class="hidden">
+      <div id="wp-city-name"></div>
+      <div id="wp-region"></div>
+      <div id="wp-now-row">
+        <div class="now-block">
+          <div class="now-label">ТЕМП.</div>
+          <div id="wp-temp" class="now-val"></div>
+        </div>
+        <div class="now-block">
+          <div class="now-label">ВЕТЕР</div>
+          <div id="wp-wind" class="now-val"></div>
+        </div>
+        <div class="now-block">
+          <div class="now-label">ОСАДКИ</div>
+          <div id="wp-prec" class="now-val"></div>
+        </div>
+      </div>
+
+      <div class="chart-section">
+        <div class="chart-label">ТЕМПЕРАТУРА (°C) · 7 ДНЕЙ</div>
+        <div class="chart-wrap"><canvas id="chart-temp"></canvas></div>
+      </div>
+      <div class="chart-section">
+        <div class="chart-label">ОСАДКИ (мм) · 7 ДНЕЙ</div>
+        <div class="chart-wrap"><canvas id="chart-prec"></canvas></div>
+      </div>
+      <div class="chart-section">
+        <div class="chart-label">ВЕТЕР (км/ч) · 7 ДНЕЙ</div>
+        <div class="chart-wrap"><canvas id="chart-wind"></canvas></div>
+      </div>
+
+      <div id="wp-credit">
+        Данные: <a href="https://open-meteo.com" target="_blank">Open-Meteo</a> · CC BY 4.0
+      </div>
+    </div>
+
+    <div id="loading-panel" class="hidden">
+      <div class="loader-ring"></div>
+      <div class="loader-text">Загрузка прогноза…</div>
+    </div>
+  </aside>
+
+  <div id="map"></div>
+
+  <button id="sidebar-toggle" title="Панель">◈</button>
+
+  <script src="cities.js"></script>
+  <script src="weather.js"></script>
+  <script src="map.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
