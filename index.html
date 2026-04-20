@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Карта населённых пунктов и прогноз погоды</title>
+  <meta name="description" content="Одностраничный сайт с картой населённых пунктов, поиском по названию и прогнозом погоды по нескольким дням." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <link rel="stylesheet" href="style.css" />
+  <style>
+  .leaflet-control-attribution {
+      display: none;
+  }
+  </style>
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar" id="sidebar">
+      <div class="brand">
+        <div class="brand-mark">⛅</div>
+        <div>
+          <h1>Погода по населённым пунктам</h1>
+          <p>Карта, поиск и прогноз на несколько дней</p>
+        </div>
+      </div>
+
+      <section class="panel panel-accent">
+        <h2>Как пользоваться</h2>
+        <ol class="steps">
+          <li>Найдите населённый пункт по названию.</li>
+          <li>Нажмите точку на карте или карточку в списке.</li>
+          <li>Вставьте token от Project // Eol и получите графики.</li>
+        </ol>
+        <div class="actions">
+          <button class="btn btn-primary" id="resetBtn">Сбросить фильтр</button>
+          <button class="btn btn-secondary" id="useMyLocationBtn">Моя геопозиция</button>
+        </div>
+        <p class="tiny-note" id="locateNote">Геопозиция используется только в вашем браузере.</p>
+      </section>
+
+      <section class="panel">
+        <h2>Токен API</h2>
+        <p class="muted" id="tokenHint">Введите token от Project // Eol: он нужен для запросов к API.</p>
+        <input id="tokenInput" class="text-input" type="password" placeholder="token" autocomplete="off" />
+        <div class="actions">
+          <button class="btn btn-primary" id="saveTokenBtn">Сохранить</button>
+          <button class="btn btn-secondary" id="clearTokenBtn">Очистить</button>
+        </div>
+      </section>
+
+      <section class="panel">
+        <div class="stats-grid">
+          <article class="stat">
+            <span>Всего точек</span>
+            <strong id="countAll">0</strong>
+          </article>
+          <article class="stat">
+            <span>Показано</span>
+            <strong id="countShown">0</strong>
+          </article>
+          <article class="stat stat-wide">
+            <span>Статус</span>
+            <strong id="statusLine">Загрузка…</strong>
+          </article>
+        </div>
+      </section>
+
+      <section class="panel">
+        <div class="search-head">
+          <h2>Поиск по названию</h2>
+          <button class="icon-btn" id="infoBtn" title="Показать первую найденную точку">↗</button>
+        </div>
+        <input id="searchInput" class="text-input" type="search" placeholder="Например, Казань или Томск" />
+        <div class="search-results" id="searchResults"></div>
+      </section>
+
+      <section class="panel">
+        <h2>Легенда</h2>
+        <div class="legend" id="legend">
+          <div><span class="dot dot-big"></span> более 1 млн жителей</div>
+          <div><span class="dot dot-mid"></span> от 100 тыс. до 1 млн</div>
+          <div><span class="dot dot-small"></span> меньше 100 тыс.</div>
+        </div>
+      </section>
+
+      <footer class="footer">
+        <p>Открытые данные и погодный API по координатам.</p>
+        <p>Графики строятся на Chart.js.</p>
+      </footer>
+    </aside>
+
+    <main class="main">
+      <header class="hero">
+        <div>
+          <p class="eyebrow">Одностраничное веб-приложение</p>
+          <h2>Населённые пункты на карте и прогноз погоды по клику</h2>
+          <p class="hero-text">Ищите населённый пункт, открывайте точку на карте и смотрите наглядные дневные графики температуры, осадков и ветра.</p>
+        </div>
+        <div class="hero-badges">
+          <span>Leaflet</span>
+          <span>jQuery</span>
+          <span>Chart.js</span>
+        </div>
+      </header>
+
+      <section class="map-panel">
+        <div id="map" class="map"></div>
+      </section>
+
+      <section class="content-grid">
+        <article class="info-card">
+          <h3>Подсказка</h3>
+          <p>Кликните по точке на карте, чтобы открыть модальное окно с прогнозом. Список слева можно фильтровать по названию, региону и численности.</p>
+        </article>
+        <article class="info-card">
+          <h3>Что подгружается динамически</h3>
+          <p>Список точек, фильтр поиска, данные прогноза, сводные карточки и графики в модальном окне обновляются без перезагрузки страницы.</p>
+        </article>
+        <article class="info-card">
+          <h3>Формат данных</h3>
+          <p>Проект ожидает JSON с объектами вида: name, region, lat, lon, population. Скрипт в папке scripts умеет собирать такой файл из CSV.</p>
+        </article>
+      </section>
+    </main>
+  </div>
+
+  <div class="modal" id="forecastModal" aria-hidden="true">
+    <div class="modal-backdrop" data-modal-backdrop></div>
+    <div class="modal-dialog">
+      <header class="modal-header">
+        <div>
+          <h3 id="modalTitle">Прогноз</h3>
+          <p id="modalMeta">—</p>
+        </div>
+        <button class="icon-btn close-btn" id="closeModal" aria-label="Закрыть">✕</button>
+      </header>
+      <div class="modal-body" id="modalBody"></div>
+    </div>
+  </div>
+
+  <div class="loading-overlay" id="loadingOverlay" aria-hidden="true">
+    <div class="spinner"></div>
+    <p>Подготавливаем карту и данные…</p>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.3/dist/chart.umd.min.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
