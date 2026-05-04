@@ -8,6 +8,12 @@ import {
   searchRoutes,
 } from "./api";
 
+import SearchResultsList from "@components/SearchResultsList";
+import StationScheduleSheet from "@components/StationScheduleSheet";
+import RouteSheet from "@components/RouteSheet";
+import StationModal from "@components/StationModal";
+import BottomSheet from "@components/BottomSheet";
+
 function App() {
   const [nearby, setNearby] = useState([]);
   const [selectedStation, setSelectedStation] = useState(null);
@@ -164,217 +170,6 @@ function App() {
     markers.push(marker);
   }
 
-  function renderSearchResults() {
-    if (!searchQuery.trim()) {
-      return null;
-    }
-
-    if (!searchResults.length) {
-      return <div className="empty small">Ничего не найдено</div>;
-    }
-
-    return searchResults.map((st) => (
-      <button
-        key={`search-${st.code}`}
-        className={`list-item ${selectedStation?.code === st.code ? "active" : ""}`}
-        onClick={() => handleSelectFromSearch(st)}
-      >
-        <span className="list-title">{st.title}</span>
-        <span className="list-subtitle">
-          {st.settlementTitle || st.regionTitle || st.countryTitle}
-        </span>
-      </button>
-    ));
-  }
-
-  function renderNearbyStations() {
-    if (!nearby.length) {
-      return (
-        <div className="empty small">
-          Нажмите по карте, чтобы увидеть ближайшие станции
-        </div>
-      );
-    }
-
-    return nearby.map((st) => (
-      <button
-        key={st.code}
-        className={`list-item ${selectedStation?.code === st.code ? "active" : ""}`}
-        onClick={() => handleSelectNearby(st)}
-      >
-        <span className="list-title">{st.title}</span>
-        <span className="list-subtitle">
-          {st.distance ? `${st.distance.toFixed(2)} км` : "Станция рядом"}
-        </span>
-      </button>
-    ));
-  }
-
-  function renderStationContent() {
-    if (!schedule) {
-      return (
-        <div className="sheet-block">
-          <div className="sheet-header">
-            <h2>Расписание по станции</h2>
-            <p>
-              Выберите станцию на карте или через поиск, затем откройте расписание
-            </p>
-          </div>
-
-          {selectedStation ? (
-            <div className="selected-box">
-              <div className="selected-title">{selectedStation.title}</div>
-              <div className="selected-subtitle">{selectedStation.code}</div>
-            </div>
-          ) : (
-            <div className="empty">Станция пока не выбрана</div>
-          )}
-
-          <div className="result-section">
-            <h3>Ближайшие станции</h3>
-            <div className="list list-nearby">{renderNearbyStations()}</div>
-          </div>
-        </div>
-      );
-    }
-
-    return (
-      <div className="sheet-block">
-        <div className="sheet-header">
-          <h2>Расписание по станции</h2>
-          <p>{schedule.station?.title || selectedStation?.title}</p>
-        </div>
-
-        <div className="schedule-scroll">
-          <div className="result-section">
-            <h3>Отправление</h3>
-            <div className="cards">
-              {schedule.departure?.length ? (
-                schedule.departure.map((item, index) => (
-                  <article
-                    className="card"
-                    key={`dep-${item.uid || index}`}
-                  >
-                    <h3>{item.title || "Электричка"}</h3>
-                    <p><strong>Номер:</strong> {item.number || "—"}</p>
-                    <p><strong>Направление:</strong> {item.direction || "—"}</p>
-                    <p><strong>Отправление:</strong> {item.departure || "—"}</p>
-                    <p><strong>Прибытие:</strong> {item.arrival || "—"}</p>
-                    <p><strong>Платформа:</strong> {item.platform || "—"}</p>
-                    <p><strong>Дни:</strong> {item.days || "—"}</p>
-                    <p><strong>Перевозчик:</strong> {item.carrier || "—"}</p>
-                  </article>
-                ))
-              ) : (
-                <div className="empty">Нет отправлений на выбранную дату</div>
-              )}
-            </div>
-          </div>
-
-          <div className="result-section">
-            <h3>Прибытие</h3>
-            <div className="cards">
-              {schedule.arrival?.length ? (
-                schedule.arrival.map((item, index) => (
-                  <article
-                    className="card"
-                    key={`arr-${item.uid || index}`}
-                  >
-                    <h3>{item.title || "Электричка"}</h3>
-                    <p><strong>Номер:</strong> {item.number || "—"}</p>
-                    <p><strong>Направление:</strong> {item.direction || "—"}</p>
-                    <p><strong>Прибытие:</strong> {item.arrival || "—"}</p>
-                    <p><strong>Отправление:</strong> {item.departure || "—"}</p>
-                    <p><strong>Платформа:</strong> {item.platform || "—"}</p>
-                    <p><strong>Дни:</strong> {item.days || "—"}</p>
-                    <p><strong>Перевозчик:</strong> {item.carrier || "—"}</p>
-                  </article>
-                ))
-              ) : (
-                <div className="empty">Нет прибытий на выбранную дату</div>
-              )}
-            </div>
-          </div>
-        </div>
-      </div>
-    );
-  }
-
-  function renderRouteContent() {
-    return (
-      <div className="sheet-block">
-        <div className="sheet-header">
-          <h2>Маршрут между станциями</h2>
-          <p>Выберите станции на карте или в поиске и получите список электричек</p>
-        </div>
-
-        <div className="route-form">
-          <div className="route-field">
-            <div className="route-label">Откуда</div>
-            <div className="route-value">
-              {routeFrom
-                ? `${routeFrom.title} (${routeFrom.code})`
-                : "Не выбрано"}
-            </div>
-          </div>
-
-          <div className="route-field">
-            <div className="route-label">Куда</div>
-            <div className="route-value">
-              {routeTo
-                ? `${routeTo.title} (${routeTo.code})`
-                : "Не выбрано"}
-            </div>
-          </div>
-
-          <div className="route-field">
-            <div className="route-label">Дата</div>
-            <div className="route-input-wrap">
-              <input
-                type="date"
-                value={date}
-                onChange={(e) => setDate(e.target.value)}
-              />
-            </div>
-          </div>
-        </div>
-
-        {routes ? (
-          routes.segments?.length ? (
-            <div className="schedule-scroll">
-              <div className="result-section">
-                <h3>Найденные маршруты</h3>
-                <div className="cards">
-                  {routes.segments.map((seg, index) => (
-                    <article
-                      className="card"
-                      key={`seg-${seg.uid || index}`}
-                    >
-                      <h3>{seg.title || "Маршрут"}</h3>
-                      <p><strong>Отправление:</strong> {seg.departure || "—"}</p>
-                      <p><strong>Прибытие:</strong> {seg.arrival || "—"}</p>
-                      <p><strong>Номер:</strong> {seg.number || "—"}</p>
-                      <p><strong>Перевозчик:</strong> {seg.carrier || "—"}</p>
-                      <p><strong>Станции:</strong> {seg.fromTitle} → {seg.toTitle}</p>
-                      <p><strong>Пересадки:</strong> {seg.hasTransfers ? "есть" : "нет"}</p>
-                    </article>
-                  ))}
-                </div>
-              </div>
-            </div>
-          ) : (
-            <div className="empty">Маршрутов на выбранную дату не найдено</div>
-          )
-        ) : (
-          <div className="result-section">
-            <h3>Ближайшие станции</h3>
-            <div className="list list-nearby">{renderNearbyStations()}</div>
-          </div>
-        )}
-      </div>
-    );
-  }
-
   return (
     <div className="page map-page">
       <div className="map-fullscreen">
@@ -383,7 +178,10 @@ function App() {
         <div className="top-bar">
           <div className="top-panel">
             <h1>Прибывалка для электричек</h1>
-            <p>Найдите станцию по названию, выберите её на карте и посмотрите расписание</p>
+            <p>
+              Найдите станцию по названию, выберите её на карте и посмотрите
+              расписание
+            </p>
 
             <div className="top-controls">
               <input
@@ -404,7 +202,14 @@ function App() {
               </div>
             </div>
 
-            <div className="search-list">{renderSearchResults()}</div>
+            <div className="search-list">
+              <SearchResultsList
+                searchQuery={searchQuery}
+                searchResults={searchResults}
+                selectedStation={selectedStation}
+                onSelect={handleSelectFromSearch}
+              />
+            </div>
 
             {error && <div className="error">{error}</div>}
           </div>
@@ -434,56 +239,43 @@ function App() {
           </div>
         </div>
 
-        {selectedStation && (
-          <div className="station-modal">
-            <div className="station-modal-head">
-              <div>
-                <div className="station-modal-title">{selectedStation.title}</div>
-                <div className="station-modal-subtitle">
-                  {selectedStation.settlementTitle ||
-                    selectedStation.regionTitle ||
-                    selectedStation.countryTitle ||
-                    selectedStation.code}
-                </div>
-              </div>
+        <StationModal
+          mode={mode}
+          selectedStation={selectedStation}
+          onClose={() => {
+            setSelectedStation(null);
+            if (mode === "station") {
+              setSchedule(null);
+            }
+          }}
+          onShowSchedule={loadSchedule}
+          onShowRoutes={loadRoutes}
+        />
 
-              <button
-                className="icon-close"
-                onClick={() => {
-                  setSelectedStation(null);
-                  if (mode === "station") {
-                    setSchedule(null);
-                  }
-                }}
-              >
-                ×
-              </button>
-            </div>
-
-            <div className="station-modal-body">
-              {mode === "station" ? (
-                <button className="full-button" onClick={loadSchedule}>
-                  Показать расписание станции
-                </button>
-              ) : (
-                <button className="full-button" onClick={loadRoutes}>
-                  Показать маршруты
-                </button>
-              )}
-            </div>
-          </div>
-        )}
-
-        <div className={`bottom-sheet ${sheetOpen ? "open" : "collapsed"}`}>
-          <button
-            className="sheet-handle"
-            onClick={() => setSheetOpen((prev) => !prev)}
-          ></button>
-
-          <div className="sheet-content">
-            {mode === "station" ? renderStationContent() : renderRouteContent()}
-          </div>
-        </div>
+        <BottomSheet
+          open={sheetOpen}
+          onToggle={() => setSheetOpen((prev) => !prev)}
+        >
+          {mode === "station" ? (
+            <StationScheduleSheet
+              schedule={schedule}
+              selectedStation={selectedStation}
+              nearby={nearby}
+              onSelectNearby={handleSelectNearby}
+            />
+          ) : (
+            <RouteSheet
+              routeFrom={routeFrom}
+              routeTo={routeTo}
+              date={date}
+              setDate={setDate}
+              routes={routes}
+              nearby={nearby}
+              selectedStation={selectedStation}
+              onSelectNearby={handleSelectNearby}
+            />
+          )}
+        </BottomSheet>
       </div>
     </div>
   );
