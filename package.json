@@ -1,0 +1,15 @@
+{
+  "name": "websec-2-schedule",
+  "version": "1.0.0",
+  "private": true,
+  "description": "WebSec lab 2 schedule application with local JSON API.",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "cheerio": "^1.0.0",
+    "express": "^4.19.2",
+    "jquery": "^3.7.1"
+  }
+}
