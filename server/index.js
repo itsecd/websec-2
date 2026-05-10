@@ -1,10 +1,11 @@
+import "dotenv/config";
 import express from "express";
 import cors from "cors";
 
 const app = express();
 app.use(cors());
 
-const TOKEN = VITE_EOLE_TOKEN;
+const TOKEN = process.env.VITE_EOLE_TOKEN;
 
 app.get("/api/weather", async (req, res) => {
   const { lat, lon, date } = req.query;
