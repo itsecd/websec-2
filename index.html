@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>Прогноз погоды с интерактивной картой</title>
+    <!-- Leaflet CSS + JS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <!-- Bootstrap 5 (CSS + JS) -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Font Awesome (иконки) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Кастомные стили -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container-fluid px-0">
+        <!-- Шапка -->
+        <header class="bg-primary text-white py-3 shadow-sm">
+            <div class="container">
+                <div class="d-flex flex-wrap justify-content-between align-items-center">
+                    <h1 class="h3 mb-0"><i class="fas fa-cloud-sun me-2"></i>WeatherMap</h1>
+                    <div class="search-box mt-2 mt-sm-0">
+                        <div class="input-group" style="max-width: 300px;">
+                            <input type="text" id="citySearchInput" class="form-control" placeholder="🔍 Найти город (Москва)...">
+                            <button id="searchCityBtn" class="btn btn-light" type="button"><i class="fas fa-search"></i></button>
+                        </div>
+                        <div id="searchSuggestions" class="list-group position-absolute bg-white shadow-lg" style="z-index: 2000; max-width: 280px; display: none;"></div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Контейнер карты -->
+        <div id="map" style="height: 90vh; width: 100%; z-index: 1;"></div>
+
+        <!-- Модальное окно с прогнозом -->
+        <div class="modal fade" id="weatherModal" data-bs-backdrop="static" tabindex="-1">
+            <div class="modal-dialog modal-lg modal-dialog-scrollable">
+                <div class="modal-content">
+                    <div class="modal-header bg-info text-white">
+                        <h5 class="modal-title" id="modalCityName">Прогноз погоды</h5>
+                        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+                    </div>
+                    <div class="modal-body">
+                        <!-- Вкладки для графиков -->
+                        <ul class="nav nav-tabs mb-3" id="weatherTab" role="tablist">
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link active" id="temp-tab" data-bs-toggle="tab" data-bs-target="#tempChart" type="button" role="tab"><i class="fas fa-thermometer-half"></i> Температура</button>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link" id="wind-tab" data-bs-toggle="tab" data-bs-target="#windChart" type="button" role="tab"><i class="fas fa-wind"></i> Ветер</button>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link" id="precip-tab" data-bs-toggle="tab" data-bs-target="#precipChart" type="button" role="tab"><i class="fas fa-tint"></i> Осадки</button>
+                            </li>
+                        </ul>
+                        <div class="tab-content">
+                            <div class="tab-pane fade show active" id="tempChart" role="tabpanel">
+                                <canvas id="temperatureChart" width="400" height="250" style="max-height: 350px;"></canvas>
+                            </div>
+                            <div class="tab-pane fade" id="windChart" role="tabpanel">
+                                <canvas id="windSpeedChart" width="400" height="250" style="max-height: 350px;"></canvas>
+                            </div>
+                            <div class="tab-pane fade" id="precipChart" role="tabpanel">
+                                <canvas id="precipitationChart" width="400" height="250" style="max-height: 350px;"></canvas>
+                            </div>
+                        </div>
+                        <div id="forecastSummary" class="mt-3 text-muted small text-center"></div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Закрыть</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Подвал -->
+        <footer class="bg-light text-center text-muted py-2 small border-top">
+            Данные погоды: Open‑Meteo (бесплатно) • Маркеры: 1000 крупнейших городов РФ • Графики Chart.js
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
