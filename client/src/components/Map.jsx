@@ -9,49 +9,49 @@ import Feature from 'ol/Feature'
 import Point from 'ol/geom/Point'
 import { fromLonLat } from 'ol/proj'
 import { Style, Circle as CircleStyle, Fill, Stroke, Text } from 'ol/style'
+import { getVectorSourceByName } from '../utils/mapHelpers'
 
 function MapComponent({ stations, selectedStation, onStationSelect }) {
   const mapRef = useRef(null)
-  const vectorSourceRef = useRef(null)
   const mapInstanceRef = useRef(null)
-  const selectedFeatureRef = useRef(null)
 
   useEffect(() => {
     if (!mapRef.current) return
 
-    vectorSourceRef.current = new VectorSource()
+    const vectorSource = new VectorSource()
+    const vectorLayer = new VectorLayer({
+      source: vectorSource,
+      style: function(feature) {
+        const station = feature.get('station')
+        const isSelected = selectedStation?.code === station?.code
+        
+        return new Style({
+          image: new CircleStyle({
+            radius: isSelected ? 12 : 8,
+            fill: new Fill({ 
+              color: isSelected ? '#FF5722' : '#2563eb' 
+            }),
+            stroke: new Stroke({ 
+              color: 'white', 
+              width: 2 
+            })
+          }),
+          text: new Text({
+            text: '🚆',
+            offsetY: isSelected ? -20 : -15,
+            scale: isSelected ? 1.8 : 1.5
+          })
+        })
+      }
+    })
+
+    vectorLayer.set('name', 'stations-layer')
 
     const map = new Map({
       target: mapRef.current,
       layers: [
-        new TileLayer({
-          source: new OSM()
-        }),
-        new VectorLayer({
-          source: vectorSourceRef.current,
-          style: function(feature) {
-            const station = feature.get('station')
-            const isSelected = selectedStation?.code === station?.code
-            
-            return new Style({
-              image: new CircleStyle({
-                radius: isSelected ? 12 : 8,
-                fill: new Fill({ 
-                  color: isSelected ? '#FF5722' : '#2196F3' 
-                }),
-                stroke: new Stroke({ 
-                  color: 'white', 
-                  width: 2 
-                })
-              }),
-              text: new Text({
-                text: '🚆',
-                offsetY: isSelected ? -20 : -15,
-                scale: isSelected ? 1.8 : 1.5
-              })
-            })
-          }
-        })
+        new TileLayer({ source: new OSM() }),
+        vectorLayer 
       ],
       view: new View({
         center: fromLonLat([50.12, 53.20]),
@@ -73,24 +73,18 @@ function MapComponent({ stations, selectedStation, onStationSelect }) {
 
     map.on('pointermove', (evt) => {
       const feature = map.forEachFeatureAtPixel(evt.pixel, (feature) => feature)
-      if (feature) {
-        map.getTargetElement().style.cursor = 'pointer'
-      } else {
-        map.getTargetElement().style.cursor = ''
-      }
+      map.getTargetElement().style.cursor = feature ? 'pointer' : ''
     })
 
-    return () => {
-      map.setTarget(null)
-    }
-  }, [onStationSelect])
+  }, [onStationSelect, selectedStation])
 
   useEffect(() => {
-    if (!vectorSourceRef.current) return
+    if (!stations?.length || !mapInstanceRef.current) return
 
-    vectorSourceRef.current.clear()
+    const source = getVectorSourceByName(mapInstanceRef.current, 'stations-layer')
+    if (!source) return
 
-    if (!stations?.length) return
+    source.clear()
 
     stations.forEach(station => {
       if (station.latitude && station.longitude) {
@@ -98,11 +92,11 @@ function MapComponent({ stations, selectedStation, onStationSelect }) {
           geometry: new Point(fromLonLat([station.longitude, station.latitude])),
           station: station
         })
-        vectorSourceRef.current.addFeature(feature)
+        source.addFeature(feature)
       }
     })
 
-    if (selectedStation && mapInstanceRef.current) {
+    if (selectedStation) {
       const view = mapInstanceRef.current.getView()
       view.animate({
         center: fromLonLat([selectedStation.longitude, selectedStation.latitude]),
@@ -112,18 +106,7 @@ function MapComponent({ stations, selectedStation, onStationSelect }) {
     }
   }, [stations, selectedStation])
 
-  return (
-    <div 
-      ref={mapRef} 
-      style={{ 
-        width: '100%', 
-        height: '400px',
-        borderRadius: '12px',
-        marginBottom: '1rem',
-        border: '2px solid #e0e0e0'
-      }}
-    />
-  )
+  return <div ref={mapRef} className="map-container" />
 }
 
 export default MapComponent

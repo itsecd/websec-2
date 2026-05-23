@@ -1,27 +1,23 @@
 function RouteResults({ segments, error }) {
-  if (error) {
-    return (
-      <div style={{
-        background: '#ffebee',
-        color: '#c62828',
-        padding: '1rem',
-        borderRadius: '12px',
-        marginBottom: '1rem',
-        border: '1px solid #ef9a9a'
-      }}>
-        <strong>Не удалось построить маршрут</strong>
-        <p style={{ margin: '0.5rem 0 0', fontSize: '0.9rem' }}>
-          {error.includes('Не нашли объект') 
-            ? 'Одна из станций не поддерживает поиск маршрутов. Попробуйте выбрать крупную станцию (например, "Самара").' 
-            : error}
-        </p>
-      </div>
-    )
-  }
-  
-  if (!segments?.length) return null
+  const renderError = () => (
+    <div style={{
+      background: '#ffebee',
+      color: '#c62828',
+      padding: '1rem',
+      borderRadius: '12px',
+      marginBottom: '1rem',
+      border: '1px solid #ef9a9a'
+    }}>
+      <strong>️ Не удалось построить маршрут</strong>
+      <p style={{ margin: '0.5rem 0 0', fontSize: '0.9rem' }}>
+        {error.includes('Не нашли объект')
+          ? 'Одна из станций не поддерживает поиск маршрутов. Попробуйте выбрать крупную станцию (например, "Самара").'
+          : error}
+      </p>
+    </div>
+  );
 
-  return (
+  const renderContent = () => (
     <div style={{ background: '#fff', padding: '1rem', borderRadius: '12px', marginBottom: '1rem' }}>
       <h3>Найдено рейсов: {segments.length}</h3>
       <div style={{ overflowX: 'auto' }}>
@@ -35,17 +31,17 @@ function RouteResults({ segments, error }) {
           </thead>
           <tbody>
             {segments.map((seg, i) => {
-              const departure = seg.departure ? new Date(seg.departure) : null
-              const arrival = seg.arrival ? new Date(seg.arrival) : null
+              const departure = seg.departure ? new Date(seg.departure) : null;
+              const arrival = seg.arrival ? new Date(seg.arrival) : null;
               
-              let durationText = '-'
+              let durationText = '-';
               if (departure && arrival) {
-                const diffMins = Math.round((arrival - departure) / 60000)
-                const h = Math.floor(diffMins / 60)
-                const m = diffMins % 60
-                durationText = h > 0 ? `${h}ч ${m}м` : `${m}м`
+                const diffMins = Math.round((arrival - departure) / 60000);
+                const h = Math.floor(diffMins / 60);
+                const m = diffMins % 60;
+                durationText = h > 0 ? `${h}ч ${m}м` : `${m}м`;
               }
-              
+
               return (
                 <tr key={i} style={{ borderBottom: '1px solid #eee' }}>
                   <td style={{ padding: '0.5rem' }}>
@@ -57,12 +53,21 @@ function RouteResults({ segments, error }) {
                   </td>
                   <td style={{ padding: '0.5rem', fontWeight: 'bold', color: '#2196F3' }}>{durationText}</td>
                 </tr>
-              )
+              );
             })}
           </tbody>
         </table>
       </div>
     </div>
-  )
+  );
+
+  return (
+    <>
+      {!segments?.length ? <></> : (
+        error ? renderError() : renderContent()
+      )}
+    </>
+  );
 }
-export default RouteResults
+
+export default RouteResults;

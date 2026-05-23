@@ -6,12 +6,12 @@ const app = express()
 app.use(cors())
 app.use(express.json())
 
-const BASE_URL = 'https://api.rasp.yandex-net.ru/v3.0'
 const API_KEY = process.env.YANDEX_RASP_KEY
+const BASE_URL = process.env.YANDEX_API_BASE_URL || 'https://api.rasp.yandex-net.ru/v3.0'
+const CACHE_TTL = parseInt(process.env.CACHE_TTL_MS, 10) || 24 * 60 * 60 * 1000
 
 let stationsCache = []
 let cacheTimestamp = null
-const CACHE_TTL = 24 * 60 * 60 * 1000
 
 async function yandexRequest(path, params = {}) {
   const url = new URL(BASE_URL + path)
@@ -82,25 +82,20 @@ app.get('/api/rasp/find-stations', async (req, res) => {
 
     const now = Date.now()
     if (!stationsCache.length || !cacheTimestamp || (now - cacheTimestamp) > CACHE_TTL) {
-      console.log('Загрузка списка станций...')
+      console.log('Обновление кэша станций...')
       await loadStations()
     }
 
     let filtered = stationsCache;
     if (query !== 'самара' && query !== 'самарская область') {
-    filtered = filtered.filter(station => 
+      filtered = filtered.filter(station => 
         station.title.toLowerCase().includes(query)
-    );
+      );
     }
 
     if (region === 'samara') {
-      const SAMARA_BBOX = {
-        minLon: 49.5, maxLon: 51.0,
-        minLat: 52.8, maxLat: 53.8
-      }
       filtered = filtered.filter(s => 
-        s.latitude >= SAMARA_BBOX.minLat && s.latitude <= SAMARA_BBOX.maxLat &&
-        s.longitude >= SAMARA_BBOX.minLon && s.longitude <= SAMARA_BBOX.maxLon
+        s.region && s.region.toLowerCase().includes('самар')
       )
     }
 
@@ -216,7 +211,7 @@ app.get('/api/rasp/:endpoint', async (req, res) => {
   }
 })
 
-const PORT = 3001
+const PORT = process.env.PORT || 3001
 
 loadStations().then(() => {
   app.listen(PORT, () => {

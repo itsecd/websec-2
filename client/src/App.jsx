@@ -34,7 +34,8 @@ function App() {
         const combined = [...prev, ...found]
         return [...new Map(combined.map(item => [item.code, item])).values()]
       })
-    } catch {
+    } catch (err) {
+      console.error('Ошибка поиска:', err)
       alert('Ошибка сети. Проверьте подключение.')
     } finally {
       setLoading(false)
@@ -49,6 +50,7 @@ function App() {
       </header>
 
       <main className="main">
+        {/* 1. Поиск */}
         <section className="card">
           <h2 className="card-title">Поиск</h2>
           <form onSubmit={handleSearch} className="search-bar">
@@ -74,6 +76,7 @@ function App() {
                   onStationSelect={setSelectedStation}
                 />
               </div>
+              
               <h3 className="card-title">Станции в регионе ({currentStations.length})</h3>
               <ul className="station-list">
                 {currentStations.map(st => (
@@ -84,7 +87,9 @@ function App() {
                   >
                     <strong>{st.title}</strong>
                     <br />
-                    <small>{st.latitude.toFixed(4)}, {st.longitude.toFixed(4)}</small>
+                    <small>
+                      {Number(st.latitude).toFixed(4)}, {Number(st.longitude).toFixed(4)}
+                    </small>
                   </li>
                 ))}
               </ul>
@@ -92,7 +97,7 @@ function App() {
 
             {selectedStation && (
               <section className="card">
-                <h2 className="card-title">Расписание: {selectedStation.title}</h2>
+                <h2 className="card-title"> Расписание: {selectedStation.title}</h2>
                 <Schedule station={selectedStation} />
               </section>
             )}

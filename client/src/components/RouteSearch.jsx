@@ -1,4 +1,5 @@
 import { useState } from 'react'
+const API_BASE = import.meta.env.VITE_API_BASE_URL || '';
 
 function RouteSearch({ stations, onRouteFound }) {
   const [from, setFrom] = useState('')
@@ -21,7 +22,7 @@ function RouteSearch({ stations, onRouteFound }) {
     setLoading(true)
     setError(null)
     try {
-      const res = await fetch(`/api/rasp/route?from=${fromStation.code}&to=${toStation.code}&date=${date}`)
+      const res = await fetch(`${API_BASE}/api/rasp/route?from=${fromStation.code}&to=${toStation.code}&date=${date}`)
       const data = await res.json()
       if (!res.ok) throw new Error(data.error || 'Маршрут не найден')
       onRouteFound(data.segments || [], null)
