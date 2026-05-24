@@ -5,10 +5,10 @@ import SwapHorizRoundedIcon from "@mui/icons-material/SwapHorizRounded";
 import { Button, Card, CardContent, Stack, TextField, Typography } from "@mui/material";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
-import { StationAutocomplete } from "@/components/station-autocomplete";
+import { StationAutocomplete } from "@components/station-autocomplete";
 import { SearchParams } from "@/lib/search-params";
 import { buildRouteQuery, createInitialStation } from "@/lib/station-form";
-import { StationSearchItem } from "@/lib/types";
+import type { StationSearchItem } from "@/shared/types";
 
 type RouteSearchFormProps = {
   initialParams: SearchParams;

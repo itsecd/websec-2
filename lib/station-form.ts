@@ -1,4 +1,4 @@
-import { StationSearchItem } from "@/lib/types";
+import type { StationSearchItem } from "@/shared/types";
 
 export function createInitialStation(id: string | null, title: string | null): StationSearchItem | null {
   if (!id || !title) {

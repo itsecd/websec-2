@@ -2,7 +2,7 @@
 
 import { Autocomplete, CircularProgress, TextField } from "@mui/material";
 import { useDeferredValue, useEffect, useState } from "react";
-import { StationSearchItem } from "@/lib/types";
+import type { StationSearchItem } from "@/shared/types";
 
 type StationAutocompleteProps = {
   label: string;
@@ -41,7 +41,10 @@ export function StationAutocomplete({
       setIsLoading(true);
 
       try {
-        const response = await fetch(`${endpoint}?q=${encodeURIComponent(deferredInputValue)}`);
+        const requestUrl = new URL(endpoint, window.location.origin);
+        requestUrl.searchParams.set("q", deferredInputValue);
+
+        const response = await fetch(requestUrl);
         const payload = (await response.json()) as { results?: StationSearchItem[] };
 
         if (!cancelled) {

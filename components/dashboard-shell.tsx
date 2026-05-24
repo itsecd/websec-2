@@ -15,11 +15,11 @@ import {
 import { styled } from "@mui/material/styles";
 import { useEffect, useState } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
-import { RouteSearchForm } from "@/components/route-search-form";
-import { SchedulePanel } from "@/components/schedule-panel";
-import { StationBoardForm } from "@/components/station-board-form";
+import { RouteSearchForm } from "@components/route-search-form";
+import { SchedulePanel } from "@components/schedule-panel";
+import { StationBoardForm } from "@components/station-board-form";
 import { SearchParams } from "@/lib/search-params";
-import { RouteScheduleResponse, StationScheduleResponse } from "@/lib/types";
+import type { RouteScheduleResponse, StationScheduleResponse } from "@/shared/types";
 
 type DashboardShellProps = {
   initialParams: SearchParams;

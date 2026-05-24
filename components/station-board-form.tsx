@@ -12,11 +12,11 @@ import {
 } from "@mui/material";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
-import { StationAutocomplete } from "@/components/station-autocomplete";
-import { StationMapPicker } from "@/components/station-map-picker";
+import { StationAutocomplete } from "@components/station-autocomplete";
+import { StationMapPicker } from "@components/station-map-picker";
 import { SearchParams } from "@/lib/search-params";
 import { buildStationBoardQuery, createInitialStation } from "@/lib/station-form";
-import { StationSearchItem } from "@/lib/types";
+import type { StationSearchItem } from "@/shared/types";
 
 type StationBoardFormProps = {
   initialParams: SearchParams;

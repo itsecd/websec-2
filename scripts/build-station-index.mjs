@@ -1,16 +1,21 @@
+import "dotenv/config";
 import { mkdir, writeFile } from "node:fs/promises";
 import path from "node:path";
 
 const apiKey = process.env.YANDEX_RASP_API_KEY;
+const yandexRaspBaseUrl = process.env.YANDEX_RASP_BASE_URL ?? "https://api.rasp.yandex-net.ru/v3.0";
 
 if (!apiKey) {
   console.error("YANDEX_RASP_API_KEY is required");
   process.exit(1);
 }
 
-const response = await fetch(
-  `https://api.rasp.yandex-net.ru/v3.0/stations_list/?apikey=${apiKey}&format=json&lang=ru_RU`
-);
+const requestUrl = new URL(`${yandexRaspBaseUrl.replace(/\/$/, "")}/stations_list/`);
+requestUrl.searchParams.set("apikey", apiKey);
+requestUrl.searchParams.set("format", "json");
+requestUrl.searchParams.set("lang", "ru_RU");
+
+const response = await fetch(requestUrl);
 
 if (!response.ok) {
   console.error(`Yandex Rasp request failed with ${response.status}`);

@@ -1,17 +1,14 @@
-import { RouteScheduleResponse, StationScheduleResponse, StationSearchItem } from "@/lib/types";
+import type {
+  RouteScheduleResponse,
+  StationScheduleResponse,
+  StationSearchItem,
+  YandexNearestStationsResponse,
+  YandexScheduleResponse,
+  YandexSearchResponse
+} from "@/shared/types";
+import { formatDuration } from "@/utils/format-duration";
 
-const baseUrl = "https://api.rasp.yandex-net.ru/v3.0";
-const railwayStationTypes = new Set([
-  "station",
-  "platform",
-  "stop",
-  "checkpoint",
-  "post",
-  "crossing",
-  "overtaking_point",
-  "train_station"
-]);
-
+const yandexRaspBaseUrl = process.env.YANDEX_RASP_BASE_URL ?? "https://api.rasp.yandex-net.ru/v3.0";
 async function yandexFetch<T>(pathname: string, searchParams: URLSearchParams) {
   const apiKey = process.env.YANDEX_RASP_API_KEY;
 
@@ -23,7 +20,10 @@ async function yandexFetch<T>(pathname: string, searchParams: URLSearchParams) {
   searchParams.set("format", "json");
   searchParams.set("lang", "ru_RU");
 
-  const response = await fetch(`${baseUrl}${pathname}?${searchParams.toString()}`, {
+  const requestUrl = new URL(`${yandexRaspBaseUrl.replace(/\/$/, "")}${pathname}`);
+  requestUrl.search = searchParams.toString();
+
+  const response = await fetch(requestUrl, {
     next: { revalidate: 120 }
   });
 
@@ -33,56 +33,6 @@ async function yandexFetch<T>(pathname: string, searchParams: URLSearchParams) {
 
   return (await response.json()) as T;
 }
-
-type YandexScheduleResponse = {
-  schedule: Array<{
-    arrival: string | null;
-    departure: string | null;
-    thread: {
-      uid: string;
-      title: string;
-      number: string;
-    };
-    platform: string;
-    direction: string | null;
-  }>;
-};
-
-type YandexSearchResponse = {
-  segments: Array<{
-    arrival: string;
-    departure: string;
-    duration: number;
-    thread: {
-      uid: string;
-      title: string;
-      number: string;
-    };
-  }>;
-};
-
-type YandexNearestStationsResponse = {
-  stations: Array<{
-    code: string;
-    title: string;
-    lat: number | null;
-    lng: number | null;
-    station_type?: string;
-    transport_type?: string;
-    region?: {
-      title: string;
-    };
-    settlement?: {
-      title: string;
-    };
-    type_choices?: {
-      suburban?: {
-        desktop_url: string;
-        touch_url: string;
-      };
-    };
-  }>;
-};
 
 export async function getStationSchedule(stationId: string, date: string): Promise<StationScheduleResponse> {
   try {
@@ -163,19 +113,4 @@ export async function getNearestStations(lat: number, lng: number): Promise<Stat
       latitude: station.lat,
       longitude: station.lng
     }));
-}
-function formatDuration(durationInSeconds: number) {
-  const totalMinutes = Math.round(durationInSeconds / 60);
-  const hours = Math.floor(totalMinutes / 60);
-  const minutes = totalMinutes % 60;
-
-  if (hours === 0) {
-    return `${minutes} мин`;
-  }
-
-  if (minutes === 0) {
-    return `${hours} ч`;
-  }
-
-  return `${hours} ч ${minutes} мин`;
 }

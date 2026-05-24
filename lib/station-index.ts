@@ -1,5 +1,5 @@
 import { cache } from "react";
-import { StationIndexItem } from "@/lib/types";
+import type { StationIndexItem } from "@/shared/types";
 import { promises as fs } from "node:fs";
 import path from "node:path";
 

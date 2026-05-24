@@ -13,7 +13,7 @@ import {
   Typography
 } from "@mui/material";
 import { styled } from "@mui/material/styles";
-import { RouteScheduleResponse, StationScheduleResponse } from "@/lib/types";
+import type { RouteScheduleResponse, StationScheduleResponse } from "@/shared/types";
 
 type SchedulePanelProps = {
   mode: "station" | "route";

@@ -5,9 +5,9 @@ import { Alert, Box, Button, Stack, Typography } from "@mui/material";
 import { styled } from "@mui/material/styles";
 import dynamic from "next/dynamic";
 import { useEffect, useState } from "react";
-import { StationSearchItem } from "@/lib/types";
+import type { StationSearchItem } from "@/shared/types";
 
-const MapCanvas = dynamic(() => import("@/components/station-map").then((module) => module.StationMap), {
+const MapCanvas = dynamic(() => import("@components/station-map").then((module) => module.StationMap), {
   ssr: false
 });
 
@@ -34,7 +34,11 @@ export function StationMapPicker({ selectedStation, onSelect }: StationMapPicker
       setHasError(false);
 
       try {
-        const response = await fetch(`/api/stations/nearby?lat=${point[0]}&lng=${point[1]}`);
+        const requestUrl = new URL("/api/stations/nearby", window.location.origin);
+        requestUrl.searchParams.set("lat", String(point[0]));
+        requestUrl.searchParams.set("lng", String(point[1]));
+
+        const response = await fetch(requestUrl);
         const payload = (await response.json()) as { results?: StationSearchItem[] };
 
         if (!cancelled) {

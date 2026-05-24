@@ -1,11 +1,20 @@
 "use client";
 
-import "leaflet/dist/leaflet.css";
+import "ol/ol.css";
 import { Box } from "@mui/material";
-import L from "leaflet";
-import { useEffect } from "react";
-import { MapContainer, Marker, Popup, TileLayer, useMap, useMapEvents } from "react-leaflet";
-import { StationSearchItem } from "@/lib/types";
+import Feature from "ol/Feature";
+import Map from "ol/Map";
+import Overlay from "ol/Overlay";
+import View from "ol/View";
+import Point from "ol/geom/Point";
+import TileLayer from "ol/layer/Tile";
+import VectorLayer from "ol/layer/Vector";
+import { fromLonLat, toLonLat } from "ol/proj";
+import OSM from "ol/source/OSM";
+import VectorSource from "ol/source/Vector";
+import { Circle as CircleStyle, Fill, Stroke, Style } from "ol/style";
+import { useEffect, useRef } from "react";
+import type { StationSearchItem } from "@/shared/types";
 
 type StationMapProps = {
   center: [number, number];
@@ -15,21 +24,20 @@ type StationMapProps = {
   onStationSelect: (station: StationSearchItem) => void;
 };
 
-const defaultIcon = new L.Icon({
-  iconUrl: "https://unpkg.com/leaflet@1.9.4/dist/images/marker-icon.png",
-  iconRetinaUrl: "https://unpkg.com/leaflet@1.9.4/dist/images/marker-icon-2x.png",
-  shadowUrl: "https://unpkg.com/leaflet@1.9.4/dist/images/marker-shadow.png",
-  iconSize: [25, 41],
-  iconAnchor: [12, 41]
+const defaultZoom = Number(process.env.NEXT_PUBLIC_DEFAULT_MAP_ZOOM ?? 11);
+const stationStyle = new Style({
+  image: new CircleStyle({
+    radius: 7,
+    fill: new Fill({ color: "#1976d2" }),
+    stroke: new Stroke({ color: "#ffffff", width: 2 })
+  })
 });
-
-const selectedIcon = new L.Icon({
-  iconUrl: "https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-red.png",
-  iconRetinaUrl:
-    "https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-red.png",
-  shadowUrl: "https://unpkg.com/leaflet@1.9.4/dist/images/marker-shadow.png",
-  iconSize: [25, 41],
-  iconAnchor: [12, 41]
+const selectedStationStyle = new Style({
+  image: new CircleStyle({
+    radius: 8,
+    fill: new Fill({ color: "#d32f2f" }),
+    stroke: new Stroke({ color: "#ffffff", width: 2 })
+  })
 });
 
 export function StationMap({
@@ -39,66 +47,133 @@ export function StationMap({
   onPointSelect,
   onStationSelect
 }: StationMapProps) {
-  return (
-    <Box sx={{ height: "100%", width: "100%", overflow: "hidden" }}>
-      <MapContainer
-        center={center}
-        zoom={Number(process.env.NEXT_PUBLIC_DEFAULT_MAP_ZOOM ?? 11)}
-        scrollWheelZoom
-        style={{ height: "100%", width: "100%" }}
-      >
-        <TileLayer
-          attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'
-          url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-        />
-        <MapViewport center={center} />
-        <MapClickHandler onPointSelect={onPointSelect} />
-        {nearbyStations.map((station) =>
-          station.latitude !== null && station.longitude !== null ? (
-            <Marker
-              key={station.id}
-              position={[station.latitude, station.longitude]}
-              icon={selectedStation?.id === station.id ? selectedIcon : defaultIcon}
-              eventHandlers={{
-                click: () => onStationSelect(station)
-              }}
-            >
-              <Popup>{station.title}</Popup>
-            </Marker>
-          ) : null
-        )}
-      </MapContainer>
-    </Box>
-  );
-}
-
-type MapClickHandlerProps = {
-  onPointSelect: (point: [number, number]) => void;
-};
-
-function MapClickHandler({ onPointSelect }: MapClickHandlerProps) {
-  useMapEvents({
-    click(event) {
-      onPointSelect([event.latlng.lat, event.latlng.lng]);
-    }
-  });
-
-  return null;
-}
-
-type MapViewportProps = {
-  center: [number, number];
-};
-
-function MapViewport({ center }: MapViewportProps) {
-  const map = useMap();
+  const mapElementRef = useRef<HTMLDivElement | null>(null);
+  const popupElementRef = useRef<HTMLDivElement | null>(null);
+  const mapRef = useRef<Map | null>(null);
+  const popupOverlayRef = useRef<Overlay | null>(null);
+  const stationSourceRef = useRef<VectorSource<Feature<Point>> | null>(null);
+  const initialCenterRef = useRef(center);
+  const onPointSelectRef = useRef(onPointSelect);
+  const onStationSelectRef = useRef(onStationSelect);
 
   useEffect(() => {
-    map.setView(center);
-    window.setTimeout(() => {
-      map.invalidateSize();
-    }, 0);
-  }, [center, map]);
+    onPointSelectRef.current = onPointSelect;
+    onStationSelectRef.current = onStationSelect;
+  }, [onPointSelect, onStationSelect]);
 
-  return null;
+  useEffect(() => {
+    if (!mapElementRef.current || !popupElementRef.current) {
+      return;
+    }
+
+    const stationSource = new VectorSource<Feature<Point>>();
+    const stationLayer = new VectorLayer({
+      source: stationSource
+    });
+    const popupOverlay = new Overlay({
+      element: popupElementRef.current,
+      positioning: "bottom-center",
+      stopEvent: false,
+      offset: [0, -12]
+    });
+    const map = new Map({
+      target: mapElementRef.current,
+      layers: [
+        new TileLayer({
+          source: new OSM()
+        }),
+        stationLayer
+      ],
+      overlays: [popupOverlay],
+      view: new View({
+        center: fromLonLat([initialCenterRef.current[1], initialCenterRef.current[0]]),
+        zoom: defaultZoom
+      })
+    });
+
+    map.on("singleclick", (event) => {
+      const feature = map.forEachFeatureAtPixel(event.pixel, (candidate) => candidate);
+      const station = feature?.get("station") as StationSearchItem | undefined;
+
+      if (station) {
+        onStationSelectRef.current(station);
+        popupElementRef.current!.textContent = station.title;
+        popupOverlay.setPosition(fromLonLat([station.longitude!, station.latitude!]));
+        return;
+      }
+
+      const [lng, lat] = toLonLat(event.coordinate);
+      popupOverlay.setPosition(undefined);
+      onPointSelectRef.current([lat, lng]);
+    });
+
+    mapRef.current = map;
+    popupOverlayRef.current = popupOverlay;
+    stationSourceRef.current = stationSource;
+    window.setTimeout(() => map.updateSize(), 0);
+
+    return () => {
+      map.setTarget(undefined);
+      mapRef.current = null;
+      popupOverlayRef.current = null;
+      stationSourceRef.current = null;
+    };
+  }, []);
+
+  useEffect(() => {
+    const map = mapRef.current;
+
+    if (!map) {
+      return;
+    }
+
+    map.getView().setCenter(fromLonLat([center[1], center[0]]));
+    window.setTimeout(() => map.updateSize(), 0);
+  }, [center]);
+
+  useEffect(() => {
+    const stationSource = stationSourceRef.current;
+
+    if (!stationSource) {
+      return;
+    }
+
+    const features = nearbyStations.flatMap((station) => {
+      if (station.latitude === null || station.longitude === null) {
+        return [];
+      }
+
+      const feature = new Feature({
+        geometry: new Point(fromLonLat([station.longitude, station.latitude])),
+        station
+      });
+      feature.setStyle(selectedStation?.id === station.id ? selectedStationStyle : stationStyle);
+
+      return [feature];
+    });
+
+    stationSource.clear();
+    stationSource.addFeatures(features);
+  }, [nearbyStations, selectedStation]);
+
+  return (
+    <Box sx={{ height: "100%", width: "100%", overflow: "hidden", position: "relative" }}>
+      <Box ref={mapElementRef} sx={{ height: "100%", width: "100%" }} />
+      <Box
+        ref={popupElementRef}
+        sx={{
+          bgcolor: "background.paper",
+          borderRadius: 1,
+          boxShadow: 3,
+          color: "text.primary",
+          fontSize: 13,
+          maxWidth: 240,
+          px: 1,
+          py: 0.5,
+          pointerEvents: "none",
+          whiteSpace: "normal"
+        }}
+      />
+    </Box>
+  );
 }
