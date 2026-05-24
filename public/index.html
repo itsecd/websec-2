@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Расписание SSAU</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <div class="page-shell">
+      <header class="hero">
+        <p class="hero__eyebrow">Вариант 1</p>
+        <h1>Расписания Самарского университета</h1>
+        <p class="hero__text">
+          Поиск групп и преподавателей с сайта SSAU, выбор недели и просмотр
+          расписания в удобной сетке.
+        </p>
+      </header>
+
+      <main class="layout">
+        <section class="panel panel_search">
+          <label class="search-label" for="searchInput">Поиск группы или преподавателя</label>
+          <div class="search-row">
+            <input
+              id="searchInput"
+              type="text"
+              placeholder="Например: 6411, Максимов, 6411-100503D"
+              autocomplete="off"
+            />
+            <button id="searchButton" type="button">Найти</button>
+          </div>
+          <div id="searchStatus" class="status"></div>
+          <div id="searchResults" class="results"></div>
+        </section>
+
+        <section class="panel panel_controls">
+          <div class="toolbar">
+            <div>
+              <p class="toolbar__label">Текущий выбор</p>
+              <h2 id="entityTitle">Пока ничего не выбрано</h2>
+              <p id="entityMeta" class="muted"></p>
+            </div>
+            <div class="week-controls">
+              <button id="prevWeek" type="button" disabled>&larr; Неделя</button>
+              <label for="weekInput">Неделя</label>
+              <input id="weekInput" type="number" min="1" max="52" />
+              <button id="nextWeek" type="button" disabled>Неделя &rarr;</button>
+            </div>
+          </div>
+          <div id="weekCaption" class="week-caption"></div>
+        </section>
+
+        <section class="panel panel_schedule">
+          <div id="scheduleStatus" class="status status_big">
+            Выберите группу или преподавателя, чтобы загрузить расписание.
+          </div>
+          <div id="scheduleRoot"></div>
+        </section>
+      </main>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="/app.js"></script>
+  </body>
+</html>
